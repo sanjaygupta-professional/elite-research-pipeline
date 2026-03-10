@@ -60,9 +60,13 @@ def collect_all_sources(config: PipelineConfig) -> list[SourceItem]:
             items = collector.collect()
             all_items.extend(items)
 
-    # RSS (Phase 3 — stub)
+    # RSS feeds
     if config.sources.rss.enabled:
-        logger.info("RSS source collection not yet implemented")
+        from .sources.rss import RSSCollector
+        for feed in config.sources.rss.feeds:
+            collector = RSSCollector(feed_url=feed.url, feed_name=feed.name)
+            items = collector.collect()
+            all_items.extend(items)
 
     return all_items
 
