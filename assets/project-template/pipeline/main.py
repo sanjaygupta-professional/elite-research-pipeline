@@ -68,6 +68,19 @@ def collect_all_sources(config: PipelineConfig) -> list[SourceItem]:
             items = collector.collect()
             all_items.extend(items)
 
+    # RSSHub (Twitter/X, Reddit, HN, etc.)
+    rsshub = config.sources.rsshub
+    if rsshub.enabled:
+        from .sources.rsshub import RSSHubCollector
+        for route in rsshub.routes:
+            collector = RSSHubCollector(
+                rsshub_base=rsshub.base_url,
+                route=route.route,
+                feed_name=route.name,
+            )
+            items = collector.collect()
+            all_items.extend(items)
+
     return all_items
 
 

@@ -31,9 +31,23 @@ class RSSConfig:
 
 
 @dataclass
+class RSSHubRoute:
+    route: str
+    name: str = ""
+
+
+@dataclass
+class RSSHubConfig:
+    enabled: bool = False
+    base_url: str = "http://localhost:1200"
+    routes: list[RSSHubRoute] = field(default_factory=list)
+
+
+@dataclass
 class SourcesConfig:
     youtube: YouTubeConfig = field(default_factory=YouTubeConfig)
     rss: RSSConfig = field(default_factory=RSSConfig)
+    rsshub: RSSHubConfig = field(default_factory=RSSHubConfig)
 
 
 @dataclass
@@ -84,6 +98,15 @@ def load_config(config_path: str = "config.yaml", env_path: str = ".env") -> Pip
     rss_feeds = [RSSFeed(url=f["url"], name=f.get("name", "")) for f in (rss_raw.get("feeds") or [])]
     rss = RSSConfig(enabled=rss_raw.get("enabled", False), feeds=rss_feeds)
 
+    # RSSHub config
+    rsshub_raw = sources_raw.get("rsshub", {})
+    rsshub_routes = [RSSHubRoute(route=r["route"], name=r.get("name", "")) for r in (rsshub_raw.get("routes") or [])]
+    rsshub = RSSHubConfig(
+        enabled=rsshub_raw.get("enabled", False),
+        base_url=rsshub_raw.get("base_url", "http://localhost:1200"),
+        routes=rsshub_routes,
+    )
+
     # Styles config
     styles_raw = raw.get("styles", {})
     styles = StylesConfig(
@@ -98,7 +121,7 @@ def load_config(config_path: str = "config.yaml", env_path: str = ".env") -> Pip
         artifact_types=raw.get("artifact_types", ["audio_overview", "slides"]),
         dual_slides=pipeline.get("dual_slides", True),
         styles=styles,
-        sources=SourcesConfig(youtube=youtube, rss=rss),
+        sources=SourcesConfig(youtube=youtube, rss=rss, rsshub=rsshub),
         notebooklm_storage_path=os.getenv("NOTEBOOKLM_STORAGE_PATH"),
         min_score_full=pipeline.get("min_score_full", 5),
         min_score_chat=pipeline.get("min_score_chat", 2),
