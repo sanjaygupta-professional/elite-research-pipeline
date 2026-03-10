@@ -214,9 +214,16 @@ class PipelineDB:
     def save_intel_card(self, item_id: int, card: dict) -> int:
         """Save an intel card for an item. Returns card ID."""
         cur = self.conn.execute(
-            """INSERT OR REPLACE INTO intel_cards
+            """INSERT INTO intel_cards
                (item_id, signals, possibilities, implications, advisory, themes, raw_response)
-               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+               VALUES (?, ?, ?, ?, ?, ?, ?)
+               ON CONFLICT(item_id) DO UPDATE SET
+                   signals=excluded.signals,
+                   possibilities=excluded.possibilities,
+                   implications=excluded.implications,
+                   advisory=excluded.advisory,
+                   themes=excluded.themes,
+                   raw_response=excluded.raw_response""",
             (
                 item_id,
                 json.dumps(card.get("signals", [])),
@@ -233,12 +240,13 @@ class PipelineDB:
     def get_intel_cards(self, limit: int = 50, theme: str | None = None) -> list[dict]:
         """Get intel cards, optionally filtered by theme."""
         if theme:
+            escaped = theme.replace("%", "\\%").replace("_", "\\_")
             rows = self.conn.execute(
                 """SELECT ic.*, i.title, i.url FROM intel_cards ic
                    JOIN items i ON ic.item_id = i.id
-                   WHERE ic.themes LIKE ?
+                   WHERE ic.themes LIKE ? ESCAPE '\\'
                    ORDER BY ic.created_at DESC LIMIT ?""",
-                (f"%{theme}%", limit),
+                (f"%{escaped}%", limit),
             ).fetchall()
         else:
             rows = self.conn.execute(
@@ -247,13 +255,12 @@ class PipelineDB:
                    ORDER BY ic.created_at DESC LIMIT ?""",
                 (limit,),
             ).fetchall()
-        cols = [d[0] for d in self.conn.execute("SELECT * FROM intel_cards LIMIT 0").description]
-        cols += ["title", "url"]
         result = []
         for row in rows:
-            d = dict(zip(cols, row))
+            d = dict(row)
             for key in ("signals", "possibilities", "implications", "advisory", "themes"):
-                d[key] = json.loads(d[key]) if isinstance(d[key], str) else d[key]
+                if isinstance(d[key], str):
+                    d[key] = json.loads(d[key])
             result.append(d)
         return result
 

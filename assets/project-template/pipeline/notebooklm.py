@@ -245,15 +245,18 @@ class NotebookLMWrapper:
                 current_section = None
             elif line.startswith("- ") and current_section:
                 item = line[2:].strip()
-                if current_section == "possibilities" and "|" in item:
-                    parts = [p.strip() for p in item.split("|")]
-                    entry = {"scenario": parts[0]}
-                    for part in parts[1:]:
-                        if part.upper().startswith("PROBABILITY:"):
-                            entry["probability"] = part.split(":", 1)[1].strip()
-                        elif part.upper().startswith("TIMEFRAME:"):
-                            entry["timeframe"] = part.split(":", 1)[1].strip()
-                    card["possibilities"].append(entry)
+                if current_section == "possibilities":
+                    if "|" in item:
+                        parts = [p.strip() for p in item.split("|")]
+                        entry = {"scenario": parts[0]}
+                        for part in parts[1:]:
+                            if part.upper().startswith("PROBABILITY:"):
+                                entry["probability"] = part.split(":", 1)[1].strip()
+                            elif part.upper().startswith("TIMEFRAME:"):
+                                entry["timeframe"] = part.split(":", 1)[1].strip()
+                        card["possibilities"].append(entry)
+                    else:
+                        card["possibilities"].append({"scenario": item})
                 else:
                     card[current_section].append(item)
 

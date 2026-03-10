@@ -8,7 +8,6 @@ against research themes. Zero Claude tokens — pure Python.
 from __future__ import annotations
 
 import logging
-import re
 
 logger = logging.getLogger(__name__)
 
