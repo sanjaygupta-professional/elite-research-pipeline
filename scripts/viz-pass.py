@@ -14,6 +14,7 @@ import sys
 import os
 import subprocess
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent
@@ -275,9 +276,11 @@ def run_paperbanana(content_text: str, caption: str, output_path: Path) -> str |
         print(f"  [PaperBanana] ERROR: not found at {PAPERBANANA_DIR}", file=sys.stderr)
         return None
 
-    # Write content to temp file
-    content_file = Path("/tmp/viz-paperbanana-content.md")
-    content_file.write_text(content_text)
+    # Write content to a UNIQUE temp file (parallel calls must not clobber each other)
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", prefix="viz-pb-", delete=False) as tf:
+        tf.write(content_text)
+        content_file = Path(tf.name)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     # Output stem — PaperBanana appends _0, _1, _2 for multiple candidates
@@ -390,15 +393,16 @@ def main():
         modified = inject_after_header(modified, "## The Debate", debate_map)
         print("[viz-pass] ✓ Debate Map (Mermaid) injected")
 
-    # PaperBanana diagrams (concept + connections map)
+    # PaperBanana diagrams — build specs, run in parallel, then inject results.
+    # Each PaperBanana call is an independent subprocess; running 3 concurrently
+    # cuts wall time from ~12 min to ~4 min per category.
     if args.with_paperbanana:
         images_dir = REPO_ROOT / "knowledge-system" / "assets" / "images" / slug_clean
+        specs = []  # each: dict(key, content, caption, output_path, section_header, caption_md)
 
-        # 1. Concept diagram (top of file)
-        concept_path = images_dir / "concept-diagram-b.png"
+        # --- Spec 1: Concept diagram (top of file)
         state_m = re.search(r'## State of the Field.*?\n(.*?)(?=\n## )', content, re.DOTALL)
         dev_m = re.search(r'## Key Developments.*?\n(.*?)(?=\n## )', content, re.DOTALL)
-        # Fallback for categories without "State of the Field" (e.g. Zone 4 lab categories)
         first_section_m = re.search(r'## .+?\n(.*?)(?=\n## )', content, re.DOTALL)
         pb_content = ""
         if state_m:
@@ -407,25 +411,16 @@ def main():
             pb_content += first_section_m.group(1).strip() + "\n\n"
         if dev_m:
             pb_content += dev_m.group(1).strip()
+        specs.append({
+            "key": "concept",
+            "content": pb_content,
+            "caption": f"Conceptual overview of {category_name} — key forces, dynamics, "
+                       f"and transformation patterns in AI research intelligence",
+            "output_path": images_dir / "concept-diagram-b.png",
+        })
 
-        concept_caption = (f"Conceptual overview of {category_name} — key forces, dynamics, "
-                           f"and transformation patterns in AI research intelligence")
-        concept_png = run_paperbanana(pb_content, concept_caption, concept_path)
-
-        if concept_png:
-            rel_path = os.path.relpath(concept_png, category_file.parent)
-            img_block = (f"\n![{category_name} — Concept Diagram]({rel_path})\n"
-                         f"*Conceptual overview — generated via PaperBanana (color infographic)*\n")
-            meta_end_m = re.search(r'\*\*Baseline status:\*\*.*?\n', modified)
-            if meta_end_m:
-                ins = meta_end_m.end()
-                modified = modified[:ins] + "\n---\n" + img_block + "\n---\n" + modified[ins:]
-            print(f"[viz-pass] ✓ PaperBanana concept diagram injected")
-
-        # 2. Signal Landscape (scatter plot — Evidence vs. Time Horizon)
+        # --- Spec 2: Signal Landscape
         if signals:
-            sl_path = images_dir / "signal-landscape-b.png"
-            # Build descriptive content with signal coordinates
             sl_lines = [
                 f"Signal Landscape for {category_name} — a scatter plot positioning "
                 f"the ranked shortlist signals by Evidence Strength (x-axis, 1-5 scale) "
@@ -437,36 +432,67 @@ def main():
                 "Signals to plot:",
             ]
             for s in signals:
-                sl_lines.append(
-                    f"- {s['name'].rstrip('…')}: Evidence={s['e']} of 5, "
-                    f"Horizon={s['z']}"
-                )
-            sl_content = "\n".join(sl_lines)
-            sl_caption = (f"Signal Landscape — {category_name}. Scatter plot of "
-                          f"ranked shortlist signals by Evidence Strength and Time Horizon")
-            sl_png = run_paperbanana(sl_content, sl_caption, sl_path)
-            if sl_png:
-                rel_path = os.path.relpath(sl_png, category_file.parent)
-                img_block = (f"\n![Signal Landscape — {category_name}]({rel_path})\n"
-                             f"*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*\n")
-                modified = inject_after_header(modified, "## Signal Assessment", img_block.strip())
-                print(f"[viz-pass] ✓ PaperBanana Signal Landscape injected")
+                sl_lines.append(f"- {s['name'].rstrip('…')}: Evidence={s['e']} of 5, Horizon={s['z']}")
+            specs.append({
+                "key": "signal_landscape",
+                "content": "\n".join(sl_lines),
+                "caption": f"Signal Landscape — {category_name}. Scatter plot of "
+                           f"ranked shortlist signals by Evidence Strength and Time Horizon",
+                "output_path": images_dir / "signal-landscape-b.png",
+            })
 
-        # 3. Connections map (replaces Mermaid mindmap)
+        # --- Spec 3: Connections map
         if connections:
-            conn_path = images_dir / "connections-map-b.png"
-            conn_content = generate_connections_description(connections, category_name, content)
-            conn_caption = (f"Knowledge system connections for {category_name} — "
-                            f"how this category relates to the other 9 research areas in "
-                            f"the Possibilities with Probabilities intelligence framework")
-            conn_png = run_paperbanana(conn_content, conn_caption, conn_path)
+            specs.append({
+                "key": "connections",
+                "content": generate_connections_description(connections, category_name, content),
+                "caption": f"Knowledge system connections for {category_name} — "
+                           f"how this category relates to the other 9 research areas in "
+                           f"the Possibilities with Probabilities intelligence framework",
+                "output_path": images_dir / "connections-map-b.png",
+            })
 
-            if conn_png:
-                rel_path = os.path.relpath(conn_png, category_file.parent)
-                img_block = (f"\n![{category_name} — Connections Map]({rel_path})\n"
-                             f"*Category connections map — generated via PaperBanana*\n")
-                modified = inject_after_header(modified, "## Connections to Other Categories", img_block.strip())
-                print(f"[viz-pass] ✓ PaperBanana connections map injected")
+        # Run all PaperBanana calls in parallel — 3 concurrent subprocesses, 3 candidates each
+        print(f"[viz-pass] Running {len(specs)} PaperBanana calls in parallel (3 candidates each)...")
+        results = {}
+        with ThreadPoolExecutor(max_workers=len(specs)) as executor:
+            futures = {
+                executor.submit(run_paperbanana, spec["content"], spec["caption"], spec["output_path"]): spec["key"]
+                for spec in specs
+            }
+            for future in as_completed(futures):
+                key = futures[future]
+                try:
+                    results[key] = future.result()
+                    print(f"[viz-pass] ✓ {key} diagram complete")
+                except Exception as e:
+                    print(f"[viz-pass] ✗ {key} diagram FAILED: {e}")
+                    results[key] = None
+
+        # Inject results into markdown (after all PaperBanana calls complete)
+        if results.get("concept"):
+            rel_path = os.path.relpath(results["concept"], category_file.parent)
+            img_block = (f"\n![{category_name} — Concept Diagram]({rel_path})\n"
+                         f"*Conceptual overview — generated via PaperBanana (color infographic)*\n")
+            meta_end_m = re.search(r'\*\*Baseline status:\*\*.*?\n', modified)
+            if meta_end_m:
+                ins = meta_end_m.end()
+                modified = modified[:ins] + "\n---\n" + img_block + "\n---\n" + modified[ins:]
+            print(f"[viz-pass] ✓ Concept diagram injected")
+
+        if results.get("signal_landscape"):
+            rel_path = os.path.relpath(results["signal_landscape"], category_file.parent)
+            img_block = (f"\n![Signal Landscape — {category_name}]({rel_path})\n"
+                         f"*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*\n")
+            modified = inject_after_header(modified, "## Signal Assessment", img_block.strip())
+            print(f"[viz-pass] ✓ Signal Landscape injected")
+
+        if results.get("connections"):
+            rel_path = os.path.relpath(results["connections"], category_file.parent)
+            img_block = (f"\n![{category_name} — Connections Map]({rel_path})\n"
+                         f"*Category connections map — generated via PaperBanana*\n")
+            modified = inject_after_header(modified, "## Connections to Other Categories", img_block.strip())
+            print(f"[viz-pass] ✓ Connections map injected")
 
     category_file.write_text(modified)
     print(f"[viz-pass] File written: {category_file}")

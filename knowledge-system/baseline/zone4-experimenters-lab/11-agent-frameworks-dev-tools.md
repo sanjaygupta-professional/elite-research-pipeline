@@ -3,6 +3,13 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE
 
+---
+
+![Agent Frameworks & Dev Tools — Concept Diagram](../../assets/images/agent-frameworks-dev-tools/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
 ## What This Category Tracks
 Hands-on experience with agent frameworks, development tools, and protocols. Sanjay has existing projects in LangGraph and Claude Agent SDK — this category builds on that foundation. The authority here comes from building with these tools, not just reading about them.
 
@@ -90,6 +97,9 @@ Agent reliability ≈ (task complexity × number of steps × number of agents)^(
 
 ## Signal Assessment
 
+![Signal Landscape — Agent Frameworks & Dev Tools](../../assets/images/agent-frameworks-dev-tools/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 
 ### Ranked Shortlist: Uncommon but Likely (Top 4)
 
@@ -142,6 +152,9 @@ Agent reliability ≈ (task complexity × number of steps × number of agents)^(
 ---
 
 ## Connections to Other Categories
+
+![Agent Frameworks & Dev Tools — Connections Map](../../assets/images/agent-frameworks-dev-tools/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 
 - **Category 01 (GenAI Capabilities):** Agent performance is bounded by model capability. Reasoning model improvements (extended thinking, o-series) directly expand what agents can do.
