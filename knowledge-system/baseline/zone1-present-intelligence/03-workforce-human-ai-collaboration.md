@@ -124,6 +124,9 @@ The biggest risk I see is the **"missing rung" problem** for junior talent devel
 
 ## Signal Assessment
 
+![Signal Landscape — Workforce & Human-AI Collaboration](../../assets/images/workforce-human-ai-collaboration/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 ### Ranked Shortlist: Uncommon but Likely (Top 5)
 
 ### 1. The "missing rung" becomes the dominant workforce challenge by 2028
