@@ -45,7 +45,11 @@ markdown_extensions:
   - tables
   - footnotes
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -66,6 +70,12 @@ markdown_extensions:
 
 plugins:
   - search
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
+extra_css:
+  - stylesheets/mermaid-theme.css
 
 extra:
   social:
@@ -88,6 +98,7 @@ nav:
       - System Methodology: design/04-system-methodology.md
       - Signal Scoring Framework: design/05-signal-scoring-framework.md
       - Source Directory: design/06-source-directory.md
+      - Visualization Guide: design/07-visualization-guide.md
   - Zone 1 — Present:
       - Overview: baseline/README.md
       - 01 · GenAI Capabilities: baseline/zone1-present-intelligence/01-genai-capabilities.md

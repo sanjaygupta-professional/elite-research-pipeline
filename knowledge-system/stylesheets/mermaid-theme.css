@@ -1,0 +1,42 @@
+/* Mermaid diagram theming — aligns with MkDocs Material deep-purple palette */
+
+/* Override default Mermaid node colors to match site palette */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  fill: #f3e5f5;
+  stroke: #6a1b9a;
+  stroke-width: 1.5px;
+}
+
+.mermaid .edgePath .path {
+  stroke: #6a1b9a;
+  stroke-width: 1.5px;
+}
+
+.mermaid .label {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+}
+
+/* Quadrant chart accent */
+.mermaid .quadrant-point {
+  fill: #6a1b9a;
+}
+
+/* Timeline color */
+.mermaid .timeline-section {
+  background: #f3e5f5;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .mermaid .node rect,
+[data-md-color-scheme="slate"] .mermaid .node circle {
+  fill: #2d1b3d;
+  stroke: #ce93d8;
+}
+
+[data-md-color-scheme="slate"] .mermaid .edgePath .path {
+  stroke: #ce93d8;
+}

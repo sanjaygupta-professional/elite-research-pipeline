@@ -21,6 +21,20 @@ The Accenture Technology Vision 2025 framed this era through three pillars: **Ab
 
 ## Key Developments (Past 12 Months)
 
+```mermaid
+timeline
+    title Key Developments — Enterprise AI & Org Transformation
+    section 2026
+        March 2026 : Stanford Enterprise AI Playbook
+        2026 : Deloitte State of AI in Enterprise 2026
+        2026 : Agentic AI operating model emergence
+        2026 : Micro-teams and AI-native org design
+        2026 : The pilot-to-production gap quantified
+        2026 : Accenture Pulse of Change Index 2026
+        2026 : BCG $200B agentic AI opportunity in tech…
+        2026 : 54% of C-suite say AI adoption is "tearing…
+```
+
 - **Stanford Enterprise AI Playbook (March 2026):** 51 enterprise case studies showing organizational readiness — not technology selection — as the determinant of success. Key insight: leadership commitment, willingness to accept failure, and process redesign matter more than model choice.
 
 - **Deloitte State of AI in Enterprise 2026:** Worker access to AI rose 50% in 2025. Number of companies with ≥40% projects in production expected to double in six months. But governance maturity lags: only 1 in 5 companies has a mature governance model for autonomous AI agents.
@@ -40,6 +54,15 @@ The Accenture Technology Vision 2025 framed this era through three pillars: **Ab
 ---
 
 ## The Debate
+
+```mermaid
+graph LR
+    E[Evidence Base] --> T{Central Tension}
+    T -->|Optimist| O["Value creation path"]
+    T -->|Skeptic| S["Caution / constraint path"]
+    O --> C["Both sides are right, sequentially"]
+    S --> C
+```
 
 **Optimist case (Accenture Tech Vision, Deloitte, BCG strategic leaders):**
 AI-native operating models will create 10x value by fundamentally redesigning how work gets done. The organizations that move fastest through the transformation wall — redesigning processes, upskilling workforces, deploying agentic AI at scale — will establish insurmountable competitive advantages. The $200B opportunity is real; the winners-take-most dynamic is already visible. AI agents will not just assist humans but operate as "digital workers" requiring onboarding, performance management, and lifecycle governance — a new organizational capability that creates value at scale.
@@ -95,6 +118,22 @@ The biggest risk I see: **transformation theater** — organizations claiming AI
 
 ## Signal Assessment
 
+```mermaid
+quadrantChart
+    title Signal Landscape — Enterprise AI & Org Transformation
+    x-axis Theoretical --> Industry Standard
+    y-axis Immediate --> Far Future
+    quadrant-1 Strategic Bets
+    quadrant-2 Watch Closely
+    quadrant-3 Monitor
+    quadrant-4 Act Now
+    Micro-team org design be…: [0.5, 0.35]
+    Chief People & Digital T…: [0.5, 0.35]
+    Governance as competitiv…: [0.5, 0.1]
+    Process redesign (not AI…: [0.75, 0.1]
+    The "tearing apart" dyna…: [0.75, 0.1]
+```
+
 ### Ranked Shortlist: Uncommon but Likely (Top 5)
 
 ### 1. Micro-team org design becomes the default for AI-native operations
@@ -149,6 +188,16 @@ The biggest risk I see: **transformation theater** — organizations claiming AI
 ---
 
 ## Connections to Other Categories
+
+```mermaid
+mindmap
+  root((Enterprise AI & Org ))
+    Cat 01 GenAI Capabilit
+    Cat 03 Workforce & Hum
+    Cat 04 AI Governance &
+    Cat 05 AI Infrastructu
+    Cat 09 Transformation 
+```
 
 - **Category 01 (GenAI Capabilities):** Agent reliability (~55% on SWE-bench) directly constrains enterprise agentic deployment. As capability improves, the organizational design requirements shift.
 - **Category 03 (Workforce & Human-AI Collaboration):** Micro-team org design and the middle management question feed directly into workforce implications. The "delegate, review, own" model reshapes every job description.
