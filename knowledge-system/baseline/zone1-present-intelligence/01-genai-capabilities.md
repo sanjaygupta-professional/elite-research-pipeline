@@ -146,6 +146,9 @@ The skeptics (LeCun, Marcus) are right that these systems don't reason causally 
 
 ## Connections to Other Categories
 
+![GenAI Capabilities — Connections Map](../../assets/images/genai-capabilities/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
+
 - **Zone 2 / AI Infrastructure Trajectory (Cat. 5):** Today's capabilities are downstream of infrastructure decisions made 18–24 months ago. Understanding the infrastructure trajectory predicts capability evolution.
 - **Zone 2 / Long-Arc Futures POV (Cat. 7):** Reasoning model trajectory and open-weight democratization are the two inputs most directly relevant to futures scenarios.
 - **Zone 4 / Local AI Engineering (Cat. 10):** Personal experimentation with Llama 3.3, DeepSeek-R1 distilled models on local GPU provides ground-truth on what capability claims hold up outside vendor-controlled conditions.
