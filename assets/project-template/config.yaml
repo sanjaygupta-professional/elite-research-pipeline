@@ -1,0 +1,25 @@
+pipeline:
+  max_items_per_run: 5
+  artifacts_dir: "./artifacts"
+  db_path: "./pipeline.db"
+
+artifact_types:
+  - audio_overview
+  - slides
+
+# Prompt styles for artifact generation
+# See pipeline/prompts.py for all available styles
+styles:
+  slides: "executive"    # executive, minimal, technical, storytelling, visual, educational, default
+  audio: "deep_dive"     # deep_dive, brief, critical, default
+
+sources:
+  youtube:
+    enabled: true
+    playlist_id: ""  # Your "Research Queue" playlist ID (from URL: list=PLxxxxxx)
+
+  rss:
+    enabled: false
+    feeds: []
+      # - url: "https://example.com/feed.xml"
+      #   name: "Example Blog"

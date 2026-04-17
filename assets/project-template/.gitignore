@@ -1,0 +1,24 @@
+# Artifacts output
+artifacts/
+
+# Database
+*.db
+
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# YouTube OAuth token
+youtube_token.json
+
+# OS
+.DS_Store
+Thumbs.db

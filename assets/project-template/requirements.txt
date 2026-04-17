@@ -1,0 +1,7 @@
+notebooklm-py[browser]>=0.3.3
+google-auth-oauthlib>=1.2.0
+google-api-python-client>=2.100.0
+feedparser>=6.0.0
+pyyaml>=6.0
+python-dotenv>=1.0.0
+aiohttp>=3.9.0
