@@ -73,6 +73,7 @@ plugins:
 
 extra_javascript:
   - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - js/mermaid-init.js
 
 extra_css:
   - stylesheets/mermaid-theme.css

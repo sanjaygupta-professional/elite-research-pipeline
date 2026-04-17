@@ -189,15 +189,6 @@ quadrantChart
 
 ## Connections to Other Categories
 
-```mermaid
-mindmap
-  root((Enterprise AI & Org ))
-    Cat 01 GenAI Capabilit
-    Cat 03 Workforce & Hum
-    Cat 04 AI Governance &
-    Cat 05 AI Infrastructu
-    Cat 09 Transformation 
-```
 
 - **Category 01 (GenAI Capabilities):** Agent reliability (~55% on SWE-bench) directly constrains enterprise agentic deployment. As capability improves, the organizational design requirements shift.
 - **Category 03 (Workforce & Human-AI Collaboration):** Micro-team org design and the middle management question feed directly into workforce implications. The "delegate, review, own" model reshapes every job description.

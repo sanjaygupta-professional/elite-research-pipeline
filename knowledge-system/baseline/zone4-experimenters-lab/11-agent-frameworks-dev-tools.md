@@ -157,15 +157,6 @@ quadrantChart
 
 ## Connections to Other Categories
 
-```mermaid
-mindmap
-  root((Agent Frameworks & D))
-    Cat 01 GenAI Capabilit
-    Cat 02 Enterprise AI &
-    Cat 05 AI Infrastructu
-    Cat 08 AI Productivity
-    Cat 10 Local AI Engine
-```
 
 - **Category 01 (GenAI Capabilities):** Agent performance is bounded by model capability. Reasoning model improvements (extended thinking, o-series) directly expand what agents can do.
 - **Category 02 (Enterprise AI & Org Transformation):** Agentic AI operating models depend on reliable agent frameworks. The "delegate, review, own" model requires agent architectures that support human oversight.
