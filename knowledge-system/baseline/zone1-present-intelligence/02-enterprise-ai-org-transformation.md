@@ -5,6 +5,13 @@
 
 ---
 
+![Enterprise AI & Org Transformation — Concept Diagram](../../assets/images/enterprise-ai-org-transformation/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
+---
+
 ## State of the Field (as of April 2026)
 
 Enterprise AI has crossed the adoption threshold but crashed into the transformation wall. The numbers tell a paradox: 88% of companies use AI in at least one function (McKinsey State of AI 2025), yet 80% of AI projects fail to deliver intended business value (Pertama Partners 2026), and only 29% report significant ROI from generative AI despite individual productivity gains averaging 5x (BCG Closing the AI Impact Gap 2025). The gap is not technological — it is organizational.
@@ -118,6 +125,9 @@ The biggest risk I see: **transformation theater** — organizations claiming AI
 
 ## Signal Assessment
 
+![Signal Landscape — Enterprise AI & Org Transformation](../../assets/images/enterprise-ai-org-transformation/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 
 ### Ranked Shortlist: Uncommon but Likely (Top 5)
 
@@ -173,6 +183,9 @@ The biggest risk I see: **transformation theater** — organizations claiming AI
 ---
 
 ## Connections to Other Categories
+
+![Enterprise AI & Org Transformation — Connections Map](../../assets/images/enterprise-ai-org-transformation/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 
 - **Category 01 (GenAI Capabilities):** Agent reliability (~55% on SWE-bench) directly constrains enterprise agentic deployment. As capability improves, the organizational design requirements shift.
