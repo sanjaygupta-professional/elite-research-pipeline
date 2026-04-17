@@ -15,10 +15,14 @@ Every research category in this knowledge system uses a **fixed vocabulary of 5 
 | 1 | **Category Concept Diagram** | PaperBanana (PNG) | Top of file | One-time per baseline |
 | 2 | **Key Developments Timeline** | Mermaid `timeline` | Key Developments | One-time per baseline |
 | 3 | **Debate Tension Map** | Mermaid `graph LR` | The Debate | One-time per baseline |
-| 4 | **Signal Landscape Quadrant** | Mermaid `quadrantChart` | Signal Assessment | Auto-updated by weekly scan |
+| 4 | **Signal Landscape** | PaperBanana (PNG) | Signal Assessment | One-time per baseline; regenerate when signal set materially changes |
 | 5 | **Category Connections Map** | PaperBanana (PNG) | Connections section | One-time per baseline |
 
-**Tool selection principle:** PaperBanana for anything requiring visual aesthetics or complex relationships (concept diagrams, connection maps). Mermaid for data-driven diagrams that must auto-update (signal quadrant) or simple process flows (timelines, debate maps).
+**Tool selection principle:**
+- **PaperBanana** for complex visuals: concept overviews, 2D scatter plots, connection networks — anything where aesthetic quality and visual clarity matter more than automation.
+- **Mermaid** for simple workflows: sequential timelines, linear flowcharts, 3-5 node relationships — only when the diagram can be expressed cleanly as a data-driven text block.
+
+The weekly scan does NOT regenerate any diagrams. It only appends signals to `06-weak-signal-watch.md`.
 
 ---
 

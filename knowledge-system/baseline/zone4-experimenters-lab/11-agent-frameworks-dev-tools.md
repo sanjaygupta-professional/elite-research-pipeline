@@ -90,20 +90,6 @@ Agent reliability ≈ (task complexity × number of steps × number of agents)^(
 
 ## Signal Assessment
 
-```mermaid
-quadrantChart
-    title Signal Landscape — Agent Frameworks & Dev Tools
-    x-axis Theoretical --> Industry Standard
-    y-axis Immediate --> Far Future
-    quadrant-1 Strategic Bets
-    quadrant-2 Watch Closely
-    quadrant-3 Monitor
-    quadrant-4 Act Now
-    Provider-native SDKs ove…: [0.5, 0.35]
-    MCP server ecosystem bec…: [0.75, 0.1]
-    Agent observability beco…: [0.5, 0.35]
-    The "agent reliability w…: [0.75, 0.1]
-```
 
 ### Ranked Shortlist: Uncommon but Likely (Top 4)
 

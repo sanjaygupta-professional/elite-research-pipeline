@@ -80,26 +80,6 @@ Append new signals to `knowledge-system/baseline/zone2-futures-intelligence/06-w
 **Status:** WATCHING
 ```
 
-## Step 6b: Regenerate Signal Landscape Quadrant for updated categories
-
-For each baseline category file that received new signals in Step 6, regenerate its Signal Landscape Quadrant diagram. This is the only diagram type updated by the weekly scan — do NOT touch any other diagrams.
-
-**Run the viz-pass script in update-quadrant-only mode:**
-```bash
-python scripts/viz-pass.py <path-to-category-file> --update-quadrant-only
-```
-
-The script will:
-1. Re-parse all signal profiles (E, Z dimensions) from the Signal Assessment section
-2. Replace the existing `quadrantChart` mermaid block with an updated one
-3. Print confirmation
-
-If the script is not available, manually update the `quadrantChart` mermaid block in the Signal Assessment section using this template from `knowledge-system/design/07-visualization-guide.md`:
-- X-axis: Evidence (E1=0.1, E2=0.3, E3=0.5, E4=0.75, E5=0.9)
-- Y-axis: Time Horizon (Now=0.1, Near=0.35, Med=0.65, Far=0.9)
-
-**Note:** The `06-weak-signal-watch.md` file does not have a quadrant chart. Only update quadrant charts in the specific baseline category files where signals were categorized.
-
 ## Step 7: Write a scan summary
 
 At the end of the Active Signals Log section, add a dated summary entry:

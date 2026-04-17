@@ -118,21 +118,6 @@ The biggest risk I see: **transformation theater** — organizations claiming AI
 
 ## Signal Assessment
 
-```mermaid
-quadrantChart
-    title Signal Landscape — Enterprise AI & Org Transformation
-    x-axis Theoretical --> Industry Standard
-    y-axis Immediate --> Far Future
-    quadrant-1 Strategic Bets
-    quadrant-2 Watch Closely
-    quadrant-3 Monitor
-    quadrant-4 Act Now
-    Micro-team org design be…: [0.5, 0.35]
-    Chief People & Digital T…: [0.5, 0.35]
-    Governance as competitiv…: [0.5, 0.1]
-    Process redesign (not AI…: [0.75, 0.1]
-    The "tearing apart" dyna…: [0.75, 0.1]
-```
 
 ### Ranked Shortlist: Uncommon but Likely (Top 5)
 
