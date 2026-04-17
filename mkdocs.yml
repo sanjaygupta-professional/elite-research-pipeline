@@ -1,0 +1,108 @@
+site_name: Possibilities with Probabilities
+site_description: A futures intelligence knowledge system at the intersection of AI and organizational transformation.
+site_author: Sanjay Gupta
+site_url: https://sanjaygupta-professional.github.io/elite-research-pipeline/
+repo_url: https://github.com/sanjaygupta-professional/elite-research-pipeline
+repo_name: sanjaygupta-professional/elite-research-pipeline
+edit_uri: edit/master/knowledge-system/
+
+docs_dir: knowledge-system
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/
+      name: LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/sanjaygupta-professional
+      name: GitHub
+  generator: false
+
+copyright: Copyright &copy; 2026 Sanjay Gupta
+
+nav:
+  - Home: README.md
+  - The Framework:
+      - Vision & Positioning: design/01-vision-and-positioning.md
+      - Knowledge Taxonomy: design/02-knowledge-taxonomy.md
+      - Success Criteria: design/03-success-criteria.md
+      - System Methodology: design/04-system-methodology.md
+      - Signal Scoring Framework: design/05-signal-scoring-framework.md
+      - Source Directory: design/06-source-directory.md
+  - Zone 1 — Present:
+      - Overview: baseline/README.md
+      - 01 · GenAI Capabilities: baseline/zone1-present-intelligence/01-genai-capabilities.md
+      - 02 · Enterprise AI & Org Transformation: baseline/zone1-present-intelligence/02-enterprise-ai-org-transformation.md
+      - 03 · Workforce & Human-AI Collaboration: baseline/zone1-present-intelligence/03-workforce-human-ai-collaboration.md
+      - 04 · AI Governance & Ethics: baseline/zone1-present-intelligence/04-ai-governance-ethics.md
+  - Zone 2 — Futures:
+      - 05 · AI Infrastructure Trajectory: baseline/zone2-futures-intelligence/05-ai-infrastructure-trajectory.md
+      - 06 · Weak Signal Watch: baseline/zone2-futures-intelligence/06-weak-signal-watch.md
+      - 07 · Long-Arc Futures POV: baseline/zone2-futures-intelligence/07-long-arc-futures-pov.md
+  - Zone 3 — Practitioner:
+      - 08 · AI Productivity Tools: baseline/zone3-practitioner-toolkit/08-ai-productivity-tools.md
+      - 09 · Transformation Methods (AI Era): baseline/zone3-practitioner-toolkit/09-transformation-methods-ai-era.md
+  - Zone 4 — Lab:
+      - 10 · Local AI Engineering: baseline/zone4-experimenters-lab/10-local-ai-engineering.md
+      - 11 · Agent Frameworks & Dev Tools: baseline/zone4-experimenters-lab/11-agent-frameworks-dev-tools.md
+  - Updates:
+      - About: updates/README.md
