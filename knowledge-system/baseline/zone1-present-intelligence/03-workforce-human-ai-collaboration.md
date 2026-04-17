@@ -5,6 +5,13 @@
 
 ---
 
+![Workforce & Human-AI Collaboration — Concept Diagram](../../assets/images/workforce-human-ai-collaboration/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
+---
+
 ## State of the Field (as of April 2026)
 
 The AI workforce transformation is producing measurable effects — but not the ones most people expected. The headline narrative of mass job displacement has not materialized. Instead, the evidence reveals a more nuanced and arguably more disruptive pattern: **task-level transformation within existing roles**, accompanied by a growing wage premium for AI-skilled workers and a quiet structural compression of middle management.
@@ -20,6 +27,21 @@ Middle management is the structural flashpoint. Gartner predicts 20% of organiza
 ---
 
 ## Key Developments (Past 12 Months)
+
+```mermaid
+timeline
+    title Key Developments — Workforce & Human-AI Collaboration
+    section 2025
+        2025 : "Jagged Frontier" study published in…
+        December 2025 : Microsoft New Future of Work Report
+        2025 : 56% wage premium for AI skills
+    section 2026
+        2026 : Entry-level employment decline in AI-exposed…
+        2026 : Middle management redefinition accelerates
+        2026 : WEF Davos 2026 workforce agenda
+        2026 : Accenture Pulse of Change
+        2026 : 40% of roles in G2000 will involve direct AI…
+```
 
 - **"Jagged Frontier" study published in Organization Science (2025):** The most rigorous field experiment on AI-augmented knowledge work to date. 758 BCG consultants. Findings now being replicated across industries. Introduced the centaur/cyborg framework that is becoming the standard vocabulary for human-AI collaboration.
 
@@ -40,6 +62,15 @@ Middle management is the structural flashpoint. Gartner predicts 20% of organiza
 ---
 
 ## The Debate
+
+```mermaid
+graph LR
+    E[Evidence Base] --> T{Central Tension}
+    T -->|Optimist| O["WEF, Accenture, Microsoft"]
+    T -->|Skeptic| S["Caution / constraint path"]
+    O --> C["The truth is **temporally split**"]
+    S --> C
+```
 
 **Optimist case (WEF, Accenture, Microsoft):**
 AI creates more jobs than it displaces — net +78 million by 2030. The key is investment in reskilling and work redesign. The jagged frontier study shows AI dramatically lifts below-average performers, creating a more equitable workforce. Demand for analytical, creative, and social-emotional skills is rising 20%+. Companies that redesign work around human-AI collaboration will see sustained competitive advantage. Middle management doesn't disappear — it evolves into higher-value strategic roles.
@@ -142,6 +173,9 @@ The biggest risk I see is the **"missing rung" problem** for junior talent devel
 ---
 
 ## Connections to Other Categories
+
+![Workforce & Human-AI Collaboration — Connections Map](../../assets/images/workforce-human-ai-collaboration/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 - **Category 02 (Enterprise AI & Org Transformation):** Workforce is the human dimension of organizational transformation. The micro-team model, middle management transformation, and "delegate, review, own" framework from Category 02 have direct workforce implications.
 - **Category 04 (AI Governance & Ethics):** Workforce displacement raises governance and ethical questions — fairness of algorithmic management, surveillance of AI-augmented workers, bias in AI-driven hiring.
