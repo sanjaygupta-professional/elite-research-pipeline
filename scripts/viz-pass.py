@@ -116,14 +116,27 @@ def parse_connections(content: str) -> list[dict]:
     if not section_m:
         return conns
 
-    # Match "Category 01 (Name)" anywhere in a bullet — flexible enough for any bold formatting
+    # Format A: "Category 01 (Name)" — most baseline files
+    # Format B: "Zone X / Name (Cat. N)" — cat 01 + others using zone-prefixed style
+    section_text = section_m.group(1)
+    seen = set()
     for m in re.finditer(
         r'Category\s+(\d+)\s+\(([^)]{3,40})\)',
-        section_m.group(1)
+        section_text
     ):
         cat_num = m.group(1)
-        cat_name = m.group(2).strip()
-        conns.append({"num": cat_num, "name": cat_name[:20]})
+        if cat_num in seen: continue
+        seen.add(cat_num)
+        conns.append({"num": cat_num, "name": m.group(2).strip()[:20]})
+
+    for m in re.finditer(
+        r'Zone\s+\d+\s*/\s*([^(]{3,40})\(Cat\.\s*(\d+)\)',
+        section_text
+    ):
+        cat_num = m.group(2)
+        if cat_num in seen: continue
+        seen.add(cat_num)
+        conns.append({"num": cat_num, "name": m.group(1).strip()[:20]})
 
     return conns[:7]
 

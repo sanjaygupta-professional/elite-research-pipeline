@@ -5,6 +5,13 @@
 
 ---
 
+![GenAI Capabilities — Concept Diagram](../../assets/images/genai-capabilities/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
+---
+
 ## State of the Field (as of April 2026)
 
 GenAI has crossed a meaningful threshold: it is no longer primarily a text prediction system that impresses people in demos but frustrates them in production. Frontier models (GPT-4o, Claude 3.5/3.7, Gemini 2.0/2.5 Pro) reliably handle long-form drafting, summarization, translation across 100+ languages, structured data extraction, and code generation at junior-to-mid developer level. These are deployed at scale — Microsoft Copilot is embedded across M365 with 70%+ of Fortune 500 reportedly using it as of early 2026; GitHub Copilot reports 55,000+ enterprise customers with a 55% code completion acceptance rate.
@@ -20,6 +27,20 @@ Agents — multi-step AI systems that use tools, take actions, and complete task
 ---
 
 ## Key Developments (Past 12 Months)
+
+```mermaid
+timeline
+    title Key Developments — GenAI Capabilities
+    section 2026
+        January 2026 : DeepSeek R1 release
+        2026 : o3 on ARC-AGI-1
+        2026 : ARC-AGI-2 released
+        2026 : Gemini 2.5 Pro with 1M token context
+        2026 : Claude 3.7 Sonnet with extended thinking
+        2026 : Computer use reaching functional quality
+        2026 : OpenAI Operator
+        2026 : Quantization enabling local deployment
+```
 
 - **DeepSeek R1 release (January 2026)** — Open-weight reasoning model, ~o1-level performance, reportedly trained for ~$6M. MIT license. 32B distilled variant runs on consumer 24GB GPU. Triggered major market repricing of AI hardware (Nvidia –17% in one session) and serious industry debate about compute efficiency. Most disruptive capability democratization event since Llama's public release.
 
@@ -42,6 +63,15 @@ Agents — multi-step AI systems that use tools, take actions, and complete task
 ---
 
 ## The Debate
+
+```mermaid
+graph LR
+    E[Evidence Base] --> T{Central Tension}
+    T -->|Optimist| O["Value creation path"]
+    T -->|Skeptic| S["Caution / constraint path"]
+    O --> C["Both right, sequentially"]
+    S --> C
+```
 
 **Core tension:** The technology is significantly more capable than most organizational processes have adapted to, and significantly less capable than the most optimistic public claims suggest. The debate is not "is it useful?" (settled: yes) but "what is it, fundamentally, and where does it go?"
 

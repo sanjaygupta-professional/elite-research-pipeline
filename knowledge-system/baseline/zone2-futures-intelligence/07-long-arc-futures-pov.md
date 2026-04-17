@@ -3,6 +3,13 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE (first edition — updated quarterly)
 
+---
+
+![Long-Arc Futures — Sanjay's POV — Concept Diagram](../../assets/images/long-arc-futures-pov/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
 ## What This Document Is
 
 This is not a research document — it is a **point of view document**. It contains Sanjay's original, evidence-grounded stakes in the ground about what the future looks like, given what we know about:
@@ -226,6 +233,9 @@ A frontier model achieves AGI-class capability (reliable autonomous operation on
 ---
 
 ## Connections to Other Categories
+
+![Long-Arc Futures — Sanjay's POV — Connections Map](../../assets/images/long-arc-futures-pov/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 This document synthesizes from all other categories. It is the destination, not a source.
 
 **Primary inputs by position:**

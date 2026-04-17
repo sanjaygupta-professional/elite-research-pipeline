@@ -3,6 +3,13 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE
 
+---
+
+![AI Infrastructure Trajectory — Concept Diagram](../../assets/images/ai-infrastructure-trajectory/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
 ## What This Category Tracks
 The structural forces being built *right now* that will determine what's possible in 3–5 years. Compute curves, model capability roadmaps, protocol standards (MCP, agent protocols), major lab bets, hardware trends. These are the inputs to the futures POV — not speculation, but the real building blocks being laid.
 
@@ -121,6 +128,9 @@ The protocol story (MCP → Linux Foundation, A2A → 150+ orgs) is the infrastr
 
 ## Signal Assessment
 
+![Signal Landscape — AI Infrastructure Trajectory](../../assets/images/ai-infrastructure-trajectory/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 ### Ranked Shortlist: Uncommon but Likely (Top 5)
 
 ### 1. Efficiency revolution outpaces scaling maximalism for enterprise-relevant AI
@@ -175,6 +185,9 @@ The protocol story (MCP → Linux Foundation, A2A → 150+ orgs) is the infrastr
 ---
 
 ## Connections to Other Categories
+
+![AI Infrastructure Trajectory — Connections Map](../../assets/images/ai-infrastructure-trajectory/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 - **Category 01 (GenAI Capabilities):** Today's capabilities are downstream of yesterday's infrastructure. The efficiency revolution (DeepSeek, MoE) directly enables the democratization of frontier-class reasoning.
 - **Category 02 (Enterprise AI & Org Transformation):** Infrastructure abundance (cheap inference, MCP standardization) removes the technology barrier — making organizational design the binding constraint on enterprise AI value.

@@ -5,6 +5,13 @@
 
 ---
 
+![AI Governance & Ethics — Concept Diagram](../../assets/images/ai-governance-ethics/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
+---
+
 ## State of the Field (as of April 2026)
 
 AI governance has shifted from aspirational ethics statements to enforceable regulation and measurable compliance requirements. The era of voluntary principles is ending; the era of mandated frameworks has begun. The gap between regulation's intent and enterprise readiness is the defining tension.
@@ -23,6 +30,20 @@ The **NIST AI Risk Management Framework** (RMF 1.0, with updates through 2026) p
 
 ## Key Developments (Past 12 Months)
 
+```mermaid
+timeline
+    title Key Developments — AI Governance & Ethics
+    section 2025
+        2025 : EU AI Act phased enforcement begins
+        May 2025 : UN AI human rights report
+    section 2026
+        2026 : US state AI law proliferation
+        February 2026 : 2026 International AI Safety Report
+        2026 : NIST AI RMF expansion
+        2026 : Anthropic's Responsible Scaling Policy as…
+        2026 : AI governance moving to C-suite
+```
+
 - **EU AI Act phased enforcement begins (Feb 2025 → Aug 2026):** Prohibited practices enforced since February 2025 — social scoring, manipulative AI, certain biometric surveillance now illegal in the EU. High-risk system requirements go live August 2026. Enterprises must classify all AI systems, conduct conformity assessments, and register high-risk systems.
 
 - **US state AI law proliferation:** Colorado, Texas, California all enacted AI-specific legislation effective in early 2026. The IAPP tracker shows AI governance legislation across dozens of states. The Trump administration's preemption order creates federal-state tension that may take years to resolve.
@@ -40,6 +61,15 @@ The **NIST AI Risk Management Framework** (RMF 1.0, with updates through 2026) p
 ---
 
 ## The Debate
+
+```mermaid
+graph LR
+    E[Evidence Base] --> T{Central Tension}
+    T -->|Optimist| O["Value creation path"]
+    T -->|Skeptic| S["Caution / constraint path"]
+    O --> C["Both right, sequentially"]
+    S --> C
+```
 
 **Regulation-first case (EU, UN, safety researchers):**
 The speed and capability of AI systems outpaces voluntary governance. The EU AI Act proves that comprehensive regulation is technically feasible and politically achievable. Without enforceable rules, market incentives drive speed over safety. The 2026 Safety Report's finding that models can evade evaluation proves that voluntary testing is insufficient. High-risk AI systems affecting employment, credit, healthcare, and law enforcement require mandatory compliance frameworks with real penalties.
@@ -97,6 +127,9 @@ The defence-in-depth approach from the 2026 Safety Report is the right mental mo
 
 ## Signal Assessment
 
+![Signal Landscape — AI Governance & Ethics](../../assets/images/ai-governance-ethics/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 ### Ranked Shortlist: Uncommon but Likely (Top 4)
 
 ### 1. EU AI Act becomes the global de facto standard (Brussels Effect)
@@ -148,6 +181,9 @@ The defence-in-depth approach from the 2026 Safety Report is the right mental mo
 ---
 
 ## Connections to Other Categories
+
+![AI Governance & Ethics — Connections Map](../../assets/images/ai-governance-ethics/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 - **Category 02 (Enterprise AI & Org Transformation):** Governance is the enabler, not the brake, for enterprise AI scaling. The 1-in-5 maturity finding and the 2x scaling advantage connect directly.
 - **Category 03 (Workforce & Human-AI Collaboration):** Governance of AI-augmented work — algorithmic management, surveillance, bias in hiring — are active regulatory concerns.

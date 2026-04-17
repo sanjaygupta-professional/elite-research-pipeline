@@ -3,6 +3,13 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE
 
+---
+
+![AI Productivity Tools — Concept Diagram](../../assets/images/ai-productivity-tools/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
 ## What This Category Tracks
 Tools Sanjay actually uses — or has evaluated — that augment personal capability. This is a first-hand practitioner account, not a review aggregation. The authority here comes from personal use, supplemented by market data and independent research.
 
@@ -96,6 +103,9 @@ The AI productivity tool landscape has consolidated around a few dominant catego
 
 ## Signal Assessment
 
+![Signal Landscape — AI Productivity Tools](../../assets/images/ai-productivity-tools/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 ### Ranked Shortlist: Uncommon but Likely (Top 4)
 
 ### 1. The AI tool chain (not single tool) becomes the professional standard
@@ -147,6 +157,9 @@ The AI productivity tool landscape has consolidated around a few dominant catego
 ---
 
 ## Connections to Other Categories
+
+![AI Productivity Tools — Connections Map](../../assets/images/ai-productivity-tools/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 - **Category 01 (GenAI Capabilities):** Daily tool use provides ground-truth on what capability claims hold up. Extended thinking, multi-modal, and code generation claims can be verified through practitioner experience.
 - **Category 02 (Enterprise AI & Org Transformation):** Tools are what employees actually experience. The productivity paradox data from this category feeds directly into the enterprise transformation challenge.

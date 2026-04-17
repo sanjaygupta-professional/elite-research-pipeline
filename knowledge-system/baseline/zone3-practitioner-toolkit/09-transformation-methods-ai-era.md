@@ -3,6 +3,13 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE
 
+---
+
+![Transformation Methods — AI Era — Concept Diagram](../../assets/images/transformation-methods-ai-era/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
 ## What This Category Tracks
 How the methodologies Sanjay has spent 30 years developing and applying — agile, OD, change management, digital transformation — are being rewritten for the AI-native context. This is the intersection of his legacy expertise with the new era.
 
@@ -131,6 +138,9 @@ The most important practitioner insight: **the transformation practitioners who 
 
 ## Signal Assessment
 
+![Signal Landscape — Transformation Methods — AI Era](../../assets/images/transformation-methods-ai-era/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 ### Ranked Shortlist: Uncommon but Likely (Top 3)
 
 ### 1. Continuous change capability replaces episodic change management
@@ -182,6 +192,9 @@ The most important practitioner insight: **the transformation practitioners who 
 ---
 
 ## Connections to Other Categories
+
+![Transformation Methods — AI Era — Connections Map](../../assets/images/transformation-methods-ai-era/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 - **Category 02 (Enterprise AI & Org Transformation):** This category describes *how* to execute the transformation that Category 02 describes as *what* needs to change. Process redesign, micro-teams, governance-as-advantage — all require transformation methodology to implement.
 - **Category 03 (Workforce & Human-AI Collaboration):** Reskilling, role redesign, and the missing rung problem all require structured transformation approaches. Centaur collaboration training is a transformation intervention.

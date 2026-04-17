@@ -3,6 +3,13 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE
 
+---
+
+![Local AI Engineering — Concept Diagram](../../assets/images/local-ai-engineering/concept-diagram-b.png)
+*Conceptual overview — generated via PaperBanana (color infographic)*
+
+---
+
 ## What This Category Tracks
 What can be run, fine-tuned, and built on personal GPU hardware. This is both a lab notebook for personal experiments and a landscape assessment of what's become possible locally. The authority comes from the rare intersection of executive-level strategic thinking and hands-on engineering practice.
 
@@ -113,6 +120,9 @@ The key enabling developments:
 
 ## Signal Assessment
 
+![Signal Landscape — Local AI Engineering](../../assets/images/local-ai-engineering/signal-landscape-b.png)
+*Signal landscape (Evidence vs. Time Horizon) — PaperBanana*
+
 ### Ranked Shortlist: Uncommon but Likely (Top 4)
 
 ### 1. "Private AI" becomes a standard enterprise deployment pattern alongside cloud AI
@@ -164,6 +174,9 @@ The key enabling developments:
 ---
 
 ## Connections to Other Categories
+
+![Local AI Engineering — Connections Map](../../assets/images/local-ai-engineering/connections-map-b.png)
+*Category connections map — generated via PaperBanana*
 
 - **Category 01 (GenAI Capabilities):** Personal experiments provide ground-truth on capability claims. Running a model locally reveals real performance vs. benchmark cherry-picking.
 - **Category 04 (AI Governance & Ethics):** Local/private deployment is the governance answer for data sovereignty requirements. Privacy-preserving AI architecture depends on local engineering capability.
