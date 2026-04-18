@@ -45,3 +45,4 @@ python -m pipeline.cli digest     # Generate weekly digest
 - Do not edit files in `assets/project-template/pipeline/__pycache__/`
 - Do not fill baseline category files with invented/hallucinated content — baseline research must come from real sources
 - Do not skip the success criteria validation step before declaring any component "done"
+- **Do not publish any research (baseline, updates, intel cards, digests, LinkedIn/X drafts) without sources.** Every substantive source must have (a) a full inline hyperlink on first mention and (b) a footnote marker on subsequent mentions, plus a `## Sources` section at the document end. Workflow: `<file>.sources.yaml` sidecar → `scripts/inject_sources.py`. Full standard: `knowledge-system/design/04-system-methodology.md → Citation Standard`. Never invent a URL — if unverified, use `url: TODO`.

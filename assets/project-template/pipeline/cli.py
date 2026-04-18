@@ -54,7 +54,7 @@ def cmd_draft(args):
         if args.format == "linkedin":
             print(linkedin_post(card, card["title"], card["url"]))
         elif args.format == "x":
-            print(x_post(card, card["title"]))
+            print(x_post(card, card["title"], card.get("url", "")))
     finally:
         db.close()
 

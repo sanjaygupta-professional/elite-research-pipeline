@@ -61,6 +61,45 @@ Run this check against `design/03-success-criteria.md → Component 1`:
 - [ ] Recency: past 12 months of significant developments are present
 - [ ] Perspective balance: at least one optimist, one skeptic, one practitioner voice
 - [ ] POV readiness: can write 2–3 "I believe..." statements from memory after reading
+- [ ] **Citations: every substantive source has an inline hyperlink (first mention) and a footnote marker (subsequent mentions), plus an entry in the `## Sources` section** — see `design/04-system-methodology.md → Citation Standard`
+
+---
+
+## Source Citation Workflow (Non-Negotiable)
+
+Every category file MUST carry verified URLs for every substantive source it cites. Named-only mentions ("McKinsey State of AI 2025" without a link) are not acceptable.
+
+### How it works
+
+1. Each `<file>.md` has a sidecar `<file>.sources.yaml` listing every substantive source (papers, reports, benchmarks, articles, newsletters, people in Sources to Track).
+2. Run `python3 scripts/inject_sources.py <file>.md` — it rewrites the markdown with:
+   - First mention of each source → full inline hyperlink `[anchor](url)`
+   - Subsequent mentions → footnote marker `[^key]`
+   - A `## Sources` section at the bottom (grouped by type)
+3. The sidecar YAML is the source-of-truth. Edit it to fix URLs; re-run the injector.
+
+### Sidecar schema
+
+```yaml
+- key: peng-2023
+  type: paper              # paper | report | benchmark | article | newsletter | person | organization
+  authors: Peng, Kalliamvakou, et al.
+  title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot"
+  venue: arXiv:2302.06590
+  year: 2023
+  url: https://arxiv.org/abs/2302.06590
+  first_mention_anchor: "Peng et al. (GitHub, 2023, now widely replicated)"  # exact prose substring
+  all_mentions:
+    - "Peng et al."        # shorter phrasings used later in the doc
+```
+
+Full schema documented in `scripts/inject_sources.py`. The injector is idempotent — running it twice produces no diff.
+
+### Adding / updating a source
+
+- Editing prose that adds a new source mention? Add the entry to the sidecar YAML, then re-run the injector.
+- URL broke / paper moved? Edit the YAML, re-run the injector.
+- Never edit inline links or footnote definitions by hand — the YAML will overwrite them.
 
 ---
 

@@ -103,6 +103,29 @@ The system exists to develop and refine an original point of view — not just a
 
 ---
 
+## Citation Standard (Non-Negotiable)
+
+Every source named in prose — in baseline research, in periodic updates, in intel cards, in publishing outputs — must carry a verifiable URL. Named-only citations ("McKinsey State of AI 2025" without a link) fail the credibility test this system exists to meet.
+
+### Rules
+
+1. **First mention of a substantive source in a document is a full inline markdown hyperlink.** Example:
+   > [Peng et al. (GitHub, 2023)](https://arxiv.org/abs/2302.06590) showed ~26% productivity improvement…
+2. **Every subsequent mention in the same document is followed by a footnote marker** `[^key]`, pointing to a definition in the `## Sources` section at the bottom.
+3. **Every document ends with a `## Sources` section** (placed before `## Connections to Other Categories`) that groups footnote definitions by type — Papers & Reports, Benchmarks, Articles & Newsletters, People (Sources to Track), Organizations & Publications.
+4. **"Substantive" sources** — papers, reports, named studies, benchmarks, articles, newsletters, Substack posts, and the people listed in the "Key Figures / Sources to Track" section. Do NOT link product names (GPT-4o, Claude 3.7, Gemini) or generic org mentions (Microsoft, Nvidia) without a specific claim attached.
+5. **Never invent a URL.** If an authoritative source cannot be verified via HEAD-check, the sidecar entry stays `url: TODO` and the footnote renders `[needs-url]` until resolved. A visible gap beats a hallucinated link.
+
+### Workflow
+
+- For each document `<file>.md`, maintain a sidecar `<file>.sources.yaml` listing every substantive source as a structured entry (schema documented in `scripts/inject_sources.py`).
+- Run `python3 scripts/inject_sources.py <file>.md` to (re)generate the inline links, footnote markers, and `## Sources` section from the sidecar. The script is idempotent — running it twice is a no-op.
+- The sidecar YAML is the source-of-truth. URLs can be audited, updated, or replaced without re-editing prose.
+
+This standard applies retroactively to baseline research and forward to all updates, intel cards, and publishing outputs.
+
+---
+
 ## The "Not Fooling Yourself" Principle
 
 Three specific failure modes to guard against:
