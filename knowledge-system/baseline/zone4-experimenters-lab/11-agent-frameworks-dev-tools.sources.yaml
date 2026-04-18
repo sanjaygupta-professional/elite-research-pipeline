@@ -1,0 +1,265 @@
+- key: anthropic-claude-agent-sdk-2025
+  type: article
+  authors: Anthropic
+  title: Building agents with the Claude Agent SDK
+  venue: Anthropic Engineering Blog
+  year: 2025
+  url: https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk
+  first_mention_anchor: Claude Agent SDK (Anthropic)
+  all_mentions:
+  - Claude Agent SDK
+- key: anthropic-agent-sdk-docs
+  type: organization
+  authors: Anthropic
+  title: Agent SDK overview
+  venue: Claude API Docs
+  year: 2025
+  url: https://platform.claude.com/docs/en/agent-sdk/overview
+  first_mention_anchor: Claude Agent SDK
+  all_mentions: []
+- key: anthropic-claude-agent-sdk-python
+  type: organization
+  authors: Anthropic
+  title: claude-agent-sdk-python
+  venue: GitHub
+  year: 2025
+  url: https://github.com/anthropics/claude-agent-sdk-python
+  first_mention_anchor: Python (v0.1.48)
+  all_mentions: []
+- key: anthropic-managed-agents-2026
+  type: article
+  authors: Anthropic
+  title: Claude Managed Agents overview
+  venue: Claude API Docs
+  year: 2026
+  url: https://platform.claude.com/docs/en/managed-agents/overview
+  first_mention_anchor: Claude Managed Agents (public beta April 8, 2026)
+  all_mentions:
+  - Claude Managed Agents
+- key: infoworld-managed-agents-2026
+  type: article
+  authors: InfoWorld
+  title: Anthropic rolls out Claude Managed Agents
+  venue: InfoWorld
+  year: 2026
+  url: https://www.infoworld.com/article/4156852/anthropic-rolls-out-claude-managed-agents.html
+  first_mention_anchor: production-grade sandboxing, orchestration, and observability
+  all_mentions: []
+- key: openai-agents-sdk
+  type: organization
+  authors: OpenAI
+  title: openai-agents-python
+  venue: GitHub
+  year: 2025
+  url: https://github.com/openai/openai-agents-python
+  first_mention_anchor: OpenAI Agents SDK
+  all_mentions: []
+- key: infoq-openai-agents-sdk-2025
+  type: article
+  authors: InfoQ
+  title: OpenAI Launches New API, SDK, and Tools to Develop Custom Agents
+  venue: InfoQ
+  year: 2025
+  url: https://www.infoq.com/news/2025/03/openai-responses-api-agents-sdk/
+  first_mention_anchor: Released March 2025, evolved from the Swarm prototype
+  all_mentions: []
+- key: google-adk-docs
+  type: organization
+  authors: Google
+  title: Agent Development Kit (ADK)
+  venue: google.github.io/adk-docs
+  year: 2025
+  url: https://google.github.io/adk-docs
+  first_mention_anchor: Google ADK (Agent Development Kit)
+  all_mentions:
+  - Google ADK
+- key: google-adk-python
+  type: organization
+  authors: Google
+  title: adk-python — open-source, code-first Python toolkit for building AI agents
+  venue: GitHub
+  year: 2025
+  url: https://github.com/google/adk-python
+  first_mention_anchor: Released April 2025. Python and TypeScript.
+  all_mentions: []
+- key: langgraph-github
+  type: organization
+  authors: LangChain
+  title: langgraph — Build resilient language agents as graphs
+  venue: GitHub
+  year: 2024
+  url: https://github.com/langchain-ai/langgraph
+  first_mention_anchor: LangGraph (LangChain)
+  all_mentions:
+  - LangGraph
+- key: langchain-langgraph-page
+  type: organization
+  authors: LangChain
+  title: LangGraph — Agent Orchestration Framework for Reliable AI Agents
+  venue: langchain.com
+  year: 2025
+  url: https://www.langchain.com/langgraph
+  first_mention_anchor: leading production-grade orchestration framework
+  all_mentions: []
+- key: langchain-langsmith
+  type: organization
+  authors: LangChain
+  title: LangSmith — AI Agent & LLM Observability Platform
+  venue: langchain.com
+  year: 2025
+  url: https://www.langchain.com/langsmith
+  first_mention_anchor: LangSmith observability platform
+  all_mentions:
+  - LangSmith
+- key: langchain-state-of-agents-2025
+  type: report
+  authors: LangChain
+  title: State of Agent Engineering 2025
+  venue: LangChain
+  year: 2025
+  url: https://www.langchain.com/state-of-agent-engineering
+  first_mention_anchor: 69% of US-based LLM teams consider essential
+  all_mentions:
+  - 69% of US LLM teams say observability is essential for production
+- key: langchain-klarna-case-study
+  type: article
+  authors: LangChain
+  title: How Klarna's AI assistant redefined customer support at scale
+  venue: LangChain Blog
+  year: 2025
+  url: https://blog.langchain.com/customers-klarna/
+  first_mention_anchor: Klarna (80% resolution time reduction)
+  all_mentions: []
+- key: langchain-langgraph-production
+  type: article
+  authors: LangChain
+  title: Is LangGraph Used In Production?
+  venue: LangChain Blog
+  year: 2024
+  url: https://blog.langchain.com/is-langgraph-used-in-production/
+  first_mention_anchor: Uber, Replit, Elastic
+  all_mentions: []
+- key: crewai-github
+  type: organization
+  authors: CrewAI Inc.
+  title: crewAI — Framework for orchestrating role-playing, autonomous AI agents
+  venue: GitHub
+  year: 2024
+  url: https://github.com/crewAIInc/crewAI
+  first_mention_anchor: '**CrewAI:**'
+  all_mentions:
+  - CrewAI
+- key: mastra-site
+  type: organization
+  authors: Mastra
+  title: Mastra — TypeScript AI Agent Framework & Platform
+  venue: mastra.ai
+  year: 2025
+  url: https://mastra.ai/
+  first_mention_anchor: '**Mastra:**'
+  all_mentions:
+  - Mastra
+- key: microsoft-autogen
+  type: organization
+  authors: Microsoft
+  title: autogen — A programming framework for agentic AI
+  venue: GitHub
+  year: 2024
+  url: https://github.com/microsoft/autogen
+  first_mention_anchor: '**AutoGen (Microsoft):**'
+  all_mentions: []
+- key: mcp-site
+  type: organization
+  authors: Model Context Protocol
+  title: Model Context Protocol — Specification and Documentation
+  venue: modelcontextprotocol.io
+  year: 2024
+  url: https://modelcontextprotocol.io
+  first_mention_anchor: MCP (Model Context Protocol)
+  all_mentions:
+  - MCP
+- key: anthropic-mcp-launch
+  type: article
+  authors: Anthropic
+  title: Introducing the Model Context Protocol
+  venue: Anthropic News
+  year: 2024
+  url: https://www.anthropic.com/news/model-context-protocol
+  first_mention_anchor: The universal AI-to-tool interface
+  all_mentions: []
+- key: mcp-github-org
+  type: organization
+  authors: Model Context Protocol
+  title: Model Context Protocol — GitHub organization
+  venue: GitHub
+  year: 2024
+  url: https://github.com/modelcontextprotocol
+  first_mention_anchor: 10,000+ public servers, 97M monthly SDK downloads
+  all_mentions: []
+- key: anthropic-mcp-aaif
+  type: article
+  authors: Anthropic
+  title: Donating the Model Context Protocol and establishing the Agentic AI Foundation
+  venue: Anthropic News
+  year: 2025
+  url: https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation
+  first_mention_anchor: Linux Foundation governance
+  all_mentions: []
+- key: google-a2a-launch
+  type: article
+  authors: Google
+  title: Announcing the Agent2Agent Protocol (A2A) — A New Era of Agent Interoperability
+  venue: Google Developers Blog
+  year: 2025
+  url: https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/
+  first_mention_anchor: A2A (Agent-to-Agent, Google)
+  all_mentions:
+  - A2A
+- key: google-a2a-upgrade
+  type: article
+  authors: Google Cloud
+  title: Agent2Agent protocol (A2A) is getting an upgrade — 150+ organizations
+  venue: Google Cloud Blog
+  year: 2026
+  url: https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade
+  first_mention_anchor: 150+ supporting organizations
+  all_mentions: []
+- key: swebench-site
+  type: benchmark
+  authors: Jimenez, Yang, et al.
+  title: SWE-bench — Can Language Models Resolve Real-world GitHub Issues?
+  venue: swebench.com
+  year: 2024
+  url: https://www.swebench.com/
+  first_mention_anchor: SWE-bench Verified (best agent performance)
+  all_mentions:
+  - SWE-bench Verified
+- key: openai-swebench-verified
+  type: article
+  authors: OpenAI
+  title: Introducing SWE-bench Verified
+  venue: OpenAI
+  year: 2024
+  url: https://openai.com/index/introducing-swe-bench-verified/
+  first_mention_anchor: 'Best agent coding performance: ~55% on SWE-bench Verified'
+  all_mentions: []
+- key: langfuse-github
+  type: organization
+  authors: Langfuse
+  title: langfuse — Open source LLM engineering platform
+  venue: GitHub
+  year: 2024
+  url: https://github.com/langfuse/langfuse
+  first_mention_anchor: Langfuse
+  all_mentions: []
+- key: forrester-predictions-2026
+  type: report
+  authors: Forrester
+  title: Predictions 2026 — AI Agents, Changing Business Models, And Workplace Culture
+    Impact Enterprise Software
+  venue: Forrester
+  year: 2025
+  url: https://www.forrester.com/blogs/predictions-2026-ai-agents-changing-business-models-and-workplace-culture-impact-enterprise-software/
+  first_mention_anchor: Forrester predicts 30% of enterprise SaaS vendors will ship
+    MCP servers in 2026
+  all_mentions: []

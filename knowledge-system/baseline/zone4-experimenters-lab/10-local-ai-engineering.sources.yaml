@@ -1,0 +1,260 @@
+- key: deepseek-r1-2025
+  type: paper
+  authors: DeepSeek-AI
+  title: 'DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement
+    Learning'
+  venue: arXiv:2501.12948
+  year: 2025
+  url: https://arxiv.org/abs/2501.12948
+  first_mention_anchor: DeepSeek R1 distilled
+  all_mentions:
+  - DeepSeek R1 32B
+- key: qwen3-2025
+  type: paper
+  authors: Qwen Team (Alibaba)
+  title: Qwen3 Technical Report
+  venue: arXiv:2505.09388
+  year: 2025
+  url: https://arxiv.org/abs/2505.09388
+  first_mention_anchor: Qwen 3 235B-A22B
+  all_mentions:
+  - Qwen 3 32B
+  - Qwen 3 (various sizes)
+- key: llama3-2024
+  type: paper
+  authors: Llama Team, AI @ Meta
+  title: The Llama 3 Herd of Models
+  venue: arXiv:2407.21783
+  year: 2024
+  url: https://arxiv.org/abs/2407.21783
+  first_mention_anchor: Llama 3.3 70B
+  all_mentions: []
+- key: phi3-2024
+  type: paper
+  authors: Abdin et al. (Microsoft)
+  title: 'Phi-3 Technical Report: A Highly Capable Language Model Locally on Your
+    Phone'
+  venue: arXiv:2404.14219
+  year: 2024
+  url: https://arxiv.org/abs/2404.14219
+  first_mention_anchor: Phi-3/Phi-4 from Microsoft
+  all_mentions:
+  - Phi-3 7B
+- key: mistral7b-2023
+  type: paper
+  authors: Jiang, Sablayrolles, Mensch, et al.
+  title: Mistral 7B
+  venue: arXiv:2310.06825
+  year: 2023
+  url: https://arxiv.org/abs/2310.06825
+  first_mention_anchor: Mistral/Mixtral
+  all_mentions: []
+- key: ollama
+  type: organization
+  authors: Ollama
+  title: Ollama — Get up and running with large language models locally
+  venue: GitHub (ollama/ollama)
+  year: 2026
+  url: https://github.com/ollama/ollama
+  first_mention_anchor: Ollama has become the standard local deployment tool
+  all_mentions:
+  - Ollama for local model serving
+  - Ollama/vLLM
+  - run locally with Ollama
+- key: vllm
+  type: organization
+  authors: vLLM Project
+  title: 'vLLM: A high-throughput and memory-efficient inference and serving engine
+    for LLMs'
+  venue: GitHub (vllm-project/vllm)
+  year: 2026
+  url: https://github.com/vllm-project/vllm
+  first_mention_anchor: vLLM provides production-grade inference serving
+  all_mentions:
+  - serve with vLLM
+- key: kwon-pagedattention-2023
+  type: paper
+  authors: Kwon, Li, Zhuang, et al.
+  title: Efficient Memory Management for Large Language Model Serving with PagedAttention
+  venue: arXiv:2309.06180 (SOSP '23)
+  year: 2023
+  url: https://arxiv.org/abs/2309.06180
+  first_mention_anchor: PagedAttention
+  all_mentions: []
+- key: dettmers-qlora-2023
+  type: paper
+  authors: Dettmers, Pagnoni, Holtzman, Zettlemoyer
+  title: 'QLoRA: Efficient Finetuning of Quantized LLMs'
+  venue: arXiv:2305.14314
+  year: 2023
+  url: https://arxiv.org/abs/2305.14314
+  first_mention_anchor: QLoRA (4-bit quantized base model + low-rank adapter training)
+  all_mentions:
+  - QLoRA on local GPU
+  - QLoRA reduces fine-tuning cost
+  - QLoRA on a $1,500 GPU with Unsloth
+  - QLoRA fine-tuning
+  - QLoRA setup with Unsloth
+  - QLoRA enables custom fine-tuning
+  - fine-tune with PEFT/QLoRA
+- key: hu-lora-2021
+  type: paper
+  authors: Hu, Shen, Wallis, et al.
+  title: 'LoRA: Low-Rank Adaptation of Large Language Models'
+  venue: arXiv:2106.09685
+  year: 2021
+  url: https://arxiv.org/abs/2106.09685
+  first_mention_anchor: LoRA adapters
+  all_mentions: []
+- key: hf-peft
+  type: organization
+  authors: Hugging Face
+  title: 'PEFT: State-of-the-art Parameter-Efficient Fine-Tuning'
+  venue: GitHub (huggingface/peft)
+  year: 2026
+  url: https://github.com/huggingface/peft
+  first_mention_anchor: PEFT (Parameter-Efficient Fine-Tuning)
+  all_mentions: []
+- key: unsloth
+  type: organization
+  authors: Unsloth AI
+  title: Unsloth — 2x faster, 70% less VRAM LLM fine-tuning
+  venue: GitHub (unslothai/unsloth)
+  year: 2026
+  url: https://github.com/unslothai/unsloth
+  first_mention_anchor: Unsloth further optimizes training speed (2x faster, 60% less
+    memory)
+  all_mentions:
+  - Unsloth or Hugging Face PEFT
+  - Unsloth, PEFT
+- key: huggingface
+  type: organization
+  authors: Hugging Face
+  title: Hugging Face — The AI community building the future
+  venue: huggingface.co
+  year: 2026
+  url: https://huggingface.co/
+  first_mention_anchor: Find models on Hugging Face
+  all_mentions:
+  - Hugging Face model cards
+  - Hugging Face as the universal distribution platform
+- key: langchain
+  type: organization
+  authors: LangChain AI
+  title: LangChain — Framework for building LLM applications
+  venue: GitHub (langchain-ai/langchain)
+  year: 2026
+  url: https://github.com/langchain-ai/langchain
+  first_mention_anchor: LangChain/Agent SDK
+  all_mentions:
+  - LangChain, Anthropic
+- key: nomic-embed-2024
+  type: paper
+  authors: Nussbaum, Morris, Duderstadt, Mulyar
+  title: 'Nomic Embed: Training a Reproducible Long Context Text Embedder'
+  venue: arXiv:2402.01613
+  year: 2024
+  url: https://arxiv.org/abs/2402.01613
+  first_mention_anchor: Nomic Embed
+  all_mentions: []
+- key: codellama-2023
+  type: paper
+  authors: Rozière, Gehring, Gloeckle, et al.
+  title: 'Code Llama: Open Foundation Models for Code'
+  venue: arXiv:2308.12950
+  year: 2023
+  url: https://arxiv.org/abs/2308.12950
+  first_mention_anchor: CodeLlama
+  all_mentions: []
+- key: radford-whisper-2022
+  type: paper
+  authors: Radford, Kim, Xu, Brockman, McLeavey, Sutskever
+  title: Robust Speech Recognition via Large-Scale Weak Supervision
+  venue: arXiv:2212.04356
+  year: 2022
+  url: https://arxiv.org/abs/2212.04356
+  first_mention_anchor: Whisper
+  all_mentions: []
+- key: llamacpp
+  type: organization
+  authors: Georgi Gerganov and contributors
+  title: llama.cpp — LLM inference in C/C++
+  venue: GitHub (ggml-org/llama.cpp)
+  year: 2026
+  url: https://github.com/ggml-org/llama.cpp
+  first_mention_anchor: llama.cpp/Ollama
+  all_mentions: []
+- key: gguf-spec
+  type: article
+  authors: Georgi Gerganov and llama.cpp contributors
+  title: GGUF File Format Specification
+  venue: ggerganov/ggml (docs/gguf.md)
+  year: 2024
+  url: https://github.com/ggerganov/ggml/blob/master/docs/gguf.md
+  first_mention_anchor: GGUF format
+  all_mentions: []
+- key: bge-flagembedding
+  type: organization
+  authors: BAAI (FlagOpen)
+  title: FlagEmbedding / BGE — General-purpose embedding models
+  venue: GitHub (FlagOpen/FlagEmbedding)
+  year: 2026
+  url: https://github.com/FlagOpen/FlagEmbedding
+  first_mention_anchor: BGE
+  all_mentions: []
+- key: chroma
+  type: organization
+  authors: Chroma
+  title: Chroma — Open-source vector database for AI
+  venue: GitHub (chroma-core/chroma)
+  year: 2026
+  url: https://github.com/chroma-core/chroma
+  first_mention_anchor: ChromaDB
+  all_mentions: []
+- key: faiss
+  type: organization
+  authors: Johnson, Douze, Jégou (Meta FAIR)
+  title: FAISS — A library for efficient similarity search
+  venue: GitHub (facebookresearch/faiss)
+  year: 2026
+  url: https://github.com/facebookresearch/faiss
+  first_mention_anchor: FAISS
+  all_mentions: []
+- key: r-localllama
+  type: organization
+  authors: r/LocalLLaMA community
+  title: r/LocalLLaMA — Subreddit for running LLMs locally
+  venue: reddit.com
+  year: 2026
+  url: https://www.reddit.com/r/LocalLLaMA/
+  first_mention_anchor: LocalLLaMA subreddit
+  all_mentions: []
+- key: langgraph
+  type: organization
+  authors: LangChain AI
+  title: LangGraph — Build resilient language agents as graphs
+  venue: GitHub (langchain-ai/langgraph)
+  year: 2026
+  url: https://github.com/langchain-ai/langgraph
+  first_mention_anchor: LangGraph
+  all_mentions: []
+- key: claude-agent-sdk
+  type: organization
+  authors: Anthropic
+  title: Claude Agent SDK
+  venue: Anthropic Developer Documentation
+  year: 2026
+  url: https://docs.claude.com/en/docs/claude-code/sdk
+  first_mention_anchor: Claude Agent SDK
+  all_mentions: []
+- key: mcp
+  type: organization
+  authors: Anthropic / MCP Working Group
+  title: Model Context Protocol (MCP) — Open protocol for AI/tool integration
+  venue: modelcontextprotocol.io
+  year: 2024
+  url: https://modelcontextprotocol.io/
+  first_mention_anchor: MCP integration
+  all_mentions:
+  - local MCP servers
+  - MCP servers work with local models
