@@ -17,11 +17,11 @@ How the methodologies Sanjay has spent 30 years developing and applying — agil
 
 ## State of the Field (as of April 2026)
 
-Transformation methodology is in a crisis of relevance. The frameworks that guided two decades of digital transformation — Kotter's 8-step model, Prosci ADKAR, SAFe, large-scale Scrum — were designed for a world where technology changed faster than organizations but slower than today. AI has broken the fundamental assumption: the rate of change now exceeds organizational absorption capacity.
+Transformation methodology is in a crisis of relevance. The frameworks that guided two decades of digital transformation — [Kotter's 8-step model](https://books.google.com/books/about/Leading_Change.html?id=ib9Xzb5eFGQC), [Prosci ADKAR](https://www.prosci.com/methodology/adkar), [SAFe, large-scale Scrum](https://framework.scaledagile.com/) — were designed for a world where technology changed faster than organizations but slower than today. AI has broken the fundamental assumption: the rate of change now exceeds organizational absorption capacity.
 
-Accenture's Pulse of Change Index shows a 183% increase in the rate of enterprise change since 2019. HBR describes the current environment as one of "ungovernable change" — transformations overlap, rarely conclude, and are driven by forces beyond leadership control. A 2025 Eagle Hill survey found only 25% of employees believe their organization manages change effectively. A March 2025 Gartner survey found just 32% of leaders implemented their last change initiative on time while sustaining employee engagement.
+[Accenture's Pulse of Change Index shows a 183% increase in the rate of enterprise change since 2019](https://newsroom.accenture.com/news/2024/businesses-anticipate-unprecedented-rate-of-change-in-2024-new-accenture-pulse-of-change-index-shows). [HBR describes the current environment as one of "ungovernable change"](https://hbr.org/2025/07/a-guide-to-building-change-resilience-in-the-age-of-ai) — transformations overlap, rarely conclude, and are driven by forces beyond leadership control. [A 2025 Eagle Hill survey found only 25% of employees believe their organization manages change effectively](https://www.eaglehillconsulting.com/news/change-management-survey-2025/). [A March 2025 Gartner survey found just 32% of leaders implemented their last change initiative on time while sustaining employee engagement](https://www.gartner.com/en/newsroom/press-releases/2025-07-08-gartner-hr-research-finds-just-32-percent-of-business-leaders-report-achieving-healthy-change-adoption-by-employees).
 
-The core tension: classic transformation methods assume a **discrete change event** — define the future state, plan the transition, execute, stabilize. AI transformation is **continuous** — the technology capability shifts quarterly, requiring perpetual adaptation rather than episodic change management. Organizations applying Kotter's "create urgency → form coalition → implement → anchor" sequence find that by the time they reach "anchor," the technology landscape has shifted and a new urgency cycle begins.
+The core tension: classic transformation methods assume a **discrete change event** — define the future state, plan the transition, execute, stabilize. AI transformation is **continuous** — the technology capability shifts quarterly, requiring perpetual adaptation rather than episodic change management. Organizations applying Kotter's "create urgency → form coalition → implement → anchor" sequence[^kotter-leading-change-1996] find that by the time they reach "anchor," the technology landscape has shifted and a new urgency cycle begins.
 
 Yet the baby must not be thrown out with the bathwater. The human dimensions of change — resistance, adoption, skill development, cultural shift — haven't changed just because the technology has. People still need a compelling vision, capability building, psychological safety, and leadership modeling. The methodology gap is not that old frameworks are wrong about people — it is that they are wrong about **pace, scope, and the nature of the change itself**.
 
@@ -47,11 +47,11 @@ Yet the baby must not be thrown out with the bathwater. The human dimensions of 
 
 ### Change Management for AI Adoption
 
-**What transfers:** Prosci's ADKAR model (Awareness, Desire, Knowledge, Ability, Reinforcement) remains valid as a description of individual change readiness. The insight that change fails when people lack awareness of *why*, desire to participate, knowledge of *how*, ability to perform, or reinforcement to sustain — this is timeless.
+**What transfers:** Prosci's ADKAR model (Awareness, Desire, Knowledge, Ability, Reinforcement)[^prosci-adkar-methodology] remains valid as a description of individual change readiness. The insight that change fails when people lack awareness of *why*, desire to participate, knowledge of *how*, ability to perform, or reinforcement to sustain — this is timeless.
 
-**What breaks:** The assumption of a defined future state. ADKAR works when you can describe "Knowledge of how to work in the new way." But when the "new way" evolves quarterly, knowledge becomes a moving target. Organizations applying ADKAR to AI adoption find they must restart the Knowledge and Ability stages every time the technology capability shifts. Prosci's own guidance now recommends pairing ADKAR with iterative methodologies.
+**What breaks:** The assumption of a defined future state. ADKAR works[^prosci-adkar-methodology] when you can describe "Knowledge of how to work in the new way." But when the "new way" evolves quarterly, knowledge becomes a moving target. Organizations applying ADKAR[^prosci-adkar-methodology] to AI adoption find they must restart the Knowledge and Ability stages every time the technology capability shifts. [Prosci's own guidance now recommends pairing ADKAR with iterative methodologies](https://www.prosci.com/blog/aligning-the-adkar-model-with-sequential-iterative-and-hybrid-change).
 
-**What's emerging:** "Continuous change management" — treating change as a persistent organizational capability rather than a project-based intervention. Building organizational muscle for constant adaptation rather than managing discrete transitions. 71% of organizations plan to increase AI technology spending in 2026, creating perpetual change pressure.
+**What's emerging:** "Continuous change management" — treating change as a persistent organizational capability rather than a project-based intervention. Building organizational muscle for constant adaptation rather than managing discrete transitions. [71% of organizations plan to increase AI technology spending in 2026](https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026), creating perpetual change pressure.
 
 ### Digital Transformation Methodology Updates
 
@@ -71,7 +71,7 @@ Yet the baby must not be thrown out with the bathwater. The human dimensions of 
 
 3. **Iterative delivery (agile heritage).** Short cycles, feedback loops, working software over documentation. More relevant than ever when the technology landscape shifts quarterly.
 
-4. **Stakeholder alignment and coalition building (Kotter heritage).** AI transformation requires executive sponsorship, cross-functional alignment, and visible leadership modeling. The mechanism is different (demonstrating AI use rather than just endorsing it), but the principle holds.
+4. **Stakeholder alignment and coalition building (Kotter heritage[^kotter-leading-change-1996]).** AI transformation requires executive sponsorship, cross-functional alignment, and visible leadership modeling. The mechanism is different (demonstrating AI use rather than just endorsing it), but the principle holds.
 
 5. **Measurement and accountability.** Defining success criteria before starting (a principle from this project's own methodology) prevents the most common transformation failure: declaring victory without evidence.
 
@@ -81,7 +81,7 @@ Yet the baby must not be thrown out with the bathwater. The human dimensions of 
 
 1. **The "future state" assumption.** Classic methods design toward a defined end state. AI transformation has no stable end state — it is continuous adaptation. Replace "future state design" with "adaptive direction setting."
 
-2. **The discrete change event model.** Kotter's 8 steps, ADKAR's five stages, and most change management models assume a beginning, middle, and end. AI transformation is perpetual. Replace episodic change management with organizational change capability.
+2. **The discrete change event model.** Kotter's 8 steps[^kotter-leading-change-1996], ADKAR's five stages[^prosci-adkar-methodology], and most change management models assume a beginning, middle, and end. AI transformation is perpetual. Replace episodic change management with organizational change capability.
 
 3. **The role-based team structure.** Traditional agile and transformation teams are organized by skill roles. AI-augmented teams need to be organized by outcome, with flexible human-AI task allocation. Replace static role assignments with dynamic task routing.
 
@@ -101,7 +101,7 @@ My emerging framework combines three heritage streams:
 
 **From Agile:** Iterative delivery, feedback loops, cross-functional teams, responding to change. The micro-team model (3-7 people + AI agents) is the next evolution of the agile team — same principles, radically different capabilities.
 
-**From Change Management:** Individual readiness (ADKAR), stakeholder alignment (Kotter), measurement discipline. But adapted from episodic intervention to continuous capability.
+**From Change Management:** Individual readiness (ADKAR)[^prosci-adkar-methodology], stakeholder alignment (Kotter)[^kotter-leading-change-1996], measurement discipline. But adapted from episodic intervention to continuous capability.
 
 The synthesis I'm developing: **AI-Native Transformation** — an approach that treats AI not as the object of transformation but as a participant in the transformation process itself. AI agents assist in organizational diagnostics, skill assessment, process redesign, and change measurement. The transformation methodology becomes AI-augmented, not just applied to AI adoption.
 
@@ -111,14 +111,14 @@ The most important practitioner insight: **the transformation practitioners who 
 
 ## Key Figures / Sources to Track
 
-- **John Kotter** (Harvard) — 8-step model originator. Now evolving the framework for accelerating change. Track: HBR articles, Kotter International publications.
-- **Prosci / Tim Creasey** — ADKAR model. Actively publishing on AI transformation change management. Track: prosci.com/blog, research publications.
-- **Marty Cagan** (SVPG) — Product organization transformation. EMPOWERED framework now being adapted for AI-augmented product teams. Track: books, blog.
-- **Accenture Transformation Practice** — Pulse of Change Index, enterprise transformation methodology. Internal access advantage. Track: reports, internal knowledge.
-- **Gartner CHRO / Change Management research** — Change management trends, role redesign data. Track: press releases, reports.
-- **Harvard Business Review** — "Ungovernable change" framing, case studies. Track: AI and organizational change articles.
-- **Eagle Hill Consulting** — Change management effectiveness surveys. Track: annual surveys.
-- **Lenny Rachitsky** — Product management and org transformation through AI. Track: Substack, podcast.
+- [**John Kotter** (Harvard)](https://www.kotterinc.com/) — 8-step model originator. [Now evolving the framework for accelerating change](https://hbr.org/2012/11/accelerate). Track: HBR articles, Kotter International publications[^hbr-org].
+- [**Prosci / Tim Creasey**](https://www.prosci.com/solutions/speaking-engagements/tim-creasey) — ADKAR model. Actively publishing on AI transformation change management. Track: prosci.com/blog, research publications.
+- [**Marty Cagan** (SVPG)](https://www.svpg.com/) — Product organization transformation. [EMPOWERED framework now being adapted for AI-augmented product teams](https://www.svpg.com/books/empowered-ordinary-people-extraordinary-products/). Track: books, blog.
+- [**Accenture Transformation Practice**](https://www.accenture.com/us-en/insights/pulse-of-change) — Pulse of Change Index, enterprise transformation methodology[^accenture-pulse-of-change-hub]. Internal access advantage. Track: reports, internal knowledge.
+- [**Gartner CHRO / Change Management research**](https://www.gartner.com/en/newsroom/press-releases/2026-3-16-gartner-identifies-top-change-management-trends-for-chros-in-age-of-ai) — Change management trends, role redesign data[^gartner-chro-ai-change-2026]. Track: press releases, reports.
+- [**Harvard Business Review**](https://hbr.org/) — "Ungovernable change" framing, case studies[^hbr-change-resilience-2025]. Track: AI and organizational change articles.
+- [**Eagle Hill Consulting**](https://www.eaglehillconsulting.com/) — Change management effectiveness surveys. Track: annual surveys.
+- [**Lenny Rachitsky**](https://www.lennysnewsletter.com/) — Product management and org transformation through AI. Track: Substack, podcast.
 
 ---
 
@@ -128,7 +128,7 @@ The most important practitioner insight: **the transformation practitioners who 
 
 2. **What replaces the multi-year transformation roadmap?** Quarterly replanning is more realistic but harder to fund, govern, and measure. What governance model supports continuous transformation without either runaway scope or analysis paralysis?
 
-3. **How do you train transformation practitioners for the AI era?** The current certification models (SAFe, Prosci, ICF coaching) are built on frameworks that need updating. What does a "certified AI-native transformation practitioner" look like?
+3. **How do you train transformation practitioners for the AI era?** The current certification models ([SAFe, Prosci, ICF coaching](https://www.prosci.com/)) are built on frameworks that need updating. What does a "certified AI-native transformation practitioner" look like?
 
 4. **Is there a "minimum viable transformation" pattern for AI adoption?** What's the smallest organizational change that produces measurable AI value? If the full transformation takes 18-36 months, what can be achieved in 90 days that demonstrates value and builds momentum?
 
@@ -145,7 +145,7 @@ The most important practitioner insight: **the transformation practitioners who 
 
 ### 1. Continuous change capability replaces episodic change management
 **Profile:** E3 T-Accelerating U3 H-Post-hype Z-Now
-**What's happening:** 183% increase in change rate since 2019. Only 25% believe organizations manage change well. Only 32% deliver change on time with engagement sustained. Classic episodic models are demonstrably failing.
+**What's happening:** 183% increase in change rate since 2019[^accenture-pulse-of-change-2024]. Only 25% believe organizations manage change well[^eaglehill-change-survey-2025]. Only 32% deliver change on time with engagement sustained[^gartner-change-adoption-2025]. Classic episodic models are demonstrably failing.
 **Why it matters:** The shift from "managing change" to "building change capability" is as fundamental as the shift from "project management" to "agile." It redefines what transformation practitioners do — from running change programs to building organizational adaptive capacity.
 **What most people miss:** Most organizations are still hiring change management consultants for episodic interventions while the real need is building permanent organizational change muscle. The consulting engagement model itself needs to change.
 **If true, optimize by:** Reframe transformation engagements from "manage this change" to "build your change capability." Design interventions that leave behind capability, not just completed transitions.
@@ -191,6 +191,41 @@ The most important practitioner insight: **the transformation practitioners who 
 
 ---
 
+## Sources
+
+### Papers & Reports
+
+[^accenture-pulse-of-change-2024]: Accenture. *Pulse of Change Index — Businesses Anticipate Unprecedented Rate of Change*. Accenture Newsroom. 2024. <https://newsroom.accenture.com/news/2024/businesses-anticipate-unprecedented-rate-of-change-in-2024-new-accenture-pulse-of-change-index-shows>
+[^cagan-empowered-2020]: Marty Cagan, Chris Jones. *EMPOWERED — Ordinary People, Extraordinary Products*. Silicon Valley Product Group / Wiley. 2020. <https://www.svpg.com/books/empowered-ordinary-people-extraordinary-products/>
+[^eaglehill-change-survey-2025]: Eagle Hill Consulting (Ipsos survey). *Change Management Survey 2025 — One-third of U.S. Employees Say Workplace Changes Not Worth the Effort*. Eagle Hill Consulting News. 2025. <https://www.eaglehillconsulting.com/news/change-management-survey-2025/>
+[^gartner-ai-spending-2026]: Gartner. *Worldwide AI Spending Will Total $2.5 Trillion in 2026*. Gartner Press Release (paywalled landing). 2026. <https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026>
+[^gartner-change-adoption-2025]: Gartner HR Research. *Just 32% of Business Leaders Report Achieving Healthy Change Adoption by Employees*. Gartner Press Release (paywalled landing). 2025. <https://www.gartner.com/en/newsroom/press-releases/2025-07-08-gartner-hr-research-finds-just-32-percent-of-business-leaders-report-achieving-healthy-change-adoption-by-employees>
+[^gartner-chro-ai-change-2026]: Gartner. *Top Change Management Trends for CHROs in the Age of AI*. Gartner Press Release (paywalled landing). 2026. <https://www.gartner.com/en/newsroom/press-releases/2026-3-16-gartner-identifies-top-change-management-trends-for-chros-in-age-of-ai>
+[^kotter-leading-change-1996]: John P. Kotter. *Leading Change*. Harvard Business School Press (Google Books preview). 1996. <https://books.google.com/books/about/Leading_Change.html?id=ib9Xzb5eFGQC>
+
+### Articles & Newsletters
+
+[^hbr-change-resilience-2025]: Karim R. Lakhani, Jen Stave, Douglas Ng, Daniel Martines. *A Guide to Building Change Resilience in the Age of AI*. Harvard Business Review (July 2025). 2025. <https://hbr.org/2025/07/a-guide-to-building-change-resilience-in-the-age-of-ai>
+[^kotter-accelerate-hbr-2012]: John P. Kotter. *Accelerate!*. Harvard Business Review (November 2012). 2012. <https://hbr.org/2012/11/accelerate>
+[^prosci-adkar-iterative-2023]: Prosci. *Aligning the ADKAR Model With Sequential, Iterative and Hybrid Change*. Prosci Blog. <https://www.prosci.com/blog/aligning-the-adkar-model-with-sequential-iterative-and-hybrid-change>
+
+### People (Sources to Track)
+
+[^cagan-person]: Marty Cagan. *Partner, Silicon Valley Product Group (SVPG); author of Inspired and Empowered*. SVPG. <https://www.svpg.com/>
+[^creasey-person]: Tim Creasey. *Chief Innovation Officer, Prosci*. Prosci. <https://www.prosci.com/solutions/speaking-engagements/tim-creasey>
+[^kotter-person]: John P. Kotter. *Konosuke Matsushita Professor of Leadership, Emeritus; founder, Kotter International*. Harvard Business School. <https://www.kotterinc.com/>
+[^rachitsky-person]: Lenny Rachitsky. *Author, Lenny's Newsletter (#1 business newsletter on Substack); product/growth advisor*. lennysnewsletter.com. <https://www.lennysnewsletter.com/>
+
+### Organizations & Publications
+
+[^accenture-pulse-of-change-hub]: Accenture. *Pulse of Change — Business and Technology Trends*. Accenture Insights. <https://www.accenture.com/us-en/insights/pulse-of-change>
+[^eaglehill-org]: Eagle Hill Consulting. *Eagle Hill Consulting — management consultancy publishing change management surveys*. eaglehillconsulting.com. <https://www.eaglehillconsulting.com/>
+[^hbr-org]: Harvard Business Review. *Harvard Business Review — flagship management publication*. hbr.org. <https://hbr.org/>
+[^prosci-adkar-methodology]: Prosci / Jeff Hiatt. *The Prosci ADKAR Model — Awareness, Desire, Knowledge, Ability, Reinforcement*. prosci.com/methodology/adkar. <https://www.prosci.com/methodology/adkar>
+[^prosci-org]: Prosci. *Prosci — Global Leader in Change Management Solutions*. prosci.com. <https://www.prosci.com/>
+[^safe-scaled-agile]: Scaled Agile, Inc. *Scaled Agile Framework (SAFe)*. framework.scaledagile.com. <https://framework.scaledagile.com/>
+
+---
 ## Connections to Other Categories
 
 ![Transformation Methods — AI Era — Connections Map](../../assets/images/transformation-methods-ai-era/connections-map-b.png)

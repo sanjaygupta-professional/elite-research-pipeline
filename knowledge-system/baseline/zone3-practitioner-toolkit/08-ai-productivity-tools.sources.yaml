@@ -1,0 +1,235 @@
+- key: pragmatic-engineer-survey-2026
+  type: newsletter
+  authors: Gergely Orosz
+  title: AI Tooling for Software Engineers in 2026 — AI Tooling Survey
+  venue: The Pragmatic Engineer Newsletter
+  year: 2026
+  url: https://newsletter.pragmaticengineer.com/p/ai-tooling-2026
+  first_mention_anchor: "Pragmatic Engineer Survey, Feb 2026"
+  all_mentions: []
+
+- key: anthropic-claude-code-1b-2025
+  type: article
+  authors: Anthropic
+  title: Anthropic acquires Bun as Claude Code reaches $1B milestone
+  venue: Anthropic News
+  year: 2025
+  url: https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone
+  first_mention_anchor: "$1B ARR by November 2025 — fastest product ramp in enterprise software history"
+  all_mentions: []
+
+- key: metr-ai-productivity-2025
+  type: paper
+  authors: Becker et al. (METR)
+  title: Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity
+  venue: arXiv:2507.09089
+  year: 2025
+  url: https://arxiv.org/abs/2507.09089
+  first_mention_anchor: "A randomized controlled study found experienced developers using AI took 19% *longer* to complete tasks while *believing* they were 20% faster"
+  all_mentions:
+    - "19%-longer study"
+
+- key: faros-ai-productivity-paradox
+  type: report
+  authors: Faros AI
+  title: The AI Productivity Paradox Research Report — Telemetry from 10,000+ developers across 1,255 teams
+  venue: Faros AI Blog
+  year: 2025
+  url: https://www.faros.ai/blog/ai-software-engineering
+  first_mention_anchor: "Individual developers completed 21% more tasks (Faros), but review time increased 91% as teams generated 98% more pull requests"
+  all_mentions: []
+
+- key: nber-yotzov-bloom-2026
+  type: paper
+  authors: Ivan Yotzov, Jose Maria Barrero, Nicholas Bloom, et al.
+  title: Firm Data on AI
+  venue: NBER Working Paper 34836
+  year: 2026
+  url: https://www.nber.org/papers/w34836
+  first_mention_anchor: "An NBER paper (Feb 2026) surveying ~6,000 executives found 80%+ of firms reported AI had *no impact* on aggregate productivity over the preceding three years"
+  all_mentions:
+    - "NBER productivity paradox data"
+    - "NBER"
+
+- key: gartner-enterprise-ai-search-2025
+  type: report
+  authors: Gartner
+  title: Market Guide for Enterprise AI Search
+  venue: Gartner Research (via GoSearch summary)
+  year: 2025
+  url: https://www.gosearch.ai/blog/gartner-market-guide-enterprise-ai-search-2026/
+  first_mention_anchor: "Gartner projects 60% of enterprise knowledge workers will use AI-native search tools by 2026, up from 15% in 2023"
+  all_mentions:
+    - "Gartner projects 60% of enterprise knowledge workers on AI-native search by end of 2026"
+    - "Gartner"
+
+- key: perplexity-450m-arr-2026
+  type: article
+  authors: TechStory
+  title: Perplexity Tops $450M ARR After Record-Breaking Month
+  venue: TechStory
+  year: 2026
+  url: https://techstory.in/perplexity-tops-450m-arr-after-record-breaking-month/
+  first_mention_anchor: "Perplexity reached 45M monthly active users, $450M+ ARR"
+  all_mentions:
+    - "45M MAU, $450M+ ARR"
+    - "Perplexity at 45M MAU"
+
+- key: claude-code-docs
+  type: organization
+  authors: Anthropic
+  title: Claude Code Overview
+  venue: Claude Code Documentation
+  year: 2026
+  url: https://code.claude.com/docs/en/overview
+  first_mention_anchor: "Claude Code is the most capable agentic coding tool"
+  all_mentions: []
+
+- key: github-copilot-accenture-study
+  type: report
+  authors: GitHub & Accenture
+  title: Quantifying GitHub Copilot's impact in the enterprise with Accenture
+  venue: The GitHub Blog
+  year: 2024
+  url: https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise-with-accenture/
+  first_mention_anchor: "55% code completion acceptance rate. 46% of code written by active users is Copilot-generated (up from 27% in 2022). Dominant in enterprise due to Microsoft ecosystem integration — 56% adoption in 10,000+ employee companies"
+  all_mentions: []
+
+- key: github-copilot-product
+  type: organization
+  authors: GitHub
+  title: GitHub Copilot — Your AI pair programmer
+  venue: GitHub
+  year: 2026
+  url: https://github.com/features/copilot
+  first_mention_anchor: "GitHub Copilot"
+  all_mentions:
+    - "Copilot"
+
+- key: perplexity-product
+  type: organization
+  authors: Perplexity AI
+  title: Perplexity
+  venue: perplexity.ai
+  year: 2026
+  url: https://www.perplexity.ai/
+  first_mention_anchor: "Perplexity"
+  all_mentions: []
+
+- key: notebooklm-gemini-3
+  type: article
+  authors: Abner Li
+  title: NotebookLM now uses Gemini 3, adds new 'Data Tables' output
+  venue: 9to5Google
+  year: 2025
+  url: https://9to5google.com/2025/12/19/notebooklm-gemini-3-data-tables/
+  first_mention_anchor: "Now powered by Gemini 3"
+  all_mentions: []
+
+- key: notebooklm-product
+  type: organization
+  authors: Google
+  title: NotebookLM
+  venue: notebooklm.google.com
+  year: 2026
+  url: https://notebooklm.google.com/
+  first_mention_anchor: "NotebookLM (Google)"
+  all_mentions:
+    - "NotebookLM"
+
+- key: cursor-2b-arr-2026
+  type: article
+  authors: Marina Temkin
+  title: Sources — Cursor in talks to raise $2B+ at $50B valuation as enterprise growth surges
+  venue: TechCrunch
+  year: 2026
+  url: https://techcrunch.com/2026/04/17/sources-cursor-in-talks-to-raise-2b-at-50b-valuation-as-enterprise-growth-surges/
+  first_mention_anchor: "$2B ARR by Feb 2026"
+  all_mentions: []
+
+- key: cursor-product
+  type: organization
+  authors: Anysphere
+  title: Cursor — The AI Code Editor
+  venue: cursor.com
+  year: 2026
+  url: https://cursor.com/
+  first_mention_anchor: "Cursor"
+  all_mentions: []
+
+- key: openai-codex-cloud
+  type: organization
+  authors: OpenAI
+  title: Codex — Cloud (sandboxed cloud coding agent)
+  venue: OpenAI Developers
+  year: 2026
+  url: https://developers.openai.com/codex/cloud
+  first_mention_anchor: "OpenAI Codex (cloud agent):** Released 2026"
+  all_mentions: []
+
+- key: windsurf-product
+  type: organization
+  authors: Cognition AI (formerly Codeium)
+  title: Windsurf — AI-native IDE
+  venue: windsurf.com
+  year: 2026
+  url: https://windsurf.com/
+  first_mention_anchor: "Windsurf (Codeium)"
+  all_mentions: []
+
+- key: google-agentspace
+  type: article
+  authors: Google Cloud
+  title: Google Agentspace enables the agent-driven enterprise
+  venue: Google Cloud Blog
+  year: 2025
+  url: https://cloud.google.com/blog/products/ai-machine-learning/google-agentspace-enables-the-agent-driven-enterprise
+  first_mention_anchor: "Google Agentspace:** Enterprise-focused AI agent platform"
+  all_mentions:
+    - "Agentspace"
+    - "Google Agentspace"
+
+- key: claude-code-routines-2026
+  type: article
+  authors: Michael Nuñez
+  title: We tested Anthropic's redesigned Claude Code desktop app and 'Routines' — here's what enterprises should know
+  venue: VentureBeat
+  year: 2026
+  url: https://venturebeat.com/orchestration/we-tested-anthropics-redesigned-claude-code-desktop-app-and-routines-heres-what-enterprises-should-know
+  first_mention_anchor: "Claude Code Routines:** Just launched (April 2026)"
+  all_mentions:
+    - "Claude Code Routines (April 2026)"
+    - "Claude Code Routines"
+    - "Routines"
+
+- key: mcp-official
+  type: organization
+  authors: Anthropic / MCP Community
+  title: Model Context Protocol
+  venue: modelcontextprotocol.io
+  year: 2026
+  url: https://modelcontextprotocol.io/
+  first_mention_anchor: "MCP server ecosystem:** 10,000+ servers and growing"
+  all_mentions:
+    - "MCP"
+
+- key: swe-bench-verified
+  type: benchmark
+  authors: Carlos E. Jimenez, John Yang, et al.
+  title: SWE-bench Verified
+  venue: swebench.com
+  year: 2024
+  url: https://www.swebench.com/verified.html
+  first_mention_anchor: "~55% success on SWE-bench"
+  all_mentions: []
+
+- key: ai-code-tools-market-2025
+  type: report
+  authors: Mordor Intelligence
+  title: AI Code Tools Market Size, Share & 2030 Trends Report
+  venue: Mordor Intelligence Industry Report
+  year: 2025
+  url: https://www.mordorintelligence.com/industry-reports/artificial-intelligence-code-tools-market
+  first_mention_anchor: "The market exceeded $7.37 billion in 2025 for coding tools alone"
+  all_mentions: []
+

@@ -1,0 +1,204 @@
+- key: kotter-leading-change-1996
+  type: paper
+  authors: John P. Kotter
+  title: Leading Change
+  venue: Harvard Business School Press (Google Books preview)
+  year: 1996
+  url: https://books.google.com/books/about/Leading_Change.html?id=ib9Xzb5eFGQC
+  first_mention_anchor: "Kotter's 8-step model"
+  all_mentions:
+    - "Kotter's 8 steps"
+    - "Kotter heritage"
+    - "stakeholder alignment (Kotter)"
+    - "Kotter's \"create urgency → form coalition → implement → anchor\" sequence"
+
+- key: kotter-accelerate-hbr-2012
+  type: article
+  authors: John P. Kotter
+  title: Accelerate!
+  venue: Harvard Business Review (November 2012)
+  year: 2012
+  url: https://hbr.org/2012/11/accelerate
+  first_mention_anchor: "Now evolving the framework for accelerating change"
+  all_mentions: []
+
+- key: kotter-person
+  type: person
+  authors: John P. Kotter
+  title: Konosuke Matsushita Professor of Leadership, Emeritus; founder, Kotter International
+  venue: Harvard Business School
+  url: https://www.kotterinc.com/
+  first_mention_anchor: "**John Kotter** (Harvard)"
+  all_mentions: []
+
+- key: prosci-adkar-methodology
+  type: organization
+  authors: Prosci / Jeff Hiatt
+  title: The Prosci ADKAR Model — Awareness, Desire, Knowledge, Ability, Reinforcement
+  venue: prosci.com/methodology/adkar
+  url: https://www.prosci.com/methodology/adkar
+  first_mention_anchor: "Prosci ADKAR"
+  all_mentions:
+    - "Prosci's ADKAR model (Awareness, Desire, Knowledge, Ability, Reinforcement)"
+    - "ADKAR's five stages"
+    - "Individual readiness (ADKAR)"
+    - "ADKAR works"
+    - "applying ADKAR"
+
+- key: prosci-adkar-iterative-2023
+  type: article
+  authors: Prosci
+  title: Aligning the ADKAR Model With Sequential, Iterative and Hybrid Change
+  venue: Prosci Blog
+  url: https://www.prosci.com/blog/aligning-the-adkar-model-with-sequential-iterative-and-hybrid-change
+  first_mention_anchor: "Prosci's own guidance now recommends pairing ADKAR with iterative methodologies"
+  all_mentions: []
+
+- key: creasey-person
+  type: person
+  authors: Tim Creasey
+  title: Chief Innovation Officer, Prosci
+  venue: Prosci
+  url: https://www.prosci.com/solutions/speaking-engagements/tim-creasey
+  first_mention_anchor: "**Prosci / Tim Creasey**"
+  all_mentions: []
+
+- key: prosci-org
+  type: organization
+  authors: Prosci
+  title: Prosci — Global Leader in Change Management Solutions
+  venue: prosci.com
+  url: https://www.prosci.com/
+  first_mention_anchor: "SAFe, Prosci, ICF coaching"
+  all_mentions: []
+
+- key: safe-scaled-agile
+  type: organization
+  authors: Scaled Agile, Inc.
+  title: Scaled Agile Framework (SAFe)
+  venue: framework.scaledagile.com
+  url: https://framework.scaledagile.com/
+  first_mention_anchor: "SAFe, large-scale Scrum"
+  all_mentions: []
+
+- key: accenture-pulse-of-change-2024
+  type: report
+  authors: Accenture
+  title: Pulse of Change Index — Businesses Anticipate Unprecedented Rate of Change
+  venue: Accenture Newsroom
+  year: 2024
+  url: https://newsroom.accenture.com/news/2024/businesses-anticipate-unprecedented-rate-of-change-in-2024-new-accenture-pulse-of-change-index-shows
+  first_mention_anchor: "Accenture's Pulse of Change Index shows a 183% increase in the rate of enterprise change since 2019"
+  all_mentions:
+    - "183% increase in change rate since 2019"
+
+- key: accenture-pulse-of-change-hub
+  type: organization
+  authors: Accenture
+  title: Pulse of Change — Business and Technology Trends
+  venue: Accenture Insights
+  url: https://www.accenture.com/us-en/insights/pulse-of-change
+  first_mention_anchor: "**Accenture Transformation Practice**"
+  all_mentions:
+    - "Pulse of Change Index, enterprise transformation methodology"
+
+- key: hbr-change-resilience-2025
+  type: article
+  authors: Karim R. Lakhani, Jen Stave, Douglas Ng, Daniel Martines
+  title: A Guide to Building Change Resilience in the Age of AI
+  venue: Harvard Business Review (July 2025)
+  year: 2025
+  url: https://hbr.org/2025/07/a-guide-to-building-change-resilience-in-the-age-of-ai
+  first_mention_anchor: "HBR describes the current environment as one of \"ungovernable change\""
+  all_mentions:
+    - "\"Ungovernable change\" framing, case studies"
+
+- key: hbr-org
+  type: organization
+  authors: Harvard Business Review
+  title: Harvard Business Review — flagship management publication
+  venue: hbr.org
+  url: https://hbr.org/
+  first_mention_anchor: "**Harvard Business Review**"
+  all_mentions:
+    - "HBR articles, Kotter International publications"
+
+- key: eaglehill-change-survey-2025
+  type: report
+  authors: Eagle Hill Consulting (Ipsos survey)
+  title: Change Management Survey 2025 — One-third of U.S. Employees Say Workplace Changes Not Worth the Effort
+  venue: Eagle Hill Consulting News
+  year: 2025
+  url: https://www.eaglehillconsulting.com/news/change-management-survey-2025/
+  first_mention_anchor: "A 2025 Eagle Hill survey found only 25% of employees believe their organization manages change effectively"
+  all_mentions:
+    - "Only 25% believe organizations manage change well"
+
+- key: eaglehill-org
+  type: organization
+  authors: Eagle Hill Consulting
+  title: Eagle Hill Consulting — management consultancy publishing change management surveys
+  venue: eaglehillconsulting.com
+  url: https://www.eaglehillconsulting.com/
+  first_mention_anchor: "**Eagle Hill Consulting**"
+  all_mentions: []
+
+- key: gartner-change-adoption-2025
+  type: report
+  authors: Gartner HR Research
+  title: Just 32% of Business Leaders Report Achieving Healthy Change Adoption by Employees
+  venue: Gartner Press Release (paywalled landing)
+  year: 2025
+  url: https://www.gartner.com/en/newsroom/press-releases/2025-07-08-gartner-hr-research-finds-just-32-percent-of-business-leaders-report-achieving-healthy-change-adoption-by-employees
+  first_mention_anchor: "A March 2025 Gartner survey found just 32% of leaders implemented their last change initiative on time while sustaining employee engagement"
+  all_mentions:
+    - "Only 32% deliver change on time with engagement sustained"
+
+- key: gartner-chro-ai-change-2026
+  type: report
+  authors: Gartner
+  title: Top Change Management Trends for CHROs in the Age of AI
+  venue: Gartner Press Release (paywalled landing)
+  year: 2026
+  url: https://www.gartner.com/en/newsroom/press-releases/2026-3-16-gartner-identifies-top-change-management-trends-for-chros-in-age-of-ai
+  first_mention_anchor: "**Gartner CHRO / Change Management research**"
+  all_mentions:
+    - "Change management trends, role redesign data"
+
+- key: gartner-ai-spending-2026
+  type: report
+  authors: Gartner
+  title: Worldwide AI Spending Will Total $2.5 Trillion in 2026
+  venue: Gartner Press Release (paywalled landing)
+  year: 2026
+  url: https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026
+  first_mention_anchor: "71% of organizations plan to increase AI technology spending in 2026"
+  all_mentions: []
+
+- key: cagan-empowered-2020
+  type: paper
+  authors: Marty Cagan, Chris Jones
+  title: EMPOWERED — Ordinary People, Extraordinary Products
+  venue: Silicon Valley Product Group / Wiley
+  year: 2020
+  url: https://www.svpg.com/books/empowered-ordinary-people-extraordinary-products/
+  first_mention_anchor: "EMPOWERED framework now being adapted for AI-augmented product teams"
+  all_mentions: []
+
+- key: cagan-person
+  type: person
+  authors: Marty Cagan
+  title: Partner, Silicon Valley Product Group (SVPG); author of Inspired and Empowered
+  venue: SVPG
+  url: https://www.svpg.com/
+  first_mention_anchor: "**Marty Cagan** (SVPG)"
+  all_mentions: []
+
+- key: rachitsky-person
+  type: person
+  authors: Lenny Rachitsky
+  title: Author, Lenny's Newsletter (#1 business newsletter on Substack); product/growth advisor
+  venue: lennysnewsletter.com
+  url: https://www.lennysnewsletter.com/
+  first_mention_anchor: "**Lenny Rachitsky**"
+  all_mentions: []
