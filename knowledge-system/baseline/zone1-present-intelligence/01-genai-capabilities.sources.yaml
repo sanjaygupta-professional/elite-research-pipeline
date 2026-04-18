@@ -1,0 +1,295 @@
+- key: peng-2023
+  type: paper
+  authors: Peng, Kalliamvakou, Cihon, Demirer
+  title: The Impact of AI on Developer Productivity — Evidence from GitHub Copilot
+  venue: arXiv:2302.06590
+  year: 2023
+  url: https://arxiv.org/abs/2302.06590
+  first_mention_anchor: "Peng et al. (GitHub, 2023, now widely replicated)"
+
+- key: dellacqua-jagged-frontier-2023
+  type: paper
+  authors: Dell'Acqua, McFowland, Mollick, Lifshitz-Assaf, Kellogg, Rajendran, Krayer, Candelon, Lakhani
+  title: Navigating the Jagged Technological Frontier — Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality
+  venue: Harvard Business School Working Paper 24-013 / SSRN 4573321
+  year: 2023
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321
+  first_mention_anchor: "Mollick's Wharton consulting simulation studies"
+
+- key: kambhampati-2024
+  type: paper
+  authors: Kambhampati et al.
+  title: Position — LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks
+  venue: arXiv:2402.01817 (ICML 2024); see also Annals NYAS 2024
+  year: 2024
+  url: https://arxiv.org/abs/2402.01817
+  first_mention_anchor: "Kambhampati (Arizona State): Formally published work (Nature, 2024)"
+
+- key: amodei-machines-loving-grace
+  type: article
+  authors: Dario Amodei
+  title: Machines of Loving Grace
+  venue: darioamodei.com
+  year: 2024
+  url: https://www.darioamodei.com/essay/machines-of-loving-grace
+  first_mention_anchor: "Amodei (February 2025)"
+
+- key: arc-agi-1
+  type: benchmark
+  authors: François Chollet
+  title: ARC-AGI-1
+  venue: arcprize.org
+  year: 2019
+  url: https://arcprize.org/arc-agi/1
+  first_mention_anchor: "ARC-AGI-1 benchmark result for o3"
+  all_mentions:
+    - "o3 on ARC-AGI-1"
+    - "ARC-AGI evidence"
+    - "ARC-AGI performance"
+
+- key: arc-agi-2
+  type: benchmark
+  authors: François Chollet
+  title: ARC-AGI-2
+  venue: arcprize.org
+  year: 2025
+  url: https://arcprize.org/arc-agi/2
+  first_mention_anchor: "ARC-AGI-2 released (early 2026)"
+  all_mentions:
+    - "ARC-AGI-2 results?"
+
+- key: swe-bench-verified
+  type: benchmark
+  authors: Princeton / OpenAI
+  title: SWE-bench Verified
+  venue: swebench.com
+  year: 2024
+  url: https://www.swebench.com/verified.html
+  first_mention_anchor: "SWE-bench Verified: ~55%"
+  all_mentions:
+    - "SWE-bench Verified"
+
+- key: frontiermath
+  type: benchmark
+  authors: Epoch AI
+  title: FrontierMath
+  venue: epoch.ai
+  year: 2024
+  url: https://epoch.ai/frontiermath
+  first_mention_anchor: "FrontierMath (novel PhD-level math problems)"
+
+- key: osworld
+  type: benchmark
+  authors: Xie, Zhang, Chen, et al. (XLang Lab)
+  title: OSWorld — Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments
+  venue: NeurIPS 2024 / os-world.github.io
+  year: 2024
+  url: https://os-world.github.io/
+  first_mention_anchor: "OSWorld benchmark (humans ~72%)"
+
+- key: helm
+  type: benchmark
+  authors: Stanford CRFM
+  title: HELM — Holistic Evaluation of Language Models
+  venue: crfm.stanford.edu/helm
+  year: 2022
+  url: https://crfm.stanford.edu/helm/
+  first_mention_anchor: "HELM benchmark initiative (crfm.stanford.edu/helm)"
+  all_mentions:
+    - "**HELM** (crfm.stanford.edu/helm)"
+
+- key: ai-snake-oil
+  type: article
+  authors: Arvind Narayanan, Sayash Kapoor
+  title: AI Snake Oil — What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference
+  venue: Princeton University Press
+  year: 2024
+  url: https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil
+  first_mention_anchor: "\"AI Snake Oil\" (Princeton, book 2024)"
+
+- key: all-in-on-ai
+  type: article
+  authors: Thomas H. Davenport, Nitin Mittal
+  title: All-in On AI — How Smart Companies Win Big with Artificial Intelligence
+  venue: Harvard Business Review Press
+  year: 2023
+  url: https://store.hbr.org/product/all-in-on-ai-how-smart-companies-win-big-with-artificial-intelligence/10599
+  first_mention_anchor: "\"All-in on AI\""
+
+- key: import-ai
+  type: newsletter
+  authors: Jack Clark
+  title: Import AI
+  venue: importai.substack.com
+  url: https://importai.substack.com/
+  first_mention_anchor: "**Import AI** (Jack Clark, weekly newsletter)"
+
+- key: the-batch
+  type: newsletter
+  authors: Andrew Ng / DeepLearning.AI
+  title: The Batch
+  venue: deeplearning.ai/the-batch
+  url: https://www.deeplearning.ai/the-batch/
+  first_mention_anchor: "**The Batch** (Andrew Ng / deeplearning.ai, weekly)"
+
+- key: one-useful-thing
+  type: newsletter
+  authors: Ethan Mollick
+  title: One Useful Thing
+  venue: oneusefulthing.org
+  url: https://www.oneusefulthing.org/
+  first_mention_anchor: "One Useful Thing (Substack)"
+
+- key: road-to-ai-we-can-trust
+  type: newsletter
+  authors: Gary Marcus
+  title: Marcus on AI (formerly "The Road to AI We Can Trust")
+  venue: garymarcus.substack.com
+  url: https://garymarcus.substack.com/
+  first_mention_anchor: "Road to AI We Can Trust (Substack)"
+
+- key: arc-prize-substack
+  type: newsletter
+  authors: François Chollet
+  title: Sparks in the Wind (ARC Prize-related writing)
+  venue: fchollet.substack.com
+  url: https://fchollet.substack.com/
+  first_mention_anchor: "ARC Prize Substack, X/Twitter"
+
+- key: chollet
+  type: person
+  authors: François Chollet
+  title: Founder, ARC Prize; creator of Keras
+  venue: arcprize.org
+  url: https://arcprize.org/
+  first_mention_anchor: "François Chollet"
+  all_mentions:
+    - "Chollet (benchmark creator)"
+    - "Chollet's follow-up benchmark"
+    - "Chollet's new, harder benchmark"
+
+- key: karpathy
+  type: person
+  authors: Andrej Karpathy
+  title: AI researcher and educator (Eureka Labs; ex-OpenAI, ex-Tesla)
+  venue: karpathy.ai
+  url: https://karpathy.ai/
+  first_mention_anchor: "Andrej Karpathy"
+  all_mentions:
+    - "Karpathy's framing"
+
+- key: percy-liang
+  type: person
+  authors: Percy Liang
+  title: Associate Professor, Stanford; Director, CRFM
+  venue: cs.stanford.edu/~pliang
+  url: https://cs.stanford.edu/~pliang/
+  first_mention_anchor: "Percy Liang / Stanford CRFM"
+
+- key: mollick
+  type: person
+  authors: Ethan Mollick
+  title: Associate Professor, Wharton
+  venue: mgmt.wharton.upenn.edu/profile/emollick
+  url: https://mgmt.wharton.upenn.edu/profile/emollick/
+  first_mention_anchor: "Ethan Mollick"
+
+- key: lecun
+  type: person
+  authors: Yann LeCun
+  title: Turing Award laureate; ex-Chief AI Scientist, Meta
+  venue: ai.meta.com
+  url: https://ai.meta.com/people/396469589677838/yann-lecun/
+  first_mention_anchor: "Yann LeCun"
+  all_mentions:
+    - "LeCun (Meta):"
+
+- key: marcus
+  type: person
+  authors: Gary Marcus
+  title: Professor Emeritus, NYU; author of Rebooting AI
+  venue: garymarcus.com
+  url: http://www.garymarcus.com/index.html
+  first_mention_anchor: "Gary Marcus"
+  all_mentions:
+    - "Marcus (NYU)"
+
+- key: mitchell
+  type: person
+  authors: Melanie Mitchell
+  title: Professor, Santa Fe Institute
+  venue: melaniemitchell.me
+  url: https://melaniemitchell.me/
+  first_mention_anchor: "Melanie Mitchell"
+  all_mentions:
+    - "Mitchell (Santa Fe Institute)"
+
+- key: kambhampati
+  type: person
+  authors: Subbarao Kambhampati
+  title: Professor, Arizona State University; ex-President, AAAI
+  venue: rakaposhi.eas.asu.edu
+  url: https://rakaposhi.eas.asu.edu/
+  first_mention_anchor: "Subbarao Kambhampati"
+
+- key: narayanan-kapoor
+  type: person
+  authors: Arvind Narayanan, Sayash Kapoor
+  title: Authors of AI Snake Oil; Princeton CITP
+  venue: aisnakeoil.com
+  url: https://www.aisnakeoil.com/
+  first_mention_anchor: "Arvind Narayanan & Sayash Kapoor"
+
+- key: casado
+  type: person
+  authors: Martin Casado
+  title: General Partner, Andreessen Horowitz (a16z)
+  venue: a16z.com
+  url: https://a16z.com/author/martin-casado/
+  first_mention_anchor: "**a16z AI research** (Martin Casado)"
+
+- key: davenport
+  type: person
+  authors: Thomas Davenport
+  title: President's Distinguished Professor, Babson College
+  venue: babson.edu
+  url: https://www.babson.edu/about/our-leaders-and-scholars/faculty-and-academic-divisions/faculty-profiles/thomas-davenport.php
+  first_mention_anchor: "Thomas Davenport** (Babson College)"
+
+- key: hassabis
+  type: person
+  authors: Demis Hassabis
+  title: CEO and co-founder, Google DeepMind
+  venue: deepmind.google
+  url: https://deepmind.google/
+  first_mention_anchor: "Demis Hassabis"
+
+- key: altman
+  type: person
+  authors: Sam Altman
+  title: CEO, OpenAI
+  venue: blog.samaltman.com
+  url: https://blog.samaltman.com/
+  first_mention_anchor: "Sam Altman"
+
+- key: amodei
+  type: person
+  authors: Dario Amodei
+  title: CEO, Anthropic
+  venue: darioamodei.com
+  url: https://www.darioamodei.com/
+  first_mention_anchor: "Dario Amodei"
+
+- key: papers-with-code
+  type: organization
+  title: Papers With Code
+  venue: paperswithcode.com
+  url: https://paperswithcode.com/
+  first_mention_anchor: "**Papers With Code** (paperswithcode.com)"
+
+- key: arxiv-cs-lg
+  type: organization
+  title: arXiv cs.LG / cs.CL preprint server
+  venue: arxiv.org
+  url: https://arxiv.org/list/cs.LG/recent
+  first_mention_anchor: "**arXiv cs.LG, cs.CL**"

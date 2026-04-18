@@ -1,0 +1,244 @@
+- key: wef-future-of-jobs-2025
+  type: report
+  authors: World Economic Forum
+  title: The Future of Jobs Report 2025
+  venue: weforum.org
+  year: 2025
+  url: https://www.weforum.org/publications/the-future-of-jobs-report-2025/
+  first_mention_anchor: "WEF's Future of Jobs Report 2025"
+  all_mentions:
+    - "WEF Future of Jobs team"
+
+- key: hbr-labor-market-2026
+  type: article
+  authors: Harvard Business Review
+  title: Research — How AI Is Changing the Labor Market
+  venue: Harvard Business Review
+  year: 2026
+  url: https://hbr.org/2026/03/research-how-ai-is-changing-the-labor-market
+  first_mention_anchor: "HBR, March 2026"
+  all_mentions: []
+
+- key: pwc-ai-jobs-barometer-2025
+  type: report
+  authors: PwC
+  title: "The Fearless Future: 2025 Global AI Jobs Barometer"
+  venue: PwC
+  year: 2025
+  url: https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html
+  first_mention_anchor: "PwC Global AI Jobs Barometer 2025"
+  all_mentions:
+    - "PwC Global AI Jobs Barometer"
+    - "PwC, 2025"
+    - "PwC's 2026 update"
+
+- key: brynjolfsson-canaries-2025
+  type: paper
+  authors: Brynjolfsson, Chandar, Chen
+  title: "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence"
+  venue: Stanford Digital Economy Lab
+  year: 2025
+  url: https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/
+  first_mention_anchor: "Brynjolfsson, Fortune 2026"
+  all_mentions:
+    - "Brynjolfsson entry-level data"
+    - "Brynjolfsson, 2026"
+
+- key: dellacqua-jagged-frontier-2025
+  type: paper
+  authors: Dell'Acqua, McFowland, Mollick, Lifshitz-Assaf, Kellogg, Rajendran, Krayer, Candelon, Lakhani
+  title: "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality"
+  venue: Organization Science
+  year: 2025
+  url: https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838
+  first_mention_anchor: "Dell'Acqua et al., published in Organization Science 2025"
+  all_mentions:
+    - "jagged frontier study"
+    - "jagged frontier research"
+    - "jagged frontier"
+    - "Jagged Frontier"
+
+- key: microsoft-nfw-2025
+  type: report
+  authors: Microsoft Research
+  title: New Future of Work Report 2025
+  venue: Microsoft Research
+  year: 2025
+  url: https://www.microsoft.com/en-us/research/publication/new-future-of-work-report-2025/
+  first_mention_anchor: "Microsoft New Future of Work Report (December 2025)"
+  all_mentions: []
+
+- key: gartner-middle-mgmt-2024
+  type: report
+  authors: Gartner
+  title: "Top Predictions for IT Organizations and Users in 2025 and Beyond (20% of organizations will use AI to flatten middle management by 2026)"
+  venue: Gartner Press Release
+  year: 2024
+  url: https://www.gartner.com/en/newsroom/press-releases/2024-10-22-gartner-unveils-top-predictions-for-it-organizations-and-users-in-2025-and-beyond
+  first_mention_anchor: "Gartner predicts 20% of organizations will use AI to eliminate more than half of current middle management roles by 2026"
+  all_mentions:
+    - "Gartner predicts 20% of orgs will halve middle management by 2026"
+    - "Gartner"
+
+- key: bearingpoint-mgr-2025
+  type: report
+  authors: BearingPoint
+  title: "From Fear to Empowerment: Middle Managers as Catalysts in AI-Driven Transformation"
+  venue: BearingPoint
+  year: 2025
+  url: https://www.bearingpoint.com/en/about-us/news-and-media/press-releases/middle-managers-are-the-key-to-ai-driven-transformation/
+  first_mention_anchor: "BearingPoint's study estimates 43% of standard managerial tasks are impacted by GenAI"
+  all_mentions:
+    - "BearingPoint"
+
+- key: hbr-redefining-mgr-2025
+  type: article
+  authors: Ana Moreno
+  title: How AI Is Redefining Managerial Roles
+  venue: Harvard Business Review
+  year: 2025
+  url: https://hbr.org/2025/07/how-ai-is-redefining-managerial-roles
+  first_mention_anchor: "HBR (July 2025) published \"How AI Is Redefining Managerial Roles.\""
+  all_mentions: []
+
+- key: fastcompany-middle-mgmt
+  type: article
+  authors: Fast Company
+  title: AI and the Death (and Rebirth) of Middle Management
+  venue: Fast Company
+  year: 2025
+  url: https://www.fastcompany.com/91380376/ai-and-the-death-and-rebirth-of-middle-management
+  first_mention_anchor: "Fast Company"
+  all_mentions: []
+
+- key: accenture-pulse-2026
+  type: report
+  authors: Accenture
+  title: "Pulse of Change 2026"
+  venue: Accenture
+  year: 2026
+  url: https://www.accenture.com/us-en/insights/pulse-of-change
+  first_mention_anchor: "Accenture Pulse of Change (2026)"
+  all_mentions: []
+
+- key: idc-futurescape-2026
+  type: report
+  authors: IDC
+  title: FutureScape 2026 Predictions
+  venue: IDC
+  year: 2025
+  url: https://my.idc.com/getdoc.jsp?containerId=prUS53883425
+  first_mention_anchor: "40% of roles in G2000 will involve direct AI agent engagement by 2026 (IDC)"
+  all_mentions: []
+
+- key: nber-ai-firm-data-2026
+  type: paper
+  authors: Acemoglu, Anderson, Beede, Buffington, Childress, Dinlersoz, Foster, Goldschlag, Haltiwanger, Kroff, Restrepo, Zolas (NBER)
+  title: Firm Data on AI
+  venue: "NBER Working Paper w34836"
+  year: 2026
+  url: https://www.nber.org/papers/w34836
+  first_mention_anchor: "NBER productivity paradox"
+  all_mentions:
+    - "NBER"
+
+- key: wef-davos-2026
+  type: article
+  authors: World Economic Forum
+  title: "Jobs and skills transformation: What to know at Davos 2026"
+  venue: World Economic Forum
+  year: 2026
+  url: https://www.weforum.org/stories/2026/01/davos-here-s-what-to-know-about-jobs-and-skills-transformation/
+  first_mention_anchor: "WEF Davos 2026 workforce agenda"
+  all_mentions: []
+
+- key: mollick-one-useful-thing
+  type: newsletter
+  authors: Ethan Mollick
+  title: One Useful Thing
+  venue: Substack
+  year: 2026
+  url: https://www.oneusefulthing.org/
+  first_mention_anchor: "**Ethan Mollick** (Wharton)"
+  all_mentions:
+    - "One Useful Thing Substack"
+
+- key: brynjolfsson-person
+  type: person
+  authors: Erik Brynjolfsson
+  title: Stanford Digital Economy Lab (Director)
+  venue: Stanford
+  year: 2026
+  url: https://www.brynjolfsson.com/
+  first_mention_anchor: "**Erik Brynjolfsson** (Stanford)"
+  all_mentions: []
+
+- key: brynjolfsson-turing-trap
+  type: paper
+  authors: Erik Brynjolfsson
+  title: "The Turing Trap: The Promise & Peril of Human-Like Artificial Intelligence"
+  venue: "arXiv:2201.04200 / Daedalus"
+  year: 2022
+  url: https://arxiv.org/abs/2201.04200
+  first_mention_anchor: "\"The Turing Trap\" framing on augmentation vs. automation"
+  all_mentions: []
+
+- key: stanford-digital-economy-lab
+  type: organization
+  authors: Stanford University
+  title: Stanford Digital Economy Lab
+  venue: Stanford
+  year: 2026
+  url: https://digitaleconomy.stanford.edu/
+  first_mention_anchor: "Stanford Digital Economy Lab"
+  all_mentions: []
+
+- key: dellacqua-person
+  type: person
+  authors: Fabrizio Dell'Acqua
+  title: Postdoctoral Researcher, Harvard Business School (Digital Data Design Institute)
+  venue: Harvard
+  year: 2026
+  url: https://www.fabriziodellacqua.com/
+  first_mention_anchor: "**Fabian Dell'Acqua** (Harvard)"
+  all_mentions: []
+
+- key: shrm-ai-hr-2025
+  type: report
+  authors: SHRM (Society for Human Resource Management)
+  title: The Role of AI in HR Continues to Expand — 2025 Talent Trends
+  venue: SHRM
+  year: 2025
+  url: https://www.shrm.org/topics-tools/research/2025-talent-trends/ai-in-hr
+  first_mention_anchor: "**SHRM (Society for Human Resource Management)** — State of AI in HR"
+  all_mentions: []
+
+- key: josh-bersin
+  type: person
+  authors: Josh Bersin
+  title: Insights on Work, Talent, Learning, Leadership, and HR Technology
+  venue: joshbersin.com
+  year: 2026
+  url: https://joshbersin.com/
+  first_mention_anchor: "**Josh Bersin**"
+  all_mentions: []
+
+- key: gartner-chro-2026
+  type: report
+  authors: Gartner
+  title: "Top Priorities for CHROs in 2026"
+  venue: Gartner Press Release
+  year: 2025
+  url: https://www.gartner.com/en/newsroom/press-releases/2025-10-02-gartner-says-chros-top-priorities-for-2026-center-around-realizing-ai-value-and-driving-performance-amid-uncertainty
+  first_mention_anchor: "**Gartner CHRO research**"
+  all_mentions: []
+
+- key: goldman-sachs-300m-2023
+  type: report
+  authors: Goldman Sachs (Briggs, Kodnani)
+  title: "The Potentially Large Effects of Artificial Intelligence on Economic Growth"
+  venue: Goldman Sachs
+  year: 2023
+  url: https://www.gspublishing.com/content/research/en/reports/2023/03/27/d64e052b-0f6e-45d7-967b-d7be35fabd16.html
+  first_mention_anchor: "\"AI will eliminate 300M jobs\" (Goldman Sachs 2023 estimate)"
+  all_mentions: []

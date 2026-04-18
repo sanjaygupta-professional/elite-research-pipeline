@@ -1,0 +1,284 @@
+- key: eu-ai-act
+  type: report
+  authors: European Union
+  title: "Regulation (EU) 2024/1689 — Artificial Intelligence Act"
+  venue: European Commission — Shaping Europe's Digital Future
+  year: 2024
+  url: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+  first_mention_anchor: "EU AI Act"
+  all_mentions: []
+
+- key: colorado-ai-act-sb24-205
+  type: report
+  authors: Colorado General Assembly
+  title: "SB24-205 — Consumer Protections for Artificial Intelligence (Colorado AI Act)"
+  venue: Colorado General Assembly
+  year: 2024
+  url: https://leg.colorado.gov/bills/sb24-205
+  first_mention_anchor: "Colorado's AI Act (SB 24-205)"
+  all_mentions: []
+
+- key: texas-raiga-hb149
+  type: report
+  authors: Texas Legislature (89th Regular Session)
+  title: "HB 149 — Texas Responsible Artificial Intelligence Governance Act (TRAIGA / RAIGA)"
+  venue: Texas Legislature Online
+  year: 2025
+  url: https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00149S.htm
+  first_mention_anchor: "Texas's RAIGA"
+  all_mentions: []
+
+- key: california-sb53
+  type: report
+  authors: California State Legislature
+  title: "SB 53 — Transparency in Frontier Artificial Intelligence Act"
+  venue: California Legislative Information
+  year: 2025
+  url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53
+  first_mention_anchor: "California's SB 53"
+  all_mentions: []
+
+- key: trump-eo-national-ai-framework-2025
+  type: report
+  authors: The White House
+  title: "Executive Order: Ensuring a National Policy Framework for Artificial Intelligence (Eliminating State Law Obstruction of National AI Policy)"
+  venue: whitehouse.gov — Presidential Actions
+  year: 2025
+  url: https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/
+  first_mention_anchor: "President Trump's December 2025 executive order \"Ensuring a National Policy Framework for AI\""
+  all_mentions:
+    - "Trump preemption order"
+    - "Trump executive order"
+    - "Trump administration's preemption order"
+
+- key: intl-ai-safety-report-2026
+  type: report
+  authors: Yoshua Bengio et al. (100+ independent experts, 30+ countries)
+  title: International AI Safety Report 2026
+  venue: International AI Safety Report (commissioned at AI Seoul / Bletchley)
+  year: 2026
+  url: https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026
+  first_mention_anchor: "2026 International AI Safety Report"
+  all_mentions:
+    - "2026 Safety Report"
+    - "2026 International AI Safety Report's"
+
+- key: bengio-yoshua
+  type: person
+  authors: Yoshua Bengio
+  title: Profile — Founder & Scientific Advisor, Mila; 2018 ACM Turing Award laureate
+  venue: yoshuabengio.org
+  year: 2026
+  url: https://yoshuabengio.org/en
+  first_mention_anchor: "Yoshua Bengio"
+  all_mentions: []
+
+- key: deloitte-state-of-ai-2026
+  type: report
+  authors: Deloitte
+  title: "State of AI in the Enterprise 2026: From Ambition to Activation"
+  venue: Deloitte
+  year: 2026
+  url: https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html
+  first_mention_anchor: "Deloitte State of AI 2026 survey"
+  all_mentions:
+    - "per Deloitte"
+
+- key: nist-ai-rmf
+  type: report
+  authors: National Institute of Standards and Technology (Elham Tabassi et al.)
+  title: "Artificial Intelligence Risk Management Framework (AI RMF 1.0)"
+  venue: "NIST AI 100-1"
+  year: 2023
+  url: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10
+  first_mention_anchor: "NIST AI Risk Management Framework"
+  all_mentions:
+    - "NIST AI RMF expansion"
+    - "NIST AI RMF"
+
+- key: nist-ci-profile-concept-note
+  type: report
+  authors: National Institute of Standards and Technology
+  title: "Concept Note: AI RMF Profile on Trustworthy AI in Critical Infrastructure"
+  venue: NIST
+  year: 2026
+  url: https://www.nist.gov/programs-projects/concept-note-ai-rmf-profile-trustworthy-ai-critical-infrastructure
+  first_mention_anchor: "April 2026 concept note for critical infrastructure AI profile"
+  all_mentions:
+    - "critical infrastructure profiles"
+
+- key: anthropic-rsp
+  type: report
+  authors: Anthropic
+  title: Responsible Scaling Policy
+  venue: anthropic.com
+  year: 2026
+  url: https://www.anthropic.com/responsible-scaling-policy
+  first_mention_anchor: "Anthropic's Responsible Scaling Policy (RSP) as industry template"
+  all_mentions: []
+
+- key: amodei-dario
+  type: person
+  authors: Dario Amodei
+  title: Profile — Co-founder and CEO, Anthropic
+  venue: darioamodei.com
+  year: 2026
+  url: https://www.darioamodei.com/
+  first_mention_anchor: "Dario Amodei"
+  all_mentions: []
+
+- key: acm-ustpc-algorithmic-principles
+  type: report
+  authors: ACM US Technology Policy Committee (USTPC) and Europe Technology Policy Committee
+  title: "Statement on Principles for Responsible Algorithmic Systems"
+  venue: ACM Global Technology Policy Council
+  year: 2022
+  url: https://www.acm.org/media-center/2022/october/tpc-statement-responsible-algorithmic-systems
+  first_mention_anchor: "ACM USTPC"
+  all_mentions: []
+
+- key: un-ohchr-ai-business-human-rights-2025
+  type: report
+  authors: UN Working Group on Business and Human Rights (OHCHR)
+  title: "A/HRC/59/53 — Artificial Intelligence Procurement and Deployment: Ensuring Alignment with the Guiding Principles on Business and Human Rights"
+  venue: Office of the UN High Commissioner for Human Rights (OHCHR)
+  year: 2025
+  url: https://www.ohchr.org/en/documents/thematic-reports/ahrc5953-artificial-intelligence-procurement-and-deployment-ensuring
+  first_mention_anchor: "UN AI human rights report (May 2025)"
+  all_mentions: []
+
+- key: eu-ai-office
+  type: organization
+  authors: European Commission (DG CNECT)
+  title: European AI Office
+  venue: Shaping Europe's Digital Future
+  year: 2024
+  url: https://digital-strategy.ec.europa.eu/en/policies/ai-office
+  first_mention_anchor: "EU AI Office"
+  all_mentions: []
+
+- key: ai-act-service-desk
+  type: organization
+  authors: European Commission — European AI Office
+  title: AI Act Service Desk & Single Information Platform
+  venue: ai-act-service-desk.ec.europa.eu
+  year: 2026
+  url: https://ai-act-service-desk.ec.europa.eu/en
+  first_mention_anchor: "ai-act-service-desk.ec.europa.eu"
+  all_mentions: []
+
+- key: nist-ai
+  type: organization
+  authors: National Institute of Standards and Technology
+  title: NIST Artificial Intelligence program
+  venue: nist.gov
+  year: 2026
+  url: https://www.nist.gov/artificial-intelligence
+  first_mention_anchor: "NIST AI team"
+  all_mentions:
+    - "nist.gov/ai"
+
+- key: berkman-klein-center
+  type: organization
+  authors: Berkman Klein Center for Internet & Society
+  title: Berkman Klein Center — Ethics and Governance of AI
+  venue: Harvard University
+  year: 2026
+  url: https://cyber.harvard.edu/
+  first_mention_anchor: "Berkman Klein Center (Harvard)"
+  all_mentions:
+    - "cyber.harvard.edu"
+
+- key: schneier-bruce
+  type: person
+  authors: Bruce Schneier
+  title: Profile — Fellow and Lecturer, Berkman Klein Center (Harvard)
+  venue: cyber.harvard.edu
+  year: 2026
+  url: https://cyber.harvard.edu/people/bschneier
+  first_mention_anchor: "Bruce Schneier"
+  all_mentions: []
+
+- key: sanders-nathan
+  type: person
+  authors: Nathan E. Sanders
+  title: Profile — Affiliate, Berkman Klein Center (Harvard)
+  venue: cyber.harvard.edu
+  year: 2026
+  url: https://cyber.harvard.edu/people/nathan-sanders
+  first_mention_anchor: "Nathan Sanders"
+  all_mentions: []
+
+- key: stanford-hai
+  type: organization
+  authors: Stanford Institute for Human-Centered AI
+  title: Stanford HAI
+  venue: hai.stanford.edu
+  year: 2026
+  url: https://hai.stanford.edu/
+  first_mention_anchor: "Stanford HAI"
+  all_mentions:
+    - "hai.stanford.edu"
+
+- key: stanford-hai-ai-index
+  type: report
+  authors: Stanford Institute for Human-Centered AI
+  title: "AI Index Report — Policy and Governance chapter"
+  venue: Stanford HAI
+  year: 2025
+  url: https://hai.stanford.edu/ai-index/2025-ai-index-report/policy-and-governance
+  first_mention_anchor: "AI Index governance metrics"
+  all_mentions: []
+
+- key: iapp-ai-tracker
+  type: organization
+  authors: International Association of Privacy Professionals (IAPP)
+  title: Global AI Law and Policy Tracker
+  venue: iapp.org
+  year: 2026
+  url: https://iapp.org/resources/article/global-ai-legislation-tracker
+  first_mention_anchor: "IAPP tracker"
+  all_mentions:
+    - "IAPP"
+    - "iapp.org"
+
+- key: accenture-responsible-ai
+  type: organization
+  authors: Accenture
+  title: Responsible AI Governance Consulting & Solutions
+  venue: accenture.com
+  year: 2026
+  url: https://www.accenture.com/us-en/services/data-ai/responsible-ai
+  first_mention_anchor: "Accenture Responsible AI practice"
+  all_mentions: []
+
+- key: gartner-agentic-2028
+  type: report
+  authors: Gartner
+  title: "Agentic AI forecast — 15% of day-to-day work decisions autonomous by 2028"
+  venue: Gartner Newsroom (press release, 25 June 2025)
+  year: 2025
+  url: https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027
+  first_mention_anchor: "Gartner: 15% of daily decisions autonomous by 2028"
+  all_mentions: []
+
+- key: brussels-effect-bradford
+  type: article
+  authors: Anu Bradford
+  title: "The Brussels Effect: How the European Union Rules the World"
+  venue: Oxford University Press
+  year: 2020
+  url: https://global.oup.com/academic/product/the-brussels-effect-9780190088583
+  first_mention_anchor: "Brussels Effect"
+  all_mentions: []
+
+- key: frontier-ai-safety-frameworks-metr
+  type: report
+  authors: METR
+  title: "Common Elements of Frontier AI Safety Policies (December 2025 Update)"
+  venue: METR
+  year: 2025
+  url: https://metr.org/blog/2025-12-09-common-elements-of-frontier-ai-safety-policies/
+  first_mention_anchor: "Frontier AI Safety Frameworks"
+  all_mentions:
+    - "public safety frameworks"

@@ -1,0 +1,236 @@
+- key: mckinsey-state-of-ai-2025
+  type: report
+  authors: McKinsey & Company (QuantumBlack)
+  title: The state of AI — How organizations are rewiring to capture value
+  venue: McKinsey Global Survey on AI
+  year: 2025
+  url: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+  first_mention_anchor: "McKinsey State of AI 2025"
+  all_mentions: []
+
+- key: pertama-ai-failure-2026
+  type: report
+  authors: Pertama Partners
+  title: AI Project Failure Statistics 2026 — Why 80% of AI Projects Fail
+  venue: Pertama Partners Insights
+  year: 2026
+  url: https://www.pertamapartners.com/insights/ai-project-failure-statistics-2026
+  first_mention_anchor: "Pertama Partners 2026"
+  all_mentions: []
+
+- key: bcg-ai-impact-gap-2025
+  type: report
+  authors: Boston Consulting Group
+  title: From Potential to Profit — Closing the AI Impact Gap (AI Radar 2025)
+  venue: BCG Publications
+  year: 2025
+  url: https://www.bcg.com/publications/2025/closing-the-ai-impact-gap
+  first_mention_anchor: "BCG Closing the AI Impact Gap 2025"
+  all_mentions:
+    - "BCG impact gap research"
+
+- key: stanford-enterprise-ai-playbook-2026
+  type: report
+  authors: Pereira, Graylin, Brynjolfsson
+  title: The Enterprise AI Playbook — Lessons from 51 Successful Deployments
+  venue: Stanford Digital Economy Lab
+  year: 2026
+  url: https://digitaleconomy.stanford.edu/publication/enterprise-ai-playbook/
+  first_mention_anchor: "Stanford Enterprise AI Playbook (Brynjolfsson et al., March 2026)"
+  all_mentions:
+    - "Stanford Enterprise AI Playbook (March 2026)"
+    - "Stanford Enterprise AI Playbook"
+    - "Enterprise AI Playbook"
+
+- key: deloitte-state-of-ai-enterprise-2026
+  type: report
+  authors: Deloitte AI Institute
+  title: State of AI in the Enterprise — 2026 AI Report (From Ambition to Activation)
+  venue: Deloitte Insights
+  year: 2026
+  url: https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html
+  first_mention_anchor: "Deloitte State of AI in the Enterprise 2026 survey"
+  all_mentions:
+    - "State of AI in the Enterprise (annual, 3,235+ leaders)"
+
+- key: gartner-agentic-ai-2025
+  type: report
+  authors: Gartner
+  title: Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027
+  venue: Gartner Press Release (paywalled landing)
+  year: 2025
+  url: https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027
+  first_mention_anchor: "Gartner projects 15% of day-to-day work decisions will be made autonomously by 2028"
+  all_mentions: []
+
+- key: accenture-tech-vision-2025
+  type: report
+  authors: Accenture
+  title: Technology Vision 2025 — AI, A Declaration of Autonomy
+  venue: Accenture Research
+  year: 2025
+  url: https://www.accenture.com/us-en/insights/technology/technology-trends-2025
+  first_mention_anchor: "Accenture Technology Vision 2025"
+  all_mentions:
+    - "Accenture Tech Vision"
+
+- key: deloitte-tech-trends-2026
+  type: report
+  authors: Deloitte
+  title: Tech Trends 2026 — Agentic AI Strategy
+  venue: Deloitte Insights
+  year: 2026
+  url: https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/agentic-ai-strategy.html
+  first_mention_anchor: "Deloitte Tech Trends 2026"
+  all_mentions:
+    - "Tech Trends"
+
+- key: mit-nanda-genai-divide-2025
+  type: report
+  authors: Challapally, Pease, Raskar, Chari
+  title: The GenAI Divide — State of AI in Business 2025
+  venue: MIT NANDA / MIT Sloan
+  year: 2025
+  url: https://nanda.media.mit.edu/ai_report_2025.pdf
+  first_mention_anchor: "MIT Sloan 2025"
+  all_mentions:
+    - "MIT Sloan"
+
+- key: accenture-pulse-of-change-2026
+  type: report
+  authors: Accenture
+  title: Pulse of Change — Business and Technology Trends Index
+  venue: Accenture Research
+  year: 2026
+  url: https://www.accenture.com/us-en/insights/pulse-of-change
+  first_mention_anchor: "Accenture Pulse of Change Index 2026"
+  all_mentions: []
+
+- key: bcg-200b-agentic-ai-2026
+  type: report
+  authors: Boston Consulting Group
+  title: The $200 Billion Agentic AI Opportunity for Tech Service Providers
+  venue: BCG Publications
+  year: 2026
+  url: https://www.bcg.com/publications/2026/the-200-billion-dollar-ai-opportunity-in-tech-services
+  first_mention_anchor: "BCG $200B agentic AI opportunity in tech services (2026)"
+  all_mentions:
+    - "$200B opportunity"
+
+- key: writer-enterprise-ai-2026
+  type: report
+  authors: WRITER & Workplace Intelligence
+  title: Enterprise AI Adoption 2026 — AI adoption is tearing companies apart
+  venue: writer.com
+  year: 2026
+  url: https://writer.com/blog/enterprise-ai-adoption-2026/
+  first_mention_anchor: "Writer, 2026"
+  all_mentions: []
+
+- key: brynjolfsson-turing-trap-2022
+  type: paper
+  authors: Erik Brynjolfsson
+  title: The Turing Trap — The Promise & Peril of Human-Like Artificial Intelligence
+  venue: Daedalus / arXiv:2201.04200
+  year: 2022
+  url: https://arxiv.org/abs/2201.04200
+  first_mention_anchor: "\"The Turing Trap\""
+  all_mentions: []
+
+- key: stanford-digital-economy-lab
+  type: organization
+  authors: Stanford University
+  title: Digital Economy Lab
+  venue: Stanford Institute for Human-Centered AI (HAI)
+  url: https://digitaleconomy.stanford.edu/
+  first_mention_anchor: "Stanford Digital Economy Lab"
+  all_mentions: []
+
+- key: brynjolfsson-person
+  type: person
+  authors: Erik Brynjolfsson
+  title: Director, Stanford Digital Economy Lab; Senior Fellow, Stanford HAI
+  venue: Stanford University
+  url: https://www.brynjolfsson.com/
+  first_mention_anchor: "**Erik Brynjolfsson**"
+  all_mentions: []
+
+- key: davenport-person
+  type: person
+  authors: Thomas H. Davenport
+  title: President's Distinguished Professor of IT and Management
+  venue: Babson College
+  url: https://www.babson.edu/about/our-leaders-and-scholars/faculty-and-academic-divisions/faculty-profiles/thomas-davenport.php
+  first_mention_anchor: "**Thomas Davenport**"
+  all_mentions: []
+
+- key: satya-nadella-person
+  type: person
+  authors: Satya Nadella
+  title: Chairman and CEO, Microsoft — remarks on $80B AI infrastructure investment
+  venue: CNBC / Microsoft earnings (paywalled)
+  year: 2025
+  url: https://www.cnbc.com/2025/02/24/microsoft-reiterates-plan-to-invest-80-billion-in-ai-.html
+  first_mention_anchor: "**Satya Nadella / Microsoft enterprise AI**"
+  all_mentions: []
+
+- key: bcg-henderson-institute-org
+  type: organization
+  authors: BCG Henderson Institute
+  title: BCG's strategy think tank
+  venue: Boston Consulting Group
+  url: https://bcghendersoninstitute.com/
+  first_mention_anchor: "**BCG Henderson Institute**"
+  all_mentions: []
+
+- key: deloitte-ai-institute-org
+  type: organization
+  authors: Deloitte AI Institute
+  title: Deloitte's AI research and practice hub
+  venue: Deloitte
+  url: https://www.deloitte.com/us/en/services/consulting/content/advancing-human-ai-collaboration.html
+  first_mention_anchor: "**Deloitte AI Institute**"
+  all_mentions: []
+
+- key: moderna-hr-it-merger
+  type: article
+  authors: FlexOS
+  title: Moderna Merges HR & IT — Chief People & Digital Technology manages 3,000 AIs and 5,800 humans
+  venue: flexos.work
+  year: 2025
+  url: https://www.flexos.work/learn/moderna-merges-hr-it-new-chief-manages-3000-ai-and-5800-humans
+  first_mention_anchor: "Moderna combined HR and IT under a single Chief People and Digital Technology Officer"
+  all_mentions:
+    - "**Moderna (Daniel Skovronsky, CPDT Officer)**"
+    - "Moderna merged HR and IT leadership under a single C-suite role"
+    - "follow Moderna's pattern"
+
+- key: idc-futurescape-2026
+  type: report
+  authors: IDC
+  title: FutureScape 2026 Predictions — The Rise of Agentic AI and a Turning Point in Enterprise Transformation
+  venue: IDC (paywalled landing)
+  year: 2025
+  url: https://my.idc.com/getdoc.jsp?containerId=prUS53883425
+  first_mention_anchor: "**IDC FutureScape**"
+  all_mentions: []
+
+- key: swe-bench
+  type: benchmark
+  authors: Jimenez, Yang, Wettig, Lieret, Yao, Narasimhan, Press
+  title: SWE-bench — Can Language Models Resolve Real-World GitHub Issues?
+  venue: Princeton University / swebench.com
+  year: 2023
+  url: https://www.swebench.com/
+  first_mention_anchor: "SWE-bench as proxy"
+  all_mentions: []
+
+- key: eu-ai-act-2024
+  type: organization
+  authors: European Parliament and Council
+  title: Regulation (EU) 2024/1689 — Artificial Intelligence Act
+  venue: EUR-Lex (Official Journal)
+  year: 2024
+  url: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
+  first_mention_anchor: "EU AI Act"
+  all_mentions: []
