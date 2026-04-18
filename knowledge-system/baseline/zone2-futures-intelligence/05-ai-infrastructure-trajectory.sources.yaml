@@ -1,0 +1,294 @@
+- key: epoch-compute-4-5x
+  type: report
+  authors: Epoch AI
+  title: Training compute of frontier AI models grows by 4-5x per year
+  venue: Epoch AI blog
+  year: 2024
+  url: https://epoch.ai/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year
+  first_mention_anchor: "Epoch AI"
+  all_mentions:
+    - "epochai.org"
+
+- key: epoch-model-counts
+  type: report
+  authors: Epoch AI
+  title: How many AI models will exceed compute thresholds?
+  venue: Epoch AI blog
+  year: 2025
+  url: https://epoch.ai/blog/model-counts-compute-thresholds
+  first_mention_anchor: "The number of frontier models exceeding 10^26 FLOP is projected to rise from 10 in 2026 to 80 by 2028 and 200+ by 2030"
+  all_mentions: []
+
+- key: epoch-efficiency-3x
+  type: report
+  authors: Epoch AI
+  title: Algorithmic progress in language models
+  venue: Epoch AI
+  year: 2024
+  url: https://epoch.ai/blog/algorithmic-progress-in-language-models
+  first_mention_anchor: "Pre-training compute efficiency improves at ~3x per year"
+  all_mentions: []
+
+- key: epoch-hardware-price-perf
+  type: report
+  authors: Epoch AI
+  title: Performance per dollar improves around 30% each year
+  venue: Epoch AI data insights
+  year: 2025
+  url: https://epoch.ai/data-insights/price-performance-hardware/
+  first_mention_anchor: "Hardware performance-per-dollar improves ~40% per year across 20+ AI accelerator generations"
+  all_mentions: []
+
+- key: epoch-trends
+  type: report
+  authors: Epoch AI
+  title: Trends in Artificial Intelligence
+  venue: Epoch AI
+  year: 2026
+  url: https://epoch.ai/trends
+  first_mention_anchor: "Most rigorous compute trend tracking"
+  all_mentions: []
+
+- key: epoch-llm-inference-prices
+  type: report
+  authors: Epoch AI
+  title: LLM inference prices have fallen rapidly but unequally across tasks
+  venue: Epoch AI data insights
+  year: 2025
+  url: https://epoch.ai/data-insights/llm-inference-price-trends
+  first_mention_anchor: "GPT-4 equivalent performance now costs ~$0.40 per million tokens, down from ~$20 in late 2022"
+  all_mentions: []
+
+- key: deepseek-r1
+  type: paper
+  authors: DeepSeek-AI
+  title: "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+  venue: arXiv:2501.12948
+  year: 2025
+  url: https://arxiv.org/abs/2501.12948
+  first_mention_anchor: "DeepSeek R1 (January 2026)"
+  all_mentions:
+    - "DeepSeek R1"
+    - "DeepSeek's January 2026 paper"
+
+- key: deepseek-v3
+  type: paper
+  authors: DeepSeek-AI
+  title: DeepSeek-V3 Technical Report
+  venue: arXiv:2412.19437
+  year: 2024
+  url: https://arxiv.org/abs/2412.19437
+  first_mention_anchor: "trained for reported ~$5.6M"
+  all_mentions: []
+
+- key: deepseek-team
+  type: person
+  authors: DeepSeek
+  title: DeepSeek
+  venue: deepseek.com
+  year: 2026
+  url: https://www.deepseek.com/
+  first_mention_anchor: "DeepSeek team"
+  all_mentions:
+    - "DeepSeek's MoE approach"
+    - "DeepSeek's approach"
+
+- key: nvidia-rubin-launch
+  type: report
+  authors: NVIDIA
+  title: NVIDIA Kicks Off the Next Generation of AI With Rubin — Six New Chips, One Incredible AI Supercomputer
+  venue: NVIDIA Newsroom (CES 2026)
+  year: 2026
+  url: https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer
+  first_mention_anchor: "NVIDIA Vera Rubin platform (H2 2026):"
+  all_mentions:
+    - "Vera Rubin"
+    - "Rubin Ultra"
+    - "NVIDIA's roadmap (Blackwell → Rubin → Feynman)"
+
+- key: nvidia-blackwell-inference
+  type: article
+  authors: NVIDIA
+  title: Leading Inference Providers Achieve Lowest Token Cost With Open Source Models on NVIDIA Blackwell
+  venue: NVIDIA Blog
+  year: 2025
+  url: https://blogs.nvidia.com/blog/inference-open-source-models-blackwell-reduce-cost-per-token/
+  first_mention_anchor: "NVIDIA reports leading inference providers cutting cost-per-token by up to 10x using optimized stacks on Blackwell"
+  all_mentions: []
+
+- key: jensen-huang
+  type: person
+  authors: Jensen Huang
+  title: "Jensen Huang (CEO, NVIDIA) — GTC keynotes and earnings commentary"
+  venue: NVIDIA
+  year: 2026
+  url: https://nvidianews.nvidia.com/
+  first_mention_anchor: "Jensen Huang / NVIDIA"
+  all_mentions: []
+
+- key: iea-energy-and-ai
+  type: report
+  authors: International Energy Agency
+  title: Energy and AI (World Energy Outlook Special Report)
+  venue: IEA
+  year: 2025
+  url: https://www.iea.org/reports/energy-and-ai
+  first_mention_anchor: "IEA projects data center electricity consumption doubling by 2030, with AI-focused centers tripling"
+  all_mentions:
+    - "IEA"
+    - "IEA (International Energy Agency)"
+
+- key: iea-dc-surged-2025
+  type: report
+  authors: International Energy Agency
+  title: Data centre electricity use surged in 2025, even with tightening bottlenecks driving a scramble for solutions
+  venue: IEA News
+  year: 2025
+  url: https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions
+  first_mention_anchor: "Data center electricity consumption surged 17% in 2025 (IEA)"
+  all_mentions: []
+
+- key: mckinsey-cost-of-compute
+  type: report
+  authors: McKinsey & Company
+  title: The cost of compute — A $7 trillion race to scale data centers
+  venue: McKinsey (site returns 000 to curl; reachable in browser)
+  year: 2025
+  url: https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-cost-of-compute-a-7-trillion-dollar-race-to-scale-data-centers
+  first_mention_anchor: "McKinsey forecasts $5.2 trillion cumulative AI data center capex by 2030 for 156GW of capacity"
+  all_mentions: []
+
+- key: microsoft-80b-capex
+  type: article
+  authors: Brad Smith
+  title: The golden opportunity for American AI
+  venue: Microsoft On the Issues
+  year: 2025
+  url: https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/
+  first_mention_anchor: "Microsoft committed $80B in FY2025 for data center expansion"
+  all_mentions: []
+
+- key: amazon-capex-geekwire
+  type: article
+  authors: Todd Bishop
+  title: Amazon on pace for $100B+ in yearly capex; Jassy expects cost efficiencies to drive AI demand
+  venue: GeekWire (site returns 403 to curl; reachable in browser)
+  year: 2025
+  url: https://www.geekwire.com/2025/amazon-on-pace-for-100b-in-yearly-capex-jassy-sees-cost-efficiencies-driving-long-term-ai-demand/
+  first_mention_anchor: "Amazon allocated $86B for AI infrastructure"
+  all_mentions: []
+
+- key: forrester-predictions-2026
+  type: report
+  authors: Forrester Research
+  title: "Predictions 2026: AI Agents, Changing Business Models, And Workplace Culture Impact Enterprise Software"
+  venue: Forrester
+  year: 2025
+  url: https://www.forrester.com/blogs/predictions-2026-ai-agents-changing-business-models-and-workplace-culture-impact-enterprise-software/
+  first_mention_anchor: "Forrester predicts 30% of enterprise app vendors will launch MCP servers in 2026"
+  all_mentions:
+    - "Forrester"
+
+- key: anthropic-mcp-launch
+  type: article
+  authors: Anthropic
+  title: Introducing the Model Context Protocol
+  venue: Anthropic News
+  year: 2024
+  url: https://www.anthropic.com/news/model-context-protocol
+  first_mention_anchor: "November 2024: Anthropic releases MCP as open standard"
+  all_mentions: []
+
+- key: linux-foundation-aaif
+  type: report
+  authors: Linux Foundation
+  title: Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)
+  venue: Linux Foundation Press
+  year: 2025
+  url: https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation
+  first_mention_anchor: "December 2025: Anthropic donates MCP to Linux Foundation's Agentic AI Foundation (AAIF), co-founded with Block and OpenAI, supported by Google, Microsoft, AWS, Cloudflare"
+  all_mentions:
+    - "Linux Foundation"
+    - "MCP / AAIF (Linux Foundation)"
+
+- key: mcp-spec
+  type: organization
+  authors: Model Context Protocol
+  title: Model Context Protocol — Specification & Ecosystem
+  venue: modelcontextprotocol.io
+  year: 2026
+  url: https://modelcontextprotocol.io/
+  first_mention_anchor: "The Model Context Protocol (MCP)"
+  all_mentions:
+    - "MCP"
+
+- key: a2a-protocol
+  type: article
+  authors: Google Developers
+  title: Announcing the Agent2Agent Protocol (A2A)
+  venue: Google Developers Blog
+  year: 2025
+  url: https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/
+  first_mention_anchor: "Google's A2A (Agent-to-Agent, 150+ supporting organizations)"
+  all_mentions: []
+
+- key: china-nuclear-10-reactors
+  type: article
+  authors: Nuclear Engineering International
+  title: China approves 10 new reactors
+  venue: Nuclear Engineering International
+  year: 2025
+  url: https://www.neimagazine.com/news/china-approves-10-new-reactors/
+  first_mention_anchor: "China approved 10 new nuclear reactors in April 2025 ($27.45B investment), targeting 200GW nuclear capacity by 2030"
+  all_mentions: []
+
+- key: qwen3-launch
+  type: article
+  authors: Qwen Team (Alibaba Cloud)
+  title: "Qwen3: Think Deeper, Act Faster"
+  venue: Qwen Blog
+  year: 2025
+  url: https://qwenlm.github.io/blog/qwen3/
+  first_mention_anchor: "Qwen/Alibaba (broadest open-source benchmark leader with Qwen 3)"
+  all_mentions: []
+
+- key: dylan-patel
+  type: person
+  authors: Dylan Patel
+  title: Dylan Patel — Founder, SemiAnalysis
+  venue: SemiAnalysis
+  year: 2026
+  url: https://semianalysis.com/
+  first_mention_anchor: "Dylan Patel / Semianalysis"
+  all_mentions: []
+
+- key: semianalysis-newsletter
+  type: newsletter
+  authors: Dylan Patel
+  title: SemiAnalysis
+  venue: SemiAnalysis Substack
+  year: 2026
+  url: https://newsletter.semianalysis.com/
+  first_mention_anchor: "Deepest independent semiconductor + AI infrastructure analysis"
+  all_mentions: []
+
+- key: ai-2027
+  type: report
+  authors: Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland
+  title: AI 2027
+  venue: AI Futures Project
+  year: 2025
+  url: https://ai-2027.com/
+  first_mention_anchor: "AI 2027 team"
+  all_mentions:
+    - "ai-2027.com"
+
+- key: delloro-group
+  type: organization
+  authors: Dell'Oro Group
+  title: Dell'Oro Group — Data Center Infrastructure Market Research
+  venue: Dell'Oro Group
+  year: 2026
+  url: https://www.delloro.com/market-research/data-center-infrastructure/
+  first_mention_anchor: "Dell'Oro Group"
+  all_mentions: []

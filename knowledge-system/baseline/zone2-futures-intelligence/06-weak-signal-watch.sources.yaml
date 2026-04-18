@@ -1,0 +1,306 @@
+- key: sciencedaily-neuromorphic-2026
+  type: article
+  authors: ScienceDaily
+  title: Brain inspired machines are better at math than expected
+  venue: ScienceDaily (Sandia/Intel Loihi 2)
+  year: 2026
+  url: https://www.sciencedaily.com/releases/2026/02/260213223923.htm
+  first_mention_anchor: ScienceDaily
+  all_mentions: []
+
+- key: infoworld-2026-breakthroughs
+  type: article
+  authors: InfoWorld
+  title: 6 AI breakthroughs that will define 2026
+  venue: InfoWorld
+  year: 2026
+  url: https://www.infoworld.com/article/4108092/6-ai-breakthroughs-that-will-define-2026.html
+  first_mention_anchor: InfoWorld (2026 breakthroughs roundup)
+  all_mentions:
+    - InfoWorld
+
+- key: sciencedaily-ai-talks-to-itself-2026
+  type: article
+  authors: ScienceDaily (OIST research coverage)
+  title: AI that talks to itself learns faster and smarter
+  venue: ScienceDaily
+  year: 2026
+  url: https://www.sciencedaily.com/releases/2026/01/260127112130.htm
+  first_mention_anchor: University of California AI research (2026), research papers
+  all_mentions:
+    - UC research
+
+- key: mit-tr-whats-next-2026
+  type: article
+  authors: MIT Technology Review
+  title: What's next for AI in 2026
+  venue: MIT Technology Review
+  year: 2026
+  url: https://www.technologyreview.com/2026/01/05/1130662/whats-next-for-ai-in-2026/
+  first_mention_anchor: MIT Technology Review ("What's next for AI in 2026")
+  all_mentions:
+    - MIT Technology Review
+
+- key: scmp-deepseek-export-controls
+  type: article
+  authors: South China Morning Post
+  title: Coverage of DeepSeek R1 and Chinese AI under US export controls
+  venue: South China Morning Post
+  year: 2025
+  url: TODO
+  first_mention_anchor: South China Morning Post
+  all_mentions: []
+
+- key: fortune-morgan-stanley-ai-leap-2026
+  type: article
+  authors: Fortune (citing Morgan Stanley research)
+  title: "Morgan Stanley warns an AI breakthrough is coming in 2026 \u2014 and most of the world isn't ready"
+  venue: Fortune (HTTP 403 to HEAD; content verified via search)
+  year: 2026
+  url: https://fortune.com/2026/03/13/elon-musk-morgan-stanley-ai-leap-2026/
+  first_mention_anchor: Fortune, March 2026, Morgan Stanley research
+  all_mentions:
+    - Morgan Stanley
+
+- key: brynjolfsson-canaries-2025
+  type: paper
+  authors: Brynjolfsson, Chandar, Chen
+  title: "Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence"
+  venue: Stanford Digital Economy Lab
+  year: 2025
+  url: https://digitaleconomy.stanford.edu/wp-content/uploads/2025/08/Canaries_BrynjolfssonChandarChen.pdf
+  first_mention_anchor: Brynjolfsson research (Fortune 2026)
+  all_mentions: []
+
+- key: hbr-entry-level-ai-2026
+  type: article
+  authors: Harvard Business Review
+  title: AI and the Entry-Level Job
+  venue: Harvard Business Review, March–April 2026 issue
+  year: 2026
+  url: https://hbr.org/2026/03/ai-and-the-entry-level-job
+  first_mention_anchor: HBR March 2026
+  all_mentions: []
+
+- key: writer-ai-adoption-survey-2026
+  type: report
+  authors: Writer
+  title: Key findings from our 2026 AI adoption survey
+  venue: Writer (2,400 knowledge workers incl. 1,200 C-suite; fieldwork Dec 2025–Jan 2026)
+  year: 2026
+  url: https://writer.com/blog/ai-adoption-survey-2026/
+  first_mention_anchor: Writer survey (54% C-suite)
+  all_mentions: []
+
+- key: intl-ai-safety-report-2026
+  type: report
+  authors: Bengio et al.
+  title: International AI Safety Report 2026
+  venue: International AI Safety Report (AISI-convened panel)
+  year: 2026
+  url: https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026
+  first_mention_anchor: 2026 International AI Safety Report (Bengio et al.)
+  all_mentions: []
+
+- key: zvi-claude-mythos-2
+  type: newsletter
+  authors: Zvi Mowshowitz
+  title: "Claude Mythos #2: Cybersecurity and Project Glasswing"
+  venue: Don't Worry About the Vase (Substack)
+  year: 2026
+  url: https://thezvi.substack.com/p/claude-mythos-2-cybersecurity-and
+  first_mention_anchor: "\"Claude Mythos #2: Cybersecurity and Project Glasswing\""
+  all_mentions:
+    - Claude Mythos #2
+
+- key: zvi-claude-mythos-3
+  type: newsletter
+  authors: Zvi Mowshowitz
+  title: "Claude Mythos #3: Capabilities and Additions"
+  venue: Don't Worry About the Vase (Substack)
+  year: 2026
+  url: https://thezvi.substack.com/p/claude-mythos-3-capabilities-and
+  first_mention_anchor: "\"Claude Mythos #3: Capabilities and Additions\""
+  all_mentions: []
+
+- key: stratechery-openai-memos-2026-04-14
+  type: newsletter
+  authors: Ben Thompson
+  title: OpenAI's Memos, Frontier, Amazon and Anthropic
+  venue: Stratechery
+  year: 2026
+  url: https://stratechery.com/2026/openais-memos-frontier-amazon-and-anthropic/
+  first_mention_anchor: "Ben Thompson, Stratechery \"OpenAI's Memos, Frontier, Amazon and Anthropic\" (Apr 14)"
+  all_mentions:
+    - OpenAI memos Apr 14
+
+- key: the-batch-issue-348
+  type: newsletter
+  authors: DeepLearning.AI (Andrew Ng)
+  title: "Anthropic's Claude Mythos Problem, Dark DNA Unveiled, Pitfalls for Assistive Models, and more…"
+  venue: The Batch, Issue 348
+  year: 2026
+  url: https://www.deeplearning.ai/the-batch/issue-348/
+  first_mention_anchor: "The Batch, \"Anthropic's Claude Mythos Problem\" (Apr 10)"
+  all_mentions:
+    - The Batch
+
+- key: import-ai-453
+  type: newsletter
+  authors: Jack Clark
+  title: "Import AI 453: Breaking AI agents; MirrorCode; and ten views on gradual disempowerment"
+  venue: Import AI (Substack)
+  year: 2026
+  url: https://importai.substack.com/p/import-ai-453-breaking-ai-agents
+  first_mention_anchor: "Jack Clark, Import AI 453 \"Breaking AI agents; MirrorCode; and ten views on gradual disempowerment\""
+  all_mentions:
+    - Import AI 453
+    - Import AI (Jack Clark)
+
+- key: metr-epoch-mirrorcode
+  type: benchmark
+  authors: METR + Epoch AI
+  title: MirrorCode (autonomous-reimplementation benchmark)
+  venue: METR / Epoch AI
+  year: 2026
+  url: TODO
+  first_mention_anchor: benchmark by METR + Epoch AI
+  all_mentions:
+    - METR/Epoch
+
+- key: zvi-ai-163-mythos-quest
+  type: newsletter
+  authors: Zvi Mowshowitz
+  title: "AI #163: Mythos Quest"
+  venue: Don't Worry About the Vase (Substack)
+  year: 2026
+  url: https://thezvi.substack.com/p/ai-163-mythos-quest
+  first_mention_anchor: "Zvi Mowshowitz, \"AI #163: Mythos Quest\""
+  all_mentions: []
+
+- key: gradual-disempowerment-paper
+  type: paper
+  authors: Kulveit, Douglas, Ammann, Turan, Krueger, Duvenaud
+  title: "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development"
+  venue: arXiv:2501.16946
+  year: 2025
+  url: https://arxiv.org/abs/2501.16946
+  first_mention_anchor: gradual-disempowerment.ai
+  all_mentions:
+    - Gradual Disempowerment framework
+    - "\"gradual disempowerment\""
+
+- key: anthropic-emotion-concepts-2026
+  type: paper
+  authors: Anthropic Interpretability Team
+  title: Emotion Concepts and their Function in a Large Language Model
+  venue: transformer-circuits.pub
+  year: 2026
+  url: https://transformer-circuits.pub/2026/emotions/index.html
+  first_mention_anchor: Anthropic research
+  all_mentions:
+    - Anthropic reports
+
+- key: goldman-ai-labor-2026
+  type: report
+  authors: Goldman Sachs (Elsie Peng)
+  title: Goldman Sachs AI labor-market impact estimates (~25K/month payroll drag; +0.16pp unemployment)
+  venue: Fortune coverage of Goldman Sachs research
+  year: 2026
+  url: https://fortune.com/2026/04/06/ai-tech-displacement-effect-gen-z-16000-jobs-per-month/
+  first_mention_anchor: Goldman Sachs estimates
+  all_mentions:
+    - Goldman Sachs
+    - Goldman
+
+- key: mollick-claude-dispatch-2026
+  type: newsletter
+  authors: Ethan Mollick
+  title: Claude Dispatch and the Power of Interfaces
+  venue: One Useful Thing (Substack)
+  year: 2026
+  url: https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of
+  first_mention_anchor: "\"Claude Dispatch and the Power of Interfaces\""
+  all_mentions: []
+
+- key: stratechery-nyt-ceo-2026-04-10
+  type: newsletter
+  authors: Ben Thompson
+  title: An Interview with New York Times CEO Meredith Kopit Levien About Betting on Humans With Expertise
+  venue: Stratechery
+  year: 2026
+  url: https://stratechery.com/2026/an-interview-with-new-york-times-ceo-meredith-kopit-levien-about-betting-on-humans-with-expertise/
+  first_mention_anchor: NYT CEO interview Apr 10
+  all_mentions: []
+
+- key: stratechery-amazon-globalstar-2026-04-15
+  type: newsletter
+  authors: Ben Thompson
+  title: Amazon Buys Globalstar, Delta to Add Leo, The Apple Angle
+  venue: Stratechery
+  year: 2026
+  url: https://stratechery.com/2026/amazon-buys-globalstar-delta-to-add-leo-the-apple-angle/
+  first_mention_anchor: Amazon/Globalstar Apr 15
+  all_mentions: []
+
+- key: anthropic-project-glasswing
+  type: organization
+  authors: Anthropic
+  title: "Project Glasswing: Securing critical software for the AI era"
+  venue: anthropic.com/glasswing
+  year: 2026
+  url: https://www.anthropic.com/glasswing
+  first_mention_anchor: Project Glasswing
+  all_mentions: []
+
+- key: jack-clark-importai-homepage
+  type: person
+  authors: Jack Clark
+  title: Import AI (author homepage)
+  venue: jack-clark.net
+  year: 2026
+  url: https://jack-clark.net/
+  first_mention_anchor: jack-clark.net/2026/04/13/
+  all_mentions:
+    - Jack Clark
+
+- key: zvi-mowshowitz-homepage
+  type: person
+  authors: Zvi Mowshowitz
+  title: Don't Worry About the Vase (author homepage)
+  venue: thezvi.substack.com
+  year: 2026
+  url: https://thezvi.substack.com/
+  first_mention_anchor: Don't Worry About the Vase (Zvi Mowshowitz)
+  all_mentions:
+    - Zvi Mowshowitz
+
+- key: ben-thompson-stratechery
+  type: person
+  authors: Ben Thompson
+  title: Stratechery (author homepage)
+  venue: stratechery.com
+  year: 2026
+  url: https://stratechery.com/
+  first_mention_anchor: Stratechery (Ben Thompson)
+  all_mentions: []
+
+- key: ethan-mollick-oneusefulthing
+  type: person
+  authors: Ethan Mollick
+  title: One Useful Thing (author homepage)
+  venue: oneusefulthing.org
+  year: 2026
+  url: https://www.oneusefulthing.org/
+  first_mention_anchor: Ethan Mollick
+  all_mentions: []
+
+- key: deeplearning-ai-the-batch
+  type: organization
+  authors: DeepLearning.AI
+  title: The Batch (newsletter homepage)
+  venue: deeplearning.ai
+  year: 2026
+  url: https://www.deeplearning.ai/the-batch/
+  first_mention_anchor: The Batch (Andrew Ng / DeepLearning.AI)
+  all_mentions: []

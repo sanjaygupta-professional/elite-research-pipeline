@@ -1,0 +1,202 @@
+- key: stanford-enterprise-ai-playbook
+  type: report
+  authors: Brynjolfsson, Andrew Chin, et al.
+  title: The Enterprise AI Playbook — Lessons from 51 Successful Developments
+  venue: Stanford Digital Economy Lab
+  year: 2024
+  url: https://digitaleconomy.stanford.edu/publication/enterprise-ai-playbook/
+  first_mention_anchor: "Stanford's Enterprise AI Playbook"
+  all_mentions: []
+
+- key: brynjolfsson-canaries-2025
+  type: paper
+  authors: Brynjolfsson, Chandar, Chen
+  title: Canaries in the Coal Mine? Six Facts about the Recent Early-Career Employment Effects of Generative AI
+  venue: Stanford Digital Economy Lab
+  year: 2025
+  url: https://digitaleconomy.stanford.edu/wp-content/uploads/2025/08/Canaries_BrynjolfssonChandarChen.pdf
+  first_mention_anchor: "13% relative decline, Brynjolfsson"
+  all_mentions: []
+
+- key: pwc-ai-jobs-barometer-2025
+  type: report
+  authors: PwC
+  title: 2025 Global AI Jobs Barometer
+  venue: PwC
+  year: 2025
+  url: https://www.pwc.com/gx/en/services/ai/ai-jobs-barometer.html
+  first_mention_anchor: "56% wage premium for AI-skilled workers (PwC)"
+  all_mentions: []
+
+- key: bearingpoint-middle-managers-2025
+  type: report
+  authors: BearingPoint
+  title: From Fear to Empowerment — Middle Managers as Catalysts in AI-Driven Transformation
+  venue: BearingPoint
+  year: 2025
+  url: https://www.bearingpoint.com/en/about-us/news-and-media/press-releases/middle-managers-are-the-key-to-ai-driven-transformation/
+  first_mention_anchor: "43% of standard managerial tasks are automatable by GenAI (BearingPoint, Category 03)"
+  all_mentions: []
+
+- key: dellacqua-jagged-frontier-2023
+  type: paper
+  authors: Dell'Acqua, McFowland, Mollick, Lifshitz-Assaf, Kellogg, Rajendran, Krayer, Candelon, Lakhani
+  title: Navigating the Jagged Technological Frontier — Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality
+  venue: Harvard Business School Working Paper 24-013
+  year: 2023
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321
+  first_mention_anchor: "BCG study: 12-22% more tasks, 22-28% faster, 38-43% higher quality"
+  all_mentions: []
+
+- key: deepseek-r1-2025
+  type: paper
+  authors: DeepSeek-AI
+  title: DeepSeek-R1 — Incentivizing Reasoning Capability in LLMs via Reinforcement Learning
+  venue: arXiv:2501.12948
+  year: 2025
+  url: https://arxiv.org/abs/2501.12948
+  first_mention_anchor: "DeepSeek R1 demonstrated 90%+ training cost reduction at frontier-class reasoning"
+  all_mentions: []
+
+- key: epoch-algorithmic-progress
+  type: paper
+  authors: Ho, Besiroglu, et al.
+  title: Algorithmic Progress in Language Models
+  venue: arXiv:2403.05812
+  year: 2024
+  url: https://arxiv.org/abs/2403.05812
+  first_mention_anchor: "Pre-training efficiency improves 3x per year (Epoch AI)"
+  all_mentions: []
+
+- key: nvidia-vera-rubin-2026
+  type: article
+  authors: NVIDIA
+  title: NVIDIA Vera Rubin Opens Agentic AI Frontier
+  venue: NVIDIA Newsroom
+  year: 2026
+  url: https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform
+  first_mention_anchor: "10x from Vera Rubin platform"
+  all_mentions:
+    - "NVIDIA's Vera Rubin"
+
+- key: mcp-anthropic-launch
+  type: article
+  authors: Anthropic
+  title: Introducing the Model Context Protocol
+  venue: Anthropic
+  year: 2024
+  url: https://www.anthropic.com/news/model-context-protocol
+  first_mention_anchor: "MCP"
+  all_mentions: []
+
+- key: mcp-linux-foundation
+  type: article
+  authors: Anthropic
+  title: Donating the Model Context Protocol and Establishing the Agentic AI Foundation
+  venue: Anthropic
+  year: 2025
+  url: https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation
+  first_mention_anchor: "Linux Foundation governance (Category 05)"
+  all_mentions: []
+
+- key: gartner-top-predictions-2025
+  type: report
+  authors: Gartner
+  title: Top Predictions for IT Organizations and Users in 2025 and Beyond
+  venue: Gartner
+  year: 2024
+  url: https://www.gartner.com/en/newsroom/press-releases/2024-10-22-gartner-unveils-top-predictions-for-it-organizations-and-users-in-2025-and-beyond
+  first_mention_anchor: "Gartner predicts 20% of orgs will halve middle management by 2026"
+  all_mentions:
+    - "15% of daily decisions made autonomously by 2028 (Gartner)"
+    - "Gartner"
+
+- key: forrester-predictions-2026-software
+  type: report
+  authors: Forrester
+  title: Predictions 2026 — AI Agents, Changing Business Models, and Workplace Culture Impact Enterprise Software
+  venue: Forrester
+  year: 2025
+  url: https://www.forrester.com/blogs/predictions-2026-ai-agents-changing-business-models-and-workplace-culture-impact-enterprise-software/
+  first_mention_anchor: "Forrester predicts 30% of enterprise SaaS vendors ship MCP servers in 2026"
+  all_mentions: []
+
+- key: eu-ai-act-2024
+  type: report
+  authors: European Parliament and Council
+  title: "Regulation (EU) 2024/1689 — Artificial Intelligence Act"
+  venue: EUR-Lex
+  year: 2024
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689
+  first_mention_anchor: "The EU AI Act"
+  all_mentions: []
+
+- key: langgraph
+  type: organization
+  authors: LangChain
+  title: LangGraph — Agent Orchestration Framework for Reliable AI Agents
+  venue: LangChain
+  year: 2024
+  url: https://www.langchain.com/langgraph
+  first_mention_anchor: "LangGraph's checkpointing and human-in-the-loop patterns (Category 11)"
+  all_mentions: []
+
+- key: deloitte-state-of-ai-2025
+  type: report
+  authors: Deloitte
+  title: The State of AI in the Enterprise — 2026 Report
+  venue: Deloitte
+  year: 2026
+  url: https://www.deloitte.com/global/en/issues/generative-ai/state-of-ai-in-enterprise.html
+  first_mention_anchor: "Deloitte"
+  all_mentions: []
+
+- key: mckinsey-state-of-ai-2025
+  type: report
+  authors: McKinsey & Company (QuantumBlack)
+  title: The State of AI in 2025 — Agents, Innovation, and Transformation
+  venue: McKinsey & Company
+  year: 2025
+  url: https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai
+  first_mention_anchor: "McKinsey"
+  all_mentions: []
+
+- key: accenture-tech-vision-2025
+  type: report
+  authors: Accenture
+  title: Technology Vision 2025 — New Age of AI to Bring Unprecedented Autonomy to Business
+  venue: Accenture
+  year: 2025
+  url: https://newsroom.accenture.com/news/2025/accenture-technology-vision-2025-new-age-of-ai-to-bring-unprecedented-autonomy-to-business
+  first_mention_anchor: "Accenture"
+  all_mentions: []
+
+- key: huggingface
+  type: organization
+  authors: Hugging Face
+  title: Hugging Face — The AI Community Building the Future
+  venue: Hugging Face
+  year: 2026
+  url: https://huggingface.co/
+  first_mention_anchor: "Hugging Face"
+  all_mentions: []
+
+- key: ollama
+  type: organization
+  authors: Ollama
+  title: Ollama — Run Large Language Models Locally
+  venue: Ollama
+  year: 2026
+  url: https://ollama.com/
+  first_mention_anchor: "Ollama"
+  all_mentions: []
+
+- key: qlora-dettmers-2023
+  type: paper
+  authors: Dettmers, Pagnoni, Holtzman, Zettlemoyer
+  title: QLoRA — Efficient Finetuning of Quantized LLMs
+  venue: arXiv:2305.14314
+  year: 2023
+  url: https://arxiv.org/abs/2305.14314
+  first_mention_anchor: "QLoRA fine-tuning"
+  all_mentions: []
