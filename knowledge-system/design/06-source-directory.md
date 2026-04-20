@@ -51,6 +51,8 @@ These institutions produce research relevant to multiple categories. Listed once
 | Zvi Mowshowitz | Zvi | Substack (Don't Worry About the Vase) | High — exhaustive weekly AI roundups, probabilistic reasoning | <https://thezvi.substack.com/> |
 | Nathan Benaich | Nathan Benaich | State of AI Report (annual) + newsletter | High — data-driven annual landscape report | <https://www.stateof.ai/> |
 | AlphaSignal | Community | Newsletter | Medium-High — technical breakthroughs, concise | <https://alphasignal.ai/> |
+| Interconnects | Nathan Lambert (AI2) | Substack | High — open-source model trajectory, RLHF deep dives | <https://www.interconnects.ai/> |
+| DAIR AI | Elvis Saravia | Blog + newsletter | Medium-High — weekly research paper digests. Monthly scan cadence to avoid Import AI overlap | <https://dair.ai/> |
 
 ---
 
@@ -79,6 +81,8 @@ These institutions produce research relevant to multiple categories. Listed once
 | Platformer | Casey Newton | Substack | Medium-High — platform business model shifts | <https://www.platformer.news/> |
 | Exponential View | Azeem Azhar | Newsletter + podcast | High — technology-driven business transformation | <https://www.exponentialview.co/> |
 | Bizzdesign | Bert van der Zwan | Blog | Medium — CEO perspectives on AI-native operating models | <https://bizzdesign.com/blog> |
+| Analytics India Magazine | Editorial team | analyticsindiamag.com | Medium-High — Indian AI industry + enterprise + policy lens | <https://analyticsindiamag.com/> |
+| Presight AI | Pranav Mistry | Blog | Medium — Indian enterprise AI perspective, sparse cadence (monthly scan) | <https://www.presight.ai/> |
 
 ---
 
@@ -212,6 +216,8 @@ These institutions produce research relevant to multiple categories. Listed once
 | Faros AI | Faros team | Blog | Medium — developer tool benchmarks and real-world reviews | <https://www.faros.ai/blog> |
 | Matt Shumer | Matt Shumer | X, blog | Medium-High — AI tool power user, prompt engineering | <https://shumer.dev/> |
 | DEV Community AI reviews | Various | dev.to | Medium — practitioner comparison posts with real usage data | <https://dev.to/t/ai> |
+| Every / Chain of Thought | Dan Shipper | every.to | High — AI-in-workflow and AI-native team patterns | <https://every.to/chain-of-thought> |
+| Underfitted | Santiago Valderrama | underfitted.io | Medium-High — ML practitioner, real-world deployment (monthly scan) | <https://underfitted.io/> |
 
 ---
 
@@ -284,6 +290,7 @@ These institutions produce research relevant to multiple categories. Listed once
 | StackOne AI Agent Tools Landscape | StackOne | Blog | Medium-High — 120+ tools mapped across 11 categories | <https://www.stackone.com/blog/ai-agent-tools-landscape-2026/> |
 | AI Agents Hub | Community | aiagentshub.net | Medium — SDK comparisons, ecosystem guides | <https://www.aiagentshub.net/> |
 | Enhancial | Newsletter | Substack | Medium — framework decision guides for practitioners | <https://enhancial.substack.com/> |
+| Latent Space | Swyx (Shawn Wang) & Alessio Fanelli | latent.space | High — AI engineer newsletter + podcast, agent framework comparisons | <https://www.latent.space/> |
 
 ---
 

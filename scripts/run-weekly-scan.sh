@@ -83,12 +83,12 @@ gh pr create \
   --title "Weekly signal scan — $DATE" \
   --body "Automated Tier 2 source scan from the weekly cron job.
 
-**Sources scanned:**
-- Import AI (Jack Clark)
-- The Batch (Andrew Ng)
-- One Useful Thing (Ethan Mollick)
-- Don't Worry About the Vase (Zvi Mowshowitz)
-- Stratechery (Ben Thompson)
+**Sources scanned (16):**
+- Synthesizers: Import AI, The Batch, One Useful Thing, Zvi, Stratechery
+- Specialists: SemiAnalysis, Simon Willison, Latent Space, Interconnects, Gary Marcus, Pragmatic Engineer
+- Workflow: Every/Chain of Thought, Hugging Face blog
+- First-party: Anthropic News, OpenAI blog
+- Indian perspective: Analytics India Magazine
 
 **Review checklist:**
 - [ ] Each new signal's 5-dimension profile is correctly scored
