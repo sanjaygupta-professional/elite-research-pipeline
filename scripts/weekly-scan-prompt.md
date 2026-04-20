@@ -16,13 +16,33 @@ Read these two files to understand the scoring rubric:
 
 Search the web for content published in the past 7 days from:
 
+**Cross-cutting synthesizers (5):**
 - **Import AI** by Jack Clark — importai.substack.com
 - **The Batch** by Andrew Ng — deeplearning.ai/the-batch
 - **One Useful Thing** by Ethan Mollick — oneusefulthing.org
 - **Don't Worry About the Vase** by Zvi Mowshowitz — thezvi.substack.com
 - **Stratechery** by Ben Thompson — stratechery.com
 
-Use WebSearch and WebFetch. If a source has nothing new in the past 7 days, note that and move on.
+**Category specialists (6):**
+- **SemiAnalysis** by Dylan Patel — semianalysis.com (cat 05 infra)
+- **Simon Willison** — simonwillison.net (cat 08/10 tools + local AI)
+- **Latent Space** by Swyx (Shawn Wang) — latent.space (cat 11 agents + AI eng)
+- **Interconnects** by Nathan Lambert — interconnects.ai (cat 01 open-source trajectory)
+- **Road to AI We Can Trust** by Gary Marcus — garymarcus.substack.com (cat 01/04 contrarian)
+- **The Pragmatic Engineer** by Gergely Orosz — newsletter.pragmaticengineer.com (cat 02/08 eng org)
+
+**Workflow & productivity (2):**
+- **Every / Chain of Thought** by Dan Shipper — every.to (cat 08/03 AI-in-workflow)
+- **Hugging Face blog** — huggingface.co/blog (cat 01/10 open-source model signal)
+
+**First-party lab announcements (2):**
+- **Anthropic News** — anthropic.com/news (cat 01/04/08 Claude + policy)
+- **OpenAI blog** — openai.com/index (cat 01/08 GPT + product)
+
+**Indian perspective (1):**
+- **Analytics India Magazine** — analyticsindiamag.com (Indian AI industry + policy lens)
+
+Use WebSearch and WebFetch. If a source has nothing new in the past 7 days, note that and move on. Total: 16 sources. If total scan time approaches 15 minutes or you're hitting rate limits, prioritize the first 11 and note which were skipped.
 
 ## Step 3: Classify each article
 
