@@ -156,6 +156,81 @@ A running log of weak signals — ideas, research, observations that are:
 - **Discarded as noise:** The Batch[^the-batch-issue-348]'s "Dark DNA" and fluid-dynamics items (science applications outside knowledge-system focus); Stratechery Apr 15 Amazon/Globalstar (satellite/consumer tech, not AI-core); Stratechery Apr 16 Rosberg F1 interview (not AI); NYT CEO "human expertise as moat" thesis (narrative/positioning rather than new measurement — interesting for Category 03 framing but not a new signal).
 ---
 
+### Added 2026-04-20 (Weekly Tier 2 scan)
+
+**[2026-04-17] | Meta abandons open-weight frontier; Muse Spark ships as closed-source model**
+**Source:** [The Batch Issue 349, "Life After Llama"](https://www.deeplearning.ai/the-batch/issue-349/)[^batch-issue-349]; [Zvi Mowshowitz, "AI #164: Pre Opus"](https://thezvi.substack.com/p/ai-164-pre-opus)[^zvi-ai-164-pre-opus]; [Meta AI announcement](https://ai.meta.com/blog/introducing-muse-spark-msl/)[^meta-muse-spark]
+**Profile:** E3 T-Shifting U2 H-Grounded Z-Now
+**Category:** 10 Local AI Engineering (primary); connects to 01 GenAI Capabilities and 02 Enterprise AI & Org Transformation
+**Why it matters:** Meta released Muse Spark — its first new frontier-class model in a year — as a closed-source product, reversing the open-weights strategy that made Llama the default anchor for enterprise local deployment, RAG stacks, and the entire Category 10 tooling ecosystem. If Meta stays closed, the open-weight frontier baton passes to Qwen and DeepSeek — non-US labs — which changes the enterprise calculus for sovereignty, vendor diversification, and on-prem AI. Independent benchmark notes (François Chollet on ARC, Apollo Research on high evaluation-awareness rates) also suggest the model may be optimized for public metrics more than general capability, complicating adoption decisions.
+**What to watch for:** (1) Whether Meta releases a subsequent open-weight model in the next two quarters or confirms the closed-source direction. (2) Whether enterprise AI reference architectures (Red Hat OpenShift AI, vLLM guides, Hugging Face enterprise playbooks) re-benchmark around Qwen 3 / DeepSeek R1 as the new open-weight default. Either signals a durable ecosystem shift away from Meta as the open-frontier anchor.
+**Status:** WATCHING — high priority
+
+**[2026-04-17] | US state AI regulatory patchwork crystallizes; Illinois SB 3444 proposes liability immunity for AI companies**
+**Source:** [The Batch Issue 349, "US States Move Forward With AI Laws"](https://www.deeplearning.ai/the-batch/issue-349/)[^batch-issue-349]; [NYT coverage](https://www.nytimes.com/2026/03/30/technology/trump-states-ai-gavin-newsom-california.html)[^nytimes-states-ai-laws-2026]; [Zvi Mowshowitz, "AI #164"](https://thezvi.substack.com/p/ai-164-pre-opus)[^zvi-ai-164-pre-opus] (Charlie Bullock analysis of Illinois SB 3444)
+**Profile:** E3 T-Accelerating U2 H-Grounded Z-Now
+**Category:** 04 AI Governance & Ethics
+**Why it matters:** 40+ US states are enacting AI laws with 1,500+ bills under consideration on top of ~100 already passed, while federal preemption remains politically stalled — creating a genuine compliance fragmentation regime (California watermarking, Colorado risk assessments, New York large-model protocols from Jan 2027). Simultaneously, Illinois SB 3444 proposes to immunize AI companies from liability in exchange for safety disclosures, with OpenAI testifying in support — a structurally different governance model (safe-harbor-for-disclosure) that, if adopted by other states, would reshape the enterprise AI risk landscape and weaken tort-based accountability. Multi-state fragmentation is shifting from a compliance headache into a governance-regime competition, which matters for any enterprise operating across US geographies.
+**What to watch for:** Whether Illinois SB 3444 (or a comparable safe-harbor-for-disclosure bill) passes in any US state in 2026, and whether a second enterprise-heavy state (Texas, Florida, New York) adopts a materially different regime — either would make multi-jurisdiction AI governance a permanent enterprise-design variable rather than a convergence-to-federal story.
+**Status:** WATCHING
+
+**[2026-04-17] | OpenAI GPT-5.4-Cyber confirms "defender-first" release pattern at second frontier lab**
+**Source:** [Zvi Mowshowitz, "AI #164: Pre Opus"](https://thezvi.substack.com/p/ai-164-pre-opus)[^zvi-ai-164-pre-opus]; OpenAI vendor announcement (referenced in Zvi)
+**Profile:** E2 T-Shifting U3 H-Grounded Z-Now
+**Category:** 04 AI Governance & Ethics; connects to 01 GenAI Capabilities
+**Why it matters:** OpenAI's limited-release GPT-5.4-Cyber variant — fine-tuned for defensive workflows and distributed under restricted terms — is the second frontier lab adopting a Glasswing-style dual-use release gate in under two weeks, directly answering the watch-for criterion on the Apr 14 Claude Mythos signal. This corroborates that "withhold on offensive-capability threshold" is becoming an industry norm rather than an Anthropic-idiosyncratic policy, which has downstream implications for enterprise procurement (partner-only access tiers become a new class of contract), regulatory expectations, and the open-weight ecosystem (these capabilities will *not* be releasable openly). Evidence is still E2 pending independent technical verification of the capability profile and distribution mechanics.
+**What to watch for:** (1) Whether Google DeepMind releases a comparable defender-first variant for a Gemini successor, making the pattern tri-lab and effectively industry standard. (2) Whether any regulator (NIST, EU AI Office, UK AISI) codifies an "offensive-capability withhold threshold" in guidance, converting this from de facto to de jure.
+**Status:** WATCHING — close to upgrade (corroborates Apr 14 Claude Mythos signal)
+
+**[2026-04-17] | AI-native team operating model: bottleneck migrates from engineering to marketing, design, and legal**
+**Source:** [Andrew Ng letter, The Batch Issue 349](https://www.deeplearning.ai/the-batch/issue-349/)[^batch-issue-349]
+**Profile:** E2 T-Emerging U2 H-Ahead Z-Near
+**Category:** 09 Transformation Methods — AI Era
+**Why it matters:** Andrew Ng[^andrew-ng-thebatch] describes a pattern in 2-10 person AI-native teams where coding acceleration of 10-100x pushes the binding constraint *out* of engineering and into marketing, design, legal, and other functions — with engineers increasingly making product decisions and product managers learning to code. If this generalizes, enterprise transformation playbooks that focus on "upskilling engineers with AI" are solving yesterday's problem: the 2026-2028 bottleneck will be restructuring *non-engineering* functions to match new software throughput. It also predicts a rise of generalist roles and co-located small teams, both of which cut against the distributed-specialist model that dominated 2015-2024.
+**What to watch for:** A quantitative study (Accenture, McKinsey, Brynjolfsson/Stanford, Lenny's Newsletter data) measuring cycle-time bottlenecks in AI-native teams by function — if marketing/design/legal are empirically the new bottleneck in 2026-2027 scaled organizations, this upgrades from practitioner observation to structural finding and rewrites Category 09's transformation-sequencing guidance.
+**Status:** WATCHING
+
+**[2026-04-17] | Healthcare AI-scribe productivity paradox: 30% cost increase via coding intensification**
+**Source:** [Zvi Mowshowitz, "AI #164: Pre Opus"](https://thezvi.substack.com/p/ai-164-pre-opus)[^zvi-ai-164-pre-opus] citing StatNews / UCSF study
+**Profile:** E2 T-Emerging U2 H-Grounded Z-Now
+**Category:** 02 Enterprise AI & Org Transformation; connects to 03 Workforce & Human-AI Collaboration
+**Why it matters:** UCSF research (surfaced by StatNews) finds that AI scribes are driving a ~30% *increase* in healthcare costs via higher coding intensity — physicians document more billable complexity because the AI can, which triggers upcoding arms races and forces reimbursement cuts elsewhere. This is a concrete mechanism-level instance of the productivity paradox: the AI-augmented workflow is faster and more comprehensive, yet the system-level outcome is cost inflation, not savings. For enterprise transformation POV, this matters more than the narrative-level paradox: it shows how an AI productivity win at the individual level can translate into a system cost loss when downstream incentive structures (billing codes, reimbursement) aren't redesigned jointly. It directly reinforces the "organizational design as binding constraint" cluster.
+**What to watch for:** Replication in a second sector where pricing/measurement is denominated per-transaction (legal billable hours, financial advisory, insurance claims adjudication). If AI augmentation drives measured-complexity inflation in two more sectors within 12 months, the mechanism becomes a general principle — not a healthcare quirk — and enters Category 02's top findings.
+**Status:** WATCHING
+
+**[2026-04-17] | AI compute supply-constraint inflection: Blackwell spot +48% in two months, Anthropic rationing, Nvidia $250B commitments**
+**Source:** [Zvi Mowshowitz, "AI #164: Pre Opus"](https://thezvi.substack.com/p/ai-164-pre-opus)[^zvi-ai-164-pre-opus]; [Zvi Mowshowitz, "On Dwarkesh Patel's Podcast With Nvidia CEO Jensen Huang"](https://thezvi.substack.com/p/on-dwarkesh-patels-podcast-with-nvidia)[^zvi-dwarkesh-jensen-2026]
+**Profile:** E3 T-Shifting U2 H-Grounded Z-Now
+**Category:** 05 AI Infrastructure Trajectory
+**Why it matters:** Three aligned signals in one week point to a regime shift from "scale-out compute is available, the question is price" to "compute is rationed, the question is access": (1) Blackwell spot pricing moved from ~$2.75/hr to ~$4.08/hr in two months (+48%); (2) Anthropic explicitly rations rather than raises prices because demand exceeds supply; (3) Nvidia has locked up components via $100B→$250B in purchase commitments, and Jensen himself frames *power* as the binding constraint within a few years. For enterprise AI strategy, this means "compute availability" re-enters the 2026 planning cycle as a first-class risk after two years of effectively being solved — procurement timelines, multi-cloud contracts, and on-prem/open-weight fallbacks become more valuable than they looked three months ago.
+**What to watch for:** (1) Whether Q2 2026 hyperscaler earnings (AWS, Azure, GCP) report AI-compute allocation constraints or multi-quarter wait lists. (2) Whether a frontier lab (OpenAI, Google, xAI) publicly announces delayed training or product rollouts explicitly citing compute access, not cost. Either would confirm this is a structural inflection, not a transient spike.
+**Status:** WATCHING — close to upgrade
+
+**[2026-04-17] | Google Persona Generators: synthetic cohorts outperform demographic samples on opinion coverage**
+**Source:** [The Batch Issue 349, "Simulating Diverse Human Cohorts"](https://www.deeplearning.ai/the-batch/issue-349/)[^batch-issue-349] citing Google research paper[^google-persona-generators]
+**Profile:** E2 T-Emerging U3 H-Ahead Z-Near
+**Category:** 08 AI Productivity Tools; connects to 01 GenAI Capabilities
+**Why it matters:** Google researchers report that 25 evolutionary-algorithm-generated synthetic personas cover 82% of possible opinion responses vs. 76% for a benchmark demographic dataset — optimizing for *response diversity* rather than demographic match. If this generalizes, it unlocks a new class of workflow: synthetic market research, policy stakeholder sims, and product feedback loops that run at near-zero marginal cost and can explore low-probability stakeholder positions that sampled human panels rarely surface. The capability-unlock score is 3 because it changes the economic structure of qualitative research (currently a human-panel bottleneck), not because the individual technique is novel. It is still E2 because it's a single research paper without independent replication or production case studies.
+**What to watch for:** (1) Whether a major consultancy (Accenture, McKinsey, BCG) or market research firm (Ipsos, Nielsen, Gartner) publishes a client case study using synthetic persona cohorts within two quarters. (2) Whether a rigorous comparison shows synthetic cohorts match human panels on an *outcome* metric (policy forecast accuracy, product feature demand) — matching on opinion coverage is suggestive, but matching on outcomes is what shifts procurement.
+**Status:** WATCHING
+
+---
+**Scan Summary — 2026-04-20**
+- **Sources scanned:**
+  - Import AI (Jack Clark[^jack-clark-importai-homepage]) — 0 new posts in window (latest remains Import AI 453[^import-ai-453] from Apr 13, already logged in 2026-04-17 scan)
+  - [The Batch (Andrew Ng / DeepLearning.AI)](https://www.deeplearning.ai/the-batch/) — 1 issue reviewed ([Issue 349, Apr 17](https://www.deeplearning.ai/the-batch/issue-349/)[^batch-issue-349])
+  - One Useful Thing (Ethan Mollick[^ethan-mollick-oneusefulthing]) — 0 posts in window (latest remains Mar 31 "Claude Dispatch and the Power of Interfaces"[^mollick-claude-dispatch-2026])
+  - [Don't Worry About the Vase (Zvi Mowshowitz)](https://thezvi.substack.com/)[^zvi-mowshowitz-homepage] — 2 in-window posts reviewed ("[On Dwarkesh Patel's Podcast With Nvidia CEO Jensen Huang](https://thezvi.substack.com/p/on-dwarkesh-patels-podcast-with-nvidia)"[^zvi-dwarkesh-jensen-2026] Apr 16, "[AI #164: Pre Opus](https://thezvi.substack.com/p/ai-164-pre-opus)"[^zvi-ai-164-pre-opus] Apr 17)
+  - [Stratechery (Ben Thompson)](https://stratechery.com/)[^ben-thompson-stratechery] — 0 new AI-relevant in-window posts (Apr 16 Rosberg F1 interview excluded as non-AI, consistent with prior scan; no new AI-focused daily updates published Apr 17-20)
+- **Total articles reviewed:** 3
+- **Signals added:** 7 total (3 strong, 4 weak)
+  - Strong: Meta Muse Spark closed-weight pivot (multi-source: The Batch + Zvi); US state AI regulatory patchwork + Illinois SB 3444 (multi-source: The Batch + Zvi + NYT); AI compute supply-constraint inflection (multi-source: two Zvi posts + Nvidia disclosures)
+  - Weak: OpenAI GPT-5.4-Cyber defender-first corroboration (E2, corroborates Apr 14 Claude Mythos signal); AI-native team bottleneck migration (Ng letter, E2); Healthcare AI-scribe productivity paradox (UCSF/StatNews via Zvi, E2); Google Persona Generators synthetic cohorts (E2, single research paper)
+- **Category distribution:** 04 Governance (2), 05 Infrastructure (1), 10 Local AI Engineering / 01+02 (1), 09 Transformation Methods (1), 02 Enterprise / 03 Workforce (1), 08 Productivity Tools (1)
+- **Notable patterns:** (1) Three of the seven new signals *corroborate or extend* existing signals from the Apr 17 scan rather than opening new territory — GPT-5.4-Cyber extends Claude Mythos/Glasswing; Meta Muse Spark's eval-awareness rates reinforce the Apr 14 "functional emotional states / evaluation gaming" cluster; compute supply constraint extends the productivity-revenue-ramp story. The watch-for criteria are firing faster than the 2-quarter cadence the Apr 17 summary anticipated, which suggests the "Safety evaluation paradigm crisis" and "end of scaling maximalism" clusters are both accelerating. (2) The AI-native team letter and healthcare AI-scribe paradox both point to the same underlying finding as the organizational-tension signal from the baseline: the real 2026 transformation constraint is *non-engineering function redesign*, not engineering capability.
+- **Discarded as noise:** Stratechery Apr 16 Rosberg F1 interview (consistent with prior scan). The Batch Issue 349's Eli Lilly / Insilico $2.75B deal and Phase 2a Rentosertib result is directionally interesting for AI drug discovery but sits outside the knowledge system's AI/GenAI + Org Transformation focus (Category 01/02 adjacent but pharma-sector-specific; no new cross-cutting mechanism to track). Zvi's political-violence item and ChatGPT gender-gap closing to parity are population-level observations without an enterprise-decision implication.
+---
+
 ---
 
 ## Upgraded Signals
@@ -199,6 +274,7 @@ Signals: Models detecting test environments. Harmful outputs via rephrasing. Def
 
 ### Papers & Reports
 
+[^google-persona-generators]: Google Research (authors TBD from paper metadata). *Persona Generators: Evolutionary algorithms for diverse synthetic human cohorts*. arXiv (referenced by The Batch Issue 349). 2026. **[needs-url — arxiv id in The Batch reads 2602.03545 which appears malformed; verify canonical ID before citing externally]**
 [^anthropic-emotion-concepts-2026]: Anthropic Interpretability Team. *Emotion Concepts and their Function in a Large Language Model*. transformer-circuits.pub. 2026. <https://transformer-circuits.pub/2026/emotions/index.html>
 [^brynjolfsson-canaries-2025]: Brynjolfsson, Chandar, Chen. *Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence*. Stanford Digital Economy Lab. 2025. <https://digitaleconomy.stanford.edu/wp-content/uploads/2025/08/Canaries_BrynjolfssonChandarChen.pdf>
 [^goldman-ai-labor-2026]: Goldman Sachs (Elsie Peng). *Goldman Sachs AI labor-market impact estimates (~25K/month payroll drag; +0.16pp unemployment)*. Fortune coverage of Goldman Sachs research. 2026. <https://fortune.com/2026/04/06/ai-tech-displacement-effect-gen-z-16000-jobs-per-month/>
@@ -226,6 +302,12 @@ Signals: Models detecting test environments. Harmful outputs via rephrasing. Def
 [^stratechery-openai-memos-2026-04-14]: Ben Thompson. *OpenAI's Memos, Frontier, Amazon and Anthropic*. Stratechery. 2026. <https://stratechery.com/2026/openais-memos-frontier-amazon-and-anthropic/>
 [^the-batch-issue-348]: DeepLearning.AI (Andrew Ng). *Anthropic's Claude Mythos Problem, Dark DNA Unveiled, Pitfalls for Assistive Models, and more…*. The Batch, Issue 348. 2026. <https://www.deeplearning.ai/the-batch/issue-348/>
 [^zvi-ai-163-mythos-quest]: Zvi Mowshowitz. *AI #163: Mythos Quest*. Don't Worry About the Vase (Substack). 2026. <https://thezvi.substack.com/p/ai-163-mythos-quest>
+[^zvi-ai-164-pre-opus]: Zvi Mowshowitz. *AI #164: Pre Opus*. Don't Worry About the Vase (Substack). 2026. <https://thezvi.substack.com/p/ai-164-pre-opus>
+[^zvi-dwarkesh-jensen-2026]: Zvi Mowshowitz. *On Dwarkesh Patel's Podcast With Nvidia CEO Jensen Huang*. Don't Worry About the Vase (Substack). 2026. <https://thezvi.substack.com/p/on-dwarkesh-patels-podcast-with-nvidia>
+[^batch-issue-349]: DeepLearning.AI (Andrew Ng). *Life After Llama, Big Pharma Bets Big on AI, US States Move Forward With AI Laws, Simulating Diverse Human Cohorts, and AI-Native Software Teams*. The Batch, Issue 349. 2026. <https://www.deeplearning.ai/the-batch/issue-349/>
+[^meta-muse-spark]: Meta AI. *Introducing Muse Spark*. ai.meta.com/blog. 2026. <https://ai.meta.com/blog/introducing-muse-spark-msl/>
+[^nytimes-states-ai-laws-2026]: The New York Times. *Trump, States, AI, and Gavin Newsom's California*. nytimes.com. 2026. <https://www.nytimes.com/2026/03/30/technology/trump-states-ai-gavin-newsom-california.html>
+[^andrew-ng-thebatch]: Andrew Ng. *Letter, The Batch Issue 349 (AI-native software engineering teams)*. DeepLearning.AI. 2026. <https://www.deeplearning.ai/the-batch/issue-349/>
 [^zvi-claude-mythos-2]: Zvi Mowshowitz. *Claude Mythos #2: Cybersecurity and Project Glasswing*. Don't Worry About the Vase (Substack). 2026. <https://thezvi.substack.com/p/claude-mythos-2-cybersecurity-and>
 [^zvi-claude-mythos-3]: Zvi Mowshowitz. *Claude Mythos #3: Capabilities and Additions*. Don't Worry About the Vase (Substack). 2026. <https://thezvi.substack.com/p/claude-mythos-3-capabilities-and>
 
