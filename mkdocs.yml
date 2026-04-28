@@ -12,17 +12,11 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: deep purple
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: deep purple
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+      primary: custom
+      accent: custom
+  font:
+    text: Bricolage Grotesque
+    code: Geist Mono
   features:
     - navigation.tabs
     - navigation.sections
@@ -76,6 +70,7 @@ extra_javascript:
   - js/mermaid-init.js
 
 extra_css:
+  - stylesheets/extra.css
   - stylesheets/mermaid-theme.css
 
 extra:
