@@ -1,0 +1,236 @@
+/*
+ * Cinnabar brand override for MkDocs Material.
+ * Tokens ported from digest/src/styles/global.css.
+ * The One Voice Rule: cinnabar is the only chromatic actor.
+ * Do not introduce a second accent. Do not use purple, indigo,
+ * or any default Material chrome color.
+ */
+
+/* ── Fonts ──────────────────────────────────────────────────────── */
+/* Material auto-fetches these from Google Fonts via mkdocs.yml font: config.
+   The :root overrides ensure the vars are set for any CSS referencing them. */
+:root {
+  --md-text-font: "Bricolage Grotesque";
+  --md-code-font: "Geist Mono";
+}
+
+/* ── Color tokens ───────────────────────────────────────────────── */
+[data-md-color-scheme="default"] {
+  /* Primary = cinnabar — nav highlights, links, active indicators */
+  --md-primary-fg-color:             oklch(58% 0.18 35);
+  --md-primary-fg-color--light:      oklch(68% 0.15 35);
+  --md-primary-fg-color--dark:       oklch(48% 0.20 30);
+  --md-primary-bg-color:             oklch(96% 0.01 85);
+  --md-primary-bg-color--light:      oklch(96% 0.01 85);
+
+  /* Accent = cinnabar (same as primary — The One Voice Rule) */
+  --md-accent-fg-color:              oklch(58% 0.18 35);
+  --md-accent-fg-color--transparent: oklch(58% 0.18 35 / 0.12);
+  --md-accent-bg-color:              oklch(96% 0.01 85);
+
+  /* Page surface */
+  --md-default-bg-color:             oklch(96% 0.01 85);
+  --md-default-bg-color--light:      oklch(96% 0.01 85);
+  --md-default-bg-color--lighter:    oklch(97% 0.008 85);
+  --md-default-bg-color--lightest:   oklch(98% 0.006 85);
+  --md-default-fg-color:             oklch(15% 0.02 60);
+  --md-default-fg-color--light:      oklch(35% 0.015 60);
+  --md-default-fg-color--lighter:    oklch(50% 0.012 60);
+  --md-default-fg-color--lightest:   oklch(65% 0.010 60);
+
+  /* Inline links */
+  --md-typeset-a-color:              oklch(58% 0.18 35);
+
+  /* Code blocks */
+  --md-code-fg-color:                oklch(20% 0.02 60);
+  --md-code-bg-color:                oklch(93% 0.010 80);
+
+  /* Tables and dividers */
+  --md-typeset-table-color:          oklch(92% 0.012 80);
+  --md-typeset-table-color--light:   oklch(92% 0.012 80 / 0.5);
+}
+
+/* ── Typography ─────────────────────────────────────────────────── */
+/* Headings in Geist Mono (the brutalist brand display face).
+   Body text in Bricolage Grotesque. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: oklch(15% 0.02 60);
+}
+
+.md-typeset h1 { letter-spacing: -0.04em; }
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Body prose: line-height and measure cap */
+.md-typeset {
+  line-height: 1.65;
+}
+
+.md-typeset p,
+.md-typeset li {
+  max-width: 70ch;
+}
+
+/* Strong weight in body */
+.md-typeset strong {
+  font-weight: 700;
+}
+
+/* ── Navigation ─────────────────────────────────────────────────── */
+/* Top nav tabs */
+.md-tabs__link {
+  color: oklch(35% 0.015 60);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: oklch(15% 0.02 60);
+}
+
+.md-tabs__link--active {
+  border-bottom: 2px solid oklch(58% 0.18 35);
+}
+
+/* Sidebar nav links */
+.md-nav__link:is(:hover, :focus) {
+  color: oklch(58% 0.18 35);
+}
+
+.md-nav__link--active {
+  color: oklch(58% 0.18 35) !important;
+  font-weight: 600;
+}
+
+/* Section titles in sidebar */
+.md-nav__title {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: oklch(45% 0.015 60);
+}
+
+/* ── Search ─────────────────────────────────────────────────────── */
+.md-search__form:focus-within {
+  box-shadow: 0 0 0 2px oklch(58% 0.18 35);
+}
+
+.md-search-result mark {
+  color: oklch(58% 0.18 35);
+  background: transparent;
+  font-weight: 600;
+}
+
+.md-search-result__article--document .md-search-result__title mark {
+  color: oklch(58% 0.18 35);
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.md-header {
+  background-color: oklch(96% 0.01 85);
+  color: oklch(15% 0.02 60);
+  border-bottom: 1px solid oklch(92% 0.012 80);
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: oklch(15% 0.02 60);
+}
+
+/* ── Admonitions ────────────────────────────────────────────────── */
+/* All admonition accent in cinnabar */
+.md-typeset .admonition,
+.md-typeset details {
+  border-left: 3px solid oklch(58% 0.18 35);
+  border-radius: 1px;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: oklch(58% 0.18 35 / 0.08);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: oklch(48% 0.20 30);
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: oklch(58% 0.18 35);
+}
+
+/* ── Code blocks ────────────────────────────────────────────────── */
+.md-typeset code {
+  border-radius: 1px;
+  background-color: oklch(93% 0.010 80);
+  color: oklch(20% 0.02 60);
+  font-size: 0.88em;
+}
+
+.md-typeset pre > code {
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border-radius: 1px;
+  border: 1px solid oklch(92% 0.012 80);
+  font-size: 0.9rem;
+}
+
+.md-typeset table:not([class]) th {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: oklch(93% 0.010 80);
+  color: oklch(45% 0.015 60);
+}
+
+/* ── Focus (a11y) ───────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid oklch(58% 0.18 35);
+  outline-offset: 3px;
+}
+
+/* ── Footnotes ──────────────────────────────────────────────────── */
+.md-typeset .footnote-ref,
+.md-typeset .footnote-backref {
+  color: oklch(58% 0.18 35);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+/* ── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background-color: oklch(58% 0.18 35);
+  color: oklch(96% 0.01 85);
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; }
+}
