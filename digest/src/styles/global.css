@@ -1,0 +1,253 @@
+/* ──────────────────────────────────────────────────────────────────────
+   THE CINNABAR DISPATCH
+   Design tokens: warm cream + deep ink + cinnabar (committed strategy).
+   Per DESIGN.md. OKLCH-canonical (CSS Color Module 4).
+   ────────────────────────────────────────────────────────────────────── */
+
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist+Mono:wght@300..600&display=swap");
+
+:root {
+  /* Colors. The One Voice Rule: cinnabar is the only chromatic actor. */
+  --color-cream: oklch(96% 0.01 85);
+  --color-ink: oklch(15% 0.02 60);
+  --color-cinnabar: oklch(58% 0.18 35);
+  --color-cinnabar-deep: oklch(48% 0.20 30);
+  --color-hairline: oklch(92% 0.012 80);
+  --color-mute: oklch(45% 0.015 60);
+
+  /* Typography stacks. Geist Mono is now the brand display face: a
+     brutalist research-dispatch move that doubles as the audit trail.
+     Bricolage Grotesque carries body and proportional copy. */
+  --font-display: "Geist Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  --font-body: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+
+  /* Type scale. Modular, ≥1.25 ratio, fluid via clamp.
+     Display sizes pulled back ~10% because mono characters are wider. */
+  --type-display: clamp(2rem, 3.4vw + 1.2rem, 3.7rem);
+  --type-headline: clamp(1.35rem, 1.4vw + 0.85rem, 1.95rem);
+  --type-title: clamp(1.1rem, 0.6vw + 0.95rem, 1.35rem);
+  --type-body: clamp(1.0625rem, 0.3vw + 0.95rem, 1.15rem);
+  --type-mono-title: clamp(0.85rem, 0.25vw + 0.78rem, 0.95rem);
+  --type-label: 0.75rem;
+  --type-small: 0.875rem;
+
+  /* Line heights. */
+  --leading-display: 1.0;
+  --leading-headline: 1.18;
+  --leading-title: 1.3;
+  --leading-body: 1.6;
+  --leading-mono: 1.45;
+
+  /* Spacing scale. Deliberately non-uniform; we use these names by intent. */
+  --space-hairline: 1px;
+  --space-tight: 0.4rem;
+  --space-snug: 0.75rem;
+  --space-step: 1.25rem;
+  --space-rest: 2.25rem;
+  --space-section: 4.5rem;
+  --space-major: 7rem;
+  --space-grand: 10rem;
+
+  /* Measure (line length cap). The body lives at 65–75ch. */
+  --measure-prose: 38rem; /* ≈ 70ch at body size */
+  --measure-wide: 50rem;
+
+  /* Motion. Per DESIGN.md: responsive, exponential ease-out, 120–220ms. */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 140ms;
+  --duration-medium: 220ms;
+
+  /* Cinnabar rule (the signature asymmetric mark). */
+  --rule-thickness: 2px;
+  --rule-length: 80px;
+  --rule-length-large: 120px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Reset (minimal). Keep the cascade legible.
+   ────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  font-feature-settings: "ss01", "kern";
+  font-variation-settings: "opsz" 14;
+}
+
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+  text-decoration-color: var(--color-hairline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color var(--duration-fast) var(--ease-out),
+    text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-cinnabar);
+  text-decoration-color: var(--color-cinnabar);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-cinnabar);
+  outline-offset: 4px;
+  border-radius: 1px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Typography classes (used by components).
+   ────────────────────────────────────────────────────────────────────── */
+/* Display + headline use Geist Mono. Brutalist: heavier weight,
+   tighter tracking than typical mono, no balanced wrap (mono lines
+   should break naturally for the typewriter cadence). */
+.t-display {
+  font-family: var(--font-display);
+  font-size: var(--type-display);
+  font-weight: 600;
+  line-height: var(--leading-display);
+  letter-spacing: -0.04em;
+  color: var(--color-ink);
+  margin: 0;
+  font-feature-settings: "ss01", "ss02", "tnum";
+}
+
+.t-headline {
+  font-family: var(--font-display);
+  font-size: var(--type-headline);
+  font-weight: 600;
+  line-height: var(--leading-headline);
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+  margin: 0;
+  font-feature-settings: "ss01", "tnum";
+}
+
+.t-title {
+  font-family: var(--font-body);
+  font-size: var(--type-title);
+  font-weight: 600;
+  line-height: var(--leading-title);
+  letter-spacing: -0.005em;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  color: var(--color-ink);
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-title);
+  font-weight: 500;
+  line-height: var(--leading-mono);
+  letter-spacing: 0.005em;
+  color: var(--color-ink);
+}
+
+.t-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+
+.t-mute {
+  color: var(--color-mute);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   The Cinnabar Rule. Asymmetric, left-aligned, fixed measure.
+   The page's signature visual mark.
+   ────────────────────────────────────────────────────────────────────── */
+.cinnabar-rule {
+  display: block;
+  width: var(--rule-length);
+  height: var(--rule-thickness);
+  background-color: var(--color-cinnabar);
+  border: 0;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.cinnabar-rule--lg {
+  width: var(--rule-length-large);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Layout primitives.
+   ────────────────────────────────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  padding: clamp(1.25rem, 4vw, 3rem) clamp(1.25rem, 5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.measure {
+  max-width: var(--measure-prose);
+}
+
+.measure-wide {
+  max-width: var(--measure-wide);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Reduced motion. Per DESIGN.md a11y rule.
+   ────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Selection.
+   ────────────────────────────────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-cinnabar);
+  color: var(--color-cream);
+}

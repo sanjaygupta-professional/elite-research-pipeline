@@ -1,0 +1,34 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  issueDate: string;
+}
+
+const { title, description, issueDate } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Sanjay Gupta" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={issueDate} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="page">
+      <slot />
+    </main>
+  </body>
+</html>

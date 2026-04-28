@@ -1,0 +1,70 @@
+---
+interface Props {
+  frameworkUrl: string;
+  archiveUrl?: string;
+}
+
+const { frameworkUrl, archiveUrl } = Astro.props;
+---
+
+<footer class="methodology">
+  <div class="methodology__inner measure-wide">
+    <p class="methodology__line t-mono">
+      Signals are scored on a 5-dimension profile (Evidence, Trajectory, Uncertainty, Horizon,
+      Z-axis). Full framework: <a href={frameworkUrl}>{frameworkUrl}</a>.
+    </p>
+    {
+      archiveUrl && (
+        <p class="methodology__line t-mono">
+          Past issues: <a href={archiveUrl}>{archiveUrl}</a>.
+        </p>
+      )
+    }
+    <p class="methodology__author">
+      <span class="t-label">Author</span>
+      <span class="t-mono">Sanjay Gupta · Senior Executive · Accenture</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .methodology {
+    margin-top: var(--space-major);
+    padding-top: var(--space-rest);
+    padding-bottom: var(--space-step);
+    border-top: 1px solid var(--color-hairline);
+  }
+
+  .methodology__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-snug);
+    color: var(--color-mute);
+  }
+
+  .methodology__line {
+    color: var(--color-mute);
+    font-size: var(--type-small);
+  }
+
+  .methodology__line :global(a) {
+    color: var(--color-mute);
+    text-decoration: underline;
+    text-decoration-color: var(--color-hairline);
+    word-break: break-word;
+  }
+
+  .methodology__line :global(a:hover) {
+    color: var(--color-cinnabar);
+    text-decoration-color: var(--color-cinnabar);
+  }
+
+  .methodology__author {
+    margin-top: var(--space-step);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.85em;
+    row-gap: 0.3em;
+    align-items: baseline;
+  }
+</style>

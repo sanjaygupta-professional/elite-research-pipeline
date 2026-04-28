@@ -1,0 +1,65 @@
+---
+interface Props {
+  kicker?: string;
+}
+
+const { kicker = "Cluster pattern" } = Astro.props;
+---
+
+<aside class="cluster" aria-label="Cluster pattern callout">
+  <div class="cluster__inner measure-wide">
+    <span class="t-label cluster__kicker">{kicker}</span>
+    <hr class="cinnabar-rule" aria-hidden="true" />
+    <div class="cluster__body t-body">
+      <slot />
+    </div>
+  </div>
+</aside>
+
+<style>
+  /* The cluster callout is the page's moment of synthesis insight.
+     Inverted (deep ink on cream) to make it the unmissable reading
+     beat: dark surface, cream type, cinnabar rule. The single
+     inverted block in the entire layout. */
+  .cluster {
+    padding-block: var(--space-major);
+    margin-block: var(--space-major);
+    background-color: var(--color-ink);
+    color: var(--color-cream);
+    margin-inline: calc(-1 * clamp(1.25rem, 5vw, 3rem));
+    padding-inline: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  .cluster__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-step);
+  }
+
+  .cluster__kicker {
+    color: var(--color-cinnabar);
+  }
+
+  .cluster :global(.cinnabar-rule) {
+    width: var(--rule-length-large);
+  }
+
+  .cluster__body {
+    max-width: var(--measure-prose);
+    font-size: clamp(1.2rem, 0.5vw + 1rem, 1.5rem);
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--color-cream);
+    font-family: var(--font-display);
+    letter-spacing: -0.005em;
+  }
+
+  .cluster__body :global(p) {
+    margin: 0;
+  }
+
+  .cluster__body :global(strong) {
+    color: var(--color-cinnabar);
+    font-weight: 600;
+  }
+</style>
