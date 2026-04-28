@@ -1,0 +1,54 @@
+---
+// Synthesis: the writer's argument in prose. 2-4 paragraphs.
+// Body sans, capped at the prose measure. Inline cinnabar emphasis
+// permitted for structural pull-quotes; never decorative.
+---
+
+<section class="synthesis">
+  <div class="synthesis__inner measure">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .synthesis {
+    padding-bottom: var(--space-major);
+  }
+
+  .synthesis__inner :global(p) {
+    margin-bottom: var(--space-step);
+  }
+
+  .synthesis__inner :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* Pull-quote-weight emphasis. Used sparingly. */
+  .synthesis__inner :global(strong) {
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+
+  /* Footnote markers in cinnabar. Renders inline. */
+  .synthesis__inner :global(sup),
+  .synthesis__inner :global(.fn) {
+    color: var(--color-cinnabar);
+    font-family: var(--font-mono);
+    font-size: 0.7em;
+    font-weight: 500;
+    margin-left: 0.1em;
+    vertical-align: super;
+    line-height: 0;
+  }
+
+  .synthesis__inner :global(a) {
+    text-decoration: underline;
+    text-decoration-color: var(--color-hairline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  .synthesis__inner :global(a:hover) {
+    text-decoration-color: var(--color-cinnabar);
+  }
+</style>

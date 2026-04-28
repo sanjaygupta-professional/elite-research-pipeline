@@ -1,0 +1,247 @@
+---
+interface Source {
+  label: string; // e.g. "Anthropic"
+  url: string;
+}
+
+interface Props {
+  index: number; // 1, 2, 3...
+  date: string; // signal-date, e.g. "2026-04-20"
+  category: string; // e.g. "05 AI Infrastructure Trajectory"
+  title: string;
+  profile: string; // e.g. "E3 T-Shifting U2 H-Grounded Z-Now"
+  strength: "strong" | "weak"; // affects chip
+  sources: Source[];
+}
+
+const { index, date, category, title, profile, strength, sources } = Astro.props;
+const indexLabel = index.toString().padStart(2, "0");
+---
+
+<article class="signal" id={`signal-${index}`}>
+  <aside class="signal__meta">
+    <div class="signal__top">
+      <span class="t-mono signal__index" aria-label={`Signal ${index}`}>{indexLabel}</span>
+      <span class="signal__chip" data-strength={strength}>
+        {strength === "strong" ? "Strong" : "Weak"}
+      </span>
+    </div>
+    <time class="t-mono signal__date" datetime={date}>{date}</time>
+    <p class="t-label signal__category">{category}</p>
+    <p class="t-mono signal__profile" aria-label="Signal profile">{profile}</p>
+    <div class="signal__sources">
+      <span class="t-label signal__sources-label">Sources</span>
+      <ol class="signal__sources-list t-mono">
+        {
+          sources.map((source) => (
+            <li>
+              <a href={source.url} rel="noopener">
+                {source.label}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </aside>
+
+  <div class="signal__content">
+    <h2 class="t-headline signal__title">{title}</h2>
+    <div class="signal__body">
+      <slot name="why" />
+    </div>
+    <aside class="signal__watch" aria-label="What to watch for">
+      <span class="t-label signal__watch-label">What to watch for</span>
+      <div class="signal__watch-body">
+        <slot name="watch" />
+      </div>
+    </aside>
+  </div>
+</article>
+
+<style>
+  /* Signal block: single-column on mobile, 2-column on desktop.
+     The meta column on the left holds the audit trail (index, date,
+     chip, category, 5-dim profile, sources). The content column on
+     the right holds the title, body, and the watch callout. The
+     2-col layout uses the horizontal whitespace deliberately: every
+     pixel of width carries content, not silence. */
+  .signal {
+    padding-block: var(--space-rest);
+    border-top: 1px solid var(--color-hairline);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-rest);
+  }
+
+  .signal:first-of-type {
+    border-top: 1px solid var(--color-ink);
+  }
+
+  @media (min-width: 900px) {
+    .signal {
+      grid-template-columns: 16rem 1fr;
+      column-gap: clamp(2rem, 4vw, 4rem);
+    }
+  }
+
+  /* ── Meta column ──────────────────────────────────────────────── */
+  .signal__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-step);
+    color: var(--color-mute);
+  }
+
+  @media (min-width: 900px) {
+    .signal__meta {
+      position: sticky;
+      top: var(--space-rest);
+      align-self: start;
+    }
+  }
+
+  .signal__top {
+    display: flex;
+    align-items: center;
+    column-gap: 0.75em;
+  }
+
+  .signal__index {
+    color: var(--color-cinnabar);
+    font-weight: 500;
+    font-feature-settings: "tnum";
+    font-size: clamp(1.5rem, 1vw + 1.2rem, 2rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .signal__chip {
+    font-family: var(--font-mono);
+    font-size: var(--type-label);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25em 0.6em;
+    border: 1px solid currentColor;
+    border-radius: 1px;
+    line-height: 1;
+  }
+
+  .signal__chip[data-strength="strong"] {
+    color: var(--color-cinnabar);
+  }
+
+  .signal__chip[data-strength="weak"] {
+    color: var(--color-mute);
+  }
+
+  .signal__date {
+    color: var(--color-ink);
+    font-weight: 500;
+    font-feature-settings: "tnum";
+  }
+
+  .signal__category {
+    color: var(--color-mute);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .signal__profile {
+    color: var(--color-cinnabar);
+    font-feature-settings: "ss01", "tnum";
+    font-weight: 500;
+    margin: 0;
+    word-break: break-word;
+  }
+
+  .signal__sources {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-snug);
+    padding-top: var(--space-step);
+    border-top: 1px solid var(--color-hairline);
+  }
+
+  .signal__sources-list {
+    list-style: decimal;
+    list-style-position: outside;
+    padding-left: 1.4em;
+    margin: 0;
+    color: var(--color-mute);
+    font-size: 0.8rem;
+  }
+
+  .signal__sources-list li {
+    margin-bottom: 0.3em;
+    word-break: break-word;
+  }
+
+  .signal__sources-list a {
+    color: var(--color-mute);
+    text-decoration: underline;
+    text-decoration-color: var(--color-hairline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  .signal__sources-list a:hover {
+    color: var(--color-cinnabar);
+    text-decoration-color: var(--color-cinnabar);
+  }
+
+  /* ── Content column ───────────────────────────────────────────── */
+  .signal__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-rest);
+    min-width: 0;
+  }
+
+  .signal__title {
+    text-wrap: balance;
+  }
+
+  .signal__body :global(p) {
+    margin-bottom: var(--space-step);
+    max-width: var(--measure-prose);
+  }
+
+  .signal__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .signal__body :global(a) {
+    text-decoration: underline;
+    text-decoration-color: var(--color-hairline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+
+  .signal__body :global(a:hover) {
+    text-decoration-color: var(--color-cinnabar);
+  }
+
+  /* "What to watch for" callout. Cinnabar rule above + hairline below.
+     Per DESIGN.md: no side-stripe borders. Full top + bottom rules instead. */
+  .signal__watch {
+    border-top: var(--rule-thickness) solid var(--color-cinnabar);
+    padding-top: var(--space-step);
+    padding-bottom: var(--space-step);
+    border-bottom: 1px solid var(--color-hairline);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-snug);
+    max-width: var(--measure-prose);
+  }
+
+  .signal__watch-label {
+    color: var(--color-cinnabar);
+  }
+
+  .signal__watch-body {
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+  }
+</style>

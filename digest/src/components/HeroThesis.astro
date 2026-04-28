@@ -1,0 +1,63 @@
+---
+interface Props {
+  kicker?: string;
+}
+
+const { kicker = "This week's thesis" } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero__inner">
+    <span class="t-label hero__kicker">{kicker}</span>
+    <hr class="cinnabar-rule cinnabar-rule--lg" aria-hidden="true" />
+    <h1 class="t-display hero__thesis">
+      <slot />
+    </h1>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: var(--space-step);
+    padding-bottom: var(--space-major);
+  }
+
+  .hero__inner {
+    /* No outer width clamp; the thesis itself sets its measure per
+       breakpoint. The kicker and rule align to the left edge of
+       whatever width the thesis takes, so the asymmetric mark and
+       the display type read as a single anchored unit. */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-rest);
+  }
+
+  .hero__kicker {
+    color: var(--color-mute);
+  }
+
+  .hero__thesis {
+    /* Display type carries the argument. One per page (per The
+       One-Display-Per-View Rule). Tuned per breakpoint so the thesis
+       lands in 3-5 confident lines at each width. */
+    max-width: 18ch;
+  }
+
+  @media (min-width: 720px) {
+    .hero__thesis {
+      max-width: 26ch;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .hero__thesis {
+      max-width: 38ch;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .hero__thesis {
+      max-width: 44ch;
+    }
+  }
+</style>

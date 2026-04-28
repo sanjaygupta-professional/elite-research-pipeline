@@ -1,0 +1,108 @@
+---
+interface Props {
+  issueDate: string; // e.g. "2026-04-27"
+  scanNumber: number;
+  signalCount: number;
+  strongCount: number;
+  weakCount: number;
+  homeUrl?: string; // link back to the main publication site
+}
+
+const {
+  issueDate,
+  scanNumber,
+  signalCount,
+  strongCount,
+  weakCount,
+  homeUrl = "https://sanjaygupta-professional.github.io/elite-research-pipeline/",
+} = Astro.props;
+---
+
+<header class="masthead">
+  <div class="masthead__primary">
+    <a class="masthead__wordmark t-label" href={homeUrl}>
+      Possibilities with Probabilities
+    </a>
+    <span class="masthead__sep" aria-hidden="true">·</span>
+    <span class="t-label">Weekly Dispatch</span>
+  </div>
+
+  <div class="masthead__meta-row">
+    <time class="t-mono masthead__date" datetime={issueDate}>{issueDate}</time>
+    <span class="masthead__sep" aria-hidden="true">·</span>
+    <span class="t-mono masthead__meta">Scan №{scanNumber}</span>
+    <span class="masthead__sep" aria-hidden="true">·</span>
+    <span class="t-mono masthead__meta">
+      {signalCount} signals
+      <span class="masthead__sub">({strongCount} strong, {weakCount} weak)</span>
+    </span>
+  </div>
+</header>
+
+<style>
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45em;
+    padding-bottom: var(--space-rest);
+    border-bottom: 1px solid var(--color-hairline);
+    margin-bottom: var(--space-section);
+  }
+
+  .masthead__primary,
+  .masthead__meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.85em;
+    row-gap: 0.3em;
+  }
+
+  @media (min-width: 640px) {
+    .masthead {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 0.85em;
+      row-gap: 0.4em;
+      align-items: baseline;
+    }
+    .masthead__primary,
+    .masthead__meta-row {
+      display: contents;
+    }
+  }
+
+  .masthead__wordmark {
+    color: var(--color-ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.05em;
+    transition: color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .masthead__wordmark:hover {
+    color: var(--color-cinnabar);
+    border-bottom-color: var(--color-cinnabar);
+  }
+
+  .masthead__sep {
+    color: var(--color-hairline);
+    font-weight: 500;
+    user-select: none;
+  }
+
+  .masthead__date {
+    color: var(--color-ink);
+    font-feature-settings: "tnum";
+  }
+
+  .masthead__meta {
+    color: var(--color-mute);
+  }
+
+  .masthead__sub {
+    color: var(--color-mute);
+    margin-left: 0.25em;
+  }
+</style>
