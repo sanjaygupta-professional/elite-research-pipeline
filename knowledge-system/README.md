@@ -1,5 +1,9 @@
 # Knowledge System — Overview
 
+!!! audio "🔊 This week's audio brief"
+    A 90-second take on the week's signals in my own voice.  
+    [→ Open the dispatch](digest/)
+
 ## What This Is
 
 A structured, permanently maintained knowledge base for building and sustaining thought leadership at the intersection of **AI/GenAI** and **Organization Transformation**.

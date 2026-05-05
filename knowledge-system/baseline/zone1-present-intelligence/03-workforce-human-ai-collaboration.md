@@ -3,6 +3,21 @@
 **Last updated:** April 2026  
 **Baseline status:** COMPLETE
 
+
+<div class="audio-brief" data-audio-brief>
+  <button type="button" class="audio-brief__play" aria-label="Play audio brief" data-audio-play>
+    <span class="audio-brief__icon" aria-hidden="true" data-audio-icon>▶</span>
+  </button>
+  <div class="audio-brief__meta">
+    <span class="audio-brief__label">Audio brief</span>
+    <span class="audio-brief__time" data-audio-time></span>
+    <span class="audio-brief__voice">Sanjay (cloned)</span>
+  </div>
+  <div class="audio-brief__progress" aria-hidden="true">
+    <div class="audio-brief__progress-fill" data-audio-progress></div>
+  </div>
+  <audio class="audio-brief__audio" src="/elite-research-pipeline/audio/categories/03.mp3" preload="metadata" data-audio-element></audio>
+</div>
 ---
 
 ![Workforce & Human-AI Collaboration — Concept Diagram](../../assets/images/workforce-human-ai-collaboration/concept-diagram-b.png)
