@@ -1,0 +1,224 @@
+---
+interface Props {
+  audioPath: string | null | undefined;
+  voiceAttribution?: string;
+  durationFallback?: string;
+}
+
+const { audioPath, voiceAttribution = "Sanjay (cloned)", durationFallback = "" } = Astro.props;
+
+// Conditional render. If no audio file exists, renders nothing.
+const hasAudio = !!audioPath;
+---
+
+{
+  hasAudio && (
+    <section class="audio-brief" data-audio-brief>
+      <button
+        type="button"
+        class="audio-brief__play"
+        aria-label="Play audio brief"
+        data-audio-play
+      >
+        <span class="audio-brief__icon" aria-hidden="true" data-audio-icon>▶</span>
+      </button>
+      <div class="audio-brief__meta">
+        <span class="t-label audio-brief__label">Audio brief</span>
+        <span class="t-mono audio-brief__time" data-audio-time>{durationFallback}</span>
+        <span class="t-mono audio-brief__voice">{voiceAttribution}</span>
+      </div>
+      <div class="audio-brief__progress" aria-hidden="true">
+        <div class="audio-brief__progress-fill" data-audio-progress />
+      </div>
+      <audio
+        class="audio-brief__audio"
+        src={audioPath}
+        preload="metadata"
+        data-audio-element
+      />
+    </section>
+  )
+}
+
+<script>
+  // One handler per AudioBrief instance on the page.
+  // Each instance is fully independent — pausing one does not affect another.
+  document.querySelectorAll<HTMLElement>("[data-audio-brief]").forEach((root) => {
+    const audio = root.querySelector<HTMLAudioElement>("[data-audio-element]");
+    const playBtn = root.querySelector<HTMLButtonElement>("[data-audio-play]");
+    const icon = root.querySelector<HTMLElement>("[data-audio-icon]");
+    const timeEl = root.querySelector<HTMLElement>("[data-audio-time]");
+    const progressEl = root.querySelector<HTMLElement>("[data-audio-progress]");
+
+    if (!audio || !playBtn || !icon || !timeEl || !progressEl) return;
+
+    const formatTime = (seconds: number): string => {
+      if (!isFinite(seconds) || seconds < 0) return "0:00";
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m}:${s.toString().padStart(2, "0")}`;
+    };
+
+    // Show duration as soon as metadata loads.
+    audio.addEventListener("loadedmetadata", () => {
+      timeEl.textContent = formatTime(audio.duration);
+    });
+
+    // While playing, show elapsed and update progress bar.
+    audio.addEventListener("timeupdate", () => {
+      if (audio.duration > 0) {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        progressEl.style.width = `${pct}%`;
+      }
+    });
+
+    audio.addEventListener("ended", () => {
+      icon.textContent = "▶";
+      playBtn.setAttribute("aria-label", "Play audio brief");
+      progressEl.style.width = "0%";
+      timeEl.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener("play", () => {
+      icon.textContent = "❚❚";
+      playBtn.setAttribute("aria-label", "Pause audio brief");
+    });
+
+    audio.addEventListener("pause", () => {
+      // Only swap back if we're not at the end (handled by 'ended').
+      if (!audio.ended) {
+        icon.textContent = "▶";
+        playBtn.setAttribute("aria-label", "Play audio brief");
+      }
+    });
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play().catch(() => {
+          // Autoplay or load error. Keep UI in paused state.
+        });
+      } else {
+        audio.pause();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* AudioBrief: cinnabar play affordance + audit-trail metadata.
+     Sits between HeroThesis and Synthesis on the dispatch page.
+     Top + bottom hairline rules — matches the Signal "watch" callout
+     pattern. The progress bar replaces the bottom hairline with a
+     cinnabar fill as the audio plays. No card, no shadow. */
+
+  .audio-brief {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: var(--space-step);
+    row-gap: var(--space-snug);
+    padding-top: var(--space-step);
+    padding-bottom: var(--space-step);
+    border-top: 1px solid var(--color-hairline);
+    border-bottom: 1px solid var(--color-hairline);
+    margin-top: var(--space-rest);
+    margin-bottom: var(--space-rest);
+    max-width: var(--measure-prose);
+    position: relative;
+  }
+
+  /* ── Play button ───────────────────────────────────────────────── */
+  .audio-brief__play {
+    grid-row: span 1;
+    appearance: none;
+    border: 1px solid var(--color-cinnabar);
+    background: transparent;
+    color: var(--color-cinnabar);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    line-height: 1;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0; /* sharp corners — DESIGN.md component philosophy */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background-color var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-out);
+  }
+
+  .audio-brief__play:hover,
+  .audio-brief__play:focus-visible {
+    background-color: var(--color-cinnabar);
+    color: var(--color-cream);
+    outline: none;
+  }
+
+  .audio-brief__play:active {
+    transform: translateY(1px);
+  }
+
+  .audio-brief__icon {
+    font-feature-settings: "ss01";
+    /* Pause symbol is two thin bars; play is a triangle. The font's
+       default rendering of "▶" leans slightly off-center — nudge. */
+    transform: translateX(0.05em);
+  }
+
+  /* ── Meta row ──────────────────────────────────────────────────── */
+  .audio-brief__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.85em;
+    row-gap: 0.25em;
+    color: var(--color-mute);
+  }
+
+  .audio-brief__label {
+    color: var(--color-cinnabar);
+  }
+
+  .audio-brief__time {
+    color: var(--color-ink);
+    font-feature-settings: "tnum";
+    font-weight: 500;
+  }
+
+  .audio-brief__voice {
+    color: var(--color-mute);
+  }
+
+  /* ── Progress bar (replaces the bottom hairline as it fills) ───── */
+  .audio-brief__progress {
+    grid-column: 1 / -1;
+    position: absolute;
+    bottom: -1px; /* sits over the bottom border */
+    left: 0;
+    right: 0;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .audio-brief__progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--color-cinnabar);
+    transition: width 0.1s linear;
+  }
+
+  /* Hidden native element. The button + progress is the visual UI. */
+  .audio-brief__audio {
+    display: none;
+  }
+
+  /* ── Mobile ────────────────────────────────────────────────────── */
+  @media (max-width: 480px) {
+    .audio-brief__meta {
+      column-gap: 0.6em;
+    }
+  }
+</style>
