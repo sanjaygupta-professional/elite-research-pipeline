@@ -234,3 +234,99 @@
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01ms !important; }
 }
+
+/* ─── Audio Brief — cloned-voice TLDR player ────────────────────────
+   Mirrors digest/src/components/AudioBrief.astro for the MkDocs side.
+   Uses MkDocs Material's --md-primary-fg-color (cinnabar) and warm cream.
+   Cinnabar accent only (One Voice Rule). Flat, no shadow. Top + bottom
+   hairline rules; progress bar replaces bottom hairline as audio plays. */
+
+.audio-brief {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1.25rem;
+  row-gap: 0.75rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  margin: 1.5rem 0 2rem;
+  position: relative;
+  max-width: 38rem;
+}
+
+.audio-brief__play {
+  appearance: none;
+  border: 1px solid var(--md-primary-fg-color);
+  background: transparent;
+  color: var(--md-primary-fg-color);
+  font-family: "Geist Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  font-size: 1.1rem;
+  line-height: 1;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 140ms ease-out, color 140ms ease-out, transform 140ms ease-out;
+}
+.audio-brief__play:hover,
+.audio-brief__play:focus-visible {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-default-bg-color);
+  outline: none;
+}
+.audio-brief__play:active { transform: translateY(1px); }
+
+.audio-brief__icon {
+  transform: translateX(0.05em);
+}
+
+.audio-brief__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.85em;
+  row-gap: 0.25em;
+  color: var(--md-default-fg-color--light);
+  font-family: "Geist Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  font-size: 0.85rem;
+}
+
+.audio-brief__label {
+  color: var(--md-primary-fg-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.audio-brief__time {
+  color: var(--md-default-fg-color);
+  font-feature-settings: "tnum";
+  font-weight: 500;
+}
+
+.audio-brief__voice {
+  color: var(--md-default-fg-color--light);
+}
+
+.audio-brief__progress {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+}
+.audio-brief__progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--md-primary-fg-color);
+  transition: width 0.1s linear;
+}
+
+.audio-brief__audio { display: none; }

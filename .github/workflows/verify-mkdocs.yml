@@ -1,0 +1,42 @@
+name: Verify MkDocs Site Builds
+
+# PR-time check: catches broken markdown / mkdocs.yml / asset paths in
+# the main MkDocs site before they can merge. The deploy-docs workflow
+# only runs on push to master, so without this guard a broken MkDocs
+# build would silently merge and break the live site.
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - knowledge-system/**
+      - mkdocs.yml
+      - .github/workflows/verify-mkdocs.yml
+
+concurrency:
+  group: verify-mkdocs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install MkDocs Material
+        run: |
+          pip install --upgrade pip
+          pip install \
+            mkdocs-material \
+            pymdown-extensions
+
+      - name: Build MkDocs site
+        run: mkdocs build --verbose
