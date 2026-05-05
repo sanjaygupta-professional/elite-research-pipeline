@@ -126,11 +126,86 @@ If all content was Noise, still add a dated log entry so the scan history is com
 **Reason:** All content classified as Noise or no fresh posts
 ```
 
+In this case, **skip Step 9** — the dispatch stays on the prior issue.
+
+## Step 9: Update the Cinnabar Dispatch (executive issue)
+
+If you logged at least one qualifying signal in Step 6, update the executive issue at `digest/src/pages/index.astro`. This is the public-facing weekly artifact at `/digest/` and must stay synchronized with each weekly scan.
+
+### Read these first
+
+- `digest/src/pages/index.astro` — the **current** dispatch issue. Use it verbatim as your structural template (component imports, prop shapes, slot patterns, paragraph cadence). Read it carefully before writing.
+- `DESIGN.md` — the locked design rules (you only need the "Named Rules" sections; skim, don't memorize).
+- `digest/README.md` — summarizes the load-bearing rules. Skim.
+
+### How to write the new issue
+
+Use the `Write` tool to replace `digest/src/pages/index.astro` in full. Start from the prior issue's structure and change only the values listed below. **The component imports at the top and the `Methodology` props at the bottom are stable across issues — copy them verbatim.**
+
+1. **Frontmatter constants:**
+   - `issueDate` = today's scan date (`YYYY-MM-DD`).
+   - `description` = one-sentence thesis (used as meta description; under 200 chars).
+   - `title` = `"The Cinnabar Dispatch · YYYY-MM-DD · Possibilities with Probabilities"`.
+
+2. **`<Masthead>` props:**
+   - `issueDate` — same as above.
+   - `scanNumber` — read the prior issue's value (the file you just read) and increment by 1.
+   - `signalCount` — total signals you appended in Step 6.
+   - `strongCount`, `weakCount` — the strong/weak split (must sum to `signalCount`).
+
+3. **`<HeroThesis kicker="This week's thesis">`:** 2–4 sentence thesis derived from your scan summary's "Notable patterns" section. A confident editorial claim, not a recap. Names the implication for an enterprise AI strategy reader.
+
+4. **`<Synthesis>`:** exactly three `<p>` paragraphs.
+   - **Para 1:** State the pattern. Walk through the strongest signals as evidence (mention 3–5 by name/finding).
+   - **Para 2:** Convergence/implication. What does the pattern mean structurally? Use one `<strong>...</strong>` for emphasis, max one.
+   - **Para 3:** Reader-action paragraph: open with `For the reader whose work is enterprise AI strategy:` and give concrete diligence/playbook implications.
+
+5. **Featured `<Signal>` blocks — select 5 of the N signals.** Selection priorities:
+   - Strong over Weak; include 1 Weak only if it materially supports the thesis.
+   - Cluster-supporting signals over standalone ones.
+   - Cover at least 3 distinct categories across the 5.
+
+   Each `<Signal>` uses these props:
+   - `index` — 1 through 5.
+   - `date` — signal date in `YYYY-MM-DD`.
+   - `category` — e.g. `"01 GenAI Capabilities · 04 AI Governance"` (use middle-dot ` · ` between categories).
+   - `title` — one declarative sentence. **No em-dashes.**
+   - `profile` — the 5-dim string verbatim (e.g. `"E3 T-Shifting U3 H-Ahead Z-Now"`).
+   - `strength` — `"strong"` or `"weak"` exactly.
+   - `sources` — array of `{label, url}`. `label` is the bare domain + path (no `https://` scheme); `url` is the full URL.
+
+   Two slots:
+   - `<p slot="why">` — body prose adapted from the signal's "Why it matters" entry. Spell out approximate numbers in narrative prose ("eighty-five percent"); preserve digits for exact figures cited from sources ("$40K", "60", "82.7%"). Use `<em>...</em>` once or twice for emphasis, max.
+   - `<p slot="watch">` — one paragraph adapted from "What to watch for".
+
+6. **`<ClusterCallout kicker="The pattern across signals X, Y, Z">`:** one `<p>` paragraph binding 3–4 of the featured signals to the thesis. Use `<strong>...</strong>` once for the punch.
+
+7. **`<Methodology>`:** copy props verbatim from the prior issue. Do not edit.
+
+### Voice rules — hard constraints
+
+- **No em-dashes (`—`) anywhere in rendered copy.** Use commas, semicolons, parens, or sentence breaks. This is a top-of-file design rule. Search-and-replace your draft before finishing.
+- No hero-metric template (big number + small label).
+- Spelled-out numbers in narrative prose; digits in benchmark/dollar figures from sources.
+- One `<strong>` in Synthesis para 2, one `<strong>` in ClusterCallout — that is the entire emphasis budget.
+- Mono audit trail is handled by the components — do not override styles.
+
+### Self-check before finishing Step 9
+
+- Grep your draft for the `—` character (U+2014). If found, replace with `,` `;` or `(...)`.
+- Confirm `scanNumber === priorIssueScanNumber + 1`.
+- Confirm `signalCount === strongCount + weakCount` and matches Step 6 totals.
+- Confirm all 5 featured signal `profile` strings appear verbatim in the appended scan section of the weak-signal file.
+- Confirm component imports and `<Methodology>` props are unchanged.
+
 ## Constraints
 
-- **Only modify** `knowledge-system/baseline/zone2-futures-intelligence/06-weak-signal-watch.md`
-- Do NOT modify baseline research files or any other knowledge system documents
-- Do NOT commit or push — the wrapper script handles git operations after you finish
-- Use self-verification before finishing: re-read your appended entries, verify each profile is formatted correctly per the rubric, confirm the category mapping is correct, confirm the scan summary numbers match the entries added
+- **You may modify exactly two files:**
+  - `knowledge-system/baseline/zone2-futures-intelligence/06-weak-signal-watch.md` (Steps 6–8, always)
+  - `digest/src/pages/index.astro` (Step 9, only if at least one signal was added in Step 6)
+- Do NOT modify baseline research files, design docs, or any other knowledge system documents.
+- Do NOT commit or push — the wrapper script handles git operations after you finish.
+- Use self-verification before finishing: re-read your appended entries, verify each profile is formatted correctly per the rubric, confirm the category mapping is correct, confirm the scan summary numbers match the entries added, and run the dispatch self-check items in Step 9 if you updated the dispatch.
 
-When complete, output a brief final message: "Scan complete. [N] signals added to Weak Signal Watch."
+When complete, output a brief final message in this exact format:
+`Scan complete. N signals added to Weak Signal Watch. Dispatch: updated|skipped.`

@@ -1,0 +1,40 @@
+name: Verify Digest Builds
+
+# Catches broken Astro in the Cinnabar Dispatch on PRs (especially the
+# auto-generated weekly scan PRs) before they can merge to master.
+# The deploy-docs workflow only runs on push to master, so without this
+# guard a broken digest would silently merge and break the live site.
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - digest/**
+      - .github/workflows/verify-digest.yml
+
+concurrency:
+  group: verify-digest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: digest/package-lock.json
+
+      - name: Install digest dependencies
+        working-directory: digest
+        run: npm ci
+
+      - name: Build digest
+        working-directory: digest
+        run: npm run build
