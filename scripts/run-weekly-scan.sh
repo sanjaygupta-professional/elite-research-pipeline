@@ -123,8 +123,10 @@ gh pr create \
 - \`digest/audio-scripts/${DATE}.md\` (TTS script — if dispatch updated)
 - \`digest/public/audio/${DATE}.mp3\` (cloned-voice audio brief — if TTS succeeded; see status: \`$AUDIO_NOTE\`)
 
-**Listen before merging:** the cloned-voice audio brief is reachable at the raw GitHub URL while this PR is open:
-\`https://raw.githubusercontent.com/sanjaygupta-professional/elite-research-pipeline/$BRANCH/digest/public/audio/${DATE}.mp3\`
+**Listen before merging:** open the audio brief in GitHub's inline player while this PR is open:
+\`https://github.com/sanjaygupta-professional/elite-research-pipeline/blob/$BRANCH/digest/public/audio/${DATE}.mp3\`
+
+(The raw URL serves with \`content-disposition: attachment\` and downloads instead of playing — use the \`blob/\` URL above for inline preview.)
 
 **Sources scanned (16):**
 - Synthesizers: Import AI, The Batch, One Useful Thing, Zvi, Stratechery
