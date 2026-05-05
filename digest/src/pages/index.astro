@@ -1,7 +1,11 @@
 ---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
 import Issue from "../layouts/Issue.astro";
 import Masthead from "../components/Masthead.astro";
 import HeroThesis from "../components/HeroThesis.astro";
+import AudioBrief from "../components/AudioBrief.astro";
 import Synthesis from "../components/Synthesis.astro";
 import Signal from "../components/Signal.astro";
 import ClusterCallout from "../components/ClusterCallout.astro";
@@ -11,6 +15,14 @@ const issueDate = "2026-05-04";
 const description =
   "The instruments are losing fidelity. Five signals from five surfaces all break the same kind of measurement in the same week.";
 const title = "The Cinnabar Dispatch · 2026-05-04 · Possibilities with Probabilities";
+
+// Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
+// Path is checked at build time against the public/ directory.
+const audioFilename = `${issueDate}.mp3`;
+const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
+const audioPath = existsSync(audioFsPath)
+  ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
+  : null;
 ---
 
 <Issue title={title} description={description} issueDate={issueDate}>
@@ -28,6 +40,8 @@ const title = "The Cinnabar Dispatch · 2026-05-04 · Possibilities with Probabi
     diverged from the underlying system in the same week, on five independent surfaces.
     Procurement and policy now require gauges the prior twelve months did not need.
   </HeroThesis>
+
+  <AudioBrief audioPath={audioPath} />
 
   <Synthesis>
     <p>

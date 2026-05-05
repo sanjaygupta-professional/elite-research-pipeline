@@ -198,14 +198,48 @@ Use the `Write` tool to replace `digest/src/pages/index.astro` in full. Start fr
 - Confirm all 5 featured signal `profile` strings appear verbatim in the appended scan section of the weak-signal file.
 - Confirm component imports and `<Methodology>` props are unchanged.
 
+## Step 10: Write the TTS audio script
+
+If you updated the dispatch in Step 9, also write a 90-second audio brief script for the cloned-voice TTS pipeline. This becomes the cohort's "minimal plus" listening option on the dispatch page.
+
+Write to `digest/audio-scripts/<YYYY-MM-DD>.md` where `<YYYY-MM-DD>` is today's scan date.
+
+### Hard constraints
+
+- **220 to 280 words total.** Aim for 250. Pre-script length budget = ~95 seconds at conversational pace.
+- **Open with:** `Sanjay here.` then a one-line hook from the dispatch's HeroThesis. Personal tone, like a voice memo to a peer.
+- **Middle:** state the thesis in one or two sentences (rephrased for ear), then 3 to 4 of the strongest signals named with one sentence each, then 1 to 2 sentences from the cluster pattern.
+- **Close with:** one-line reader-action (`If your work is enterprise AI strategy, ...`), then `Full detail in the dispatch. Until next week.`
+
+### Voice rules — ear, not eye
+
+- **No em-dashes (—).** Use commas, semicolons, parens.
+- **No parentheticals.** TTS pacing on parens is poor; convert to commas.
+- **Spell out numbers in narrative prose.** Examples: `eighty-five percent`, `forty thousand to three hundred and twenty thousand dollars`, `twenty twenty-six`. Preserve digits ONLY for benchmark or dollar figures cited verbatim from sources, and only when they read naturally.
+- **No URLs spoken aloud.** No `github.io`, no `slash-digest`. The closing CTA "Full detail in the dispatch" suffices.
+- **Sentence average length: 15 words.** Long clauses degrade cloned-voice quality. Break sentences on natural pauses.
+- **No model identifiers in raw form.** `GPT-5.5` becomes `GPT five point five`. `K2.6` becomes `K two point six`. `ARC-AGI-2` becomes `arc A G I two`. The TTS engine pronounces unaltered model strings poorly.
+- **No markdown, no frontmatter, no commentary.** Plain prose paragraphs separated by blank lines. The file is ingested directly into the TTS API.
+
+### Self-check before finishing Step 10
+
+- Word count between 220 and 280.
+- Grep for `—` (em-dash) and any URL — both must be absent.
+- Confirm "Sanjay here." is the first phrase.
+- Confirm "Full detail in the dispatch. Until next week." is the closing.
+- Re-read aloud (or simulate it). Any sentence that runs out of breath is too long; split it.
+
+The wrapper script will pass this file through `scripts/gen-audio.sh dispatch` after you finish. If TTS fails (ElevenLabs outage, quota), the dispatch ships without audio (graceful degrade) and the PR notes the failure.
+
 ## Constraints
 
-- **You may modify exactly two files:**
+- **You may modify exactly three files:**
   - `knowledge-system/baseline/zone2-futures-intelligence/06-weak-signal-watch.md` (Steps 6–8, always)
   - `digest/src/pages/index.astro` (Step 9, only if at least one signal was added in Step 6)
+  - `digest/audio-scripts/<YYYY-MM-DD>.md` (Step 10, only if you updated the dispatch in Step 9)
 - Do NOT modify baseline research files, design docs, or any other knowledge system documents.
 - Do NOT commit or push — the wrapper script handles git operations after you finish.
-- Use self-verification before finishing: re-read your appended entries, verify each profile is formatted correctly per the rubric, confirm the category mapping is correct, confirm the scan summary numbers match the entries added, and run the dispatch self-check items in Step 9 if you updated the dispatch.
+- Use self-verification before finishing: re-read your appended entries, verify each profile is formatted correctly per the rubric, confirm the category mapping is correct, confirm the scan summary numbers match the entries added, run the dispatch self-check items in Step 9 if you updated the dispatch, and run the TTS-script self-check items in Step 10 if you wrote the audio script.
 
 When complete, output a brief final message in this exact format:
-`Scan complete. N signals added to Weak Signal Watch. Dispatch: updated|skipped.`
+`Scan complete. N signals added to Weak Signal Watch. Dispatch: updated|skipped. Audio script: written|skipped.`
