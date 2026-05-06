@@ -1,0 +1,302 @@
+---
+import Issue from "../../layouts/Issue.astro";
+import Masthead from "../../components/Masthead.astro";
+import HeroThesis from "../../components/HeroThesis.astro";
+import Synthesis from "../../components/Synthesis.astro";
+import Signal from "../../components/Signal.astro";
+import ClusterCallout from "../../components/ClusterCallout.astro";
+import Methodology from "../../components/Methodology.astro";
+import previousIssues from "../../data/issues.json";
+
+const issueDate = "2026-04-27";
+const description =
+  "The infrastructure layer is now the binding constraint for 2026 enterprise AI. Three of this week's seven signals say so.";
+const title = "The Cinnabar Dispatch · 2026-04-27 · Possibilities with Probabilities";
+
+const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
+---
+
+<Issue title={title} description={description} issueDate={issueDate}>
+  <Masthead
+    issueDate={issueDate}
+    scanNumber={3}
+    signalCount={7}
+    strongCount={5}
+    weakCount={2}
+  />
+
+  <HeroThesis kicker="This week's thesis">
+    The infrastructure layer is now the binding constraint for 2026 enterprise AI. Three of this
+    week's seven signals say so, and they sharpen the prior week's compute supply-constraint
+    inflection from observation into structural pattern.
+  </HeroThesis>
+
+  <Synthesis>
+    <p>
+      The reading I have been carrying for two weeks is that compute supply, not model capability,
+      is the binding constraint on 2026 enterprise AI strategy. This week, three independent signals
+      from three independent surfaces all moved that reading from <em>observation</em> to
+      <strong>structural pattern</strong>. Anthropic and Amazon committed an additional one hundred
+      billion dollars over ten years to five gigawatts of new compute, with one gigawatt of Trainium
+      capacity slated to come online by year-end. DeepSeek released a one-million-token agentic
+      model that holds frontier-class task parity at roughly two percent of the previous KV cache
+      footprint, which is a category-creation move for deployable long-horizon agentic workloads.
+      And US datacenter siting, which was a permitting question two years ago, became a political
+      risk question this year, with roughly sixty-four billion dollars of projects blocked across a
+      ten-month window and at least twelve states moving restrictive bills.
+    </p>
+
+    <p>
+      The convergence is the point. Each signal alone is a strong observation. Together, they
+      describe a market where capacity is rationed by power and politics on the supply side,
+      pursued via radical efficiency moves on the demand side, and increasingly priced in
+      gigawatts and decade-length contracts rather than tokens and quarters. The frontier labs
+      that win 2026 are not the labs with the cleverest models. They are the labs with secured,
+      siteable, decade-stable compute.
+    </p>
+
+    <p>
+      For the reader whose work is enterprise AI strategy: your 2026 capacity model needs a third
+      risk dimension that did not exist in 2024, alongside power and GPU availability. Community
+      and political acceptance of host sites is now a planning variable. Your procurement
+      assumption that vendor selection is a $ / token comparison is also becoming structurally
+      wrong, which is the second pattern this week pointed to. More on that below.
+    </p>
+  </Synthesis>
+
+  <!-- Selected signals: 3 cluster-pattern + 2 strong supplements. -->
+
+  <Signal
+    index={1}
+    date="2026-04-20"
+    category="05 AI Infrastructure Trajectory"
+    title="Anthropic and Amazon expand to 5 GW / additional $100B over 10 years; 1 GW Trainium online by end-2026."
+    profile="E3 T-Shifting U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "anthropic.com/news/anthropic-amazon-compute",
+        url: "https://www.anthropic.com/news/anthropic-amazon-compute",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-165-in-our-image",
+        url: "https://thezvi.substack.com/p/ai-165-in-our-image",
+      },
+    ]}
+  >
+    <p slot="why">
+      A second multi-year capital commitment, on top of the 2024 four-billion and 2025 eight-billion
+      tranches, now expressed in <em>gigawatts</em> and <em>decade-length terms</em>, confirms that
+      frontier-lab compute is migrating from spot procurement to infrastructure project economics.
+      One gigawatt of Trainium-based capacity is slated to come online by year-end. Combined with
+      the prior week's compute supply-constraint inflection, this is the sharpest tell yet that the
+      binding constraint for 2026 to 2028 enterprise AI strategy is power-anchored capacity
+      allocation, not cloud spend. Enterprises without a multi-year compute strategy will
+      increasingly negotiate from a position of rationing, not pricing.
+    </p>
+    <p slot="watch">
+      Whether OpenAI, Google, or xAI announces a comparable GW-scale, decade-length commitment
+      within two quarters; three such commitments in twelve months converts this from
+      Anthropic-specific to industry-structural. Watch also for any hyperscaler disclosing a
+      multi-quarter waitlist or rationing language in Q2 2026 earnings, which would corroborate
+      the compute-as-rationed-resource framing.
+    </p>
+  </Signal>
+
+  <Signal
+    index={2}
+    date="2026-04-24"
+    category="01 GenAI Capabilities · 11 Agent Frameworks"
+    title="DeepSeek V4: 1M-token agentic context with ~2% KV-cache footprint and frontier-class agent-task parity."
+    profile="E3 T-Accelerating U3 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "huggingface.co/blog/deepseekv4",
+        url: "https://huggingface.co/blog/deepseekv4",
+      },
+      {
+        label: "simonwillison.net/2026/Apr/24/deepseek-v4/",
+        url: "https://simonwillison.net/2026/Apr/24/deepseek-v4/",
+      },
+      {
+        label: "newsletter.semianalysis.com/p/the-coding-assistant-breakdown-more",
+        url: "https://newsletter.semianalysis.com/p/the-coding-assistant-breakdown-more",
+      },
+    ]}
+  >
+    <p slot="why">
+      DeepSeek V4-Pro and V4-Flash combine Compressed Sparse Attention with Heavily Compressed
+      Attention to deliver MRCR 8-needle accuracy above 0.82 through 256K tokens (0.59 at 1M),
+      SWE-Verified 80.6 (effective parity with Opus 4.6-Max at 80.8), and Toolathlon 51.8 (ahead of
+      Gemini-3.1-Pro at 48.8), all at roughly ten percent of V3.2's KV cache and twenty-seven
+      percent of its inference FLOPs. This is a category-creation move for <em>deployable</em>
+      long-horizon agentic workloads: 1M-context multi-step browsing, terminal sessions of
+      hundreds of commands, and SWE-bench tasks now run on standard hardware without context
+      blowup. It directly stresses the open-weights-frontier-baton-has-passed thesis from the Meta
+      Muse Spark signal a week earlier.
+    </p>
+    <p slot="watch">
+      Whether enterprise reference architectures (Red Hat OpenShift AI, vLLM guides, Hugging Face
+      enterprise playbooks, Accenture solution stacks) re-benchmark long-context agent workloads on
+      V4 within Q2 2026; whether a US frontier lab announces a comparable KV-cache efficiency
+      breakthrough. Non-announcement reinforces the pattern that efficiency advantage is
+      concentrating in Chinese labs.
+    </p>
+  </Signal>
+
+  <Signal
+    index={3}
+    date="2026-04-24"
+    category="05 AI Infrastructure · 04 AI Governance"
+    title="US data-center community revolt: ~$64B blocked May 2024–Mar 2025; 12 states with restrictive bills in 2026."
+    profile="E3 T-Accelerating U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "deeplearning.ai/the-batch/issue-350/",
+        url: "https://www.deeplearning.ai/the-batch/issue-350/",
+      },
+    ]}
+  >
+    <p slot="why">
+      Approximately sixty-four billion dollars of US data-center projects were blocked or delayed
+      between May 2024 and March 2025. Maine passed a moratorium. At least twelve other US states
+      filed comparable bills in 2026. Port Washington, Wisconsin passed a 2-to-1 referendum
+      requiring voter approval for tax incentives. At least one molotov-cocktail incident plus
+      thirteen gunshots fired at an Indianapolis councilor's home are now on record. This converts
+      data-center siting from a permitting question into a political-risk question, layering a
+      community-consent constraint <em>on top</em> of the power and GPU constraints already
+      squeezing capacity. Enterprises modeling AI capacity now need a third risk dimension,
+      community and political acceptance of host sites, that did not exist as a planning variable
+      in 2024.
+    </p>
+    <p slot="watch">
+      Whether any state passes a binding moratorium (not just a study commission) on new
+      hyperscale data centers in 2026, which would force a measurable capacity re-routing.
+      Whether a Tier-1 AI lab publicly cancels or relocates a previously announced site citing
+      community or regulatory pushback. Either upgrades this from growing tension to structural
+      capacity risk.
+    </p>
+  </Signal>
+
+  <Signal
+    index={4}
+    date="2026-04-24"
+    category="08 AI Productivity Tools · 02 Enterprise AI"
+    title="Cost-per-task overtakes cost-per-token as the procurement-relevant unit for coding assistants."
+    profile="E3 T-Emerging U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "newsletter.semianalysis.com/p/the-coding-assistant-breakdown-more",
+        url: "https://newsletter.semianalysis.com/p/the-coding-assistant-breakdown-more",
+      },
+      {
+        label: "newsletter.pragmaticengineer.com/p/the-pulse-ai-token-spending-out-of",
+        url: "https://newsletter.pragmaticengineer.com/p/the-pulse-ai-token-spending-out-of",
+      },
+      {
+        label: "latent.space/p/shopify",
+        url: "https://www.latent.space/p/shopify",
+      },
+    ]}
+  >
+    <p slot="why">
+      Three independent surfaces converge in one week on the same operational finding. GPT-5.5's
+      five-dollar input and thirty-dollar output rates and Opus 4.7's new tokenizer (roughly
+      thirty-five percent more tokens per identical input) make raw $ / token comparisons
+      misleading. The Pragmatic Engineer's data on fifteen tech companies and Shopify's CTO both
+      confirm that high-throughput AI-native teams are quietly migrating budgeting from $ / token
+      to $ / task. Shopify additionally reports that <em>spending more tokens on model-based code
+      review than on generation</em> is the configuration that actually reduces production bugs.
+      For enterprise procurement, the dominant 2024 to 2025 vendor-comparison spreadsheet (price
+      per million tokens times benchmark score) is becoming structurally wrong. The right unit is
+      end-to-end task economics, which couples model choice to harness, latency, review cadence,
+      and rollback cost.
+    </p>
+    <p slot="watch">
+      Whether a major analyst firm (Gartner, Forrester, IDC) or consultancy (Accenture, McKinsey,
+      Deloitte) publishes a coding-assistant TCO methodology built on cost-per-task within Q2
+      2026. Whether at least one AI vendor begins publishing official $ / task benchmarks
+      alongside $ / token pricing.
+    </p>
+  </Signal>
+
+  <Signal
+    index={5}
+    date="2026-04-26"
+    category="02 Enterprise AI & Org Transformation"
+    title="Indian-IT enterprise-AI inflection: TCS $1.8B AI ARR, Wipro 200+ deployed agents, India AI workloads at ~30% CAGR through 2030."
+    profile="E3 T-Accelerating U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label:
+          "analyticsindiamag.com/2026-could-be-indias-year-in-ai-but-only-the-resilient-will-survive",
+        url: "https://analyticsindiamag.com/ai-features/2026-could-be-indias-year-in-ai-but-only-the-resilient-will-survive/",
+      },
+      {
+        label: "analyticsindiamag.com/it-services/indian-its-ai-talks-get-louder-as-revenues-go-mute",
+        url: "https://analyticsindiamag.com/it-services/indian-its-ai-talks-get-louder-as-revenues-go-mute/",
+      },
+      {
+        label: "business-standard.com/industry/news/indian-it-faces-ai-reset",
+        url: "https://www.business-standard.com/industry/news/indian-it-faces-ai-reset-top-5-firms-post-mixed-fy26-amid-macro-headwinds-126042600466_1.html",
+      },
+    ]}
+  >
+    <p slot="why">
+      TCS reports approximately one-point-eight billion dollars annualised AI revenue in Q3,
+      HCLTech reports roughly one hundred and forty-six million dollars in Advanced AI revenue,
+      and Wipro doubled large-deal bookings to two-point-seven billion dollars in Q1 FY26 (up one
+      hundred and thirty-one percent year-over-year) while disclosing two hundred plus deployed
+      enterprise AI agents. Dell launched an AI India Blueprint at the India AI Impact Summit
+      projecting roughly thirty percent CAGR for AI workloads in India through 2030. This is the
+      first scan in which Indian IT services disclose AI revenue at material absolute scale
+      (multi-billion-dollar). It matters because Indian IT is the global delivery layer for
+      enterprise AI transformation, so its capacity and pricing for AI work directly shape global
+      enterprise economics. The dual signal (AI revenue rising while overall services revenue is
+      muted) suggests AI is cannibalizing rather than expanding the revenue base, an early-warning
+      pattern for the missing-rung hypothesis at industry scale.
+    </p>
+    <p slot="watch">
+      Whether Q4 FY26 earnings from Infosys, TCS, Wipro, HCLTech, and Tech Mahindra show AI
+      revenue growth offsetting non-AI services contraction (cannibalization confirmed) or
+      expanding the total revenue base (additive). Whether NASSCOM or India's MeitY publishes a
+      quantified workforce-impact estimate within two quarters.
+    </p>
+  </Signal>
+
+  <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
+    <p>
+      Three of this week's seven signals (Anthropic-Amazon's gigawatt expansion, US data-center
+      community revolt, and DeepSeek V4's KV-cache efficiency) point at the same conclusion from
+      three different angles. <strong>The infrastructure layer is the contested ground for 2026,
+      and the binding constraint on enterprise AI strategy.</strong> Capability used to be the
+      dominant strategic variable. It is being displaced. The labs and enterprises that secure
+      sited, scaled, decade-stable compute, and that build models efficient enough to run on
+      standard hardware, will set the pace.
+    </p>
+  </ClusterCallout>
+
+  {filteredIssues.length > 0 && (
+    <section class="previous-issues">
+      <h2 class="previous-issues__heading">Previous Issues</h2>
+      <ul class="previous-issues__list">
+        {filteredIssues.map((issue) => (
+          <li>
+            <a href={`${import.meta.env.BASE_URL}issues/${issue.date}/`}>
+              Week of {issue.date}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <Methodology
+    frameworkUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/"
+    archiveUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/baseline/zone2-futures-intelligence/06-weak-signal-watch/"
+  />
+</Issue>
