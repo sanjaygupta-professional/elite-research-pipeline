@@ -5,15 +5,22 @@ interface Props {
   durationFallback?: string;
 }
 
-const { audioPath, voiceAttribution = "Sanjay (cloned)", durationFallback = "" } = Astro.props;
+const { audioPath, voiceAttribution = "Sanjay's Summary", durationFallback = "" } = Astro.props;
 
 // Conditional render. If no audio file exists, renders nothing.
 const hasAudio = !!audioPath;
+const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
 ---
 
 {
   hasAudio && (
     <section class="audio-brief" data-audio-brief>
+      <img
+        class="audio-brief__avatar"
+        src={avatarSrc}
+        alt="Sanjay Gupta"
+        aria-hidden="true"
+      />
       <button
         type="button"
         class="audio-brief__play"
@@ -113,7 +120,7 @@ const hasAudio = !!audioPath;
 
   .audio-brief {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto 1fr;
     align-items: center;
     column-gap: var(--space-step);
     row-gap: var(--space-snug);
@@ -125,6 +132,16 @@ const hasAudio = !!audioPath;
     margin-bottom: var(--space-rest);
     max-width: var(--measure-prose);
     position: relative;
+  }
+
+  /* ── Avatar ────────────────────────────────────────────────────── */
+  .audio-brief__avatar {
+    width: 2.6rem;
+    height: 2.6rem;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    flex-shrink: 0;
   }
 
   /* ── Play button ───────────────────────────────────────────────── */
