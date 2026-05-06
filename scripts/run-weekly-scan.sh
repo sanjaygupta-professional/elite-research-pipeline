@@ -79,6 +79,39 @@ DISPATCH_NOTE="Dispatch: not modified (scan only)"
 AUDIO_NOTE="Audio: not generated"
 
 if ! git diff --quiet -- "$DISPATCH_FILE"; then
+  # Archive the prior dispatch (HEAD version, before Claude's changes) so readers
+  # can browse past issues. Reads issueDate from the committed file, not the
+  # working-tree version Claude just wrote.
+  PRIOR_DATE=$(git show HEAD:"$DISPATCH_FILE" | grep -oP 'issueDate = "\K[^"]+' | head -1 || true)
+  ARCHIVE_PAGE="digest/src/pages/issues/${PRIOR_DATE}.astro"
+  ISSUES_JSON="digest/src/data/issues.json"
+
+  if [[ -n "$PRIOR_DATE" && ! -f "$ARCHIVE_PAGE" ]]; then
+    mkdir -p "$(dirname "$ARCHIVE_PAGE")"
+    git show HEAD:"$DISPATCH_FILE" | sed \
+      -e 's|from "\.\./layouts/|from "../../layouts/|g' \
+      -e 's|from "\.\./components/|from "../../components/|g' \
+      -e 's|from "\.\./data/|from "../../data/|g' \
+      > "$ARCHIVE_PAGE"
+
+    export PRIOR_DATE ISSUES_JSON
+    python3 - <<'PYEOF'
+import json, os
+path = os.environ['ISSUES_JSON']
+with open(path) as f:
+    issues = json.load(f)
+date = os.environ['PRIOR_DATE']
+if not any(i['date'] == date for i in issues):
+    issues.insert(0, {'date': date})
+with open(path, 'w') as f:
+    json.dump(issues, f, indent=2)
+    f.write('\n')
+PYEOF
+
+    git add "$ARCHIVE_PAGE" "$ISSUES_JSON"
+    echo "Archived dispatch $PRIOR_DATE → $ARCHIVE_PAGE"
+  fi
+
   git add "$DISPATCH_FILE"
   DISPATCH_NOTE="Dispatch: updated"
 
