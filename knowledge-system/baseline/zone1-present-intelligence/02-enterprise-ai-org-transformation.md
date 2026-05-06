@@ -5,13 +5,13 @@
 
 
 <div class="audio-brief" data-audio-brief>
+  <img class="audio-brief__avatar" src="/elite-research-pipeline/images/sanjay.png" alt="Sanjay Gupta" aria-hidden="true" />
   <button type="button" class="audio-brief__play" aria-label="Play audio brief" data-audio-play>
     <span class="audio-brief__icon" aria-hidden="true" data-audio-icon>▶</span>
   </button>
   <div class="audio-brief__meta">
-    <span class="audio-brief__label">Audio brief</span>
     <span class="audio-brief__time" data-audio-time></span>
-    <span class="audio-brief__voice">Sanjay (cloned)</span>
+    <span class="audio-brief__voice">Sanjay's Summary</span>
   </div>
   <div class="audio-brief__progress" aria-hidden="true">
     <div class="audio-brief__progress-fill" data-audio-progress></div>
