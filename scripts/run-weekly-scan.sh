@@ -44,21 +44,19 @@ fi
 
 git checkout -b "$BRANCH"
 
-# Run Claude Code in headless mode with Opus 4.7 + self-verification
+# Run Claude Code in headless mode with Sonnet 4.6
 # --print: non-interactive, output to stdout
 # --permission-mode bypassPermissions: auto-approve all tools (needed for non-interactive web scans)
 # --allowedTools: explicit whitelist — defense-in-depth alongside bypass mode
-# --model opus: use Opus 4.7
-# --effort xhigh: deep reasoning for signal scoring
+# --model sonnet: use Sonnet 4.6 (~5x cheaper than Opus, sufficient for web research synthesis)
 # --max-budget-usd: safety ceiling to prevent runaway spend
 # --output-format text: simple text output
 claude \
   --print \
   --permission-mode bypassPermissions \
   --allowedTools "WebSearch" "WebFetch" "Read" "Write" "Edit" "Glob" "Grep" "Bash" \
-  --model opus \
-  --effort xhigh \
-  --max-budget-usd 7.00 \
+  --model sonnet \
+  --max-budget-usd 10.00 \
   --output-format text \
   < "$PROMPT_FILE"
 
