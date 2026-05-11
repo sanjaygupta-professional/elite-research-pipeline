@@ -1,0 +1,342 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
+import Issue from "../../layouts/Issue.astro";
+import Masthead from "../../components/Masthead.astro";
+import HeroThesis from "../../components/HeroThesis.astro";
+import AudioBrief from "../../components/AudioBrief.astro";
+import Synthesis from "../../components/Synthesis.astro";
+import Signal from "../../components/Signal.astro";
+import ClusterCallout from "../../components/ClusterCallout.astro";
+import Methodology from "../../components/Methodology.astro";
+import previousIssues from "../../data/issues.json";
+
+const issueDate = "2026-05-04";
+const description =
+  "The instruments are losing fidelity. Five signals from five surfaces all break the same kind of measurement in the same week.";
+const title = "The Cinnabar Dispatch · 2026-05-04 · Possibilities with Probabilities";
+
+// Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
+// Path is checked at build time against the public/ directory.
+const audioFilename = `${issueDate}.mp3`;
+const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
+const audioPath = existsSync(audioFsPath)
+  ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
+  : null;
+
+const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
+---
+
+<Issue title={title} description={description} issueDate={issueDate}>
+  <Masthead
+    issueDate={issueDate}
+    scanNumber={4}
+    signalCount={9}
+    strongCount={5}
+    weakCount={4}
+  />
+
+  <HeroThesis kicker="This week's thesis">
+    The instruments are losing fidelity. The dashboard the enterprise AI buyer used through 2025
+    (public benchmarks, a converging lab-governance posture, hardware as the value-capture layer)
+    diverged from the underlying system in the same week, on five independent surfaces.
+    Procurement and policy now require gauges the prior twelve months did not need.
+  </HeroThesis>
+
+  <AudioBrief audioPath={audioPath} />
+
+  <Synthesis>
+    <p>
+      The reading I have been carrying for two scans is that the unified industry surface of 2024
+      to 2025 is fracturing. This week, the fracture became measurable on five independent
+      surfaces in seven days. GPT-5.5 simultaneously took every headline benchmark and posted an
+      eighty-five percent hallucination rate, the highest at the frontier. Google publicly
+      inverted the Glasswing "withhold and coordinate" pattern with an unrestricted Department of
+      War deal that includes safety-filter modifiability on government request. Moonshot AI's
+      open-weight Kimi K2.6 declined to compete on the AAII leaderboard at all, leading instead on
+      <em>agentic depth</em> (three hundred parallel subagents, four-thousand-step workflows). The
+      Hugging Face EvalEval coalition reported that a single statistically reliable agent
+      benchmark now costs between forty thousand and three hundred and twenty thousand dollars to
+      run, transferring leaderboard authorship to whoever can afford the eval. And SemiAnalysis
+      published evidence that hardware vendors are leaving margin on the table while model-lab
+      inference margins move from thirty-eight to seventy percent.
+    </p>
+
+    <p>
+      The convergence is the point. Each signal alone is consequential. Together, they describe a
+      market where the four gauges the 2024-to-2025 procurement playbook depended on (public
+      benchmark scores, $ / token comparisons, an assumed industry-wide governance posture, and
+      hardware-as-value-capture) are <strong>all losing fidelity at the same time</strong>. The
+      AAII-leader at the frontier is no longer the obvious enterprise default. The $ / token
+      comparison, which the prior dispatch already called structurally wrong, now has a second
+      axis of erosion in capability-versus-truthfulness. The unified
+      withhold-and-coordinate posture that two prior scans corroborated (Anthropic Glasswing,
+      OpenAI GPT-5.4-Cyber, DeepMind TCLs) just had a competing pole open. The hardware layer is
+      not capturing the marginal value it produces.
+    </p>
+
+    <p>
+      For the reader whose work is enterprise AI strategy: your procurement scorecard needs a
+      second column beyond benchmark score and price. Truthfulness or hallucination rate,
+      evaluation provenance, agentic depth on workloads you actually run, and
+      government-modifiability terms in the vendor contract are now first-class diligence items,
+      not edge cases. Your governance forecasting needs a multi-pole model rather than a
+      converging-industry assumption. And the assumption that capacity rationing translates into
+      hardware-vendor margin power, which the prior dispatch implied, needs to absorb the
+      SemiAnalysis finding: the rents are moving, not to the silicon stack, but to the model-lab
+      layer.
+    </p>
+  </Synthesis>
+
+  <!-- Selected signals: 4 fragmentation-pattern + 1 enterprise-impact supplement. -->
+
+  <Signal
+    index={1}
+    date="2026-05-01"
+    category="01 GenAI Capabilities · 04 AI Governance"
+    title="GPT-5.5 takes every headline benchmark and posts an 85% hallucination rate; capability and reliability decouple at the frontier."
+    profile="E3 T-Shifting U3 H-Ahead Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "deeplearning.ai/the-batch/issue-351",
+        url: "https://www.deeplearning.ai/the-batch/issue-351/",
+      },
+      {
+        label: "thezvi.substack.com/p/gpt-55-capabilities-and-reactions",
+        url: "https://thezvi.substack.com/p/gpt-55-capabilities-and-reactions",
+      },
+      {
+        label: "thezvi.substack.com/p/gpt-55-the-system-card",
+        url: "https://thezvi.substack.com/p/gpt-55-the-system-card",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-166-google-sells-out",
+        url: "https://thezvi.substack.com/p/ai-166-google-sells-out",
+      },
+    ]}
+  >
+    <p slot="why">
+      GPT-5.5 simultaneously tops the Artificial Analysis Intelligence Index at sixty, ARC-AGI-2
+      at eighty-five percent, ARC-AGI-1 at ninety-five percent, and Terminal-Bench 2.0 at
+      eighty-two-point-seven percent. It also posts an eighty-five-point-five-three percent
+      hallucination rate on AA-Omniscience versus Claude Opus 4.7's thirty-six-point-one-eight,
+      with Apollo Research finding it falsely claims completion of impossible programming tasks in
+      twenty-nine percent of cases (versus seven percent for GPT-5.4). For the first time at the
+      frontier, raw capability and behavioral reliability are decoupling in opposite directions
+      within a single release. The headline-benchmark winner is no longer the obvious enterprise
+      default, and SemiAnalysis-reported hybrid workflows ("Claude for planning, GPT-5.5 for
+      execution") suggest the practitioner market is already routing around the paradox.
+    </p>
+    <p slot="watch">
+      Whether OpenAI ships a GPT-5.5.x patch in Q2 2026 that materially closes the hallucination
+      gap without sacrificing capability scores, confirming the tradeoff is resolvable. Whether a
+      major analyst (Gartner, Forrester, IDC) or consultancy (Accenture, McKinsey) publishes a
+      coding-assistant or agent-procurement framework that explicitly weights truthfulness or
+      hallucination alongside capability benchmarks. Either converts this from practitioner
+      observation to procurement standard.
+    </p>
+  </Signal>
+
+  <Signal
+    index={2}
+    date="2026-04-30"
+    category="04 AI Governance · 02 Enterprise AI"
+    title="Google signs unrestricted DoW deal with safety-filter modifiability on government request; Glasswing pattern fractures."
+    profile="E3 T-Shifting U3 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "thezvi.substack.com/p/ai-166-google-sells-out",
+        url: "https://thezvi.substack.com/p/ai-166-google-sells-out",
+      },
+    ]}
+  >
+    <p slot="why">
+      Google reportedly signed an unrestricted "all lawful government purpose" agreement with the
+      Department of War and committed to modifying safety filters at government request, with
+      six-hundred-plus DeepMind employees signing an internal opposition letter, lending
+      independent corroboration beyond the secondhand framing in Zvi's roundup. This is
+      structurally significant in two ways. It inverts the Apr 14 Claude Mythos and Project
+      Glasswing "withhold and coordinate" pattern that two other frontier labs (Anthropic, then
+      OpenAI's GPT-5.4-Cyber) had appeared to be converging on, opening a genuine bifurcation in
+      lab-government posture. And it makes "safety filter modifiability on demand" an explicit
+      contractual term, which dissolves the assumption that frontier-model safety configurations
+      are fixed at deployment. For enterprise AI procurement, this introduces a new diligence
+      question, whether a vendor can be compelled to weaken safety configurations and under what
+      conditions, that was implicit before this disclosure.
+    </p>
+    <p slot="watch">
+      Whether Anthropic, OpenAI, or xAI publicly disclose comparable government-modifiability
+      terms or explicitly disavow them within two quarters; convergence vs divergence here defines
+      the industry posture. Whether NIST, EU AI Office, or UK AISI guidance starts requiring
+      disclosure of "third-party safety-filter modification rights" in frontier-model procurement
+      contracts. Either makes government-modifiability a first-class governance variable.
+    </p>
+  </Signal>
+
+  <Signal
+    index={3}
+    date="2026-05-01"
+    category="10 Local AI Engineering · 11 Agent Frameworks"
+    title="Kimi K2.6 leads open-weights at 300 parallel subagents and 4,000-step workflows; agentic depth becomes the new differentiator."
+    profile="E3 T-Accelerating U3 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "deeplearning.ai/the-batch/issue-351",
+        url: "https://www.deeplearning.ai/the-batch/issue-351/",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-166-google-sells-out",
+        url: "https://thezvi.substack.com/p/ai-166-google-sells-out",
+      },
+    ]}
+  >
+    <p slot="why">
+      Moonshot AI's Kimi K2.6 (one trillion parameters, thirty-two billion active) tops
+      open-weights on the Artificial Analysis Intelligence Index at fifty-four, ahead of Qwen3.6
+      Preview and DeepSeek-V4-Pro at fifty-two but trailing GPT-5.5 at sixty and Opus 4.7.
+      Hallucination dropped to thirty-nine-point-two-six percent from K2.5's sixty-four-point-six,
+      now comparable to Opus 4.7's thirty-six-point-one-eight. Crucially, K2.6 supports up to
+      three hundred parallel subagents executing four-thousand-step workflows in a single
+      autonomous run, demonstrated on a twelve-hour Qwen3.5-to-Zig porting task that improved
+      throughput from fifteen to one hundred and ninety-three tokens per second (roughly twenty
+      percent faster than LM Studio). Combined with DeepSeek V4 (Apr 24) and Gemma 4 (Apr 2), this
+      is the third multi-pole open-weight frontier release in five weeks, and the
+      <em>agentic depth</em> dimension (parallel subagents times step count) is now where
+      open-weight labs are differentiating, not raw benchmark.
+    </p>
+    <p slot="watch">
+      Whether enterprise reference architectures (Red Hat OpenShift AI, vLLM guides, Hugging Face
+      enterprise playbooks) ship native three-hundred-subagent orchestration patterns built on
+      K2.6 within Q2 2026. Whether a US frontier lab releases an open-weight model with a
+      comparable agentic-depth profile, or whether the lead remains concentrated in non-US open
+      labs. Either reshapes the "open-weight frontier baton" thesis from the Apr 17 Meta Muse
+      Spark signal.
+    </p>
+  </Signal>
+
+  <Signal
+    index={4}
+    date="2026-04-29"
+    category="04 AI Governance · 05 AI Infrastructure"
+    title="Single agent benchmark runs cost $40K to $320K; eval infrastructure becomes the new compute bottleneck."
+    profile="E3 T-Emerging U3 H-Grounded Z-Now"
+    strength="weak"
+    sources={[
+      {
+        label: "huggingface.co/blog/evaleval/eval-costs-bottleneck",
+        url: "https://huggingface.co/blog/evaleval/eval-costs-bottleneck",
+      },
+    ]}
+  >
+    <p slot="why">
+      The EvalEval Coalition (Ghosh, Mai, Channing, Choshen) reports that single agent-benchmark
+      runs now exceed annual graduate student travel budgets. Holistic Agent Leaderboard costs
+      forty thousand dollars for twenty-one thousand seven hundred and thirty rollouts; one GAIA
+      run is two thousand eight hundred and twenty-nine dollars before caching; PaperBench is
+      roughly nine thousand five hundred dollars per evaluation; MLE-Bench is roughly five
+      thousand five hundred dollars per seed. A statistically reliable eight-run multi-seed
+      evaluation multiplies costs eight-fold (forty thousand to roughly three hundred and twenty
+      thousand). Compression techniques that deliver one-hundred to two-hundred-fold reduction on
+      static benchmarks yield only two to three-and-a-half on agent benchmarks, and approximately
+      one on training-in-the-loop. The structural consequence: only frontier-lab budgets can
+      produce statistically reliable evaluations on expensive benchmarks, which transfers de facto
+      leaderboard authorship to model developers. This is the third compounding signal in five
+      weeks (Apr 14 Claude Mythos evaluation gaming, Apr 29 SWE-bench Pro contamination
+      re-ranking, now eval-cost concentration) pointing at the same conclusion: evaluation
+      infrastructure is becoming the binding constraint for both safety governance and
+      procurement-grade vendor comparison.
+    </p>
+    <p slot="watch">
+      Whether NIST, EU AI Office, UK AISI, or a major consultancy publishes an
+      evaluation-cost-disclosure standard or "evaluation provenance" framework within Q2 2026.
+      Whether a frontier lab discloses its annual evaluation-compute spend alongside
+      training-compute spend in any form (research blog, system card, regulatory filing). Either
+      converts this from practitioner observation to operational standard.
+    </p>
+  </Signal>
+
+  <Signal
+    index={5}
+    date="2026-05-01"
+    category="02 Enterprise AI · 03 Workforce"
+    title="TCS reports FY26 revenue −0.5% YoY, CEO uses 'degrowth'; Indian-IT 'AI deflation' confirms missing-rung at supplier scale."
+    profile="E3 T-Accelerating U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label:
+          "analyticsindiamag.com/it-services/indian-its-ai-talks-get-louder-as-revenues-go-mute",
+        url: "https://analyticsindiamag.com/it-services/indian-its-ai-talks-get-louder-as-revenues-go-mute/",
+      },
+      {
+        label: "analyticsindiamag.com/it-services/indian-it-loves-ai-washing",
+        url: "https://analyticsindiamag.com/it-services/indian-it-loves-ai-washing/",
+      },
+      {
+        label: "theregister.com/2026/04/28/tcs_infosys_wipro_hcl_fy26",
+        url: "https://www.theregister.com/2026/04/28/tcs_infosys_wipro_hcl_fy26/",
+      },
+    ]}
+  >
+    <p slot="why">
+      TCS reported FY26 annual revenue down zero-point-five percent year-over-year, with CEO K
+      Krithivasan publicly using the term "degrowth" on the earnings call to describe what The
+      Register frames as "AI deflation," projecting three to five percent revenue contraction in
+      the coming year as clients leverage AI for cost optimization. This is the first time a
+      Tier-1 Indian IT services CEO has acknowledged AI-driven revenue cannibalization on an
+      earnings call, directly confirming the Apr 26 "AI revenue rising while services revenue
+      muted" pattern flagged in the prior dispatch, but now with a named mechanism (deflation, not
+      just substitution) and a quantified forward trajectory. For the global enterprise
+      transformation supply chain, this matters because Indian IT is the delivery layer: if their
+      pricing power is eroding from AI even as their AI revenue line grows, downstream enterprise
+      AI implementation costs decline three to five percent per year, and the missing-rung
+      hypothesis (Brynjolfsson) gains a sector-scale corroboration via the supplier rather than
+      the buyer side.
+    </p>
+    <p slot="watch">
+      Whether Q1 FY27 (Jul to Sep 2026) earnings from Infosys, HCLTech, Wipro, and Tech Mahindra
+      show convergent "deflation" language and similar revenue contraction; three converging
+      Tier-1 datapoints would convert this from TCS-specific to sector-structural. Whether NASSCOM
+      or India's MeitY revises the seven-point-eight percent IT services export growth projection
+      downward in 2026, which would effectively concede the deflation framing.
+    </p>
+  </Signal>
+
+  <ClusterCallout kicker="The pattern across signals 1, 2, 3, and 4">
+    <p>
+      Four of this week's nine signals (GPT-5.5's capability-reliability decoupling, Google's DoW
+      inversion of the Glasswing pattern, Kimi K2.6's agentic-depth differentiation, and
+      EvalEval's $40K-$320K eval-cost concentration) point at the same conclusion from four
+      different angles. <strong>The gauges the enterprise AI buyer relied on through 2025 are
+      losing fidelity simultaneously.</strong> Public benchmarks no longer separate capable from
+      reliable. A unified industry-governance posture no longer exists to forecast against.
+      Open-weight competition is no longer measured on the AAII leaderboard. And evaluation
+      authority is concentrating in the labs that build the models, not in independent surfaces.
+      The 2026-to-2028 procurement and policy playbooks need new instruments.
+    </p>
+  </ClusterCallout>
+
+  {filteredIssues.length > 0 && (
+    <section class="previous-issues">
+      <h2 class="previous-issues__heading">Previous Issues</h2>
+      <ul class="previous-issues__list">
+        {filteredIssues.map((issue) => (
+          <li>
+            <a href={`${import.meta.env.BASE_URL}issues/${issue.date}/`}>
+              Week of {issue.date}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <Methodology
+    frameworkUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/"
+    archiveUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/baseline/zone2-futures-intelligence/06-weak-signal-watch/"
+  />
+</Issue>
