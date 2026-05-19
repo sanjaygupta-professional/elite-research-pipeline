@@ -181,8 +181,8 @@ gh pr create \
 
 **Review checklist (audio brief, if generated):**
 - [ ] Audio plays from the raw URL above and sounds like Sanjay (no audible artifacts)
-- [ ] Word count 220–280, opens with "Sanjay here.", closes with "Full detail in the dispatch. Until next week."
-- [ ] Model identifiers spelled phonetically (e.g. "GPT five point five" not "GPT-5.5")
+- [ ] Word count 220–280, opens with \"Sanjay here.\", closes with \"Full detail in the dispatch. Until next week.\"
+- [ ] Model identifiers spelled phonetically (e.g. \"GPT five point five\" not \"GPT-5.5\")
 - [ ] If audio failed, retry locally: \`scripts/gen-audio.sh dispatch $DATE\`
 
 Run log: \`$LOG_FILE\`" \
