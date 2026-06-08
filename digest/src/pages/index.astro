@@ -12,10 +12,10 @@ import ClusterCallout from "../components/ClusterCallout.astro";
 import Methodology from "../components/Methodology.astro";
 import previousIssues from "../data/issues.json";
 
-const issueDate = "2026-06-01";
+const issueDate = "2026-06-08";
 const description =
-  "AI mathematical discovery scaled to two labs in one week as the EU extended high-risk AI compliance by sixteen months and Glasswing revealed a fourteen percent patch rate on AI-found vulnerabilities.";
-const title = "The Cinnabar Dispatch · 2026-06-01 · Possibilities with Probabilities";
+  "US AI governance split in one week between a federal voluntary shadow framework and the first state mandatory safety audit law, as the industry's own PAC was caught astroturfing the debate.";
+const title = "The Cinnabar Dispatch · 2026-06-08 · Possibilities with Probabilities";
 
 // Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
 // Path is checked at build time against the public/ directory.
@@ -31,355 +31,340 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
 <Issue title={title} description={description} issueDate={issueDate}>
   <Masthead
     issueDate={issueDate}
-    scanNumber={8}
+    scanNumber={9}
     signalCount={7}
-    strongCount={5}
-    weakCount={2}
+    strongCount={4}
+    weakCount={3}
   />
 
   <HeroThesis kicker="This week's thesis">
-    DeepMind's AlphaProof Nexus solved nine open mathematical problems, some
-    unsolved for decades, in the same week the EU formally extended its primary
-    AI governance framework's compliance deadline by sixteen months, citing
-    unready technical standards. OpenAI launched a restricted-access reasoning
-    model for biodefense as Anthropic crossed a near-trillion-dollar valuation
-    on forty-seven billion in annualized revenue. Project Glasswing's
-    operational data established the numerical ratio the capability-governance
-    gap has needed: AI identifies critical software vulnerabilities at a rate
-    the human ecosystem patches at fourteen percent. The gap between the
-    capability clock and the governance clock is no longer a prediction; it is
-    a sourced, institutional disclosure.
+    Within seventy-two hours, the US produced two incompatible AI governance
+    architectures: a White House executive order creating a classified,
+    voluntary federal framework with NSA oversight and secret criteria, and
+    Illinois SB 315 passing its legislature unanimously to become the first US
+    law mandating annual independent safety audits for frontier AI labs. In the
+    same week, the political action committee funded by OpenAI resources was
+    confirmed running fake accounts impersonating AI critics, and Bain Capital
+    reported that forty-four percent of large companies are funding their next
+    AI wave on savings that have not yet materialized. The governance debate is
+    now contested both formally, between two divergent US regulatory
+    philosophies, and informally, by the industry's own political apparatus.
   </HeroThesis>
 
   <AudioBrief audioPath={audioPath} />
 
   <Synthesis>
     <p>
-      This week's scan produced seven signals across four domains, with a
-      structural pattern binding three of them. AlphaProof Nexus proved nine
-      open Erdős problems and forty-four OEIS conjectures using a formal proof
-      assistant that eliminates hallucination risk, arriving in the same scan
-      window as Anthropic Mythos's independent replication of last week's unit
-      distance proof by a different mathematical route. Project Glasswing
-      disclosed that its AI-powered vulnerability research has identified more
-      than ten thousand high and critical flaws in open-source software, with
-      seventy-five of five hundred and thirty disclosed bugs patched — a
-      remediation rate below fifteen percent. The EU Council formally extended
-      high-risk AI compliance deadlines from August 2026 to December 2027,
-      citing technical standards not yet ready, in the same week OpenAI
-      launched Rosalind Biodefense as a restricted-access life science
-      reasoning model for vetted government partners. Anthropic's $65B Series H
-      at a $965B valuation accompanied annualized revenue growing from $9B in
-      December 2025 to $47B in May 2026, providing the investor-verified
-      revenue confirmation this scan series tracked as a watch-for criterion
-      since April.
+      This week's scan produced seven signals across three domains, with a
+      structural collision at the center. The Trump administration's executive
+      order on frontier AI models (June 2) created a federal preflight-check
+      framework: labs may voluntarily provide the NSA up to thirty days of
+      pre-release model access for classified capability benchmarking, with
+      criteria that remain secret and no mandatory requirements. Illinois SB 315
+      cleared its legislature 110 to 0 in the House and 52 to 5 in the Senate
+      within the same seventy-two hours, with Governor Pritzker signaling his
+      intent to sign into the first US law requiring annual independent
+      third-party safety audits for frontier AI developers, plus seventy-two-hour
+      incident reporting and civil penalties up to three million dollars per
+      incident. Build American AI, the PAC funded by OpenAI resources and
+      personally by OpenAI President Greg Brockman, confirmed in the same week
+      that outside vendors it hired ran fake accounts impersonating AI critics,
+      including accounts posting provocative imagery. Bain Capital's research,
+      cited in Zvi Mowshowitz's June 4 roundup, found that forty-four percent of
+      large companies are funding next-wave AI investment on AI-driven cost
+      savings that have not yet materialized. Microsoft launched MAI-Thinking-1,
+      a one-trillion-parameter mixture-of-experts reasoning model, as the first
+      proprietary frontier-class entry from a company outside the existing
+      four-lab oligopoly.
     </p>
 
     <p>
-      The structural observation across signals one, two, and three: mathematical
-      discovery capability and vulnerability discovery capability are accelerating
-      at rates measured in hours and dollars, while the primary international
-      governance framework for governing both has just conceded sixteen months of
-      additional time to write its own technical standards.
-      <strong>The capability-governance gap is now measurable rather than
-      predicted: AI discovers critical vulnerabilities at a rate the human
-      ecosystem patches at fourteen percent, and the regulatory framework for
-      governing that capability has just extended its own operationalization
-      deadline by sixteen months in a primary institutional disclosure.</strong>
-      The gap is not a forecast; it is an acknowledged, sourced ratio from the
-      EU Council and an operational data point from Glasswing's own program
-      page.
+      The structural observation binding signals one, two, and three is
+      not simply that governance is accelerating but that the two US governance
+      tracks now point in opposite directions. The Trump EO is federal,
+      voluntary, and classified: it rewards labs for participation with
+      partner-selection power while keeping the criteria that define "covered
+      frontier model" invisible to the public and to enterprise buyers. Illinois
+      SB 315 is state, mandatory, and public: it imposes independent audits,
+      whistleblower protections, and attorney-general enforcement with published
+      results. Both were passed in the same week by institutions that endorsed
+      the same frontier labs.
+      <strong>The implication for enterprise AI strategy is not that governance
+      is coming; it is that two governance philosophies, one that rewards
+      opacity and one that mandates transparency, are now simultaneously
+      operative in the US market, and enterprises will need to design
+      vendor-risk frameworks that can accommodate both.</strong>
+      The Build American AI confirmation adds a third dimension: the regulatory
+      debate itself is now susceptible to coordinated inauthentic influence from
+      the industry it is trying to govern.
     </p>
 
     <p>
-      For the reader whose work is enterprise AI strategy: the EU Omnibus delay
-      does not reduce governance risk; it reduces the timeline pressure that was
-      forcing governance investment. Organizations that relied on EU AI Act
-      compliance as the forcing function for AI governance infrastructure now
-      have a sixteen-month window to build it voluntarily rather than
-      reactively, and the Glasswing patch-rate data suggests that window should
-      be treated as urgency rather than relief. The Anthropic Series H data
-      empirically closes the pilot-phase narrative for a material segment of the
-      Fortune 1000; any enterprise framing AI adoption as a question of whether
-      to invest rather than how to structure the investment is operating on an
-      assumption the revenue trajectory has now answered. The Rosalind
-      Biodefense launch and the Glasswing expansion together indicate that
-      frontier labs are building voluntary governance architecture faster than
-      regulatory bodies are formalizing mandatory requirements, which means the
-      de facto governance standard for the next eighteen months will be set by
-      lab-voluntary programs, not law.
+      For the reader whose work is enterprise AI strategy: the Illinois SB 315
+      passage creates a new vendor due-diligence requirement that did not exist
+      last week: whether your frontier AI provider has completed or is planning
+      an independent safety audit under a US mandatory framework. The EU AI Act
+      Omnibus delay (logged May 29 scan) removed compliance pressure from one
+      direction; SB 315 restores it from another, and with a shorter timeline.
+      The Bain forty-four percent finding is the more immediate planning risk: if
+      nearly half of your peer companies are committing expanded AI spend on
+      savings that have not arrived, the inflection point where budget
+      contractions arrive simultaneously is a scenario worth stress-testing now.
+      And the Trump EO's voluntary structure offers a practical asymmetry to
+      watch: labs that participate in the classified preflight window gain
+      partner-selection power that labs outside the program will not have, which
+      may affect procurement options in regulated federal-adjacent sectors within
+      the next twelve months.
     </p>
   </Synthesis>
 
   <Signal
     index={1}
-    date="2026-05-21"
-    category="01 GenAI Capabilities"
-    title="AlphaProof Nexus solves nine open Erdős problems and proves forty-four OEIS conjectures using formal proof verification; two labs confirm novel mathematical discovery in one week."
-    profile="E3 T-Accelerating U3 H-Grounded Z-Near"
+    date="2026-06-02"
+    category="04 AI Governance & Ethics"
+    title="Trump executive order establishes classified preflight-check framework for frontier AI models; NSA designated oversight authority with secret criteria."
+    profile="E4 T-Shifting U2 H-Grounded Z-Now"
     strength="strong"
     sources={[
       {
-        label: "arxiv.org/abs/2605.22763",
-        url: "https://arxiv.org/abs/2605.22763",
+        label: "whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security",
+        url: "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
       },
       {
-        label: "the-decoder.com",
-        url: "https://the-decoder.com/google-deepminds-alphaproof-nexus-solves-decades-old-math-problems-for-a-few-hundred-dollars/",
+        label: "crowell.com",
+        url: "https://www.crowell.com/en/insights/client-alerts/executive-order-creates-voluntary-regulatory-regime-of-frontier-ai-models",
       },
       {
-        label: "thezvi.substack.com/p/ai-170-lack-of-executive-order",
-        url: "https://thezvi.substack.com/p/ai-170-lack-of-executive-order",
+        label: "thezvi.substack.com/p/ai-171-false-flag",
+        url: "https://thezvi.substack.com/p/ai-171-false-flag",
       },
     ]}
   >
     <p slot="why">
-      AlphaProof Nexus pairs a large language model with the Lean formal proof
-      assistant, which rejects any proof that contains a logical error. DeepMind
-      solved nine of three hundred and fifty-three open Erdős problems, two
-      unsolved for fifty-six years, and proved forty-four of four hundred and
-      ninety-two OEIS conjectures; all formal proofs are published in a public
-      GitHub repository at a cost of a few hundred dollars per problem. The Lean
-      verification step is what makes this result epistemically significant:
-      there is no hallucination risk when a formal proof checker has accepted
-      every logical step independently. The companion finding from Zvi's AI 170
-      roundup: Anthropic's Mythos Preview independently replicated the Unit
-      Distance Conjecture proof from the prior week, sometimes finding
-      structurally different mathematical routes to the same result. Two labs
-      solving novel mathematical problems in one week, using general-purpose
-      reasoning models rather than math-specialized systems, is a pattern rather
-      than a coincidence. For enterprise AI strategy, the implication is
-      inferential: the same reasoning capability running coding agents and
-      business-process automation is also capable of independently generating
-      novel cross-domain scientific insight, which expands the plausible ceiling
-      of general-purpose reasoning models beyond pattern completion.
+      President Trump signed the first US federal mechanism for pre-deployment
+      frontier AI model review: developers may voluntarily provide the government
+      up to thirty days of pre-release access to covered frontier models for
+      classified NSA-led benchmarking of advanced cyber capabilities. Within
+      sixty days, agencies must develop a classified benchmarking process to
+      determine what qualifies as a covered frontier model, with the criteria
+      remaining secret. Labs that participate help select trusted partners for
+      early model access, creating a first-mover advantage for compliant
+      companies. The order is nominally voluntary and explicitly bars mandatory
+      pre-clearance requirements; the practical effect is a new
+      government-industry checkpoint at federal level that did not exist before
+      June 2026. For enterprise AI procurement, this begins differentiating
+      frontier labs by government-relationship depth, a factor likely to influence
+      vendor selection in regulated sectors including defense, healthcare, and
+      finance. Multiple legal analyses note a structural tension: the opacity of
+      the benchmarking criteria makes it impossible for enterprises to assess
+      which labs are participating or on what terms, creating an information
+      asymmetry that benefits early participants.
     </p>
     <p slot="watch">
-      Whether AlphaProof Nexus's formal proofs are submitted to and accepted by
-      a peer-reviewed mathematics journal within Q3 2026, upgrading this to
-      Evidence Strength four and establishing the result as a citable scientific
-      first. Whether a second long-standing open conjecture in any domain is
-      independently solved by an AI model within twelve months, confirming
-      mathematical discovery as a replicable capability class rather than a
-      two-lab result from a single week.
+      Whether any frontier lab publicly confirms participation in the thirty-day
+      preflight window, which would establish it as a de facto norm even without
+      mandatory status. Whether the classified benchmarking criteria eventually
+      surface through Congressional oversight hearings, providing enterprises
+      with visibility into the thresholds the NSA is applying and the
+      participation list of labs that have engaged.
     </p>
   </Signal>
 
   <Signal
     index={2}
     date="2026-05-28"
-    category="04 AI Governance & Ethics · 01 GenAI Capabilities"
-    title="Project Glasswing discloses ten thousand critical vulnerabilities found in open-source software; seventy-five of five hundred and thirty patched; AI discovery outpaces human remediation at fourteen percent."
-    profile="E3 T-Accelerating U3 H-Grounded Z-Now"
+    category="04 AI Governance & Ethics"
+    title="Illinois SB 315 passes legislature 110 to 0 and 52 to 5; first US law mandating annual independent safety audits for frontier AI labs, with civil penalties and incident reporting."
+    profile="E4 T-Shifting U3 H-Grounded Z-Now"
     strength="strong"
     sources={[
       {
-        label: "thezvi.substack.com/p/ai-170-lack-of-executive-order",
-        url: "https://thezvi.substack.com/p/ai-170-lack-of-executive-order",
+        label: "capitolnewsillinois.com",
+        url: "https://capitolnewsillinois.com/news/illinois-lawmakers-pass-landmark-ai-accountability-bill/",
       },
       {
-        label: "anthropic.com/glasswing",
-        url: "https://www.anthropic.com/glasswing",
+        label: "nbcnews.com/tech/tech-news/illinois-legislature-passes-historic-ai-bill-rcna347191",
+        url: "https://www.nbcnews.com/tech/tech-news/illinois-legislature-passes-historic-ai-bill-rcna347191",
+      },
+      {
+        label: "iapp.org",
+        url: "https://iapp.org/news/a/notable-ai-privacy-bills-hit-finish-line-in-illinois-connecticut-and-new-york",
       },
     ]}
   >
     <p slot="why">
-      Six weeks after Glasswing launched, Anthropic's Mythos has identified more
-      than ten thousand high and critical vulnerabilities across open-source
-      software and disclosed five hundred and thirty to affected maintainers.
-      Seventy-five have been patched, a remediation rate below fifteen percent.
-      A wolfSSL certificate forgery vulnerability affecting billions of devices
-      was among those identified. The operational ratio is the signal: AI
-      discovers vulnerabilities at a rate the human security ecosystem cannot
-      currently absorb. The five-hundred-and-thirty-to-seventy-five gap is not
-      a temporary backlog; it represents a structural asymmetry where
-      AI-generated vulnerability disclosure outpaces human maintainer capacity.
-      For enterprise security architects, the threat model has shifted from
-      whether AI can find vulnerabilities at scale to who finds them first and
-      what the patch latency is in the interim window. Every unpatched
-      vulnerability in that backlog is a window where a malicious actor with the
-      same AI capability is finding the same flaw. The defender-first release
-      pattern, logged since April, was designed to address this asymmetry; the
-      operational data shows the asymmetry is already active and widening.
+      Illinois SB 315 cleared both chambers with near-unanimous margins: one
+      hundred and ten to zero in the House, fifty-two to five in the Senate, with
+      Governor Pritzker publicly indicating his intent to sign. The bill requires
+      frontier AI developers to publish and annually update a safety framework
+      covering catastrophic-risk assessment, cybersecurity, internal governance,
+      and third-party evaluations; to report serious AI failures within
+      seventy-two hours; to protect employee whistleblowers; and to face civil
+      penalties up to three million dollars per incident enforced by the Illinois
+      attorney general. OpenAI and Anthropic supported the bill; other AI trade
+      groups opposed it. This is structurally different from prior state AI
+      activity such as California watermarking requirements or Colorado risk
+      assessments: it targets the frontier lab directly, requires ongoing
+      independent verification rather than self-attestation, and creates
+      enforcement mechanisms with named penalties. For enterprise AI procurement,
+      this creates a new vendor due-diligence requirement that did not exist last
+      week: whether your frontier AI provider has completed, or is planning, an
+      independent safety audit under a US mandatory framework.
     </p>
     <p slot="watch">
-      Whether the ratio of identified-to-patched vulnerabilities narrows or
-      widens over the next two quarters. A widening ratio confirms that
-      AI vulnerability disclosure is structurally outpacing open-source
-      maintainer capacity, which would require coordinated institutional response
-      beyond the current voluntary disclosure model. Whether a second frontier
-      lab publishes comparable operational metrics for its own AI-powered
-      vulnerability research program, establishing whether the fourteen percent
-      patch rate is Glasswing-specific or a general property of AI-scale
-      security research.
+      Whether Governor Pritzker signs, converting the bill to enacted law. Whether
+      a second enterprise-heavy state (Texas, New York, California) introduces
+      comparable frontier-lab audit legislation in its next legislative session.
+      Two-state replication would create a de facto compliance norm for US-based
+      frontier labs regardless of federal preemption status.
     </p>
   </Signal>
 
   <Signal
     index={3}
-    date="2026-05-07"
+    date="2026-06-04"
     category="04 AI Governance & Ethics"
-    title="EU AI Act Omnibus extends high-risk compliance to December 2027; EU Council formally states governance standards cannot keep pace with deployment timelines."
-    profile="E4 T-Shifting U2 H-Grounded Z-Now"
+    title="OpenAI-backed PAC confirmed running fake accounts impersonating AI critics; first AI-lab-affiliated political influence operation targeting AI governance discourse."
+    profile="E3 T-Emerging U2 H-Grounded Z-Now"
     strength="strong"
     sources={[
       {
-        label: "consilium.europa.eu",
-        url: "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/",
-      },
-      {
-        label: "deeplearning.ai/the-batch/issue-355",
-        url: "https://www.deeplearning.ai/the-batch/issue-355/",
-      },
-      {
-        label: "gibsondunn.com",
-        url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/",
+        label: "thezvi.substack.com/p/ai-171-false-flag",
+        url: "https://thezvi.substack.com/p/ai-171-false-flag",
       },
     ]}
   >
     <p slot="why">
-      The EU Council and Parliament reached a provisional agreement extending
-      compliance deadlines for high-risk stand-alone AI systems, covering
-      employment, credit, law enforcement, education, and border control, from
-      August 2026 to December 2027, with AI embedded in regulated products
-      pushed to August 2028. The official stated reason: technical standards and
-      guidance documents required for actual implementation are not ready. This
-      is a primary regulatory source (Evidence Strength four) explicitly stating
-      that governance operationalization is trailing the deployment it was
-      designed to govern. Sixteen months is not a minor adjustment; it exceeds
-      the time between ChatGPT's November 2022 capability step-change and the
-      AI Act's original drafting urgency. The perverse structural incentive is
-      direct: the delay reduces urgency, which reduces investment in AI
-      governance infrastructure today, which leaves organizations less prepared
-      when standards are finalized. Combined with US federal preemption stalled
-      and state-level liability frameworks at early-legislative stage, the global
-      enterprise AI regulatory environment now operates without binding
-      enforcement on the highest-risk AI categories for at least another
-      eighteen months.
+      Build American AI, a political action committee funded by OpenAI resources
+      and personally by OpenAI President Greg Brockman, confirmed that outside
+      vendors it hired ran fake social media accounts impersonating AI skeptics,
+      including accounts posting provocative imagery. The PAC characterized these
+      as parody accounts run by outside vendors and not a core part of its
+      strategy. OpenAI issued a public statement saying no outside political group
+      speaks for OpenAI and explicitly criticizing astroturfing tactics.
+      Congressional staff reportedly view the PAC as OpenAI's PAC regardless of
+      the official distancing. This is the first confirmed case of a frontier-lab
+      affiliated entity using coordinated inauthentic political influence
+      operations to shape AI governance discourse, at the precise moment that
+      political bodies are debating mandatory AI regulation. The structural
+      consequence is a meta-governance problem: the regulatory debate over AI is
+      now susceptible to AI-funded manipulation, which compounds the trust deficit
+      that the SB 315 and Trump EO signals represent. OpenAI simultaneously
+      publicly supported SB 315 and the Trump EO's voluntary compliance model,
+      creating an accountability gap legislators have noted explicitly.
     </p>
     <p slot="watch">
-      Whether the December 2027 deadline holds or slips again. A second
-      extension would confirm that EU AI Act compliance is effectively
-      indefinitely deferred, converting the delay from a temporary reprieve into
-      a structural governance vacuum. Whether the US state liability framework
-      (Illinois SB 315 or comparable) passes and is replicated in two or more
-      states within Q3 2026, creating a de facto alternative governance
-      architecture that moves faster than the EU Omnibus timeline.
+      Whether the FEC or any state attorney general opens enforcement
+      investigations into Build American AI's activities, establishing legal
+      precedent for AI company PAC accountability. Whether a Congressional
+      committee adds political influence disclosure requirements to proposed
+      federal AI legislation as a direct response to this incident.
     </p>
   </Signal>
 
   <Signal
     index={4}
-    date="2026-05-29"
-    category="04 AI Governance & Ethics · 01 GenAI Capabilities"
-    title="OpenAI Rosalind Biodefense extends restricted-access governance pattern to life sciences; third distinct dual-use domain gated to vetted partners in six weeks across two frontier labs."
-    profile="E3 T-Shifting U3 H-Grounded Z-Now"
+    date="2026-06-04"
+    category="02 Enterprise AI & Org Transformation"
+    title="Bain Capital finds forty-four percent of large companies funding next-wave AI investment from savings that have not yet materialized; circular ROI risk flagged."
+    profile="E3 T-Emerging U2 H-Grounded Z-Now"
     strength="strong"
     sources={[
       {
-        label: "openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
-        url: "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/",
-      },
-      {
-        label: "axios.com/2026/05/29/openai-biodefense-program",
-        url: "https://www.axios.com/2026/05/29/openai-biodefense-program",
+        label: "thezvi.substack.com/p/ai-171-false-flag",
+        url: "https://thezvi.substack.com/p/ai-171-false-flag",
       },
     ]}
   >
     <p slot="why">
-      GPT-Rosalind is a frontier reasoning model for biology, drug discovery,
-      and translational medicine, covering chemistry, protein engineering, and
-      genomics, released exclusively to vetted US government and allied partners
-      and approved developers for biodefense and pandemic preparedness. This is
-      the third distinct dual-use domain in six weeks where a major frontier lab
-      has applied the restricted-access, vetting-gated release governance pattern:
-      Anthropic's Glasswing in offensive cybersecurity (April 14), OpenAI's
-      GPT-5.4-Cyber in defensive security workflows (April 17), and GPT-Rosalind
-      in life sciences (May 29). A single isolated restricted release could be
-      an ad-hoc response to a capability discovery; three releases across two
-      labs in three distinct high-risk domains in six weeks is a deliberate
-      governance architecture being constructed voluntarily before regulations
-      require it. For enterprise AI procurement, the pattern has a direct
-      implication: specialized high-capability AI for sensitive domains is
-      becoming a gated procurement category with vetting requirements, not a
-      general API category. Organizations with biodefense, critical
-      infrastructure, or security mandates need to plan for vetting-gated access
-      as a standard feature of frontier AI contracts.
+      Bain Capital's research finds that forty-four percent of large companies
+      are funding the next wave of AI investment based on AI-driven cost savings
+      that have not yet been realized, which Bain characterizes as circular risk
+      rather than financial discipline: organizations are committing to expanded
+      AI spend before current investments have produced the reductions that were
+      supposed to justify them. This sits in direct tension with the supply-side
+      acceleration signals from this same week, including one company reportedly
+      spending five hundred million dollars on Claude in a single month and
+      Anthropic's annualized revenue reaching forty-seven billion dollars in May
+      2026. The revenue acceleration visible at the frontier-lab supply side is
+      being partially financed by projected demand-side savings that have not
+      arrived. Enterprise AI budget frameworks were designed for deterministic
+      software consumption patterns; agentic systems consume tokens proportional
+      to autonomous task volume, which grows exponentially within budgets designed
+      for linear growth. The Bain finding extends the April enterprise token cost
+      crisis signal (Uber, Microsoft) from individual incidents to a structural
+      financing pattern across forty-four percent of the large-company cohort.
     </p>
     <p slot="watch">
-      Whether Google DeepMind applies a comparable restricted-access,
-      vetting-gated release to a dual-use domain within Q3 2026, making the
-      defender-first pattern explicitly tri-lab and effectively the new
-      governance norm for sensitive-domain AI. Whether a regulatory body (NIST,
-      EU AI Office, WHO) codifies the restricted-access model as a formal
-      compliance standard for dual-use AI, converting this from a voluntary lab
-      practice to a binding procurement requirement.
+      Whether a major analyst firm (Gartner, Forrester, IDC) or consultancy
+      (Accenture, McKinsey, Deloitte) publishes enterprise AI ROI-realization
+      data for the S&P 500 in Q3-Q4 2026, providing independent corroboration or
+      refutation of the forty-four percent figure. Whether any Fortune 500 company
+      publicly reports an AI program restructuring citing savings shortfall within
+      the next two quarters, converting the structural risk from statistical to
+      named and public.
     </p>
   </Signal>
 
   <Signal
     index={5}
-    date="2026-05-28"
-    category="02 Enterprise AI & Org Transformation"
-    title="Anthropic $65B Series H at $965B valuation; ARR reaches $47B in five months, investor-verified; inference margins expand to over seventy percent through caching efficiency."
-    profile="E3 T-Accelerating U2 H-Grounded Z-Now"
-    strength="strong"
+    date="2026-06-02"
+    category="01 GenAI Capabilities"
+    title="Microsoft launches MAI-Thinking-1, a one-trillion-parameter reasoning model; first proprietary frontier competitor outside the existing four-lab oligopoly."
+    profile="E2 T-Emerging U2 H-Ahead Z-Near"
+    strength="weak"
     sources={[
       {
-        label: "anthropic.com/news",
-        url: "https://www.anthropic.com/news",
-      },
-      {
-        label: "cnbc.com/2026/05/28/anthropic-open-ai-startup-value",
-        url: "https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html",
+        label: "simonwillison.net/2026/Jun/2/microsofts-new-models",
+        url: "https://simonwillison.net/2026/Jun/2/microsofts-new-models/",
       },
     ]}
   >
     <p slot="why">
-      Anthropic's $65B Series H at a $965B post-money valuation accompanies
-      annualized revenue growing from $9B in December 2025 to $47B in May 2026,
-      one of the fastest enterprise software revenue ramps on record. Series H
-      institutional investor diligence functions as the structural equivalent of
-      the independent revenue verification this scan series has tracked as a
-      watch-for criterion since April. SemiAnalysis reports that gross inference
-      margins expanded from thirty-eight percent to more than seventy percent
-      through prompt caching efficiency, indicating the revenue quality is
-      genuine rather than volume-inflated: margins at that level come from
-      operational leverage. At $47B annualized, the revenue cannot be sustained
-      by pilots, trials, or consumer subscription alone; it requires widespread
-      enterprise production deployment at scale. Simon Willison's concurrent
-      analysis surfaces a reasonable sustainability question, noting that
-      product-market fit concerns arise at this growth trajectory, which is worth
-      tracking as a counterweight to the headline figure. For enterprise AI
-      strategy, the data empirically closes the pilot-phase narrative for a
-      material segment of the Fortune 1000; the investment question has shifted
-      from whether to how.
+      Microsoft launched MAI-Thinking-1 (a one-trillion-parameter,
+      thirty-five-billion-active-parameter mixture-of-experts reasoning model)
+      and MAI-Code-1-Flash (a one-hundred-and-thirty-seven-billion-parameter,
+      five-billion-active coding model), representing Microsoft's first in-house
+      proprietary frontier-class models rather than distributing OpenAI or
+      Anthropic output. Microsoft claims MAI-Thinking-1 is preferred to Sonnet
+      4.6 in blind human side-by-side evaluations, an internal claim without
+      independent benchmark replication. The structural significance is the
+      competitive landscape shift: the effective frontier-model oligopoly
+      (OpenAI, Anthropic, Google, Meta) now has a fifth US entrant with Azure
+      distribution at enterprise scale and GitHub Copilot as an existing
+      deployment channel for MAI-Code-1-Flash, rolling out to individual users
+      immediately. Evidence is E2 because the performance claims are
+      vendor-internal evaluations not yet independently verified; the Hype rating
+      is Ahead of itself because Microsoft's evaluation methodology and comparison
+      conditions are not disclosed. The signal is logged because the structural
+      change (a fifth US frontier entrant with enterprise-scale distribution) is
+      real regardless of whether the performance claims hold.
     </p>
     <p slot="watch">
-      Whether Anthropic's ARR trajectory continues upward or plateaus in Q3
-      2026, determining whether this is a sustainable growth curve or a
-      concentrated early-adopter spike. Whether enterprise software companies
-      (Salesforce, ServiceNow, Microsoft) report AI-driven revenue acceleration
-      in Q2 2026 earnings, confirming the adoption curve is sector-wide rather
-      than a single-lab effect.
+      Whether independent benchmark organizations (HELM, LMSYS Chatbot Arena,
+      LiveBench) publish evaluations placing MAI-Thinking-1 against frontier
+      peers within Q3 2026, confirming or refuting Microsoft's side-by-side
+      claim. Whether MAI-Code-1-Flash shows measurable acceptance-rate or
+      productivity differences from the prior Copilot baseline in public GitHub
+      data, providing real-world deployment evidence independent of vendor claims.
     </p>
   </Signal>
 
   <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
     <p>
-      AlphaProof Nexus solved nine mathematical problems that had remained open
-      for decades using the same general-purpose reasoning capability now running
-      enterprise AI agents, at a cost of a few hundred dollars per proof. Project
-      Glasswing used the same class of capability to identify more than ten
-      thousand critical vulnerabilities in open-source software; seventy-five of
-      five hundred and thirty have been patched. The EU Omnibus agreement
-      conceded in the same week that the technical standards required to govern
-      this capability will not be ready until December 2027.
-      <strong>Three signals, three independent institutional actors, one
-      measurement: AI capability is compounding at a rate that governance
-      infrastructure is explicitly acknowledging it cannot match in real time,
-      and the ratio is now disclosed in primary sources rather than inferred
-      from capability trajectories.</strong>
+      The Trump EO (federal, voluntary, classified criteria) and Illinois SB 315
+      (state, mandatory, public penalties and audits) were both enacted within
+      seventy-two hours and were both publicly supported by the same frontier
+      labs. They represent incompatible philosophies: one rewards opacity and
+      first-mover compliance advantage, the other mandates transparency and
+      independent verification. Build American AI's confirmed fake-account
+      campaign arrived in the same week, making the governance debate itself an
+      object of coordinated manipulation.
+      <strong>Enterprises designing AI vendor-risk frameworks for 2026-2028 now
+      face a US regulatory environment with two simultaneous governing
+      philosophies, neither of which has precedence over the other, and an
+      industry whose political credibility is contested by its own disclosed
+      conduct.</strong>
     </p>
   </ClusterCallout>
 
