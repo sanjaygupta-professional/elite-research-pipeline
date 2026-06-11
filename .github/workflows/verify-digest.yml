@@ -5,13 +5,13 @@ name: Verify Digest Builds
 # The deploy-docs workflow only runs on push to master, so without this
 # guard a broken digest would silently merge and break the live site.
 
+# No paths filter: scan-only PRs (weak-signal file only) must still get a
+# green check — a required check that "skips" blocks nothing and confuses
+# the review checklist. The build is ~1 min; run it on every PR to master.
 on:
   pull_request:
     branches:
       - master
-    paths:
-      - digest/**
-      - .github/workflows/verify-digest.yml
 
 concurrency:
   group: verify-digest-${{ github.ref }}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly signal scan — Mon 00:30 UTC (6 AM IST), catches up missed runs
+
+[Timer]
+OnCalendar=Mon *-*-* 00:30:00 UTC
+# Persistent: if the machine/WSL was off at fire time, run once on next start.
+# This replaces plain cron, which silently skips missed runs (2026-05-18 miss).
+Persistent=true
+
+[Install]
+WantedBy=timers.target

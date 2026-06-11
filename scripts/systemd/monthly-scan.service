@@ -1,0 +1,9 @@
+[Unit]
+Description=Elite research pipeline — monthly low-cadence signal scan
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/sanjayegupta/projects/elite-research-pipeline/scripts/run-monthly-scan.sh
+Environment=PATH=/home/sanjayegupta/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

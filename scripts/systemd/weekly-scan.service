@@ -1,0 +1,11 @@
+[Unit]
+Description=Elite research pipeline — weekly Tier 2 signal scan
+# Network required: claude web scan + git push + gh PR.
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/sanjayegupta/projects/elite-research-pipeline/scripts/run-weekly-scan.sh
+# claude and gh live in ~/.local/bin — user services get a minimal PATH.
+Environment=PATH=/home/sanjayegupta/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
