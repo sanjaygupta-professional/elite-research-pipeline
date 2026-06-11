@@ -1,0 +1,9 @@
+[Unit]
+Description=Monthly low-cadence scan — 1st 03:00 UTC (8:30 AM IST), catches up missed runs
+
+[Timer]
+OnCalendar=*-*-01 03:00:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target
