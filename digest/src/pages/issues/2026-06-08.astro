@@ -1,0 +1,390 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
+import Issue from "../../layouts/Issue.astro";
+import Masthead from "../../components/Masthead.astro";
+import HeroThesis from "../../components/HeroThesis.astro";
+import AudioBrief from "../../components/AudioBrief.astro";
+import Synthesis from "../../components/Synthesis.astro";
+import Signal from "../../components/Signal.astro";
+import ClusterCallout from "../../components/ClusterCallout.astro";
+import Methodology from "../../components/Methodology.astro";
+import previousIssues from "../../data/issues.json";
+
+const issueDate = "2026-06-08";
+const description =
+  "US AI governance split in one week between a federal voluntary shadow framework and the first state mandatory safety audit law, as the industry's own PAC was caught astroturfing the debate.";
+const title = "The Cinnabar Dispatch · 2026-06-08 · Possibilities with Probabilities";
+
+// Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
+// Path is checked at build time against the public/ directory.
+const audioFilename = `${issueDate}.mp3`;
+const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
+const audioPath = existsSync(audioFsPath)
+  ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
+  : null;
+
+const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
+---
+
+<Issue title={title} description={description} issueDate={issueDate}>
+  <Masthead
+    issueDate={issueDate}
+    scanNumber={9}
+    signalCount={7}
+    strongCount={4}
+    weakCount={3}
+  />
+
+  <HeroThesis kicker="This week's thesis">
+    Within seventy-two hours, the US produced two incompatible AI governance
+    architectures: a White House executive order creating a classified,
+    voluntary federal framework with NSA oversight and secret criteria, and
+    Illinois SB 315 passing its legislature unanimously to become the first US
+    law mandating annual independent safety audits for frontier AI labs. In the
+    same week, the political action committee funded by OpenAI resources was
+    confirmed running fake accounts impersonating AI critics, and Bain Capital
+    reported that forty-four percent of large companies are funding their next
+    AI wave on savings that have not yet materialized. The governance debate is
+    now contested both formally, between two divergent US regulatory
+    philosophies, and informally, by the industry's own political apparatus.
+  </HeroThesis>
+
+  <AudioBrief audioPath={audioPath} />
+
+  <Synthesis>
+    <p>
+      This week's scan produced seven signals across three domains, with a
+      structural collision at the center. The Trump administration's executive
+      order on frontier AI models (June 2) created a federal preflight-check
+      framework: labs may voluntarily provide the NSA up to thirty days of
+      pre-release model access for classified capability benchmarking, with
+      criteria that remain secret and no mandatory requirements. Illinois SB 315
+      cleared its legislature 110 to 0 in the House and 52 to 5 in the Senate
+      within the same seventy-two hours, with Governor Pritzker signaling his
+      intent to sign into the first US law requiring annual independent
+      third-party safety audits for frontier AI developers, plus seventy-two-hour
+      incident reporting and civil penalties up to three million dollars per
+      incident. Build American AI, the PAC funded by OpenAI resources and
+      personally by OpenAI President Greg Brockman, confirmed in the same week
+      that outside vendors it hired ran fake accounts impersonating AI critics,
+      including accounts posting provocative imagery. Bain Capital's research,
+      cited in Zvi Mowshowitz's June 4 roundup, found that forty-four percent of
+      large companies are funding next-wave AI investment on AI-driven cost
+      savings that have not yet materialized. Microsoft launched MAI-Thinking-1,
+      a one-trillion-parameter mixture-of-experts reasoning model, as the first
+      proprietary frontier-class entry from a company outside the existing
+      four-lab oligopoly.
+    </p>
+
+    <p>
+      The structural observation binding signals one, two, and three is
+      not simply that governance is accelerating but that the two US governance
+      tracks now point in opposite directions. The Trump EO is federal,
+      voluntary, and classified: it rewards labs for participation with
+      partner-selection power while keeping the criteria that define "covered
+      frontier model" invisible to the public and to enterprise buyers. Illinois
+      SB 315 is state, mandatory, and public: it imposes independent audits,
+      whistleblower protections, and attorney-general enforcement with published
+      results. Both were passed in the same week by institutions that endorsed
+      the same frontier labs.
+      <strong>The implication for enterprise AI strategy is not that governance
+      is coming; it is that two governance philosophies, one that rewards
+      opacity and one that mandates transparency, are now simultaneously
+      operative in the US market, and enterprises will need to design
+      vendor-risk frameworks that can accommodate both.</strong>
+      The Build American AI confirmation adds a third dimension: the regulatory
+      debate itself is now susceptible to coordinated inauthentic influence from
+      the industry it is trying to govern.
+    </p>
+
+    <p>
+      For the reader whose work is enterprise AI strategy: the Illinois SB 315
+      passage creates a new vendor due-diligence requirement that did not exist
+      last week: whether your frontier AI provider has completed or is planning
+      an independent safety audit under a US mandatory framework. The EU AI Act
+      Omnibus delay (logged May 29 scan) removed compliance pressure from one
+      direction; SB 315 restores it from another, and with a shorter timeline.
+      The Bain forty-four percent finding is the more immediate planning risk: if
+      nearly half of your peer companies are committing expanded AI spend on
+      savings that have not arrived, the inflection point where budget
+      contractions arrive simultaneously is a scenario worth stress-testing now.
+      And the Trump EO's voluntary structure offers a practical asymmetry to
+      watch: labs that participate in the classified preflight window gain
+      partner-selection power that labs outside the program will not have, which
+      may affect procurement options in regulated federal-adjacent sectors within
+      the next twelve months.
+    </p>
+  </Synthesis>
+
+  <Signal
+    index={1}
+    date="2026-06-02"
+    category="04 AI Governance & Ethics"
+    title="Trump executive order establishes classified preflight-check framework for frontier AI models; NSA designated oversight authority with secret criteria."
+    profile="E4 T-Shifting U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security",
+        url: "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+      },
+      {
+        label: "crowell.com",
+        url: "https://www.crowell.com/en/insights/client-alerts/executive-order-creates-voluntary-regulatory-regime-of-frontier-ai-models",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-171-false-flag",
+        url: "https://thezvi.substack.com/p/ai-171-false-flag",
+      },
+    ]}
+  >
+    <p slot="why">
+      President Trump signed the first US federal mechanism for pre-deployment
+      frontier AI model review: developers may voluntarily provide the government
+      up to thirty days of pre-release access to covered frontier models for
+      classified NSA-led benchmarking of advanced cyber capabilities. Within
+      sixty days, agencies must develop a classified benchmarking process to
+      determine what qualifies as a covered frontier model, with the criteria
+      remaining secret. Labs that participate help select trusted partners for
+      early model access, creating a first-mover advantage for compliant
+      companies. The order is nominally voluntary and explicitly bars mandatory
+      pre-clearance requirements; the practical effect is a new
+      government-industry checkpoint at federal level that did not exist before
+      June 2026. For enterprise AI procurement, this begins differentiating
+      frontier labs by government-relationship depth, a factor likely to influence
+      vendor selection in regulated sectors including defense, healthcare, and
+      finance. Multiple legal analyses note a structural tension: the opacity of
+      the benchmarking criteria makes it impossible for enterprises to assess
+      which labs are participating or on what terms, creating an information
+      asymmetry that benefits early participants.
+    </p>
+    <p slot="watch">
+      Whether any frontier lab publicly confirms participation in the thirty-day
+      preflight window, which would establish it as a de facto norm even without
+      mandatory status. Whether the classified benchmarking criteria eventually
+      surface through Congressional oversight hearings, providing enterprises
+      with visibility into the thresholds the NSA is applying and the
+      participation list of labs that have engaged.
+    </p>
+  </Signal>
+
+  <Signal
+    index={2}
+    date="2026-05-28"
+    category="04 AI Governance & Ethics"
+    title="Illinois SB 315 passes legislature 110 to 0 and 52 to 5; first US law mandating annual independent safety audits for frontier AI labs, with civil penalties and incident reporting."
+    profile="E4 T-Shifting U3 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "capitolnewsillinois.com",
+        url: "https://capitolnewsillinois.com/news/illinois-lawmakers-pass-landmark-ai-accountability-bill/",
+      },
+      {
+        label: "nbcnews.com/tech/tech-news/illinois-legislature-passes-historic-ai-bill-rcna347191",
+        url: "https://www.nbcnews.com/tech/tech-news/illinois-legislature-passes-historic-ai-bill-rcna347191",
+      },
+      {
+        label: "iapp.org",
+        url: "https://iapp.org/news/a/notable-ai-privacy-bills-hit-finish-line-in-illinois-connecticut-and-new-york",
+      },
+    ]}
+  >
+    <p slot="why">
+      Illinois SB 315 cleared both chambers with near-unanimous margins: one
+      hundred and ten to zero in the House, fifty-two to five in the Senate, with
+      Governor Pritzker publicly indicating his intent to sign. The bill requires
+      frontier AI developers to publish and annually update a safety framework
+      covering catastrophic-risk assessment, cybersecurity, internal governance,
+      and third-party evaluations; to report serious AI failures within
+      seventy-two hours; to protect employee whistleblowers; and to face civil
+      penalties up to three million dollars per incident enforced by the Illinois
+      attorney general. OpenAI and Anthropic supported the bill; other AI trade
+      groups opposed it. This is structurally different from prior state AI
+      activity such as California watermarking requirements or Colorado risk
+      assessments: it targets the frontier lab directly, requires ongoing
+      independent verification rather than self-attestation, and creates
+      enforcement mechanisms with named penalties. For enterprise AI procurement,
+      this creates a new vendor due-diligence requirement that did not exist last
+      week: whether your frontier AI provider has completed, or is planning, an
+      independent safety audit under a US mandatory framework.
+    </p>
+    <p slot="watch">
+      Whether Governor Pritzker signs, converting the bill to enacted law. Whether
+      a second enterprise-heavy state (Texas, New York, California) introduces
+      comparable frontier-lab audit legislation in its next legislative session.
+      Two-state replication would create a de facto compliance norm for US-based
+      frontier labs regardless of federal preemption status.
+    </p>
+  </Signal>
+
+  <Signal
+    index={3}
+    date="2026-06-04"
+    category="04 AI Governance & Ethics"
+    title="OpenAI-backed PAC confirmed running fake accounts impersonating AI critics; first AI-lab-affiliated political influence operation targeting AI governance discourse."
+    profile="E3 T-Emerging U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "thezvi.substack.com/p/ai-171-false-flag",
+        url: "https://thezvi.substack.com/p/ai-171-false-flag",
+      },
+    ]}
+  >
+    <p slot="why">
+      Build American AI, a political action committee funded by OpenAI resources
+      and personally by OpenAI President Greg Brockman, confirmed that outside
+      vendors it hired ran fake social media accounts impersonating AI skeptics,
+      including accounts posting provocative imagery. The PAC characterized these
+      as parody accounts run by outside vendors and not a core part of its
+      strategy. OpenAI issued a public statement saying no outside political group
+      speaks for OpenAI and explicitly criticizing astroturfing tactics.
+      Congressional staff reportedly view the PAC as OpenAI's PAC regardless of
+      the official distancing. This is the first confirmed case of a frontier-lab
+      affiliated entity using coordinated inauthentic political influence
+      operations to shape AI governance discourse, at the precise moment that
+      political bodies are debating mandatory AI regulation. The structural
+      consequence is a meta-governance problem: the regulatory debate over AI is
+      now susceptible to AI-funded manipulation, which compounds the trust deficit
+      that the SB 315 and Trump EO signals represent. OpenAI simultaneously
+      publicly supported SB 315 and the Trump EO's voluntary compliance model,
+      creating an accountability gap legislators have noted explicitly.
+    </p>
+    <p slot="watch">
+      Whether the FEC or any state attorney general opens enforcement
+      investigations into Build American AI's activities, establishing legal
+      precedent for AI company PAC accountability. Whether a Congressional
+      committee adds political influence disclosure requirements to proposed
+      federal AI legislation as a direct response to this incident.
+    </p>
+  </Signal>
+
+  <Signal
+    index={4}
+    date="2026-06-04"
+    category="02 Enterprise AI & Org Transformation"
+    title="Bain Capital finds forty-four percent of large companies funding next-wave AI investment from savings that have not yet materialized; circular ROI risk flagged."
+    profile="E3 T-Emerging U2 H-Grounded Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "thezvi.substack.com/p/ai-171-false-flag",
+        url: "https://thezvi.substack.com/p/ai-171-false-flag",
+      },
+    ]}
+  >
+    <p slot="why">
+      Bain Capital's research finds that forty-four percent of large companies
+      are funding the next wave of AI investment based on AI-driven cost savings
+      that have not yet been realized, which Bain characterizes as circular risk
+      rather than financial discipline: organizations are committing to expanded
+      AI spend before current investments have produced the reductions that were
+      supposed to justify them. This sits in direct tension with the supply-side
+      acceleration signals from this same week, including one company reportedly
+      spending five hundred million dollars on Claude in a single month and
+      Anthropic's annualized revenue reaching forty-seven billion dollars in May
+      2026. The revenue acceleration visible at the frontier-lab supply side is
+      being partially financed by projected demand-side savings that have not
+      arrived. Enterprise AI budget frameworks were designed for deterministic
+      software consumption patterns; agentic systems consume tokens proportional
+      to autonomous task volume, which grows exponentially within budgets designed
+      for linear growth. The Bain finding extends the April enterprise token cost
+      crisis signal (Uber, Microsoft) from individual incidents to a structural
+      financing pattern across forty-four percent of the large-company cohort.
+    </p>
+    <p slot="watch">
+      Whether a major analyst firm (Gartner, Forrester, IDC) or consultancy
+      (Accenture, McKinsey, Deloitte) publishes enterprise AI ROI-realization
+      data for the S&P 500 in Q3-Q4 2026, providing independent corroboration or
+      refutation of the forty-four percent figure. Whether any Fortune 500 company
+      publicly reports an AI program restructuring citing savings shortfall within
+      the next two quarters, converting the structural risk from statistical to
+      named and public.
+    </p>
+  </Signal>
+
+  <Signal
+    index={5}
+    date="2026-06-02"
+    category="01 GenAI Capabilities"
+    title="Microsoft launches MAI-Thinking-1, a one-trillion-parameter reasoning model; first proprietary frontier competitor outside the existing four-lab oligopoly."
+    profile="E2 T-Emerging U2 H-Ahead Z-Near"
+    strength="weak"
+    sources={[
+      {
+        label: "simonwillison.net/2026/Jun/2/microsofts-new-models",
+        url: "https://simonwillison.net/2026/Jun/2/microsofts-new-models/",
+      },
+    ]}
+  >
+    <p slot="why">
+      Microsoft launched MAI-Thinking-1 (a one-trillion-parameter,
+      thirty-five-billion-active-parameter mixture-of-experts reasoning model)
+      and MAI-Code-1-Flash (a one-hundred-and-thirty-seven-billion-parameter,
+      five-billion-active coding model), representing Microsoft's first in-house
+      proprietary frontier-class models rather than distributing OpenAI or
+      Anthropic output. Microsoft claims MAI-Thinking-1 is preferred to Sonnet
+      4.6 in blind human side-by-side evaluations, an internal claim without
+      independent benchmark replication. The structural significance is the
+      competitive landscape shift: the effective frontier-model oligopoly
+      (OpenAI, Anthropic, Google, Meta) now has a fifth US entrant with Azure
+      distribution at enterprise scale and GitHub Copilot as an existing
+      deployment channel for MAI-Code-1-Flash, rolling out to individual users
+      immediately. Evidence is E2 because the performance claims are
+      vendor-internal evaluations not yet independently verified; the Hype rating
+      is Ahead of itself because Microsoft's evaluation methodology and comparison
+      conditions are not disclosed. The signal is logged because the structural
+      change (a fifth US frontier entrant with enterprise-scale distribution) is
+      real regardless of whether the performance claims hold.
+    </p>
+    <p slot="watch">
+      Whether independent benchmark organizations (HELM, LMSYS Chatbot Arena,
+      LiveBench) publish evaluations placing MAI-Thinking-1 against frontier
+      peers within Q3 2026, confirming or refuting Microsoft's side-by-side
+      claim. Whether MAI-Code-1-Flash shows measurable acceptance-rate or
+      productivity differences from the prior Copilot baseline in public GitHub
+      data, providing real-world deployment evidence independent of vendor claims.
+    </p>
+  </Signal>
+
+  <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
+    <p>
+      The Trump EO (federal, voluntary, classified criteria) and Illinois SB 315
+      (state, mandatory, public penalties and audits) were both enacted within
+      seventy-two hours and were both publicly supported by the same frontier
+      labs. They represent incompatible philosophies: one rewards opacity and
+      first-mover compliance advantage, the other mandates transparency and
+      independent verification. Build American AI's confirmed fake-account
+      campaign arrived in the same week, making the governance debate itself an
+      object of coordinated manipulation.
+      <strong>Enterprises designing AI vendor-risk frameworks for 2026-2028 now
+      face a US regulatory environment with two simultaneous governing
+      philosophies, neither of which has precedence over the other, and an
+      industry whose political credibility is contested by its own disclosed
+      conduct.</strong>
+    </p>
+  </ClusterCallout>
+
+  {filteredIssues.length > 0 && (
+    <section class="previous-issues">
+      <h2 class="previous-issues__heading">Previous Issues</h2>
+      <ul class="previous-issues__list">
+        {filteredIssues.map((issue) => (
+          <li>
+            <a href={`${import.meta.env.BASE_URL}issues/${issue.date}/`}>
+              Week of {issue.date}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <Methodology
+    frameworkUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/"
+    archiveUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/baseline/zone2-futures-intelligence/06-weak-signal-watch/"
+  />
+</Issue>
