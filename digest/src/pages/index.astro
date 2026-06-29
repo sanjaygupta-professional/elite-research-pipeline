@@ -12,10 +12,10 @@ import ClusterCallout from "../components/ClusterCallout.astro";
 import Methodology from "../components/Methodology.astro";
 import previousIssues from "../data/issues.json";
 
-const issueDate = "2026-06-15";
+const issueDate = "2026-06-29";
 const description =
-  "Claude Fable 5 launched as the first generally available Mythos-class model, was suspended for all foreign nationals under statutory export control seventy-two hours later, as Anthropic disclosed an eight-times code acceleration baseline.";
-const title = "The Cinnabar Dispatch · 2026-06-15 · Possibilities with Probabilities";
+  "GPT-5.6 previewed to the US government before release, OpenAI's Jalapeño inference chip tapes out in nine months, and GLM-5.2 becomes the first open-weights model to compete at the frontier agent tier.";
+const title = "The Cinnabar Dispatch · 2026-06-29 · Possibilities with Probabilities";
 
 // Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
 // Path is checked at build time against the public/ directory.
@@ -31,377 +31,362 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
 <Issue title={title} description={description} issueDate={issueDate}>
   <Masthead
     issueDate={issueDate}
-    scanNumber={10}
-    signalCount={6}
-    strongCount={4}
+    scanNumber={11}
+    signalCount={5}
+    strongCount={3}
     weakCount={2}
   />
 
   <HeroThesis kicker="This week's thesis">
-    Claude Fable 5 launched on June 9 as the first Mythos-class model available
-    to general enterprise users: Wharton professor Ethan Mollick confirmed
-    autonomous nine-hour project builds, described a shift from "steer" to
-    "commission," and Stripe compressed months of engineering into days on a
-    fifty-million-line codebase migration. By June 12, the US Department of
-    Commerce had issued an export control directive suspending all
-    foreign-national access to both Fable 5 and Mythos 5, citing a jailbreak
-    identified by an Amazon-affiliated trusted partner that Anthropic
-    characterized as a narrow, non-universal vulnerability already present in
-    competitors' models. In the same week, Import AI 460 disclosed Anthropic's
-    own operational data: code merged into its engineering codebase is running
-    at eight times the 2021 to 2024 average, the first quantified
-    recursive self-improvement metric from any frontier lab. The seventy-two-hour
-    window from Fable 5's launch to its suspension compresses what had been
-    theoretical vendor risk into a lived enterprise governance event: a
-    generally available Mythos-class model removed overnight on national security
-    grounds while its developer simultaneously disclosed an eight-times code
-    acceleration baseline.
+    The week of June 22 to 29 brought three simultaneous structural shifts in
+    who controls frontier AI capability. OpenAI previewed GPT-5.6 Sol to the US
+    government and restricted its launch to approximately twenty trusted
+    partners, the first voluntary government pre-coordination for a frontier
+    model release, arriving two weeks after the first statutory model shutdown.
+    On June 24, OpenAI and Broadcom announced Jalapeño, a custom LLM inference
+    chip that went from design to tape-out in nine months with AI-assisted
+    design, making OpenAI the fifth major lab to own proprietary inference
+    silicon and extending the recursive-self-improvement signal from software
+    into hardware. One week after the US government suspended Fable 5 under
+    export control authority, Z.ai released GLM-5.2 under an MIT license, the
+    first open-weights model to compete directly with GPT-5.5 and Claude Opus
+    4.8 on Arena's agent leaderboard at approximately one-third the token cost.
+    Together these three signals reveal a structural gap in the
+    export-control-as-AI-governance thesis: restricting US closed models while
+    Chinese labs release MIT-licensed open-weights alternatives at frontier
+    agentic capability does not achieve the intended containment effect for
+    enterprises or developers.
   </HeroThesis>
 
   <AudioBrief audioPath={audioPath} />
 
   <Synthesis>
     <p>
-      This week's scan produced six signals across two domains, with an
-      extraordinary structural collision at the center. Anthropic's Claude Fable
-      5 launched on June 9 as the first Mythos-class model available to general
-      enterprise users, with Wharton professor Ethan Mollick documenting
-      autonomous project runs of nine and a half hours producing complete,
-      deployable software from a single brief, and Stripe publicly confirming
-      months of engineering compressed into days on a fifty-million-line
-      codebase migration. Three days later, the US Department of Commerce issued
-      an export control directive at 5:21 PM on June 12 requiring Anthropic to
-      suspend all access to Fable 5 and Mythos 5 for every foreign national,
-      whether inside or outside the United States. Anthropic received no written
-      technical justification. The trigger was a jailbreak identified by Amazon
-      as a trusted government partner, which the government characterized as
-      a material vulnerability; Anthropic characterized it as a narrow,
-      non-universal exploit already present in competitors' models. Unable to
-      verify citizenship status for hundreds of millions of users, Anthropic
-      suspended access entirely. In the same week, Import AI 460 disclosed
-      Anthropic's own operational data: code merged into its engineering
-      codebase is running at eight times the 2021 to 2024 average, the first
-      time a frontier lab has quantified recursive self-improvement as a
-      current-state operational fact rather than a forecast. A fourth signal
-      arrived separately: Qwen3.7-Max, developed by Alibaba's Tongyi team,
-      posted a twenty-three percent hallucination rate on Artificial Analysis
-      benchmarks, the lowest of any frontier model, outperforming GPT-5.5 by
-      more than sixty percentage points on the truthfulness dimension.
+      This week's scan produced five signals across three domains, with a
+      recurring structural theme: the architecture of who controls frontier AI
+      capability is restructuring at the governance, infrastructure, and
+      open-source layers simultaneously. OpenAI launched GPT-5.6 Sol on June
+      26, its most capable model yet, with an "ultra mode" using subagents for
+      complex tasks and a new state-of-the-art on Terminal-Bench 2.1 for
+      command-line workflows, but limited initial access to approximately twenty
+      trusted partners whose participation was shared with the US government.
+      Three days earlier, on June 24, OpenAI and Broadcom announced Jalapeño, a
+      custom LLM inference accelerator developed in nine months with AI-assisted
+      chip design, planned for gigawatt-scale deployment by end of 2026 in
+      partnership with Microsoft. In the same window, multiple synthesizers
+      reviewed GLM-5.2 from Z.ai as the first open-weights model to compete
+      directly with GPT-5.5 and Claude Opus 4.8 on Arena's agent leaderboard,
+      MIT-licensed at one-third the token cost of closed alternatives. Two
+      weaker signals complete the picture: OpenAI's Daybreak release on June 22
+      makes GPT-5.5-Cyber available for enterprise-scale patch automation,
+      paralleling Anthropic's Glasswing security initiative in the same quarter,
+      and Zvi's June 25 analysis documents that coding agents are now routinely
+      deployed with full organizational trust, including internet access and
+      internal data access, without post-run security review, as Five Eyes
+      intelligence agencies warned of months to secure systems from advanced AI
+      threats.
     </p>
 
     <p>
-      The structural observation binding signals one, two, and three is not
-      simply that the first public Mythos-class launch coincided with the first
-      statutory model takedown. It is that both events are downstream of the
-      same fact: frontier models are now powerful enough that a single identified
-      jailbreak constitutes a credible national security trigger, while the labs
-      building them are simultaneously disclosing that AI is measurably
-      accelerating their own development pipeline at eight times the prior
-      baseline rate.
-      <strong>The enterprise AI governance problem is no longer about how to
-      regulate AI that might become dangerous. It is about how to operate vendor
-      contracts for AI systems already capable enough to be suspended overnight
-      on national security grounds, while their developers are using the same AI
-      to build more capable successors at eight times their prior baseline
-      pace.</strong>
-      This distinction matters for vendor-risk frameworks built in 2024, which
-      were calibrated for AI as a productivity amplifier subject to content
-      policies. The June 12 directive reveals those frameworks as structurally
-      incomplete: they do not account for statutory export-control authority as a
-      shutdown mechanism triggered by a single government-identified jailbreak
-      that the vendor itself judges non-material.
+      The structural observation binding signals one, two, and three is that the
+      June 12 Fable 5 export control shutdown and the June 26 GPT-5.6
+      government pre-coordination reveal opposite ends of the same new reality:
+      US frontier model launches now operate under either cooperative government
+      pre-review or coercive statutory suspension as live operating modes, not
+      theoretical risks. The Jalapeño chip extends a parallel structural shift
+      at the hardware layer: as OpenAI becomes the fifth major lab to own
+      proprietary inference silicon, and the AI-assisted nine-month design cycle
+      suggests silicon iteration cadence can approach model development velocity,
+      the compute infrastructure enterprise teams assumed was a stable external
+      market is becoming a set of lab-owned roadmaps.
+      <strong>The GLM-5.2 open-weights release completes the picture with a
+      signal the current governance architecture cannot easily address: the
+      intended effect of restricting US closed models is partially neutralized
+      when Chinese labs simultaneously release MIT-licensed open-weights models
+      at comparable frontier agent capability, available to any enterprise or
+      developer without US API dependency.</strong>
     </p>
 
     <p>
-      For the reader whose work is enterprise AI strategy: the immediate
-      diligence question the June 12 directive creates is whether your frontier
-      AI provider's terms of service disclose the circumstances under which
-      statutory export-control authority can mandate suspension, and whether your
-      business continuity plan has a tested fallback for twenty-four to
-      seventy-two hours of model unavailability with no advance notice. If
-      Anthropic's situation generalizes, any frontier model provider with access
-      to capabilities the government judges nationally sensitive faces the same
-      precedent. The Qwen3.7-Max hallucination finding adds a parallel
-      due-diligence signal: if your current procurement framework selects models
-      primarily on capability benchmarks without separating out reliability, the
-      sixty-two-percentage-point hallucination gap between Qwen3.7-Max and
-      GPT-5.5 is larger than most enterprise AI safety architectures have
-      formally accounted for. The Obernolte-Trahan bill (signal five) adds a
-      third dimension: if its three-year moratorium on state AI laws passes
-      intact, the state-level governance architecture built since April, including
-      Illinois SB 315, would be dissolved at the moment enterprises are most
-      dependent on it as a counterweight to the federal voluntary framework.
+      For the reader whose work is enterprise AI strategy: the June 22 to 29
+      window creates three concrete diligence questions. First, does your
+      frontier AI vendor contract disclose the conditions under which either
+      voluntary or statutory government review can restrict or suspend model
+      access, and does your business continuity plan test for up to seventy-two
+      hours of model unavailability with no advance notice? Second, does your
+      infrastructure and procurement framework account for inference cost and
+      availability being determined by lab-owned silicon roadmaps rather than
+      GPU market pricing, now that OpenAI, Google, Amazon, and Microsoft each
+      own their inference compute? Third, if GLM-5.2's frontier-tier agentic
+      performance is independently verified on enterprise task distributions,
+      does your agent architecture evaluation framework include MIT-licensed
+      open-weights alternatives as a viable option alongside US closed-model
+      APIs, or is it implicitly scoped to API-access-only procurement?
     </p>
   </Synthesis>
 
   <Signal
     index={1}
-    date="2026-06-09"
-    category="01 GenAI Capabilities · 08 AI Productivity Tools"
-    title="Claude Fable 5 publicly released: first Mythos-class model for general enterprise users, with confirmed nine-hour autonomous software builds and Stripe codebase migration in days."
-    profile="E3 T-Ac U3 H-Gr Z-Now"
+    date="2026-06-26"
+    category="01 GenAI Capabilities · 04 AI Governance & Ethics"
+    title="OpenAI launches GPT-5.6 with government pre-coordination and trusted-partner access limits, establishing de facto pre-review as the new frontier launch norm."
+    profile="E3 T-Ac U3 H-Gr Z-Near"
     strength="strong"
     sources={[
       {
-        label: "anthropic.com/news/claude-fable-5-mythos-5",
-        url: "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+        label: "openai.com/index/previewing-gpt-5-6-sol",
+        url: "https://openai.com/index/previewing-gpt-5-6-sol/",
       },
       {
-        label: "oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
-        url: "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
+        label: "techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout",
+        url: "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
       },
       {
-        label: "thezvi.substack.com/p/ai-172-the-first-fable",
-        url: "https://thezvi.substack.com/p/ai-172-the-first-fable",
-      },
-      {
-        label: "every.to/chain-of-thought/the-moral-of-fable",
-        url: "https://every.to/chain-of-thought/the-moral-of-fable",
+        label: "cnbc.com/2026/06/26/openai-limits-new-ai-models",
+        url: "https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html",
       },
     ]}
   >
     <p slot="why">
-      Fable 5 is the first Mythos-class model released to general enterprise
-      users, priced at ten dollars per million input tokens and fifty dollars per
-      million output tokens, with a thirty-day data retention safety
-      architecture and friction-based rather than hard-refusal safety classifiers
-      covering cybersecurity, biology, and chemistry. Ethan Mollick at Wharton
-      ran a nine-and-a-half-hour autonomous build session producing "Concord," a
-      complete data analysis software package, from a single brief, documenting a
-      shift in human role he described as: "I no longer steer; I commission."
-      Stripe publicly confirmed months of engineering compressed into days on a
-      fifty-million-line codebase migration. The Agents' Last Exam benchmark
-      places Fable 5 comparable to GPT-5.5 on task performance at four to twelve
-      times higher per-task cost. Capability Unlock is three because this moves
-      Mythos-class autonomous task completion from a gated enterprise preview to a
-      generally available procurement option. The Hype-Reality rating is Grounded
-      because the autonomous-build claims are corroborated by a
-      practitioner-researcher (Mollick) and a Fortune 100-scale enterprise
-      (Stripe) within the same week.
+      OpenAI launched GPT-5.6 Sol (flagship), Terra (balanced at twice the cost
+      efficiency of GPT-5.5), and Luna (fast and affordable) on June 26, its
+      most capable model family yet. Sol sets a new state-of-the-art on
+      Terminal-Bench 2.1 for command-line workflows and introduces an "ultra
+      mode" using subagents to handle complex tasks beyond single-agent
+      capability; all three models launch under OpenAI's "High" risk
+      classification for cybersecurity and biological workflows, creating new
+      compliance obligations for enterprise teams in those domains. The most
+      structurally significant element is the launch process: OpenAI previewed
+      plans and model capabilities to the US government before launch, limited
+      initial access to approximately twenty trusted partners whose participation
+      was shared with the government, and explicitly stated that this process
+      "should not become the long-term default." Two weeks after the first
+      statutory frontier model shutdown, the second largest frontier lab
+      voluntarily engaged government stakeholders and restricted initial access,
+      establishing de facto government pre-review as an emerging norm for the
+      most capable model launches. The three-tier architecture also creates
+      differentiated governance obligations: enterprise teams deploying Sol in
+      cybersecurity or life-sciences workflows face higher compliance
+      requirements than those using Terra or Luna, a new procurement variable
+      without precedent in prior model generations.
     </p>
     <p slot="watch">
-      Whether three or more additional enterprises publish audited autonomous-task
-      case studies comparable to Stripe's codebase migration within Q3 2026,
-      converting practitioner anecdotes into a production-grade pattern. Whether
-      per-task cost efficiency narrows the four-to-twelve-times gap between Fable
-      5 and GPT-5.5 in a subsequent Anthropic pricing update, which would expand
-      enterprise adoption reach.
+      Whether Google DeepMind coordinates its next Gemini frontier release with
+      the US government in a comparable pre-review pattern, converting this from
+      two labs into a multi-lab institutionalized norm. Whether OpenAI extends
+      GPT-5.6 Sol's trusted-partner gating beyond thirty days, which determines
+      whether this is a staged rollout or a new access stratification model that
+      persists beyond general availability.
     </p>
   </Signal>
 
   <Signal
     index={2}
-    date="2026-06-12"
-    category="04 AI Governance & Ethics"
-    title="US Department of Commerce suspends Fable 5 and Mythos 5 for all foreign nationals; first frontier model taken down via statutory export control authority."
-    profile="E4 T-Sh U3 H-Gr Z-Now"
+    date="2026-06-24"
+    category="05 AI Infrastructure Trajectory"
+    title="OpenAI and Broadcom tape out Jalapeño, a custom LLM inference chip, in nine months using AI-assisted design, targeting gigawatt-scale deployment by end of 2026."
+    profile="E3 T-Sh U3 H-Gr Z-Near"
     strength="strong"
     sources={[
       {
-        label: "anthropic.com/news/fable-mythos-access",
-        url: "https://www.anthropic.com/news/fable-mythos-access",
+        label: "openai.com/index/openai-broadcom-jalapeno-inference-chip",
+        url: "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/",
       },
       {
-        label: "thezvi.substack.com/p/american-government-takes-down-claude",
-        url: "https://thezvi.substack.com/p/american-government-takes-down-claude",
+        label: "investors.broadcom.com/news-releases/openai-broadcom-jalapeno",
+        url: "https://investors.broadcom.com/news-releases/news-release-details/openai-and-broadcom-unveil-llm-optimized-intelligence-processor",
+      },
+      {
+        label: "hpcwire.com/aiwire/2026/06/24/jalapeno-ai-chip",
+        url: "https://www.hpcwire.com/aiwire/2026/06/24/openai-and-broadcom-unveil-jalapeno-ai-chip-for-llm-inference/",
       },
     ]}
   >
     <p slot="why">
-      The US Department of Commerce issued an export control directive on June 12
-      at 5:21 PM ET requiring Anthropic to suspend all access to Fable 5 and
-      Mythos 5 for every foreign national, whether inside or outside the United
-      States. Anthropic received no written technical justification. The trigger
-      was a jailbreak identified by Amazon as a trusted partner with pre-release
-      access, which the government characterized as a material national security
-      vulnerability; Anthropic characterized it as a narrow, non-universal exploit
-      already present in competitors' models. Unable to verify the citizenship
-      status of hundreds of millions of users, Anthropic suspended access
-      entirely. This is structurally distinct from all prior governance signals
-      in this scan series: it is the first invocation of statutory export control
-      authority to compel a frontier lab to immediately remove a model already in
-      general commercial deployment. It converts the CAISI prior-restraint
-      framework (logged May 11) from informal-pressure-and-agreement into a
-      demonstrated precedent for statutory model shutdown. The Evidence rating is
-      E4 because both the Anthropic official statement and the Zvi analysis
-      provide direct sourcing with named actors, timeline, and confirmed
-      outcome. Foreign-national employees at US AI labs lose model access as a
-      collateral consequence, and the precedent implies that a single
-      government-identified jailbreak in any competitor's model could trigger
-      comparable suspension regardless of the lab's own severity assessment.
+      OpenAI and Broadcom announced Jalapeño on June 24, OpenAI's first custom
+      inference ASIC, developed from initial design to manufacturing tape-out in
+      nine months. Broadcom describes this as possibly the fastest
+      high-performance ASIC development cycle ever achieved, enabled by using
+      OpenAI models to accelerate parts of the design and optimization process,
+      which is the first public case of AI directly shortening silicon
+      development cycles at frontier scale and extends the recursive-self-
+      improvement signal from software into hardware. Planned for initial
+      deployment in gigawatt-scale data centers with Microsoft by end of 2026,
+      Jalapeño makes OpenAI the fifth major frontier actor to own proprietary
+      inference silicon, joining Google with TPUv7, Amazon with Trainium,
+      Microsoft with Maia, and Apple with its device-side chips. For enterprise
+      AI strategy, this shifts the inference cost and availability calculus from
+      GPU market pricing toward lab-owned silicon roadmaps that are increasingly
+      invisible to enterprise procurement. Tape-out is a concrete, verifiable
+      hardware milestone; the performance-per-watt claim described as
+      "substantially better than current state-of-the-art" has not yet been
+      independently verified.
     </p>
     <p slot="watch">
-      Whether Anthropic restores access within days or the directive is extended
-      or expanded to additional models, which determines whether this is a
-      one-time incident or a new operational norm. Whether the DoC applies
-      comparable export control scrutiny to GPT-5.5 or Google Gemini frontier
-      models within Q3 2026, making this a universal frontier-model risk class
-      rather than an Anthropic-specific event. Whether legislation defines
-      jailbreak severity thresholds for export control triggers, giving
-      enterprises a predictable compliance framework.
+      Whether Jalapeño's performance-per-watt claim survives independent
+      third-party benchmarking within twelve months of first deployment. Whether
+      the AI-assisted nine-month design cycle enables OpenAI to announce a
+      Jalapeño successor before end of 2027, establishing a silicon development
+      cadence approaching model development velocity.
     </p>
   </Signal>
 
   <Signal
     index={3}
-    date="2026-06-08"
-    category="01 GenAI Capabilities · 04 AI Governance & Ethics"
-    title="Anthropic discloses eight-times code merge increase in 2026; first quantified recursive self-improvement metric disclosed by any frontier lab."
-    profile="E3 T-Ac U4 H-Gr Z-Now"
+    date="2026-06-26"
+    category="01 GenAI Capabilities · 10 Local AI Engineering"
+    title="Z.ai releases GLM-5.2 under MIT license as the first open-weights model to compete at frontier tier on agent benchmarks, at one-third the token cost of closed alternatives."
+    profile="E3 T-Ac U3 H-Gr Z-Now"
     strength="strong"
     sources={[
       {
-        label: "importai.substack.com/p/import-ai-460-reward-hacking-society",
-        url: "https://importai.substack.com/p/import-ai-460-reward-hacking-society",
+        label: "deeplearning.ai/the-batch/issue-359",
+        url: "https://www.deeplearning.ai/the-batch/issue-359/",
       },
       {
-        label: "thezvi.substack.com/p/ai-172-the-first-fable",
-        url: "https://thezvi.substack.com/p/ai-172-the-first-fable",
+        label: "interconnects.ai/p/glm-52-is-the-step-change-for-open",
+        url: "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-174-youre-it",
+        url: "https://thezvi.substack.com/p/ai-174-youre-it",
       },
     ]}
   >
     <p slot="why">
-      Anthropic disclosed that code merged into its engineering codebase is
-      running at eight times the 2021 to 2024 average in 2026, with early
-      evidence that capable AI models assist on harder engineering tasks rather
-      than merely generating bulk code. Jack Clark in Import AI 460 notes what is
-      still missing: AI systems are not yet generating paradigm-shifting
-      conceptual ideas, only accelerating execution. This is the first instance
-      of a frontier lab publicly quantifying recursive self-improvement as a
-      current-state operational fact rather than a theoretical forecast or a
-      scenario in a system card. It directly extends the May 11 Import AI 455
-      signal (Clark's sixty percent probability estimate for automated AI R&D by
-      2028) by replacing a probabilistic estimate with a measured operational
-      baseline: the feedback loop is already running, not predicted. Capability
-      Unlock is four because if prosaic RSI compounds, it restructures the
-      competitive dynamics of AI development at an institutional level, not just a
-      performance level. For enterprise AI strategy, this changes the planning
-      horizon for capability trajectory: if the lab building the models is itself
-      running on an eight-times acceleration of its own development pipeline, the
-      standard practice of extrapolating frontier capability from annual model
-      releases is structurally too slow.
+      GLM-5.2 from Z.ai is a 753-billion-parameter Mixture-of-Experts model
+      with 40 billion active parameters, MIT-licensed and priced at
+      approximately one-third the token cost of Claude Opus 4.8. It posted the
+      highest score of any open model on PostTrainBench (34.3%) and ranked
+      second on Arena.ai Code Arena WebDev (1,593 Elo), with Arena's agent
+      leaderboard showing it as the first open-weights model competing directly
+      with GPT-5.5 and Claude Opus 4.8 for agentic tasks. Nathan Lambert at AI2
+      characterized it as the first open-weights model that "feels right in
+      coding harnesses as a general agent," and The Batch Issue 359 (June 26)
+      and Zvi's June 25 weekly analysis both reviewed it within the same scan
+      window, providing multi-synthesizer corroboration. The geopolitical timing
+      is structurally significant: GLM-5.2 was released as an MIT-licensed
+      open-weights model exactly one week after the US government suspended
+      access to Fable 5 under statutory export control authority. The intended
+      containment effect of restricting US closed models is partially
+      neutralized when a Chinese lab simultaneously releases a frontier-tier
+      open-weights alternative that any enterprise or developer can run without
+      US API access, at a lower token cost than the restricted models.
     </p>
     <p slot="watch">
-      Whether OpenAI, Google DeepMind, or a non-US lab publicly discloses a
-      comparable code-velocity RSI metric within two quarters, converting this
-      from a single-lab disclosure to an industry-wide pattern. Whether a
-      subsequent Anthropic model release's system card explicitly cites
-      AI-assistance as a material component of its training pipeline, providing a
-      structural anchor for the RSI trajectory. Whether METR's planned late-2026
-      follow-up Risk Report includes RSI as a named risk category with operational
-      evidence, upgrading from research concern to regulatory baseline.
+      Whether HELM, LMArena, or enterprise evaluation frameworks from Accenture
+      or Gartner independently verify GLM-5.2's agentic performance parity with
+      Claude Opus 4.8 and GPT-5.5 on enterprise task distributions. Whether a
+      US-based enterprise publicly deploys GLM-5.2 as a primary agent backbone
+      within Q3 2026, converting a benchmark result into a production reference
+      architecture.
     </p>
   </Signal>
 
   <Signal
     index={4}
-    date="2026-06-12"
-    category="01 GenAI Capabilities · 10 Local AI Engineering"
-    title="Qwen3.7-Max posts twenty-three percent hallucination rate, lowest at the frontier tier; Chinese open-weight model leads reliability benchmark for the first time."
-    profile="E3 T-Ac U2 H-Gr Z-Now"
-    strength="strong"
+    date="2026-06-22"
+    category="04 AI Governance & Ethics · 08 AI Productivity Tools"
+    title="OpenAI releases Daybreak and GPT-5.5-Cyber for enterprise-scale vulnerability remediation, establishing AI-native security as a bimodal frontier race alongside Anthropic Glasswing."
+    profile="E2 T-Em U3 H-Gr Z-Now"
+    strength="weak"
     sources={[
       {
-        label: "deeplearning.ai/the-batch",
-        url: "https://www.deeplearning.ai/the-batch/",
+        label: "openai.com/index/daybreak-securing-the-world",
+        url: "https://openai.com/index/daybreak-securing-the-world/",
+      },
+      {
+        label: "openai.com/index/patch-the-planet",
+        url: "https://openai.com/index/patch-the-planet/",
       },
     ]}
   >
     <p slot="why">
-      Qwen3.7-Max (Alibaba/Tongyi) posts a twenty-three percent hallucination
-      rate on Artificial Analysis omniscience benchmarks, the lowest of any
-      frontier model, against GPT-5.5's 85.53 percent and Claude Opus 4.8's
-      36.18 percent, while simultaneously running at 208 tokens per second (third
-      fastest at frontier tier) and scoring 56.6 on the AI Intelligence Index
-      with a one-million-token context window. This is the first instance of a
-      Chinese-developed model leading on the reliability dimension at frontier
-      tier, as distinct from the prior "efficiency-at-lower-compute" Chinese
-      advantage signals (DeepSeek V4 in April, Kimi K2.6 in May). The
-      hallucination dimension matters specifically for enterprise deployment: the
-      May 4 GPT-5.5 capability/hallucination paradox signal identified that the
-      headline-capability winner was simultaneously the least reliable on
-      truthfulness. Qwen3.7-Max inverts the paradox for the first time at
-      near-frontier capability levels. For enterprise procurement teams using May
-      2026 frameworks that selected models on capability rank with a secondary
-      filter on hallucination rate, this introduces a Chinese-sourced model as a
-      top-three consideration for accuracy-critical workflows where truthfulness
-      outweighs raw benchmark dominance. The Batch Issue 357, sourced from
-      Artificial Analysis Tier 1 benchmarks, is a Tier 1 synthesizer citation
-      (Andrew Ng/DeepLearning.AI), warranting E3 (multi-source adjacent) rather
-      than E2.
+      OpenAI released Daybreak on June 22, a security toolset including the
+      full version of GPT-5.5-Cyber for end-to-end patch automation, followed
+      by "Patch the Planet" on June 23, an initiative applying automated
+      vulnerability remediation to open-source maintainers at scale. Together
+      with Anthropic's Project Glasswing expansion across April and June 2026,
+      both leading frontier labs have now released dedicated AI-native security
+      products within the same quarter, establishing AI-automated security as a
+      new product category race. The structural dual-use tension is immediately
+      visible: GPT-5.5-Cyber is optimized for both vulnerability discovery and
+      patch generation, and three days after Daybreak's release, GPT-5.6 Sol
+      was classified "High" risk for cybersecurity by OpenAI itself, implying
+      the offense-defense gap is tightening in both directions simultaneously.
+      The signal is E2 because Daybreak is a single first-party announcement
+      without independent benchmark data on patch effectiveness rates in
+      production environments.
     </p>
     <p slot="watch">
-      Whether independent benchmark organizations (HELM, LMArena, enterprise
-      evaluation frameworks from Gartner or Accenture) replicate the
-      sixty-two-percentage-point hallucination gap between Qwen3.7-Max and
-      GPT-5.5 on enterprise task distributions. Whether enterprise reference
-      architectures begin including Qwen3.7-Max alongside Gemma 4 and DeepSeek
-      V4 as a production-grade option for accuracy-critical regulatory and
-      professional-services workflows.
+      Whether a major enterprise or open-source project publicly discloses using
+      Daybreak or GPT-5.5-Cyber for a production vulnerability remediation
+      workflow within Q3 2026. Whether Google DeepMind releases a comparable
+      dedicated security product, converting AI-native security from a two-lab
+      race into an industry-standard offering.
     </p>
   </Signal>
 
   <Signal
     index={5}
-    date="2026-06-11"
-    category="04 AI Governance & Ethics"
-    title="Obernolte-Trahan federal AI bill proposes three-year moratorium on state AI laws; most comprehensive US federal AI safety framework introduced to date, with limited enforcement and significant political opposition."
-    profile="E2 T-Sh U2 H-Ah Z-Near"
+    date="2026-06-25"
+    category="04 AI Governance & Ethics · 11 Agent Frameworks & Dev Tools"
+    title="Coding agents deployed as trusted insiders without security review, as Five Eyes warns months remain before AI cyber threats overwhelm current enterprise defenses."
+    profile="E2 T-Em U3 H-Gr Z-Now"
     strength="weak"
     sources={[
       {
-        label: "thezvi.substack.com/p/ai-172-the-first-fable",
-        url: "https://thezvi.substack.com/p/ai-172-the-first-fable",
+        label: "thezvi.substack.com/p/ai-174-youre-it",
+        url: "https://thezvi.substack.com/p/ai-174-youre-it",
       },
     ]}
   >
     <p slot="why">
-      The 269-page Obernolte-Trahan bill proposes the most comprehensive US
-      federal AI safety framework yet introduced, covering frontier model
-      requirements and safety disclosures. Its most structurally consequential
-      provision is a three-year moratorium on state AI laws, which would directly
-      pre-empt Illinois SB 315 (just signed after passing 110 to 0 and 52 to 5),
-      California's watermarking requirements, Colorado's risk assessments, and
-      more than forty additional state-level AI governance measures built since
-      2024. If passed with the moratorium intact, it would dissolve the
-      state-level governance architecture this scan series has tracked since
-      April, shifting the entire US regulatory balance toward the federal
-      framework which, combined with the CAISI and TRAINS apparatus, would
-      concentrate AI governance in classified federal oversight with limited
-      public transparency. Evidence is E2 because this is a bill with no
-      committee markup confirmed, and enforcement mechanisms are described as
-      limited in the current draft. Hype-Reality is Ahead of itself because the
-      moratorium provision draws significant political opposition from state
-      attorneys general and the same legislators who passed SB 315.
+      Zvi's June 25 weekly analysis documents a structural security posture
+      problem now visible to practitioners: coding agents are deployed in
+      organizations with full organizational trust, including internet
+      connectivity, internal data access, and autonomous runtime capability,
+      without post-run security analysis of their actions, a posture that
+      security teams would have rejected for any other software process in 2020.
+      The Five Eyes intelligence partnership has issued warnings that AI cyber
+      threats create urgency measured in months, not years, to harden systems.
+      Anthropic simultaneously disclosed that sixty-five percent of its product
+      team's code is now AI-generated, establishing that AI-generated code at
+      production majority is a current-state fact. For enterprise security
+      architects, the combination of agents trusted by default, AI-generated
+      code at majority threshold, and government warnings on a months timescale
+      suggests that current enterprise governance frameworks, built for
+      human-readable commits from authenticated human developers, are
+      structurally mismatched to the agent deployment reality already present in
+      Q2 2026.
     </p>
     <p slot="watch">
-      Whether the moratorium provision survives committee markup or is stripped
-      in negotiation, and whether the bill gains bipartisan co-sponsorship within
-      Q3 2026. Whether Illinois Governor Pritzker or a state attorney general
-      explicitly challenges the preemption provision in court, setting up a
-      constitutional clash between federal export-control authority (invoked June
-      12) and state AI safety regulation.
+      Whether a major enterprise or cloud provider publishes a formal agent
+      security framework or attestation standard within Q3 2026, providing an
+      institutional baseline for secure agent deployment. Whether a documented
+      agent-related security incident at an enterprise is publicly disclosed in
+      H2 2026, providing the first evidence that trust-by-default has been
+      operationally exploited.
     </p>
   </Signal>
 
   <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
     <p>
-      Fable 5's June 9 launch delivered the first generally available
-      Mythos-class autonomous builds and confirmed the "commission not steer"
-      paradigm shift documented by Mollick. The June 12 suspension invoked
-      statutory export control authority as a model-shutdown mechanism for the
-      first time, citing a jailbreak the lab itself characterized as minor and
-      non-universal. The Import AI 460 RSI disclosure arrived in the same week,
-      revealing that the lab building the suspended model is itself running on a
-      self-accelerating development pipeline at eight times its prior baseline.
-      <strong>Enterprises whose vendor-risk frameworks were calibrated for 2024
-      (AI as productivity amplifier subject to content policies) need to
-      re-calibrate for 2026: frontier models are now strategic national-security
-      assets subject to statutory export control, developed by labs whose own
-      productivity is compounding at eight times their prior rate. The gap
-      between what enterprise procurement frameworks assumed and what the June 8
-      to 12 window revealed is not a policy risk on the horizon. It is a
-      governance event that already happened.</strong>
+      Signal 1, the GPT-5.6 government pre-coordination, and signal 3, the
+      GLM-5.2 open-weights frontier release, are products of the same forcing
+      function: the June 12 export control shutdown established that frontier
+      model access is now a government-modulated variable, and both OpenAI and
+      Z.ai responded within two weeks with strategies for operating in that
+      regime. Signal 2, the Jalapeño chip, extends the recursive-self-
+      improvement pattern from software into hardware: AI-assisted nine-month
+      chip design cycles mean the compute foundation of frontier AI is now
+      itself accelerating.
+      <strong>The combined signal across all three is that the enterprise AI
+      infrastructure every organization built assumptions around in 2024, stable
+      API access to US-lab models, GPU-market-determined inference costs, and
+      US-lab compute dominance, is being restructured on a timescale of weeks,
+      not years, and the restructuring is happening at the governance, hardware,
+      and open-source layers simultaneously.</strong>
     </p>
   </ClusterCallout>
 
