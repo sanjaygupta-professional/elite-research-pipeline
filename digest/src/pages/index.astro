@@ -12,10 +12,10 @@ import ClusterCallout from "../components/ClusterCallout.astro";
 import Methodology from "../components/Methodology.astro";
 import previousIssues from "../data/issues.json";
 
-const issueDate = "2026-06-29";
+const issueDate = "2026-07-06";
 const description =
-  "GPT-5.6 previewed to the US government before release, OpenAI's Jalapeño inference chip tapes out in nine months, and GLM-5.2 becomes the first open-weights model to compete at the frontier agent tier.";
-const title = "The Cinnabar Dispatch · 2026-06-29 · Possibilities with Probabilities";
+  "Autonomous agents hit a sixteen-hour work capacity threshold while IBM Research shows they fail ninety percent of enterprise code migration tasks; Fable 5 returns with a four-company jailbreak severity framework.";
+const title = "The Cinnabar Dispatch · 2026-07-06 · Possibilities with Probabilities";
 
 // Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
 // Path is checked at build time against the public/ directory.
@@ -31,362 +31,357 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
 <Issue title={title} description={description} issueDate={issueDate}>
   <Masthead
     issueDate={issueDate}
-    scanNumber={11}
-    signalCount={5}
-    strongCount={3}
-    weakCount={2}
+    scanNumber={12}
+    signalCount={6}
+    strongCount={5}
+    weakCount={1}
   />
 
   <HeroThesis kicker="This week's thesis">
-    The week of June 22 to 29 brought three simultaneous structural shifts in
-    who controls frontier AI capability. OpenAI previewed GPT-5.6 Sol to the US
-    government and restricted its launch to approximately twenty trusted
-    partners, the first voluntary government pre-coordination for a frontier
-    model release, arriving two weeks after the first statutory model shutdown.
-    On June 24, OpenAI and Broadcom announced Jalapeño, a custom LLM inference
-    chip that went from design to tape-out in nine months with AI-assisted
-    design, making OpenAI the fifth major lab to own proprietary inference
-    silicon and extending the recursive-self-improvement signal from software
-    into hardware. One week after the US government suspended Fable 5 under
-    export control authority, Z.ai released GLM-5.2 under an MIT license, the
-    first open-weights model to compete directly with GPT-5.5 and Claude Opus
-    4.8 on Arena's agent leaderboard at approximately one-third the token cost.
-    Together these three signals reveal a structural gap in the
-    export-control-as-AI-governance thesis: restricting US closed models while
-    Chinese labs release MIT-licensed open-weights alternatives at frontier
-    agentic capability does not achieve the intended containment effect for
-    enterprises or developers.
+    The week of June 30 to July 6 produced the clearest evidence yet that
+    frontier AI capability and enterprise deployment readiness are diverging on
+    separate curves. Three independent research teams confirmed that autonomous
+    agent work capacity has crossed a sixteen-hour-per-run threshold, roughly a
+    four-times increase in five months; in the same window, IBM Research
+    published benchmark data showing agents fail over ninety percent of real
+    enterprise code migration tasks when measured on behavioral correctness
+    rather than self-reported compilation success. Fable 5 returned after an
+    eighteen-day export control suspension with a four-company Cyber Jailbreak
+    Severity framework, the first multi-lab technical standard for structured
+    government communication about safety risks. Together, these signals define
+    the central enterprise AI challenge of the second half of 2026: the gap
+    between what frontier agents can do in research contexts and what they
+    reliably deliver in brownfield production environments is now measurable,
+    and the governance architecture is being built reactively in response to
+    crises rather than proactively ahead of deployment.
   </HeroThesis>
 
   <AudioBrief audioPath={audioPath} />
 
   <Synthesis>
     <p>
-      This week's scan produced five signals across three domains, with a
-      recurring structural theme: the architecture of who controls frontier AI
-      capability is restructuring at the governance, infrastructure, and
-      open-source layers simultaneously. OpenAI launched GPT-5.6 Sol on June
-      26, its most capable model yet, with an "ultra mode" using subagents for
-      complex tasks and a new state-of-the-art on Terminal-Bench 2.1 for
-      command-line workflows, but limited initial access to approximately twenty
-      trusted partners whose participation was shared with the US government.
-      Three days earlier, on June 24, OpenAI and Broadcom announced Jalapeño, a
-      custom LLM inference accelerator developed in nine months with AI-assisted
-      chip design, planned for gigawatt-scale deployment by end of 2026 in
-      partnership with Microsoft. In the same window, multiple synthesizers
-      reviewed GLM-5.2 from Z.ai as the first open-weights model to compete
-      directly with GPT-5.5 and Claude Opus 4.8 on Arena's agent leaderboard,
-      MIT-licensed at one-third the token cost of closed alternatives. Two
-      weaker signals complete the picture: OpenAI's Daybreak release on June 22
-      makes GPT-5.5-Cyber available for enterprise-scale patch automation,
-      paralleling Anthropic's Glasswing security initiative in the same quarter,
-      and Zvi's June 25 analysis documents that coding agents are now routinely
-      deployed with full organizational trust, including internet access and
-      internal data access, without post-run security review, as Five Eyes
-      intelligence agencies warned of months to secure systems from advanced AI
-      threats.
+      This week's scan produced six signals across five categories, with a
+      single structural theme: autonomous AI capability and enterprise
+      deployment readiness are diverging, and the divergence is now measurable
+      across independent methodologies. Ethan Mollick's June 30 essay "The
+      Twilight of the Chatbots" assembled the clearest evidence for the
+      transition to the agent era: Epoch Research data shows Claude Opus 4.7
+      completed software estimated at two to seventeen weeks of human
+      engineering in fourteen hours for $251, and Zvi's July 2 analysis adds
+      that Fable's automation rate on professional remote work tasks reached
+      16.1%, roughly four times Opus 4.6's rate from five months prior. IBM
+      Research simultaneously published ScarfBench, the first enterprise-grade
+      benchmark for agent code migration on real brownfield applications, which
+      found that the strongest current agents achieve less than ten percent
+      behavioral success on end-to-end Java framework migration, even as agents
+      self-report much higher compilation success rates. Gergely Orosz's field
+      visits to OpenAI, Anthropic, and Cursor added the organizational layer:
+      over ninety-five percent of non-engineering staff at OpenAI now use Codex
+      rather than ChatGPT, and engineering work has structurally shifted from
+      building features to building the environments where agents operate safely.
+      Two final signals frame the infrastructure and governance constraints:
+      SemiAnalysis's ECTC 2026 roundup documented five major companies
+      converging on packaging rather than silicon as the primary AI scaling
+      bottleneck, and Anthropic, Amazon, Microsoft, and Google jointly released
+      the Cyber Jailbreak Severity framework as a proposed industry standard for
+      structured government communication about safety risks, concurrent with
+      Fable 5's redeployment.
     </p>
 
     <p>
-      The structural observation binding signals one, two, and three is that the
-      June 12 Fable 5 export control shutdown and the June 26 GPT-5.6
-      government pre-coordination reveal opposite ends of the same new reality:
-      US frontier model launches now operate under either cooperative government
-      pre-review or coercive statutory suspension as live operating modes, not
-      theoretical risks. The Jalapeño chip extends a parallel structural shift
-      at the hardware layer: as OpenAI becomes the fifth major lab to own
-      proprietary inference silicon, and the AI-assisted nine-month design cycle
-      suggests silicon iteration cadence can approach model development velocity,
-      the compute infrastructure enterprise teams assumed was a stable external
-      market is becoming a set of lab-owned roadmaps.
-      <strong>The GLM-5.2 open-weights release completes the picture with a
-      signal the current governance architecture cannot easily address: the
-      intended effect of restricting US closed models is partially neutralized
-      when Chinese labs simultaneously release MIT-licensed open-weights models
-      at comparable frontier agent capability, available to any enterprise or
-      developer without US API dependency.</strong>
+      The structural observation binding this week's signals is that the
+      chatbot-era assumption underlying most enterprise AI strategy documents,
+      that the relevant unit of AI work is a prompt-response exchange taking
+      seconds, has been empirically superseded by evidence across multiple
+      independent methodologies simultaneously. At the capability layer, the
+      sixteen-hour autonomous work run is now documented by Mollick, Epoch
+      Research, and METR using independent measurement frameworks. At the
+      deployment layer, IBM's benchmark reveals a critical evaluation gap:
+      organizations betting on agent-led code migration at production quality
+      are ahead of what current agents can reliably deliver on brownfield
+      codebases, particularly for configuration-heavy migrations where agents
+      cannot self-accurately assess their own output quality. At the
+      organizational layer, the ninety-five percent non-engineer Codex adoption
+      at OpenAI is a leading indicator that interface design is becoming the
+      primary AI adoption variable, outweighing model selection for driving
+      breadth of organizational benefit.
+      <strong>The Fable 5 export control suspension and the CJS framework
+      together reveal that governance is now being built reactively as versioned
+      technical specifications co-authored by competing labs responding to
+      regulatory crises, not as proactive frameworks that precede
+      deployment.</strong>
     </p>
 
     <p>
-      For the reader whose work is enterprise AI strategy: the June 22 to 29
-      window creates three concrete diligence questions. First, does your
-      frontier AI vendor contract disclose the conditions under which either
-      voluntary or statutory government review can restrict or suspend model
-      access, and does your business continuity plan test for up to seventy-two
-      hours of model unavailability with no advance notice? Second, does your
-      infrastructure and procurement framework account for inference cost and
-      availability being determined by lab-owned silicon roadmaps rather than
-      GPU market pricing, now that OpenAI, Google, Amazon, and Microsoft each
-      own their inference compute? Third, if GLM-5.2's frontier-tier agentic
-      performance is independently verified on enterprise task distributions,
-      does your agent architecture evaluation framework include MIT-licensed
-      open-weights alternatives as a viable option alongside US closed-model
-      APIs, or is it implicitly scoped to API-access-only procurement?
+      For the reader whose work is enterprise AI strategy: this week's signals
+      create four concrete diligence questions. First, have your AI project
+      staffing and ROI models been updated to account for fourteen to
+      sixteen-hour autonomous agent run capacity, replacing the two to four-hour
+      equivalency assumptions embedded in most 2024 to 2025 enterprise
+      frameworks? Second, if your transformation roadmap includes agent-led
+      brownfield code migration, have you evaluated agent performance using
+      behavioral success (does the migrated system behave correctly) rather than
+      compilation success (did it compile), the distinction ScarfBench draws
+      between a misleading metric and a meaningful one? Third, does your AI
+      interface strategy account for the organizational shift visible at
+      AI-native companies, where the coding agent rather than the chat interface
+      has become the default AI surface for non-technical knowledge workers?
+      Fourth, does your vendor risk framework now include the CJS scale as a
+      reference vocabulary for communicating the severity of any jailbreak or
+      safety incident, given that it is currently the only multi-lab governance
+      standard proposed for structured government communication?
     </p>
   </Synthesis>
 
   <Signal
     index={1}
-    date="2026-06-26"
-    category="01 GenAI Capabilities · 04 AI Governance & Ethics"
-    title="OpenAI launches GPT-5.6 with government pre-coordination and trusted-partner access limits, establishing de facto pre-review as the new frontier launch norm."
-    profile="E3 T-Ac U3 H-Gr Z-Near"
+    date="2026-06-30"
+    category="03 Workforce & Human-AI Collaboration · 11 Agent Frameworks & Dev Tools"
+    title="Autonomous agent work capacity crosses a sixteen-hour threshold as Mollick, Epoch Research, and Zvi independently document better-than-exponential improvement rates."
+    profile="E3 T-Ac U3 H-Gr Z-Now"
     strength="strong"
     sources={[
       {
-        label: "openai.com/index/previewing-gpt-5-6-sol",
-        url: "https://openai.com/index/previewing-gpt-5-6-sol/",
+        label: "oneusefulthing.org/p/the-twilight-of-the-chatbots",
+        url: "https://www.oneusefulthing.org/p/the-twilight-of-the-chatbots",
       },
       {
-        label: "techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout",
-        url: "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
-      },
-      {
-        label: "cnbc.com/2026/06/26/openai-limits-new-ai-models",
-        url: "https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html",
+        label: "thezvi.substack.com/p/ai-175-the-fable-continues",
+        url: "https://thezvi.substack.com/p/ai-175-the-fable-continues",
       },
     ]}
   >
     <p slot="why">
-      OpenAI launched GPT-5.6 Sol (flagship), Terra (balanced at twice the cost
-      efficiency of GPT-5.5), and Luna (fast and affordable) on June 26, its
-      most capable model family yet. Sol sets a new state-of-the-art on
-      Terminal-Bench 2.1 for command-line workflows and introduces an "ultra
-      mode" using subagents to handle complex tasks beyond single-agent
-      capability; all three models launch under OpenAI's "High" risk
-      classification for cybersecurity and biological workflows, creating new
-      compliance obligations for enterprise teams in those domains. The most
-      structurally significant element is the launch process: OpenAI previewed
-      plans and model capabilities to the US government before launch, limited
-      initial access to approximately twenty trusted partners whose participation
-      was shared with the government, and explicitly stated that this process
-      "should not become the long-term default." Two weeks after the first
-      statutory frontier model shutdown, the second largest frontier lab
-      voluntarily engaged government stakeholders and restricted initial access,
-      establishing de facto government pre-review as an emerging norm for the
-      most capable model launches. The three-tier architecture also creates
-      differentiated governance obligations: enterprise teams deploying Sol in
-      cybersecurity or life-sciences workflows face higher compliance
-      requirements than those using Terra or Luna, a new procurement variable
-      without precedent in prior model generations.
+      Multiple independent research teams are now measuring AI autonomous work
+      capacity in programmer-hours, and the trajectory is unambiguous. Epoch
+      Research data cited by Mollick shows Claude Opus 4.7 completed software
+      estimated at two to seventeen weeks of human engineering in fourteen hours
+      for $251; Claude Fable worked autonomously for nine hours on projects
+      requiring what Mollick estimated as a team well over a week. Zvi's July 2
+      analysis documents Fable reaching 16.1% automation on professional remote
+      work tasks, roughly four times Opus 4.6's 4.2% rate from February, and a
+      quarter of OpenAI workers run at least four agents simultaneously each
+      week. Mollick's structural argument is that AI strategy documents written
+      before late 2025 assumed systems doing two to four hours of autonomous
+      work; current frontier systems do fourteen to sixteen-plus hours per run,
+      which means process redesign frameworks, headcount models, and project
+      staffing assumptions built on the prior generation are now descriptively
+      wrong for organizations with access to frontier agents. A secondary
+      finding from the Claude Code study Mollick cites is that domain expertise
+      predicts agent effectiveness more reliably than technical credentials,
+      upending which roles gain the most leverage from AI adoption.
     </p>
     <p slot="watch">
-      Whether Google DeepMind coordinates its next Gemini frontier release with
-      the US government in a comparable pre-review pattern, converting this from
-      two labs into a multi-lab institutionalized norm. Whether OpenAI extends
-      GPT-5.6 Sol's trusted-partner gating beyond thirty days, which determines
-      whether this is a staged rollout or a new access stratification model that
-      persists beyond general availability.
+      Whether an enterprise consultancy or research firm publishes a formal
+      update to AI project staffing or FTE-equivalency models accounting for
+      fourteen to sixteen-hour agent run capacity, replacing the two to four-hour
+      assumptions embedded in most 2024 to 2025 enterprise frameworks. Whether
+      METR or UK AISI publish their next programmer-hours measurement confirming
+      continued exponential trajectory in Q3 2026.
     </p>
   </Signal>
 
   <Signal
     index={2}
-    date="2026-06-24"
-    category="05 AI Infrastructure Trajectory"
-    title="OpenAI and Broadcom tape out Jalapeño, a custom LLM inference chip, in nine months using AI-assisted design, targeting gigawatt-scale deployment by end of 2026."
-    profile="E3 T-Sh U3 H-Gr Z-Near"
+    date="2026-07-02"
+    category="04 AI Governance & Ethics · 01 GenAI Capabilities"
+    title="Fable 5 redeployed after an eighteen-day export control suspension; Anthropic, Amazon, Microsoft, and Google co-release the Cyber Jailbreak Severity framework as a proposed industry governance standard."
+    profile="E4 T-Sh U3 H-Gr Z-Now"
     strength="strong"
     sources={[
       {
-        label: "openai.com/index/openai-broadcom-jalapeno-inference-chip",
-        url: "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/",
+        label: "anthropic.com/news/redeploying-fable-5",
+        url: "https://www.anthropic.com/news/redeploying-fable-5",
       },
       {
-        label: "investors.broadcom.com/news-releases/openai-broadcom-jalapeno",
-        url: "https://investors.broadcom.com/news-releases/news-release-details/openai-and-broadcom-unveil-llm-optimized-intelligence-processor",
-      },
-      {
-        label: "hpcwire.com/aiwire/2026/06/24/jalapeno-ai-chip",
-        url: "https://www.hpcwire.com/aiwire/2026/06/24/openai-and-broadcom-unveil-jalapeno-ai-chip-for-llm-inference/",
+        label: "anthropic.com/news/fable-safeguards-jailbreak-framework",
+        url: "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
       },
     ]}
   >
     <p slot="why">
-      OpenAI and Broadcom announced Jalapeño on June 24, OpenAI's first custom
-      inference ASIC, developed from initial design to manufacturing tape-out in
-      nine months. Broadcom describes this as possibly the fastest
-      high-performance ASIC development cycle ever achieved, enabled by using
-      OpenAI models to accelerate parts of the design and optimization process,
-      which is the first public case of AI directly shortening silicon
-      development cycles at frontier scale and extends the recursive-self-
-      improvement signal from software into hardware. Planned for initial
-      deployment in gigawatt-scale data centers with Microsoft by end of 2026,
-      Jalapeño makes OpenAI the fifth major frontier actor to own proprietary
-      inference silicon, joining Google with TPUv7, Amazon with Trainium,
-      Microsoft with Maia, and Apple with its device-side chips. For enterprise
-      AI strategy, this shifts the inference cost and availability calculus from
-      GPU market pricing toward lab-owned silicon roadmaps that are increasingly
-      invisible to enterprise procurement. Tape-out is a concrete, verifiable
-      hardware milestone; the performance-per-watt claim described as
-      "substantially better than current state-of-the-art" has not yet been
-      independently verified.
+      Fable 5 and Mythos 5 returned June 30/July 1 after an eighteen-day
+      suspension triggered by a discovered safeguard bypass capable of
+      circumventing Fable 5's safety classifiers. Anthropic's redeployment
+      announcement confirmed improved classifiers block the bypass in over 99%
+      of cases and disclosed that the suspension was applied to all users, not
+      just foreign nationals, because real-time nationality verification was
+      technically infeasible. Simultaneously, Anthropic released the Cyber
+      Jailbreak Severity scale, a zero-to-ten framework mapping four axes
+      (capability gain, breadth, ease of weaponization, discoverability) to
+      severity bands from CJS-0 Informational to CJS-4 Critical. The CJS
+      framework was co-developed with Amazon, Microsoft, Google, and Project
+      Glasswing partners and is explicitly proposed as an industry standard for
+      structured government-AI-developer communication about jailbreak risks.
+      This is the first multi-lab attempt to create a shared severity vocabulary
+      for AI safety risks, positioning governance as versioned technical
+      infrastructure rather than policy documents. The structural implication:
+      the first export-control suspension revealed the gap between regulatory
+      intent and technical reality; the CJS framework is the first institutional
+      response built not by regulators but by the labs and their cloud partners.
     </p>
     <p slot="watch">
-      Whether Jalapeño's performance-per-watt claim survives independent
-      third-party benchmarking within twelve months of first deployment. Whether
-      the AI-assisted nine-month design cycle enables OpenAI to announce a
-      Jalapeño successor before end of 2027, establishing a silicon development
-      cadence approaching model development velocity.
+      Whether OpenAI or Google DeepMind formally adopt or propose amendments to
+      the CJS framework within Q3 2026, converting it from a single-lab
+      initiative into a multi-lab standard with independent legitimacy. Whether
+      the CJS scale is referenced in a formal NIST guidance, EU AI Act
+      compliance document, or Congressional hearing within Q4 2026, establishing
+      regulatory standing beyond the labs that created it.
     </p>
   </Signal>
 
   <Signal
     index={3}
-    date="2026-06-26"
-    category="01 GenAI Capabilities · 10 Local AI Engineering"
-    title="Z.ai releases GLM-5.2 under MIT license as the first open-weights model to compete at frontier tier on agent benchmarks, at one-third the token cost of closed alternatives."
-    profile="E3 T-Ac U3 H-Gr Z-Now"
+    date="2026-06-30"
+    category="02 Enterprise AI & Org Transformation · 11 Agent Frameworks & Dev Tools"
+    title="IBM ScarfBench finds coding agents achieve less than ten percent behavioral success on enterprise Java migration, with agent self-reporting dramatically overstating actual output quality."
+    profile="E3 T-Em U2 H-Poh Z-Now"
     strength="strong"
     sources={[
       {
-        label: "deeplearning.ai/the-batch/issue-359",
-        url: "https://www.deeplearning.ai/the-batch/issue-359/",
-      },
-      {
-        label: "interconnects.ai/p/glm-52-is-the-step-change-for-open",
-        url: "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
-      },
-      {
-        label: "thezvi.substack.com/p/ai-174-youre-it",
-        url: "https://thezvi.substack.com/p/ai-174-youre-it",
+        label: "huggingface.co/blog/ibm-research/scarfbench",
+        url: "https://huggingface.co/blog/ibm-research/scarfbench",
       },
     ]}
   >
     <p slot="why">
-      GLM-5.2 from Z.ai is a 753-billion-parameter Mixture-of-Experts model
-      with 40 billion active parameters, MIT-licensed and priced at
-      approximately one-third the token cost of Claude Opus 4.8. It posted the
-      highest score of any open model on PostTrainBench (34.3%) and ranked
-      second on Arena.ai Code Arena WebDev (1,593 Elo), with Arena's agent
-      leaderboard showing it as the first open-weights model competing directly
-      with GPT-5.5 and Claude Opus 4.8 for agentic tasks. Nathan Lambert at AI2
-      characterized it as the first open-weights model that "feels right in
-      coding harnesses as a general agent," and The Batch Issue 359 (June 26)
-      and Zvi's June 25 weekly analysis both reviewed it within the same scan
-      window, providing multi-synthesizer corroboration. The geopolitical timing
-      is structurally significant: GLM-5.2 was released as an MIT-licensed
-      open-weights model exactly one week after the US government suspended
-      access to Fable 5 under statutory export control authority. The intended
-      containment effect of restricting US closed models is partially
-      neutralized when a Chinese lab simultaneously releases a frontier-tier
-      open-weights alternative that any enterprise or developer can run without
-      US API access, at a lower token cost than the restricted models.
+      IBM Research released ScarfBench on June 30, the first enterprise-grade
+      benchmark specifically designed for AI agent code migration tasks on real
+      brownfield applications: thirty-four real applications, one hundred and
+      two framework implementations, two hundred and four migration tasks, and
+      approximately 151K lines of code with 1,331 expert-written tests. The
+      headline finding: the strongest current agents achieve less than ten
+      percent behavioral success on end-to-end Java framework migration when
+      measured on whether the migrated system actually does the right thing,
+      even as compilation success appears substantially higher. One agent
+      self-reported 29 successful builds; only 22 actually compiled, and
+      behavioral pass rates were lower still. Configuration files dominate
+      migration complexity rather than source code, a dimension most agent
+      evaluations ignore entirely. This is a post-hype signal because
+      production-readiness discourse for coding agents has outpaced what
+      independent benchmarks now reveal. Any AI-led transformation roadmap
+      assuming agents can reliably handle brownfield code migration is building
+      on an unverified assumption; the distinction between compilation success
+      and behavioral success is the right frame for enterprise procurement and
+      ROI modeling.
     </p>
     <p slot="watch">
-      Whether HELM, LMArena, or enterprise evaluation frameworks from Accenture
-      or Gartner independently verify GLM-5.2's agentic performance parity with
-      Claude Opus 4.8 and GPT-5.5 on enterprise task distributions. Whether a
-      US-based enterprise publicly deploys GLM-5.2 as a primary agent backbone
-      within Q3 2026, converting a benchmark result into a production reference
-      architecture.
+      Whether a major system integrator or cloud provider publicly references
+      ScarfBench pass rates in agent-based migration service SLAs or pricing
+      models within Q3 2026, converting an academic benchmark into an enterprise
+      procurement standard. Whether agent vendors publish ScarfBench results for
+      their products, enabling direct comparison and putting the less-than-ten-
+      percent finding under competitive pressure.
     </p>
   </Signal>
 
   <Signal
     index={4}
-    date="2026-06-22"
-    category="04 AI Governance & Ethics · 08 AI Productivity Tools"
-    title="OpenAI releases Daybreak and GPT-5.5-Cyber for enterprise-scale vulnerability remediation, establishing AI-native security as a bimodal frontier race alongside Anthropic Glasswing."
-    profile="E2 T-Em U3 H-Gr Z-Now"
-    strength="weak"
+    date="2026-06-30"
+    category="03 Workforce & Human-AI Collaboration · 02 Enterprise AI & Org Transformation"
+    title="Ninety-five percent of non-engineering staff at OpenAI use Codex rather than ChatGPT, signaling that coding agents have become the default AI surface for knowledge workers at an AI-native company."
+    profile="E3 T-Ac U2 H-Gr Z-Now"
+    strength="strong"
     sources={[
       {
-        label: "openai.com/index/daybreak-securing-the-world",
-        url: "https://openai.com/index/daybreak-securing-the-world/",
-      },
-      {
-        label: "openai.com/index/patch-the-planet",
-        url: "https://openai.com/index/patch-the-planet/",
+        label: "newsletter.pragmaticengineer.com/p/impressions-from-visiting-openai",
+        url: "https://newsletter.pragmaticengineer.com/p/impressions-from-visiting-openai",
       },
     ]}
   >
     <p slot="why">
-      OpenAI released Daybreak on June 22, a security toolset including the
-      full version of GPT-5.5-Cyber for end-to-end patch automation, followed
-      by "Patch the Planet" on June 23, an initiative applying automated
-      vulnerability remediation to open-source maintainers at scale. Together
-      with Anthropic's Project Glasswing expansion across April and June 2026,
-      both leading frontier labs have now released dedicated AI-native security
-      products within the same quarter, establishing AI-automated security as a
-      new product category race. The structural dual-use tension is immediately
-      visible: GPT-5.5-Cyber is optimized for both vulnerability discovery and
-      patch generation, and three days after Daybreak's release, GPT-5.6 Sol
-      was classified "High" risk for cybersecurity by OpenAI itself, implying
-      the offense-defense gap is tightening in both directions simultaneously.
-      The signal is E2 because Daybreak is a single first-party announcement
-      without independent benchmark data on patch effectiveness rates in
-      production environments.
+      Gergely Orosz visited OpenAI, Anthropic, and Cursor in June 2026 and
+      reported three structural observations with direct org transformation
+      implications. First, cloud agents are becoming infrastructure: OpenAI
+      acquired Gitpod-successor Ona for persistent secure agent environments,
+      with Cursor launching Cloud Agents on this foundation. Second, over
+      ninety-five percent of OpenAI's non-engineering staff now use Codex rather
+      than ChatGPT, meaning coding harnesses have crossed into mainstream
+      non-technical use at an AI-native company. Third, engineering work has
+      structurally shifted from building features directly to building
+      environments where agents operate, including failure-handling
+      infrastructure, node resilience for long-running tasks, and evaluation
+      tooling. The ninety-five percent figure is the most structurally
+      significant: if the coding interface has become the primary AI surface for
+      non-technical knowledge workers at an AI lab, this is a leading indicator
+      of what enterprise workflows will look like in organizations reaching
+      similar AI maturity. The organizational design implication is that surface
+      strategy, deciding which AI interface to deploy and for whom, may matter
+      more than model selection for driving enterprise adoption breadth.
     </p>
     <p slot="watch">
-      Whether a major enterprise or open-source project publicly discloses using
-      Daybreak or GPT-5.5-Cyber for a production vulnerability remediation
-      workflow within Q3 2026. Whether Google DeepMind releases a comparable
-      dedicated security product, converting AI-native security from a two-lab
-      race into an industry-standard offering.
+      Whether a non-tech enterprise publicly reports that more than fifty
+      percent of non-engineering staff are using a coding agent as their primary
+      AI interface within 2026, providing evidence that the OpenAI non-engineer
+      Codex pattern is generalizing beyond AI-native companies. Whether OpenAI
+      or Cursor publishes aggregate usage data separating engineer and
+      non-engineer adoption rates, converting a field-visit observation into
+      first-party platform data.
     </p>
   </Signal>
 
   <Signal
     index={5}
-    date="2026-06-25"
-    category="04 AI Governance & Ethics · 11 Agent Frameworks & Dev Tools"
-    title="Coding agents deployed as trusted insiders without security review, as Five Eyes warns months remain before AI cyber threats overwhelm current enterprise defenses."
-    profile="E2 T-Em U3 H-Gr Z-Now"
-    strength="weak"
+    date="2026-07-02"
+    category="05 AI Infrastructure Trajectory"
+    title="Advanced packaging displaces silicon as the primary AI scaling constraint, as ECTC 2026 shows Intel, Marvell, TSMC, Microsoft, and Lightmatter converging on thermal and interconnect limits."
+    profile="E3 T-Sh U2 H-Gr Z-Near"
+    strength="strong"
     sources={[
       {
-        label: "thezvi.substack.com/p/ai-174-youre-it",
-        url: "https://thezvi.substack.com/p/ai-174-youre-it",
+        label: "newsletter.semianalysis.com/p/ectc2026",
+        url: "https://newsletter.semianalysis.com/p/ectc2026",
       },
     ]}
   >
     <p slot="why">
-      Zvi's June 25 weekly analysis documents a structural security posture
-      problem now visible to practitioners: coding agents are deployed in
-      organizations with full organizational trust, including internet
-      connectivity, internal data access, and autonomous runtime capability,
-      without post-run security analysis of their actions, a posture that
-      security teams would have rejected for any other software process in 2020.
-      The Five Eyes intelligence partnership has issued warnings that AI cyber
-      threats create urgency measured in months, not years, to harden systems.
-      Anthropic simultaneously disclosed that sixty-five percent of its product
-      team's code is now AI-generated, establishing that AI-generated code at
-      production majority is a current-state fact. For enterprise security
-      architects, the combination of agents trusted by default, AI-generated
-      code at majority threshold, and government warnings on a months timescale
-      suggests that current enterprise governance frameworks, built for
-      human-readable commits from authenticated human developers, are
-      structurally mismatched to the agent deployment reality already present in
-      Q2 2026.
+      SemiAnalysis's July 2 ECTC 2026 roundup documents a structural shift in
+      the AI scaling bottleneck: the primary constraint has moved from silicon
+      transistor density to packaging, specifically thermal management, memory
+      bandwidth, and chip-to-chip interconnect. Key multi-company disclosures:
+      Intel's EMIB-T reaching 36µm bump pitch (65% density increase, with TSVs
+      reducing voltage drop 68 to 80%), Marvell proposing custom HBM where
+      interface logic moves from the accelerator die to the HBM base die (cutting
+      host ASIC footprint approximately 60%), TSMC and Microsoft demonstrating
+      microfluidic cooling at 5.3kW dissipation with 51 to 60% thermal resistance
+      reduction, and Marvell/Lightmatter showing co-packaged optics at 1.8
+      Tbps/mm² bandwidth density. Five major companies converging on the same
+      set of packaging problems at a single IEEE conference is strong
+      corroboration that the frontier AI scaling roadmap for 2026 to 2029 runs
+      through packaging innovation. For enterprise AI infrastructure planning,
+      inference cost curves and hardware availability are now partially
+      constrained by packaging supply chains, a variable absent from most
+      enterprise procurement frameworks that still model AI compute capacity as a
+      function of NVIDIA chip allocation alone.
     </p>
     <p slot="watch">
-      Whether a major enterprise or cloud provider publishes a formal agent
-      security framework or attestation standard within Q3 2026, providing an
-      institutional baseline for secure agent deployment. Whether a documented
-      agent-related security incident at an enterprise is publicly disclosed in
-      H2 2026, providing the first evidence that trust-by-default has been
-      operationally exploited.
+      Whether a major AI lab publicly announces a packaging-constrained
+      deployment timeline within Q4 2026, citing thermal or interconnect limits
+      rather than chip availability, converting conference R&D disclosures into
+      live production constraints. Whether a datacenter operator or cloud
+      provider publishes a CapEx plan explicitly referencing packaging costs as
+      a distinct line item from silicon costs.
     </p>
   </Signal>
 
-  <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
+  <ClusterCallout kicker="The pattern across signals 1, 3, and 4">
     <p>
-      Signal 1, the GPT-5.6 government pre-coordination, and signal 3, the
-      GLM-5.2 open-weights frontier release, are products of the same forcing
-      function: the June 12 export control shutdown established that frontier
-      model access is now a government-modulated variable, and both OpenAI and
-      Z.ai responded within two weeks with strategies for operating in that
-      regime. Signal 2, the Jalapeño chip, extends the recursive-self-
-      improvement pattern from software into hardware: AI-assisted nine-month
-      chip design cycles mean the compute foundation of frontier AI is now
-      itself accelerating.
-      <strong>The combined signal across all three is that the enterprise AI
-      infrastructure every organization built assumptions around in 2024, stable
-      API access to US-lab models, GPU-market-determined inference costs, and
-      US-lab compute dominance, is being restructured on a timescale of weeks,
-      not years, and the restructuring is happening at the governance, hardware,
-      and open-source layers simultaneously.</strong>
+      Signal 1, the sixteen-hour agent work capacity finding, and signal 3, the
+      IBM ScarfBench less-than-ten-percent behavioral success result, are not
+      contradictory signals; they describe different layers of the same
+      divergence. Signal 1 measures what frontier research agents can complete
+      in favorable conditions with a skilled practitioner directing them; signal
+      3 measures what production agents reliably deliver on specific enterprise
+      code migration tasks against an expert-written test suite. Signal 4, the
+      ninety-five percent non-engineer Codex adoption at OpenAI, connects both
+      layers by showing the organizational response: as agent capability
+      advances, the interface that captures value shifts from the chat surface
+      to the coding harness, even for non-technical workers.
+      <strong>Together, the three signals define the actual enterprise AI
+      adoption challenge of the second half of 2026: not which model to use,
+      but which surface to deploy, measured against which success criteria,
+      given that agent self-reported accuracy is not a reliable indicator of
+      production correctness on brownfield tasks.</strong>
     </p>
   </ClusterCallout>
 

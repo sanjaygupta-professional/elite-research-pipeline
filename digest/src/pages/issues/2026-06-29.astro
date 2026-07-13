@@ -1,0 +1,412 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
+import Issue from "../../layouts/Issue.astro";
+import Masthead from "../../components/Masthead.astro";
+import HeroThesis from "../../components/HeroThesis.astro";
+import AudioBrief from "../../components/AudioBrief.astro";
+import Synthesis from "../../components/Synthesis.astro";
+import Signal from "../../components/Signal.astro";
+import ClusterCallout from "../../components/ClusterCallout.astro";
+import Methodology from "../../components/Methodology.astro";
+import previousIssues from "../../data/issues.json";
+
+const issueDate = "2026-06-29";
+const description =
+  "GPT-5.6 previewed to the US government before release, OpenAI's Jalapeño inference chip tapes out in nine months, and GLM-5.2 becomes the first open-weights model to compete at the frontier agent tier.";
+const title = "The Cinnabar Dispatch · 2026-06-29 · Possibilities with Probabilities";
+
+// Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
+// Path is checked at build time against the public/ directory.
+const audioFilename = `${issueDate}.mp3`;
+const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
+const audioPath = existsSync(audioFsPath)
+  ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
+  : null;
+
+const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
+---
+
+<Issue title={title} description={description} issueDate={issueDate}>
+  <Masthead
+    issueDate={issueDate}
+    scanNumber={11}
+    signalCount={5}
+    strongCount={3}
+    weakCount={2}
+  />
+
+  <HeroThesis kicker="This week's thesis">
+    The week of June 22 to 29 brought three simultaneous structural shifts in
+    who controls frontier AI capability. OpenAI previewed GPT-5.6 Sol to the US
+    government and restricted its launch to approximately twenty trusted
+    partners, the first voluntary government pre-coordination for a frontier
+    model release, arriving two weeks after the first statutory model shutdown.
+    On June 24, OpenAI and Broadcom announced Jalapeño, a custom LLM inference
+    chip that went from design to tape-out in nine months with AI-assisted
+    design, making OpenAI the fifth major lab to own proprietary inference
+    silicon and extending the recursive-self-improvement signal from software
+    into hardware. One week after the US government suspended Fable 5 under
+    export control authority, Z.ai released GLM-5.2 under an MIT license, the
+    first open-weights model to compete directly with GPT-5.5 and Claude Opus
+    4.8 on Arena's agent leaderboard at approximately one-third the token cost.
+    Together these three signals reveal a structural gap in the
+    export-control-as-AI-governance thesis: restricting US closed models while
+    Chinese labs release MIT-licensed open-weights alternatives at frontier
+    agentic capability does not achieve the intended containment effect for
+    enterprises or developers.
+  </HeroThesis>
+
+  <AudioBrief audioPath={audioPath} />
+
+  <Synthesis>
+    <p>
+      This week's scan produced five signals across three domains, with a
+      recurring structural theme: the architecture of who controls frontier AI
+      capability is restructuring at the governance, infrastructure, and
+      open-source layers simultaneously. OpenAI launched GPT-5.6 Sol on June
+      26, its most capable model yet, with an "ultra mode" using subagents for
+      complex tasks and a new state-of-the-art on Terminal-Bench 2.1 for
+      command-line workflows, but limited initial access to approximately twenty
+      trusted partners whose participation was shared with the US government.
+      Three days earlier, on June 24, OpenAI and Broadcom announced Jalapeño, a
+      custom LLM inference accelerator developed in nine months with AI-assisted
+      chip design, planned for gigawatt-scale deployment by end of 2026 in
+      partnership with Microsoft. In the same window, multiple synthesizers
+      reviewed GLM-5.2 from Z.ai as the first open-weights model to compete
+      directly with GPT-5.5 and Claude Opus 4.8 on Arena's agent leaderboard,
+      MIT-licensed at one-third the token cost of closed alternatives. Two
+      weaker signals complete the picture: OpenAI's Daybreak release on June 22
+      makes GPT-5.5-Cyber available for enterprise-scale patch automation,
+      paralleling Anthropic's Glasswing security initiative in the same quarter,
+      and Zvi's June 25 analysis documents that coding agents are now routinely
+      deployed with full organizational trust, including internet access and
+      internal data access, without post-run security review, as Five Eyes
+      intelligence agencies warned of months to secure systems from advanced AI
+      threats.
+    </p>
+
+    <p>
+      The structural observation binding signals one, two, and three is that the
+      June 12 Fable 5 export control shutdown and the June 26 GPT-5.6
+      government pre-coordination reveal opposite ends of the same new reality:
+      US frontier model launches now operate under either cooperative government
+      pre-review or coercive statutory suspension as live operating modes, not
+      theoretical risks. The Jalapeño chip extends a parallel structural shift
+      at the hardware layer: as OpenAI becomes the fifth major lab to own
+      proprietary inference silicon, and the AI-assisted nine-month design cycle
+      suggests silicon iteration cadence can approach model development velocity,
+      the compute infrastructure enterprise teams assumed was a stable external
+      market is becoming a set of lab-owned roadmaps.
+      <strong>The GLM-5.2 open-weights release completes the picture with a
+      signal the current governance architecture cannot easily address: the
+      intended effect of restricting US closed models is partially neutralized
+      when Chinese labs simultaneously release MIT-licensed open-weights models
+      at comparable frontier agent capability, available to any enterprise or
+      developer without US API dependency.</strong>
+    </p>
+
+    <p>
+      For the reader whose work is enterprise AI strategy: the June 22 to 29
+      window creates three concrete diligence questions. First, does your
+      frontier AI vendor contract disclose the conditions under which either
+      voluntary or statutory government review can restrict or suspend model
+      access, and does your business continuity plan test for up to seventy-two
+      hours of model unavailability with no advance notice? Second, does your
+      infrastructure and procurement framework account for inference cost and
+      availability being determined by lab-owned silicon roadmaps rather than
+      GPU market pricing, now that OpenAI, Google, Amazon, and Microsoft each
+      own their inference compute? Third, if GLM-5.2's frontier-tier agentic
+      performance is independently verified on enterprise task distributions,
+      does your agent architecture evaluation framework include MIT-licensed
+      open-weights alternatives as a viable option alongside US closed-model
+      APIs, or is it implicitly scoped to API-access-only procurement?
+    </p>
+  </Synthesis>
+
+  <Signal
+    index={1}
+    date="2026-06-26"
+    category="01 GenAI Capabilities · 04 AI Governance & Ethics"
+    title="OpenAI launches GPT-5.6 with government pre-coordination and trusted-partner access limits, establishing de facto pre-review as the new frontier launch norm."
+    profile="E3 T-Ac U3 H-Gr Z-Near"
+    strength="strong"
+    sources={[
+      {
+        label: "openai.com/index/previewing-gpt-5-6-sol",
+        url: "https://openai.com/index/previewing-gpt-5-6-sol/",
+      },
+      {
+        label: "techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout",
+        url: "https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/",
+      },
+      {
+        label: "cnbc.com/2026/06/26/openai-limits-new-ai-models",
+        url: "https://www.cnbc.com/2026/06/26/openai-limits-new-ai-models-to-trusted-partners-request-us-government.html",
+      },
+    ]}
+  >
+    <p slot="why">
+      OpenAI launched GPT-5.6 Sol (flagship), Terra (balanced at twice the cost
+      efficiency of GPT-5.5), and Luna (fast and affordable) on June 26, its
+      most capable model family yet. Sol sets a new state-of-the-art on
+      Terminal-Bench 2.1 for command-line workflows and introduces an "ultra
+      mode" using subagents to handle complex tasks beyond single-agent
+      capability; all three models launch under OpenAI's "High" risk
+      classification for cybersecurity and biological workflows, creating new
+      compliance obligations for enterprise teams in those domains. The most
+      structurally significant element is the launch process: OpenAI previewed
+      plans and model capabilities to the US government before launch, limited
+      initial access to approximately twenty trusted partners whose participation
+      was shared with the government, and explicitly stated that this process
+      "should not become the long-term default." Two weeks after the first
+      statutory frontier model shutdown, the second largest frontier lab
+      voluntarily engaged government stakeholders and restricted initial access,
+      establishing de facto government pre-review as an emerging norm for the
+      most capable model launches. The three-tier architecture also creates
+      differentiated governance obligations: enterprise teams deploying Sol in
+      cybersecurity or life-sciences workflows face higher compliance
+      requirements than those using Terra or Luna, a new procurement variable
+      without precedent in prior model generations.
+    </p>
+    <p slot="watch">
+      Whether Google DeepMind coordinates its next Gemini frontier release with
+      the US government in a comparable pre-review pattern, converting this from
+      two labs into a multi-lab institutionalized norm. Whether OpenAI extends
+      GPT-5.6 Sol's trusted-partner gating beyond thirty days, which determines
+      whether this is a staged rollout or a new access stratification model that
+      persists beyond general availability.
+    </p>
+  </Signal>
+
+  <Signal
+    index={2}
+    date="2026-06-24"
+    category="05 AI Infrastructure Trajectory"
+    title="OpenAI and Broadcom tape out Jalapeño, a custom LLM inference chip, in nine months using AI-assisted design, targeting gigawatt-scale deployment by end of 2026."
+    profile="E3 T-Sh U3 H-Gr Z-Near"
+    strength="strong"
+    sources={[
+      {
+        label: "openai.com/index/openai-broadcom-jalapeno-inference-chip",
+        url: "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/",
+      },
+      {
+        label: "investors.broadcom.com/news-releases/openai-broadcom-jalapeno",
+        url: "https://investors.broadcom.com/news-releases/news-release-details/openai-and-broadcom-unveil-llm-optimized-intelligence-processor",
+      },
+      {
+        label: "hpcwire.com/aiwire/2026/06/24/jalapeno-ai-chip",
+        url: "https://www.hpcwire.com/aiwire/2026/06/24/openai-and-broadcom-unveil-jalapeno-ai-chip-for-llm-inference/",
+      },
+    ]}
+  >
+    <p slot="why">
+      OpenAI and Broadcom announced Jalapeño on June 24, OpenAI's first custom
+      inference ASIC, developed from initial design to manufacturing tape-out in
+      nine months. Broadcom describes this as possibly the fastest
+      high-performance ASIC development cycle ever achieved, enabled by using
+      OpenAI models to accelerate parts of the design and optimization process,
+      which is the first public case of AI directly shortening silicon
+      development cycles at frontier scale and extends the recursive-self-
+      improvement signal from software into hardware. Planned for initial
+      deployment in gigawatt-scale data centers with Microsoft by end of 2026,
+      Jalapeño makes OpenAI the fifth major frontier actor to own proprietary
+      inference silicon, joining Google with TPUv7, Amazon with Trainium,
+      Microsoft with Maia, and Apple with its device-side chips. For enterprise
+      AI strategy, this shifts the inference cost and availability calculus from
+      GPU market pricing toward lab-owned silicon roadmaps that are increasingly
+      invisible to enterprise procurement. Tape-out is a concrete, verifiable
+      hardware milestone; the performance-per-watt claim described as
+      "substantially better than current state-of-the-art" has not yet been
+      independently verified.
+    </p>
+    <p slot="watch">
+      Whether Jalapeño's performance-per-watt claim survives independent
+      third-party benchmarking within twelve months of first deployment. Whether
+      the AI-assisted nine-month design cycle enables OpenAI to announce a
+      Jalapeño successor before end of 2027, establishing a silicon development
+      cadence approaching model development velocity.
+    </p>
+  </Signal>
+
+  <Signal
+    index={3}
+    date="2026-06-26"
+    category="01 GenAI Capabilities · 10 Local AI Engineering"
+    title="Z.ai releases GLM-5.2 under MIT license as the first open-weights model to compete at frontier tier on agent benchmarks, at one-third the token cost of closed alternatives."
+    profile="E3 T-Ac U3 H-Gr Z-Now"
+    strength="strong"
+    sources={[
+      {
+        label: "deeplearning.ai/the-batch/issue-359",
+        url: "https://www.deeplearning.ai/the-batch/issue-359/",
+      },
+      {
+        label: "interconnects.ai/p/glm-52-is-the-step-change-for-open",
+        url: "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-174-youre-it",
+        url: "https://thezvi.substack.com/p/ai-174-youre-it",
+      },
+    ]}
+  >
+    <p slot="why">
+      GLM-5.2 from Z.ai is a 753-billion-parameter Mixture-of-Experts model
+      with 40 billion active parameters, MIT-licensed and priced at
+      approximately one-third the token cost of Claude Opus 4.8. It posted the
+      highest score of any open model on PostTrainBench (34.3%) and ranked
+      second on Arena.ai Code Arena WebDev (1,593 Elo), with Arena's agent
+      leaderboard showing it as the first open-weights model competing directly
+      with GPT-5.5 and Claude Opus 4.8 for agentic tasks. Nathan Lambert at AI2
+      characterized it as the first open-weights model that "feels right in
+      coding harnesses as a general agent," and The Batch Issue 359 (June 26)
+      and Zvi's June 25 weekly analysis both reviewed it within the same scan
+      window, providing multi-synthesizer corroboration. The geopolitical timing
+      is structurally significant: GLM-5.2 was released as an MIT-licensed
+      open-weights model exactly one week after the US government suspended
+      access to Fable 5 under statutory export control authority. The intended
+      containment effect of restricting US closed models is partially
+      neutralized when a Chinese lab simultaneously releases a frontier-tier
+      open-weights alternative that any enterprise or developer can run without
+      US API access, at a lower token cost than the restricted models.
+    </p>
+    <p slot="watch">
+      Whether HELM, LMArena, or enterprise evaluation frameworks from Accenture
+      or Gartner independently verify GLM-5.2's agentic performance parity with
+      Claude Opus 4.8 and GPT-5.5 on enterprise task distributions. Whether a
+      US-based enterprise publicly deploys GLM-5.2 as a primary agent backbone
+      within Q3 2026, converting a benchmark result into a production reference
+      architecture.
+    </p>
+  </Signal>
+
+  <Signal
+    index={4}
+    date="2026-06-22"
+    category="04 AI Governance & Ethics · 08 AI Productivity Tools"
+    title="OpenAI releases Daybreak and GPT-5.5-Cyber for enterprise-scale vulnerability remediation, establishing AI-native security as a bimodal frontier race alongside Anthropic Glasswing."
+    profile="E2 T-Em U3 H-Gr Z-Now"
+    strength="weak"
+    sources={[
+      {
+        label: "openai.com/index/daybreak-securing-the-world",
+        url: "https://openai.com/index/daybreak-securing-the-world/",
+      },
+      {
+        label: "openai.com/index/patch-the-planet",
+        url: "https://openai.com/index/patch-the-planet/",
+      },
+    ]}
+  >
+    <p slot="why">
+      OpenAI released Daybreak on June 22, a security toolset including the
+      full version of GPT-5.5-Cyber for end-to-end patch automation, followed
+      by "Patch the Planet" on June 23, an initiative applying automated
+      vulnerability remediation to open-source maintainers at scale. Together
+      with Anthropic's Project Glasswing expansion across April and June 2026,
+      both leading frontier labs have now released dedicated AI-native security
+      products within the same quarter, establishing AI-automated security as a
+      new product category race. The structural dual-use tension is immediately
+      visible: GPT-5.5-Cyber is optimized for both vulnerability discovery and
+      patch generation, and three days after Daybreak's release, GPT-5.6 Sol
+      was classified "High" risk for cybersecurity by OpenAI itself, implying
+      the offense-defense gap is tightening in both directions simultaneously.
+      The signal is E2 because Daybreak is a single first-party announcement
+      without independent benchmark data on patch effectiveness rates in
+      production environments.
+    </p>
+    <p slot="watch">
+      Whether a major enterprise or open-source project publicly discloses using
+      Daybreak or GPT-5.5-Cyber for a production vulnerability remediation
+      workflow within Q3 2026. Whether Google DeepMind releases a comparable
+      dedicated security product, converting AI-native security from a two-lab
+      race into an industry-standard offering.
+    </p>
+  </Signal>
+
+  <Signal
+    index={5}
+    date="2026-06-25"
+    category="04 AI Governance & Ethics · 11 Agent Frameworks & Dev Tools"
+    title="Coding agents deployed as trusted insiders without security review, as Five Eyes warns months remain before AI cyber threats overwhelm current enterprise defenses."
+    profile="E2 T-Em U3 H-Gr Z-Now"
+    strength="weak"
+    sources={[
+      {
+        label: "thezvi.substack.com/p/ai-174-youre-it",
+        url: "https://thezvi.substack.com/p/ai-174-youre-it",
+      },
+    ]}
+  >
+    <p slot="why">
+      Zvi's June 25 weekly analysis documents a structural security posture
+      problem now visible to practitioners: coding agents are deployed in
+      organizations with full organizational trust, including internet
+      connectivity, internal data access, and autonomous runtime capability,
+      without post-run security analysis of their actions, a posture that
+      security teams would have rejected for any other software process in 2020.
+      The Five Eyes intelligence partnership has issued warnings that AI cyber
+      threats create urgency measured in months, not years, to harden systems.
+      Anthropic simultaneously disclosed that sixty-five percent of its product
+      team's code is now AI-generated, establishing that AI-generated code at
+      production majority is a current-state fact. For enterprise security
+      architects, the combination of agents trusted by default, AI-generated
+      code at majority threshold, and government warnings on a months timescale
+      suggests that current enterprise governance frameworks, built for
+      human-readable commits from authenticated human developers, are
+      structurally mismatched to the agent deployment reality already present in
+      Q2 2026.
+    </p>
+    <p slot="watch">
+      Whether a major enterprise or cloud provider publishes a formal agent
+      security framework or attestation standard within Q3 2026, providing an
+      institutional baseline for secure agent deployment. Whether a documented
+      agent-related security incident at an enterprise is publicly disclosed in
+      H2 2026, providing the first evidence that trust-by-default has been
+      operationally exploited.
+    </p>
+  </Signal>
+
+  <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
+    <p>
+      Signal 1, the GPT-5.6 government pre-coordination, and signal 3, the
+      GLM-5.2 open-weights frontier release, are products of the same forcing
+      function: the June 12 export control shutdown established that frontier
+      model access is now a government-modulated variable, and both OpenAI and
+      Z.ai responded within two weeks with strategies for operating in that
+      regime. Signal 2, the Jalapeño chip, extends the recursive-self-
+      improvement pattern from software into hardware: AI-assisted nine-month
+      chip design cycles mean the compute foundation of frontier AI is now
+      itself accelerating.
+      <strong>The combined signal across all three is that the enterprise AI
+      infrastructure every organization built assumptions around in 2024, stable
+      API access to US-lab models, GPU-market-determined inference costs, and
+      US-lab compute dominance, is being restructured on a timescale of weeks,
+      not years, and the restructuring is happening at the governance, hardware,
+      and open-source layers simultaneously.</strong>
+    </p>
+  </ClusterCallout>
+
+  {filteredIssues.length > 0 && (
+    <section class="previous-issues">
+      <h2 class="previous-issues__heading">Previous Issues</h2>
+      <ul class="previous-issues__list">
+        {filteredIssues.map((issue) => (
+          <li>
+            <a href={`${import.meta.env.BASE_URL}issues/${issue.date}/`}>
+              Week of {issue.date}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <Methodology
+    frameworkUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/"
+    archiveUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/baseline/zone2-futures-intelligence/06-weak-signal-watch/"
+  />
+</Issue>
