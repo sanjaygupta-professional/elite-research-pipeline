@@ -166,6 +166,11 @@ const signals: SignalMeta[] = [
     title: "One declarative sentence. No em-dashes.",
     profile: "E3 T-Ac U3 H-Gr Z-Now",
     strength: "strong",
+    logic: {
+      what: "The event, one terse line.",
+      mechanism: "Why it matters / what shifted, one terse line.",
+      soWhat: "The enterprise implication, one terse line.",
+    },
     sources: [{ label: "domain.com/path", url: "https://domain.com/path" }],
   },
   // ...indexes 2 through 5
@@ -174,6 +179,10 @@ const signals: SignalMeta[] = [
 - `label` is the bare domain + path (no `https://` scheme); `url` is the full URL.
 - `profile` is the 5-dim string verbatim (e.g. `"E3 T-Ac U3 H-Gr Z-Now"`).
 - Selection priorities: Strong over Weak (include 1 Weak only if it materially supports the thesis); cluster-supporting over standalone; cover at least 3 distinct categories across the 5.
+- `logic` is the **3-beat causal spine**, rendered as a visual TL;DR under the signal's title (What happened → Mechanism → So what). Author all three beats; each is one terse line (roughly 10 to 18 words).
+  - `what`: the event. `mechanism`: the causal shift, i.e. why this is a signal. `soWhat`: the implication for an enterprise AI strategy reader.
+  - **Content discipline (hard rule):** distill each beat ONLY from this signal's own "Why it matters" / "What to watch" prose. Introduce **no new claim, number, or URL** — the spine inherits the signal's `sources` and adds nothing that needs its own citation. It is a re-presentation of existing content, not new content.
+  - **No em-dashes** in the beats (same rule as all rendered copy). Preserve digits for exact source figures; spell out or use "to" for ranges ("6 to 25", not "6–25").
 
 **Each `<Signal>` detail block spreads its array entry and supplies prose in slots:**
 
@@ -185,6 +194,7 @@ const signals: SignalMeta[] = [
 ```
 - `<p slot="why">`: spell out approximate numbers in prose ("eighty-five percent"); preserve digits for exact source figures ("$40K", "82.7%"); `<em>...</em>` once or twice max.
 - `<p slot="watch">`: one paragraph.
+- The 3-beat spine renders **automatically** from the entry's `logic` field (it rides the `{...signals[i]}` spread). Do **not** add any spine markup inside the `<Signal>` block.
 
 **The other sections:**
 
@@ -210,6 +220,7 @@ const signals: SignalMeta[] = [
 - Confirm `signalCount === strongCount + weakCount` and matches Step 6 totals.
 - Confirm the `signals` array has exactly 5 entries with `index` 1 through 5, and every entry's `profile` string appears verbatim in the appended scan section of the weak-signal file.
 - Confirm there are exactly 5 `<Signal {...signals[i]}>` blocks, spreads `i = 0` through `4`, each with a `why` and a `watch` slot.
+- Confirm every `signals` entry has a `logic` object with non-empty `what`, `mechanism`, and `soWhat`, each distilled from that signal's own prose (no new claim, number, or URL) and free of em-dashes.
 - Confirm the section order matches the list above: Masthead(header) → HeroThesis → AudioBrief → ClusterCallout → SignalIndex → Synthesis → 5 Signals → PreviousIssues → Methodology(footer).
 - Confirm `slot="header"` is on `<Masthead>` and `slot="footer"` is on `<Methodology>`.
 - Confirm `<AudioBrief>` receives both `audioPath` and `issueDate`.

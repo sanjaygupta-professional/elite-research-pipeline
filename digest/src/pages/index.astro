@@ -10,6 +10,7 @@ import ClusterCallout from "../components/ClusterCallout.astro";
 import SignalIndex from "../components/SignalIndex.astro";
 import Synthesis from "../components/Synthesis.astro";
 import Signal from "../components/Signal.astro";
+import type { SignalLogic } from "../components/SignalSpine.astro";
 import Methodology from "../components/Methodology.astro";
 import PreviousIssues from "../components/PreviousIssues.astro";
 
@@ -39,6 +40,11 @@ interface SignalMeta {
   profile: string;
   strength: Strength;
   sources: { label: string; url: string }[];
+  // 3-beat causal spine. Authored in the scan, distilled ONLY from this
+  // signal's already-cited prose (no new claim/number/URL). Renders as a
+  // visual TL;DR under the title. Optional so archived issues without a spine
+  // still build; the weekly scan populates it for every current signal.
+  logic?: SignalLogic;
 }
 
 const signals: SignalMeta[] = [
@@ -50,6 +56,13 @@ const signals: SignalMeta[] = [
       "Anthropic's J-Space interpretability paper identifies the verbalizable global workspace controlling Claude's outputs, and shows it is externally steerable via the Jacobian Lens technique.",
     profile: "E3 T-Em U3 H-Gr Z-Near",
     strength: "strong",
+    logic: {
+      what: "Anthropic identifies J-Space: a verbalizable workspace of 6 to 25 concepts controlling Claude's outputs.",
+      mechanism:
+        "The Jacobian Lens makes it externally steerable: the first mechanistic control layer found in a frontier model.",
+      soWhat:
+        "Model behavior is now mechanistically addressable, yet the same lever enables alignment monitoring and adversarial steering alike.",
+    },
     sources: [
       {
         label: "thezvi.substack.com/p/no-space-like-j-space",
@@ -65,6 +78,13 @@ const signals: SignalMeta[] = [
       "OpenAI launches ChatGPT Work as the first general-purpose product designed to run full knowledge-work loops autonomously over hours rather than assisting with individual prompts.",
     profile: "E3 T-Ac U3 H-Ah Z-Now",
     strength: "strong",
+    logic: {
+      what: "OpenAI launches ChatGPT Work: a GPT-5.6 product that runs multi-hour knowledge-work loops autonomously.",
+      mechanism:
+        "Task assistance → full loops (scan → decide → execute → learn); Atlas is deprecated, signaling consolidation.",
+      soWhat:
+        "First general-purpose agentic workflow product from a frontier lab, but no third-party accuracy data yet.",
+    },
     sources: [
       {
         label: "openai.com/news/",
@@ -84,6 +104,13 @@ const signals: SignalMeta[] = [
       "Bun's eleven-day AI-assisted Zig-to-Rust rewrite at approximately $165,000 in API costs provides the first dollar-and-timeline benchmark for large-scale production language migration using AI.",
     profile: "E3 T-Ac U2 H-Gr Z-Now",
     strength: "strong",
+    logic: {
+      what: "Bun's runtime rewritten Zig → Rust in 11 days, ~$165K in API costs.",
+      mechanism:
+        "≈ one year of small-team engineering, compressed; corroborated by three independent synthesizers.",
+      soWhat:
+        "Large brownfield migration becomes a small-team, API-cost move, no longer a 12-to-24-month program risk.",
+    },
     sources: [
       {
         label: "newsletter.pragmaticengineer.com",
@@ -103,6 +130,13 @@ const signals: SignalMeta[] = [
       "Meta is building five compute clusters exceeding one gigawatt each and a 3,000-engineer RL organization that converts recorded employee workflows into model training tasks.",
     profile: "E3 T-Ac U3 H-Gr Z-Near",
     strength: "strong",
+    logic: {
+      what: "Meta builds five >1GW clusters and a 3,000-engineer RL org that turns recorded employee work into training tasks.",
+      mechanism:
+        "A workflow-to-training-task flywheel: proprietary operations become model training signal, compounding each cycle.",
+      soWhat:
+        "The organization becomes the training data, an edge firms buying generic API access can't replicate.",
+    },
     sources: [
       {
         label: "newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
@@ -118,6 +152,13 @@ const signals: SignalMeta[] = [
       "A pending White House executive order may restrict open-weights AI models above current frontier capability within six months, creating the first existential regulatory test for the open-source AI ecosystem.",
     profile: "E2 T-Sh U3 H-Ah Z-Near",
     strength: "weak",
+    logic: {
+      what: "A pending White House EO may restrict open-weights models above frontier capability within ~6 months.",
+      mechanism:
+        "Not formal licensing but export-control-adjacent limits; from two synthesizers on a pending order, not confirmed text (E2).",
+      soWhat:
+        "Local-frontier deployment plans may need an API fallback within the year; closed providers with government ties gain.",
+    },
     sources: [
       {
         label: "interconnects.ai/p/6-months-to-live-for-open-models",

@@ -4,6 +4,10 @@ interface Source {
   url: string;
 }
 
+import SignalProfile from "./SignalProfile.astro";
+import SignalSpine from "./SignalSpine.astro";
+import type { SignalLogic } from "./SignalSpine.astro";
+
 interface Props {
   index: number; // 1, 2, 3...
   date: string; // signal-date, e.g. "2026-04-20"
@@ -12,11 +16,11 @@ interface Props {
   profile: string; // e.g. "E3 T-Shifting U2 H-Grounded Z-Now"
   strength: "strong" | "weak"; // affects chip
   sources: Source[];
+  logic?: SignalLogic; // optional 3-beat causal spine (renders under the title)
 }
 
-import SignalProfile from "./SignalProfile.astro";
-
-const { index, date, category, title, profile, strength, sources } = Astro.props;
+const { index, date, category, title, profile, strength, sources, logic } =
+  Astro.props;
 const indexLabel = index.toString().padStart(2, "0");
 
 // Absolute deep link to this signal, for the share action.
@@ -52,6 +56,7 @@ const shareUrl = new URL(`${Astro.url.pathname}#signal-${index}`, Astro.site).hr
 
   <div class="signal__content">
     <h2 class="t-headline signal__title">{title}</h2>
+    {logic && <SignalSpine logic={logic} />}
     <div class="signal__body">
       <slot name="why" />
     </div>
