@@ -19,22 +19,21 @@ const {
 ---
 
 <header class="masthead">
-  <div class="masthead__primary">
-    <a class="masthead__wordmark t-label" href={homeUrl}>
-      Possibilities with Probabilities
-    </a>
-    <span class="masthead__sep" aria-hidden="true">·</span>
-    <span class="t-label">Weekly Dispatch</span>
-  </div>
+  <a class="masthead__wordmark" href={homeUrl}>
+    Possibilities with Probabilities
+  </a>
+  <span class="masthead__dispatch t-label">Weekly Dispatch</span>
+
+  <hr class="cinnabar-rule masthead__rule" aria-hidden="true" />
 
   <div class="masthead__meta-row">
-    <time class="t-mono masthead__date" datetime={issueDate}>{issueDate}</time>
+    <time class="masthead__date" datetime={issueDate}>{issueDate}</time>
     <span class="masthead__sep" aria-hidden="true">·</span>
-    <span class="t-mono masthead__meta">Scan №{scanNumber}</span>
+    <span class="masthead__meta">Scan №{scanNumber}</span>
     <span class="masthead__sep" aria-hidden="true">·</span>
-    <span class="t-mono masthead__meta">
+    <span class="masthead__meta">
       {signalCount} signals
-      <span class="masthead__sub">({strongCount} strong, {weakCount} weak)</span>
+      <span class="masthead__sub">({strongCount} strong · {weakCount} weak)</span>
     </span>
   </div>
 </header>
@@ -43,53 +42,52 @@ const {
   .masthead {
     display: flex;
     flex-direction: column;
-    gap: 0.45em;
+    align-items: flex-start;
+    gap: var(--space-tight);
     padding-bottom: var(--space-rest);
-    border-bottom: 1px solid var(--color-hairline);
     margin-bottom: var(--space-section);
   }
 
-  .masthead__primary,
-  .masthead__meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    column-gap: 0.85em;
-    row-gap: 0.3em;
-  }
-
-  @media (min-width: 640px) {
-    .masthead {
-      flex-direction: row;
-      flex-wrap: wrap;
-      column-gap: 0.85em;
-      row-gap: 0.4em;
-      align-items: baseline;
-    }
-    .masthead__primary,
-    .masthead__meta-row {
-      display: contents;
-    }
-  }
-
+  /* The wordmark is now the masthead's anchor: a bold Geist Mono block,
+     stepped up from the old tiny label — confident, but capped at 2rem so
+     it stays clearly subordinate to the ~2.9rem thesis (One-Display-Per-View). */
   .masthead__wordmark {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 1.4vw + 1.05rem, 2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
     color: var(--color-ink);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.05em;
-    transition: color var(--duration-fast) var(--ease-out),
-      border-color var(--duration-fast) var(--ease-out);
+    transition: color var(--duration-fast) var(--ease-out);
   }
 
   .masthead__wordmark:hover {
     color: var(--color-cinnabar);
-    border-bottom-color: var(--color-cinnabar);
   }
 
-  .masthead__sep {
-    color: var(--color-hairline);
-    font-weight: 500;
-    user-select: none;
+  .masthead__dispatch {
+    /* t-label carries the mono / uppercase / muted treatment. */
+    display: block;
+  }
+
+  /* The signature asymmetric cinnabar mark, tying the masthead into the
+     page's visual system. */
+  .masthead__rule {
+    margin: var(--space-snug) 0 var(--space-tight);
+  }
+
+  .masthead__meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.7em;
+    row-gap: 0.3em;
+    font-family: var(--font-mono);
+    font-size: var(--type-mono-title);
+    line-height: var(--leading-mono);
+    letter-spacing: 0.005em;
   }
 
   .masthead__date {
@@ -101,8 +99,13 @@ const {
     color: var(--color-mute);
   }
 
+  .masthead__sep {
+    color: var(--color-hairline);
+    user-select: none;
+  }
+
   .masthead__sub {
     color: var(--color-mute);
-    margin-left: 0.25em;
+    margin-left: 0.2em;
   }
 </style>

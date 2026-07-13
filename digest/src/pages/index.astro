@@ -10,7 +10,7 @@ import Synthesis from "../components/Synthesis.astro";
 import Signal from "../components/Signal.astro";
 import ClusterCallout from "../components/ClusterCallout.astro";
 import Methodology from "../components/Methodology.astro";
-import previousIssues from "../data/issues.json";
+import PreviousIssues from "../components/PreviousIssues.astro";
 
 const issueDate = "2026-07-06";
 const description =
@@ -24,8 +24,6 @@ const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
 const audioPath = existsSync(audioFsPath)
   ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
   : null;
-
-const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
 ---
 
 <Issue title={title} description={description} issueDate={issueDate}>
@@ -385,20 +383,7 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     </p>
   </ClusterCallout>
 
-  {filteredIssues.length > 0 && (
-    <section class="previous-issues">
-      <h2 class="previous-issues__heading">Previous Issues</h2>
-      <ul class="previous-issues__list">
-        {filteredIssues.map((issue) => (
-          <li>
-            <a href={`${import.meta.env.BASE_URL}issues/${issue.date}/`}>
-              Week of {issue.date}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+  <PreviousIssues currentDate={issueDate} />
 
   <Methodology
     frameworkUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/"
