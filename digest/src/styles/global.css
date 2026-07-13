@@ -311,6 +311,38 @@ a:focus-visible {
 }
 
 /* ──────────────────────────────────────────────────────────────────────
+   The ClusterCallout inverts to the opposite ground of the page, so its
+   cinnabar text needs the opposite variant. The local token is set here (not
+   in the scoped component styles) so the dark-theme override below can win.
+   ────────────────────────────────────────────────────────────────────── */
+.cluster {
+  --color-cinnabar-text: var(--color-cinnabar-light);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Dark theme. Auto, via the OS preference. Values recomputed for WCAG AA on
+   the dark ground; cinnabar text uses the lighter variant. The palette lives
+   entirely in custom properties, so this is a pure token swap.
+   ────────────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-cream: oklch(18% 0.02 60); /* warm near-black ground */
+    --color-ink: oklch(92% 0.012 85); /* warm off-white type */
+    --color-cinnabar: oklch(64% 0.17 38); /* brighter for the dark ground */
+    --color-cinnabar-text: var(--color-cinnabar-light);
+    --color-hairline: oklch(34% 0.02 60);
+    --color-mute: oklch(74% 0.02 75);
+  }
+
+  /* The callout auto-inverts to a light block on the dark page (its bg is
+     --color-ink, which is now light), so its cinnabar text flips to the
+     on-light (deeper) variant. */
+  .cluster {
+    --color-cinnabar-text: var(--color-cinnabar-deep);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────
    Previous Issues — compact archive list at the bottom of each dispatch.
    ────────────────────────────────────────────────────────────────────── */
 .previous-issues {

@@ -36,10 +36,12 @@ const { kicker = "Cluster pattern" } = Astro.props;
     gap: var(--space-step);
   }
 
-  /* On the inverted (ink) ground, small cinnabar text needs the lighter
-     variant to clear WCAG AA. cinnabar-light is 5.96:1 on ink. */
+  /* Cinnabar text on this block follows --color-cinnabar-text, whose value is
+     set per-theme in global.css: light theme = the block is ink (dark), so the
+     lighter cinnabar; dark theme = the block auto-inverts to cream (light), so
+     the deeper cinnabar. Either way it clears WCAG AA. */
   .cluster__kicker {
-    color: var(--color-cinnabar-light);
+    color: var(--color-cinnabar-text);
     margin: 0;
   }
 
@@ -62,7 +64,7 @@ const { kicker = "Cluster pattern" } = Astro.props;
   }
 
   .cluster__body :global(strong) {
-    color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
     font-weight: 600;
   }
 </style>
