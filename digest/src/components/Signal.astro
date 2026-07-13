@@ -14,8 +14,13 @@ interface Props {
   sources: Source[];
 }
 
+import SignalProfile from "./SignalProfile.astro";
+
 const { index, date, category, title, profile, strength, sources } = Astro.props;
 const indexLabel = index.toString().padStart(2, "0");
+
+// Absolute deep link to this signal, for the share action.
+const shareUrl = new URL(`${Astro.url.pathname}#signal-${index}`, Astro.site).href;
 ---
 
 <article class="signal" id={`signal-${index}`}>
@@ -28,7 +33,7 @@ const indexLabel = index.toString().padStart(2, "0");
     </div>
     <time class="t-mono signal__date" datetime={date}>{date}</time>
     <p class="t-label signal__category">{category}</p>
-    <p class="t-mono signal__profile" aria-label="Signal profile">{profile}</p>
+    <SignalProfile profile={profile} variant="meters" />
     <div class="signal__sources">
       <span class="t-label signal__sources-label">Sources</span>
       <ol class="signal__sources-list t-mono">
@@ -56,8 +61,76 @@ const indexLabel = index.toString().padStart(2, "0");
         <slot name="watch" />
       </div>
     </aside>
+    <div class="signal__share">
+      <button
+        type="button"
+        class="signal__share-btn"
+        data-share-btn
+        data-share-url={shareUrl}
+        data-share-title={title}
+        data-share-profile={profile}
+        aria-label="Copy this signal to the clipboard"
+      >
+        <span data-share-label>Copy this signal</span>
+      </button>
+    </div>
   </div>
 </article>
+
+<script>
+  // Share-a-signal: copy the signal title, decoded profile, "what to watch",
+  // and a deep link as a formatted quote block, for forwarding to one peer.
+  // Composed from existing rendered content; adds no new copy.
+  document.querySelectorAll<HTMLButtonElement>("[data-share-btn]").forEach((btn) => {
+    const label = btn.querySelector<HTMLElement>("[data-share-label]");
+    const original = label?.textContent ?? "Copy this signal";
+
+    const flash = (msg: string) => {
+      if (label) label.textContent = msg;
+      btn.setAttribute("data-copied", "true");
+      window.setTimeout(() => {
+        if (label) label.textContent = original;
+        btn.removeAttribute("data-copied");
+      }, 2000);
+    };
+
+    btn.addEventListener("click", async () => {
+      const title = btn.getAttribute("data-share-title") ?? "";
+      const profile = btn.getAttribute("data-share-profile") ?? "";
+      const url = btn.getAttribute("data-share-url") ?? "";
+      const watch =
+        btn
+          .closest(".signal")
+          ?.querySelector(".signal__watch-body")
+          ?.textContent?.trim() ?? "";
+
+      const parts = [title, "", `Profile: ${profile}`];
+      if (watch) parts.push(`What to watch: ${watch}`);
+      parts.push("", url);
+      const text = parts.join("\n");
+
+      try {
+        await navigator.clipboard.writeText(text);
+        flash("Copied");
+      } catch {
+        // Fallback for browsers without async clipboard access.
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand("copy");
+          flash("Copied");
+        } catch {
+          flash("Copy failed");
+        }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
 
 <style>
   /* Signal block: single-column on mobile, 2-column on desktop.
@@ -129,7 +202,7 @@ const indexLabel = index.toString().padStart(2, "0");
   }
 
   .signal__chip[data-strength="strong"] {
-    color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
   }
 
   .signal__chip[data-strength="weak"] {
@@ -146,14 +219,6 @@ const indexLabel = index.toString().padStart(2, "0");
     color: var(--color-mute);
     margin: 0;
     line-height: 1.4;
-  }
-
-  .signal__profile {
-    color: var(--color-cinnabar);
-    font-feature-settings: "ss01", "tnum";
-    font-weight: 500;
-    margin: 0;
-    word-break: break-word;
   }
 
   .signal__sources {
@@ -187,8 +252,8 @@ const indexLabel = index.toString().padStart(2, "0");
   }
 
   .signal__sources-list a:hover {
-    color: var(--color-cinnabar);
-    text-decoration-color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
+    text-decoration-color: var(--color-cinnabar-text);
   }
 
   /* ── Content column ───────────────────────────────────────────── */
@@ -237,11 +302,40 @@ const indexLabel = index.toString().padStart(2, "0");
   }
 
   .signal__watch-label {
-    color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
   }
 
   .signal__watch-body {
     font-size: var(--type-body);
     line-height: var(--leading-body);
+  }
+
+  /* ── Share action ─────────────────────────────────────────────── */
+  .signal__share-btn {
+    appearance: none;
+    background: transparent;
+    border: 1px solid var(--color-hairline);
+    border-radius: 0; /* sharp corners — DESIGN.md component philosophy */
+    color: var(--color-mute);
+    font-family: var(--font-mono);
+    font-size: var(--type-label);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5em 0.9em;
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--ease-out),
+      border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .signal__share-btn:hover,
+  .signal__share-btn[data-copied="true"] {
+    color: var(--color-cinnabar-text);
+    border-color: var(--color-cinnabar-text);
+  }
+
+  .signal__share-btn:focus-visible {
+    outline: 2px solid var(--color-cinnabar);
+    outline-offset: 3px;
   }
 </style>

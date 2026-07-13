@@ -1,26 +1,54 @@
 ---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 interface Props {
   audioPath: string | null | undefined;
+  issueDate?: string;
   voiceAttribution?: string;
   durationFallback?: string;
 }
 
-const { audioPath, voiceAttribution = "Sanjay's Summary", durationFallback = "" } = Astro.props;
+const {
+  audioPath,
+  issueDate,
+  voiceAttribution = "Sanjay's Summary",
+  durationFallback = "",
+} = Astro.props;
 
 // Conditional render. If no audio file exists, renders nothing.
 const hasAudio = !!audioPath;
 const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
+
+// Transcript: the spoken script, surfaced as text. Satisfies WCAG 1.2.1
+// (text alternative for prerecorded audio), works in open-plan offices, and
+// gives shareable quotes. Read at build time; degrades to no transcript if the
+// script file is absent. Same build-time fs pattern as PreviousIssues.
+let transcriptParas: string[] = [];
+if (issueDate) {
+  try {
+    const raw = readFileSync(
+      join(process.cwd(), "audio-scripts", `${issueDate}.md`),
+      "utf8",
+    );
+    transcriptParas = raw
+      .trim()
+      .split(/\n\s*\n/)
+      .map((p) => p.replace(/\s+/g, " ").trim())
+      .filter(Boolean);
+  } catch {
+    transcriptParas = [];
+  }
+}
 ---
 
 {
   hasAudio && (
-    <section class="audio-brief" data-audio-brief>
-      <img
-        class="audio-brief__avatar"
-        src={avatarSrc}
-        alt="Sanjay Gupta"
-        aria-hidden="true"
-      />
+    <section class="audio-brief" data-audio-brief aria-labelledby="audio-brief-heading">
+      <h2 id="audio-brief-heading" class="visually-hidden">
+        Audio brief
+      </h2>
+      <img class="audio-brief__avatar" src={avatarSrc} alt="" />
       <button
         type="button"
         class="audio-brief__play"
@@ -42,6 +70,18 @@ const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
         preload="metadata"
         data-audio-element
       />
+      {transcriptParas.length > 0 && (
+        <details class="audio-brief__transcript">
+          <summary class="audio-brief__transcript-summary t-label">
+            Read the transcript
+          </summary>
+          <div class="audio-brief__transcript-body">
+            {transcriptParas.map((para) => (
+              <p>{para}</p>
+            ))}
+          </div>
+        </details>
+      )}
     </section>
   )
 }
@@ -166,11 +206,15 @@ const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
       transform var(--duration-fast) var(--ease-out);
   }
 
-  .audio-brief__play:hover,
-  .audio-brief__play:focus-visible {
+  .audio-brief__play:hover {
     background-color: var(--color-cinnabar);
     color: var(--color-cream);
-    outline: none;
+  }
+
+  /* Focus ring consistent with every other interactive element on the page. */
+  .audio-brief__play:focus-visible {
+    outline: 2px solid var(--color-cinnabar);
+    outline-offset: 3px;
   }
 
   .audio-brief__play:active {
@@ -229,6 +273,56 @@ const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
   /* Hidden native element. The button + progress is the visual UI. */
   .audio-brief__audio {
     display: none;
+  }
+
+  /* ── Transcript (text alternative) ─────────────────────────────── */
+  .audio-brief__transcript {
+    grid-column: 1 / -1;
+  }
+
+  .audio-brief__transcript-summary {
+    cursor: pointer;
+    color: var(--color-cinnabar-text);
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    padding-block: 0.2em;
+    user-select: none;
+  }
+
+  .audio-brief__transcript-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .audio-brief__transcript-summary::before {
+    content: "+";
+    font-family: var(--font-mono);
+    font-weight: 500;
+  }
+
+  .audio-brief__transcript[open] .audio-brief__transcript-summary::before {
+    content: "–";
+  }
+
+  .audio-brief__transcript-summary:focus-visible {
+    outline: 2px solid var(--color-cinnabar);
+    outline-offset: 3px;
+  }
+
+  .audio-brief__transcript-body {
+    margin-top: var(--space-step);
+    max-width: var(--measure-prose);
+  }
+
+  .audio-brief__transcript-body :global(p) {
+    margin-bottom: var(--space-step);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+  }
+
+  .audio-brief__transcript-body :global(p:last-child) {
+    margin-bottom: 0;
   }
 
   /* ── Mobile ────────────────────────────────────────────────────── */

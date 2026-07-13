@@ -7,11 +7,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist+Mono:wght@300..600&display=swap");
 
 :root {
-  /* Colors. The One Voice Rule: cinnabar is the only chromatic actor. */
+  /* Colors. The One Voice Rule: cinnabar is the only chromatic actor.
+     Three cinnabar values, one hue family:
+       --color-cinnabar       bright accent. Graphics + large text. 4.15:1 on
+                              cream (passes AA for >=18px / UI, fails <18px text).
+       --color-cinnabar-deep  small cinnabar TEXT on light ground. 6.40:1 on cream.
+       --color-cinnabar-light small cinnabar TEXT on dark ground. 5.96:1 on ink.
+     --color-cinnabar-text is the semantic token components use for cinnabar
+     text; it resolves to deep on the light page and light on dark grounds. */
   --color-cream: oklch(96% 0.01 85);
   --color-ink: oklch(15% 0.02 60);
   --color-cinnabar: oklch(58% 0.18 35);
   --color-cinnabar-deep: oklch(48% 0.20 30);
+  --color-cinnabar-light: oklch(66% 0.15 40);
+  --color-cinnabar-text: var(--color-cinnabar-deep);
   --color-hairline: oklch(92% 0.012 80);
   --color-mute: oklch(45% 0.015 60);
 
@@ -115,8 +124,8 @@ a {
 }
 
 a:hover {
-  color: var(--color-cinnabar);
-  text-decoration-color: var(--color-cinnabar);
+  color: var(--color-cinnabar-text);
+  text-decoration-color: var(--color-cinnabar-text);
 }
 
 a:focus-visible {
@@ -222,12 +231,61 @@ a:focus-visible {
   gap: 0;
 }
 
+.page__main {
+  min-width: 0;
+}
+
+/* Programmatic focus target for the skip link; no visible ring needed. */
+.page__main:focus {
+  outline: none;
+}
+
 .measure {
   max-width: var(--measure-prose);
 }
 
 .measure-wide {
   max-width: var(--measure-wide);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Accessibility utilities.
+   ────────────────────────────────────────────────────────────────────── */
+/* Visible to assistive tech, removed from the visual layout. Used for
+   headings that structure the page for screen-reader navigation without
+   adding a visible label (Audio, Insight, Synthesis). */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link: off-screen until focused, then pinned top-left. Lets keyboard
+   and screen-reader users bypass the masthead straight to the content. */
+.skip-link {
+  position: absolute;
+  left: var(--space-snug);
+  top: -100%;
+  z-index: 100;
+  padding: 0.6em 1em;
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-mono);
+  font-size: var(--type-small);
+  text-decoration: none;
+  border-radius: 1px;
+}
+
+.skip-link:focus-visible {
+  top: var(--space-snug);
+  outline: 2px solid var(--color-cinnabar);
+  outline-offset: 2px;
 }
 
 /* ──────────────────────────────────────────────────────────────────────
@@ -250,6 +308,38 @@ a:focus-visible {
 ::selection {
   background-color: var(--color-cinnabar);
   color: var(--color-cream);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   The ClusterCallout inverts to the opposite ground of the page, so its
+   cinnabar text needs the opposite variant. The local token is set here (not
+   in the scoped component styles) so the dark-theme override below can win.
+   ────────────────────────────────────────────────────────────────────── */
+.cluster {
+  --color-cinnabar-text: var(--color-cinnabar-light);
+}
+
+/* ──────────────────────────────────────────────────────────────────────
+   Dark theme. Auto, via the OS preference. Values recomputed for WCAG AA on
+   the dark ground; cinnabar text uses the lighter variant. The palette lives
+   entirely in custom properties, so this is a pure token swap.
+   ────────────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-cream: oklch(18% 0.02 60); /* warm near-black ground */
+    --color-ink: oklch(92% 0.012 85); /* warm off-white type */
+    --color-cinnabar: oklch(64% 0.17 38); /* brighter for the dark ground */
+    --color-cinnabar-text: var(--color-cinnabar-light);
+    --color-hairline: oklch(34% 0.02 60);
+    --color-mute: oklch(74% 0.02 75);
+  }
+
+  /* The callout auto-inverts to a light block on the dark page (its bg is
+     --color-ink, which is now light), so its cinnabar text flips to the
+     on-light (deeper) variant. */
+  .cluster {
+    --color-cinnabar-text: var(--color-cinnabar-deep);
+  }
 }
 
 /* ──────────────────────────────────────────────────────────────────────
