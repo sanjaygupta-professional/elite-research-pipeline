@@ -132,6 +132,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="OpenAI launches GPT-5.6 with government pre-coordination and trusted-partner access limits, establishing de facto pre-review as the new frontier launch norm."
     profile="E3 T-Ac U3 H-Gr Z-Near"
     strength="strong"
+    logic={{
+      what: "OpenAI previewed GPT-5.6 before launch, limiting rollout to approximately twenty government-vetted trusted partners.",
+      mechanism: "Voluntary government pre-review emerged as a live launch operating mode, two weeks after the first statutory model shutdown.",
+      soWhat: "Enterprise contracts must now account for government review conditions that can restrict model access without advance notice.",
+    }}
     sources={[
       {
         label: "openai.com/index/previewing-gpt-5-6-sol",
@@ -187,6 +192,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="OpenAI and Broadcom tape out Jalapeño, a custom LLM inference chip, in nine months using AI-assisted design, targeting gigawatt-scale deployment by end of 2026."
     profile="E3 T-Sh U3 H-Gr Z-Near"
     strength="strong"
+    logic={{
+      what: "OpenAI and Broadcom taped out Jalapeño, a custom LLM inference chip, in nine months using AI-assisted design.",
+      mechanism: "AI directly shortened a silicon development cycle at frontier scale, extending recursive self-improvement from software into hardware.",
+      soWhat: "Inference cost and availability now depends on lab-owned silicon roadmaps, not GPU market pricing, changing enterprise procurement assumptions.",
+    }}
     sources={[
       {
         label: "openai.com/index/openai-broadcom-jalapeno-inference-chip",
@@ -238,6 +248,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="Z.ai releases GLM-5.2 under MIT license as the first open-weights model to compete at frontier tier on agent benchmarks, at one-third the token cost of closed alternatives."
     profile="E3 T-Ac U3 H-Gr Z-Now"
     strength="strong"
+    logic={{
+      what: "Z.ai released GLM-5.2, MIT-licensed, at one-third closed-model token cost, competing directly at frontier agent tier.",
+      mechanism: "Released one week after Fable 5's suspension, GLM-5.2 partially neutralizes export-control containment without US API dependency.",
+      soWhat: "Enterprise agent evaluation frameworks must include MIT-licensed open-weights alternatives, not only US closed-model APIs.",
+    }}
     sources={[
       {
         label: "deeplearning.ai/the-batch/issue-359",
@@ -290,6 +305,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="OpenAI releases Daybreak and GPT-5.5-Cyber for enterprise-scale vulnerability remediation, establishing AI-native security as a bimodal frontier race alongside Anthropic Glasswing."
     profile="E2 T-Em U3 H-Gr Z-Now"
     strength="weak"
+    logic={{
+      what: "OpenAI released Daybreak and GPT-5.5-Cyber for end-to-end patch automation, alongside Anthropic Glasswing, in the same quarter.",
+      mechanism: "Both leading labs released AI-native security tools in the same quarter; rated E2, lacking independent production benchmark data.",
+      soWhat: "Enterprise security teams face a narrowing offense-defense gap as the same models handle both vulnerability discovery and remediation.",
+    }}
     sources={[
       {
         label: "openai.com/index/daybreak-securing-the-world",
@@ -334,6 +354,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="Coding agents deployed as trusted insiders without security review, as Five Eyes warns months remain before AI cyber threats overwhelm current enterprise defenses."
     profile="E2 T-Em U3 H-Gr Z-Now"
     strength="weak"
+    logic={{
+      what: "Coding agents are now deployed with full organizational trust and no post-run security review of their actions.",
+      mechanism: "Five Eyes warns months remain to harden systems; rated E2, sourced from practitioner observation without independent organizational audits.",
+      soWhat: "Enterprise governance built for human commits is structurally mismatched to the agent deployment reality already present in Q2 2026.",
+    }}
     sources={[
       {
         label: "thezvi.substack.com/p/ai-174-youre-it",

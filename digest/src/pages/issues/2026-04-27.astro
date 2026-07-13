@@ -73,6 +73,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="Anthropic and Amazon expand to 5 GW / additional $100B over 10 years; 1 GW Trainium online by end-2026."
     profile="E3 T-Shifting U2 H-Grounded Z-Now"
     strength="strong"
+    logic={{
+      what: "Anthropic-Amazon committed $100B over 10 years to 5 GW of capacity; 1 GW Trainium comes online by end-2026.",
+      mechanism: "A second multi-year commitment expressed in gigawatts confirms frontier compute has migrated to infrastructure project economics.",
+      soWhat: "Enterprises without a multi-year compute strategy will negotiate from rationing, not pricing, in 2026 to 2028.",
+    }}
     sources={[
       {
         label: "anthropic.com/news/anthropic-amazon-compute",
@@ -110,6 +115,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="DeepSeek V4: 1M-token agentic context with ~2% KV-cache footprint and frontier-class agent-task parity."
     profile="E3 T-Accelerating U3 H-Grounded Z-Now"
     strength="strong"
+    logic={{
+      what: "DeepSeek V4 delivered 1M-token agentic context at roughly 2% of prior KV-cache footprint, at frontier-class task parity.",
+      mechanism: "Compressed attention architectures make long-horizon agentic workloads deployable on standard hardware without context blowup, a category-creation move.",
+      soWhat: "Enterprise AI architectures can now run 1M-context browsing and SWE-bench tasks on standard hardware, not just frontier clusters.",
+    }}
     sources={[
       {
         label: "huggingface.co/blog/deepseekv4",
@@ -152,6 +162,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="US data-center community revolt: ~$64B blocked May 2024–Mar 2025; 12 states with restrictive bills in 2026."
     profile="E3 T-Accelerating U2 H-Grounded Z-Now"
     strength="strong"
+    logic={{
+      what: "About $64B of US data-center projects were blocked over 10 months; 12 states filed restrictive bills in 2026.",
+      mechanism: "Data-center siting shifted from a permitting question to a political-risk question, layering community-consent constraints on top of power and GPU limits.",
+      soWhat: "Enterprise AI capacity models now need a third planning dimension, community and political acceptance of host sites, absent in 2024.",
+    }}
     sources={[
       {
         label: "deeplearning.ai/the-batch/issue-350/",
@@ -187,6 +202,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="Cost-per-task overtakes cost-per-token as the procurement-relevant unit for coding assistants."
     profile="E3 T-Emerging U2 H-Grounded Z-Now"
     strength="strong"
+    logic={{
+      what: "Three independent surfaces converged in one week on cost-per-task as the correct procurement unit for AI coding assistants.",
+      mechanism: "New tokenizer changes and pricing structures make raw price-per-token comparisons structurally misleading across vendor benchmarks.",
+      soWhat: "Enterprise price-per-token procurement spreadsheets are becoming structurally wrong; the right unit couples model choice to end-to-end task economics.",
+    }}
     sources={[
       {
         label: "newsletter.semianalysis.com/p/the-coding-assistant-breakdown-more",
@@ -230,6 +250,11 @@ const filteredIssues = previousIssues.filter((i) => i.date !== issueDate);
     title="Indian-IT enterprise-AI inflection: TCS $1.8B AI ARR, Wipro 200+ deployed agents, India AI workloads at ~30% CAGR through 2030."
     profile="E3 T-Accelerating U2 H-Grounded Z-Now"
     strength="strong"
+    logic={{
+      what: "TCS disclosed $1.8B AI ARR and Wipro 200-plus deployed agents: Indian IT AI revenue reached material absolute scale.",
+      mechanism: "AI revenue is rising while overall services revenue is muted, an early-warning pattern for cannibalization at industry scale.",
+      soWhat: "Indian IT is the global delivery layer for enterprise AI; its pricing and capacity directly shape global enterprise economics.",
+    }}
     sources={[
       {
         label:
