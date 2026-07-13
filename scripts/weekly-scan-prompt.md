@@ -140,47 +140,60 @@ If you logged at least one qualifying signal in Step 6, update the executive iss
 
 ### How to write the new issue
 
-Use the `Write` tool to replace `digest/src/pages/index.astro` in full. Start from the prior issue's structure and change only the values listed below. **The component imports at the top and the `Methodology` props at the bottom are stable across issues — copy them verbatim.**
+Use the `Write` tool to replace `digest/src/pages/index.astro` in full. Start from the prior issue's structure and change only the values listed below. **The `import` block, the `type Strength` / `interface SignalMeta` lines, the audio-path check, and the `<Methodology>` props are stable across issues — copy them verbatim.**
 
-1. **Frontmatter constants:**
-   - `issueDate` = today's scan date (`YYYY-MM-DD`).
-   - `description` = one-sentence thesis (used as meta description; under 200 chars).
-   - `title` = `"The Cinnabar Dispatch · YYYY-MM-DD · Possibilities with Probabilities"`.
+The page uses an **insight-first** structure. Reproduce this exact section order:
 
-2. **`<Masthead>` props:**
-   - `issueDate` — same as above.
-   - `scanNumber` — read the prior issue's value (the file you just read) and increment by 1.
-   - `signalCount` — total signals you appended in Step 6.
-   - `strongCount`, `weakCount` — the strong/weak split (must sum to `signalCount`).
+1. Frontmatter: the `import` block (copy verbatim), the `issueDate` / `description` / `title` consts, the audio-path check (copy verbatim), and the **`signals` metadata array** (see below).
+2. `<Masthead slot="header" ... />` — note `slot="header"`.
+3. `<HeroThesis kicker="This week's thesis"> ... </HeroThesis>`
+4. `<AudioBrief audioPath={audioPath} issueDate={issueDate} />`
+5. `<ClusterCallout kicker="..."> ... </ClusterCallout>` (the insight leads, above the signals)
+6. `<SignalIndex signals={signals} />`
+7. `<Synthesis>` three `<p>` `</Synthesis>`
+8. Five `<Signal {...signals[i]}> ... </Signal>` blocks (i = 0 through 4)
+9. `<PreviousIssues currentDate={issueDate} />`
+10. `<Methodology slot="footer" ... />` — note `slot="footer"`.
 
-3. **`<HeroThesis kicker="This week's thesis">`:** 2–4 sentence thesis derived from your scan summary's "Notable patterns" section. A confident editorial claim, not a recap. Names the implication for an enterprise AI strategy reader.
+**The `signals` array is the single source of truth.** Author one entry per featured signal (5 of the N). Both `<SignalIndex>` and the `<Signal>` detail blocks read from it, so the metadata is written once. Shape:
 
-4. **`<Synthesis>`:** exactly three `<p>` paragraphs.
-   - **Para 1:** State the pattern. Walk through the strongest signals as evidence (mention 3–5 by name/finding).
-   - **Para 2:** Convergence/implication. What does the pattern mean structurally? Use one `<strong>...</strong>` for emphasis, max one.
-   - **Para 3:** Reader-action paragraph: open with `For the reader whose work is enterprise AI strategy:` and give concrete diligence/playbook implications.
+```ts
+const signals: SignalMeta[] = [
+  {
+    index: 1,
+    date: "YYYY-MM-DD",
+    category: "01 GenAI Capabilities · 04 AI Governance & Ethics",
+    title: "One declarative sentence. No em-dashes.",
+    profile: "E3 T-Ac U3 H-Gr Z-Now",
+    strength: "strong",
+    sources: [{ label: "domain.com/path", url: "https://domain.com/path" }],
+  },
+  // ...indexes 2 through 5
+];
+```
+- `label` is the bare domain + path (no `https://` scheme); `url` is the full URL.
+- `profile` is the 5-dim string verbatim (e.g. `"E3 T-Ac U3 H-Gr Z-Now"`).
+- Selection priorities: Strong over Weak (include 1 Weak only if it materially supports the thesis); cluster-supporting over standalone; cover at least 3 distinct categories across the 5.
 
-5. **Featured `<Signal>` blocks — select 5 of the N signals.** Selection priorities:
-   - Strong over Weak; include 1 Weak only if it materially supports the thesis.
-   - Cluster-supporting signals over standalone ones.
-   - Cover at least 3 distinct categories across the 5.
+**Each `<Signal>` detail block spreads its array entry and supplies prose in slots:**
 
-   Each `<Signal>` uses these props:
-   - `index` — 1 through 5.
-   - `date` — signal date in `YYYY-MM-DD`.
-   - `category` — e.g. `"01 GenAI Capabilities · 04 AI Governance"` (use middle-dot ` · ` between categories).
-   - `title` — one declarative sentence. **No em-dashes.**
-   - `profile` — the 5-dim string verbatim (e.g. `"E3 T-Shifting U3 H-Ahead Z-Now"`).
-   - `strength` — `"strong"` or `"weak"` exactly.
-   - `sources` — array of `{label, url}`. `label` is the bare domain + path (no `https://` scheme); `url` is the full URL.
+```astro
+<Signal {...signals[0]}>
+  <p slot="why">Body prose adapted from "Why it matters" ...</p>
+  <p slot="watch">One paragraph adapted from "What to watch for".</p>
+</Signal>
+```
+- `<p slot="why">`: spell out approximate numbers in prose ("eighty-five percent"); preserve digits for exact source figures ("$40K", "82.7%"); `<em>...</em>` once or twice max.
+- `<p slot="watch">`: one paragraph.
 
-   Two slots:
-   - `<p slot="why">` — body prose adapted from the signal's "Why it matters" entry. Spell out approximate numbers in narrative prose ("eighty-five percent"); preserve digits for exact figures cited from sources ("$40K", "60", "82.7%"). Use `<em>...</em>` once or twice for emphasis, max.
-   - `<p slot="watch">` — one paragraph adapted from "What to watch for".
+**The other sections:**
 
-6. **`<ClusterCallout kicker="The pattern across signals X, Y, Z">`:** one `<p>` paragraph binding 3–4 of the featured signals to the thesis. Use `<strong>...</strong>` once for the punch.
-
-7. **`<Methodology>`:** copy props verbatim from the prior issue. Do not edit.
+- `<Masthead slot="header">` props: `issueDate`; `scanNumber` = prior issue's value + 1; `signalCount` = total signals from Step 6; `strongCount` + `weakCount` split (must sum to `signalCount`).
+- `<HeroThesis>`: 2–4 sentence thesis from the scan's "Notable patterns." A confident editorial claim, not a recap; names the implication for an enterprise AI strategy reader.
+- `<AudioBrief>`: pass **both** `audioPath={audioPath}` and `issueDate={issueDate}` (the second drives the on-page transcript, read from your Step 10 script).
+- `<ClusterCallout kicker="The pattern across signals X, Y, Z">`: one `<p>` binding 3–4 featured signals to the thesis; one `<strong>...</strong>`.
+- `<Synthesis>`: exactly three `<p>`. Para 1 states the pattern (3–5 signals by name). Para 2 the convergence, one `<strong>` max. Para 3 opens `For the reader whose work is enterprise AI strategy:`.
+- `<Methodology slot="footer">`: copy props verbatim from the prior issue. Do not edit.
 
 ### Voice rules — hard constraints
 
@@ -195,9 +208,13 @@ Use the `Write` tool to replace `digest/src/pages/index.astro` in full. Start fr
 - Grep your draft for the `—` character (U+2014). If found, replace with `,` `;` or `(...)`.
 - Confirm `scanNumber === priorIssueScanNumber + 1`.
 - Confirm `signalCount === strongCount + weakCount` and matches Step 6 totals.
-- Confirm all 5 featured signal `profile` strings appear verbatim in the appended scan section of the weak-signal file.
-- Confirm component imports and `<Methodology>` props are unchanged.
-- Confirm `import previousIssues from "../data/issues.json";`, `const filteredIssues = ...`, and the `<section class="previous-issues">` block are preserved verbatim from the prior issue (the wrapper script archives the prior dispatch, so these must always be carried forward).
+- Confirm the `signals` array has exactly 5 entries with `index` 1 through 5, and every entry's `profile` string appears verbatim in the appended scan section of the weak-signal file.
+- Confirm there are exactly 5 `<Signal {...signals[i]}>` blocks, spreads `i = 0` through `4`, each with a `why` and a `watch` slot.
+- Confirm the section order matches the list above: Masthead(header) → HeroThesis → AudioBrief → ClusterCallout → SignalIndex → Synthesis → 5 Signals → PreviousIssues → Methodology(footer).
+- Confirm `slot="header"` is on `<Masthead>` and `slot="footer"` is on `<Methodology>`.
+- Confirm `<AudioBrief>` receives both `audioPath` and `issueDate`.
+- Confirm `<PreviousIssues currentDate={issueDate} />` is present. Do NOT reintroduce a raw `import previousIssues from "../data/issues.json"`, a `const filteredIssues = ...`, or an inline `<section class="previous-issues">` block — the `PreviousIssues` component owns all of that now.
+- Confirm the `import` block, the `type Strength` / `interface SignalMeta` lines, and the `<Methodology>` props are unchanged from the prior issue.
 
 ## Step 10: Write the TTS audio script
 
