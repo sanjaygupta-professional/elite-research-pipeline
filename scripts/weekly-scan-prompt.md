@@ -197,7 +197,7 @@ Use the `Write` tool to replace `digest/src/pages/index.astro` in full. Start fr
 - Confirm `signalCount === strongCount + weakCount` and matches Step 6 totals.
 - Confirm all 5 featured signal `profile` strings appear verbatim in the appended scan section of the weak-signal file.
 - Confirm component imports and `<Methodology>` props are unchanged.
-- Confirm `import previousIssues from "../data/issues.json";`, `const filteredIssues = ...`, and the `<section class="previous-issues">` block are preserved verbatim from the prior issue (the wrapper script archives the prior dispatch, so these must always be carried forward).
+- Confirm the `import PreviousIssues from "../components/PreviousIssues.astro";` line and the `<PreviousIssues currentDate={issueDate} />` element are preserved verbatim from the prior issue. Do NOT reintroduce a raw `import previousIssues from "../data/issues.json";`, a `const filteredIssues = ...`, or an inline `<section class="previous-issues">` block — the `PreviousIssues` component now owns all of that (the wrapper script archives the prior dispatch into `issues/`, and the component reads those archives at build time, so this reference must always be carried forward).
 
 ## Step 10: Write the TTS audio script
 
