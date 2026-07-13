@@ -6,9 +6,10 @@ import Issue from "../layouts/Issue.astro";
 import Masthead from "../components/Masthead.astro";
 import HeroThesis from "../components/HeroThesis.astro";
 import AudioBrief from "../components/AudioBrief.astro";
+import ClusterCallout from "../components/ClusterCallout.astro";
+import SignalIndex from "../components/SignalIndex.astro";
 import Synthesis from "../components/Synthesis.astro";
 import Signal from "../components/Signal.astro";
-import ClusterCallout from "../components/ClusterCallout.astro";
 import Methodology from "../components/Methodology.astro";
 import PreviousIssues from "../components/PreviousIssues.astro";
 
@@ -24,10 +25,116 @@ const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
 const audioPath = existsSync(audioFsPath)
   ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
   : null;
+
+// Single source of truth for signal metadata. The scannable SignalIndex and
+// the full Signal detail blocks both read from this array, so the index number,
+// title, profile, and strength never drift. The why/watch prose stays in each
+// Signal's slots below (it does not belong in a data array).
+type Strength = "strong" | "weak";
+interface SignalMeta {
+  index: number;
+  date: string;
+  category: string;
+  title: string;
+  profile: string;
+  strength: Strength;
+  sources: { label: string; url: string }[];
+}
+
+const signals: SignalMeta[] = [
+  {
+    index: 1,
+    date: "2026-07-07",
+    category: "01 GenAI Capabilities · 04 AI Governance & Ethics",
+    title:
+      "Anthropic's J-Space interpretability paper identifies the verbalizable global workspace controlling Claude's outputs, and shows it is externally steerable via the Jacobian Lens technique.",
+    profile: "E3 T-Em U3 H-Gr Z-Near",
+    strength: "strong",
+    sources: [
+      {
+        label: "thezvi.substack.com/p/no-space-like-j-space",
+        url: "https://thezvi.substack.com/p/no-space-like-j-space",
+      },
+    ],
+  },
+  {
+    index: 2,
+    date: "2026-07-09",
+    category: "08 AI Productivity Tools · 02 Enterprise AI & Org Transformation",
+    title:
+      "OpenAI launches ChatGPT Work as the first general-purpose product designed to run full knowledge-work loops autonomously over hours rather than assisting with individual prompts.",
+    profile: "E3 T-Ac U3 H-Ah Z-Now",
+    strength: "strong",
+    sources: [
+      {
+        label: "openai.com/news/",
+        url: "https://openai.com/news/",
+      },
+      {
+        label: "every.to/chain-of-thought/how-gpt-5-6-changes-knowledge-work",
+        url: "https://every.to/chain-of-thought/how-gpt-5-6-changes-knowledge-work",
+      },
+    ],
+  },
+  {
+    index: 3,
+    date: "2026-07-09",
+    category: "08 AI Productivity Tools · 02 Enterprise AI & Org Transformation",
+    title:
+      "Bun's eleven-day AI-assisted Zig-to-Rust rewrite at approximately $165,000 in API costs provides the first dollar-and-timeline benchmark for large-scale production language migration using AI.",
+    profile: "E3 T-Ac U2 H-Gr Z-Now",
+    strength: "strong",
+    sources: [
+      {
+        label: "newsletter.pragmaticengineer.com",
+        url: "https://newsletter.pragmaticengineer.com/archive",
+      },
+      {
+        label: "simonwillison.net/2026/Jul/8/",
+        url: "https://simonwillison.net/2026/Jul/8/",
+      },
+    ],
+  },
+  {
+    index: 4,
+    date: "2026-07-09",
+    category: "05 AI Infrastructure Trajectory · 02 Enterprise AI & Org Transformation",
+    title:
+      "Meta is building five compute clusters exceeding one gigawatt each and a 3,000-engineer RL organization that converts recorded employee workflows into model training tasks.",
+    profile: "E3 T-Ac U3 H-Gr Z-Near",
+    strength: "strong",
+    sources: [
+      {
+        label: "newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+        url: "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+      },
+    ],
+  },
+  {
+    index: 5,
+    date: "2026-07-12",
+    category: "04 AI Governance & Ethics · 10 Local AI Engineering",
+    title:
+      "A pending White House executive order may restrict open-weights AI models above current frontier capability within six months, creating the first existential regulatory test for the open-source AI ecosystem.",
+    profile: "E2 T-Sh U3 H-Ah Z-Near",
+    strength: "weak",
+    sources: [
+      {
+        label: "interconnects.ai/p/6-months-to-live-for-open-models",
+        url: "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+      },
+      {
+        label: "thezvi.substack.com/p/ai-176-part-2-plan-b",
+        url: "https://thezvi.substack.com/p/ai-176-part-2-plan-b",
+      },
+    ],
+  },
+];
 ---
 
 <Issue title={title} description={description} issueDate={issueDate}>
   <Masthead
+    slot="header"
     issueDate={issueDate}
     scanNumber={13}
     signalCount={5}
@@ -54,6 +161,30 @@ const audioPath = existsSync(audioFsPath)
   </HeroThesis>
 
   <AudioBrief audioPath={audioPath} />
+
+  <ClusterCallout kicker="The pattern across signals 2, 3, and 4">
+    <p>
+      Signal 2, the ChatGPT Work launch, and signal 3, the Bun eleven-day
+      rewrite, are not independent events; they document the workflow-execution
+      thesis at product scale and engineering scale respectively. ChatGPT Work
+      formalizes what frontier models can run when wrapped in an agentic product
+      layer; the Bun rewrite documents what a skilled practitioner can accomplish
+      when a frontier model is applied to a specific production engineering
+      problem with a clear success criterion. Signal 4, the Meta Superintelligence
+      infrastructure analysis, reveals why these patterns compound: Meta's titan
+      clusters and 3,000-engineer RL organization are structured specifically to
+      convert organizational workflow recordings into training tasks, creating a
+      loop in which each workflow the AI executes becomes training signal for
+      the next generation.
+      <strong>The three signals together define the AI infrastructure investment
+      thesis for 2026 to 2029: organizations that convert their own operational
+      workflows into proprietary AI training data will compound capability
+      advantages that organizations purchasing generic API access cannot
+      replicate.</strong>
+    </p>
+  </ClusterCallout>
+
+  <SignalIndex signals={signals} />
 
   <Synthesis>
     <p>
@@ -118,20 +249,7 @@ const audioPath = existsSync(audioFsPath)
     </p>
   </Synthesis>
 
-  <Signal
-    index={1}
-    date="2026-07-07"
-    category="01 GenAI Capabilities · 04 AI Governance & Ethics"
-    title="Anthropic's J-Space interpretability paper identifies the verbalizable global workspace controlling Claude's outputs, and shows it is externally steerable via the Jacobian Lens technique."
-    profile="E3 T-Em U3 H-Gr Z-Near"
-    strength="strong"
-    sources={[
-      {
-        label: "thezvi.substack.com/p/no-space-like-j-space",
-        url: "https://thezvi.substack.com/p/no-space-like-j-space",
-      },
-    ]}
-  >
+  <Signal {...signals[0]}>
     <p slot="why">
       Anthropic's interpretability team identified a global workspace, called
       J-Space, in Claude: a compressed bottleneck where approximately six to
@@ -162,24 +280,7 @@ const audioPath = existsSync(audioFsPath)
     </p>
   </Signal>
 
-  <Signal
-    index={2}
-    date="2026-07-09"
-    category="08 AI Productivity Tools · 02 Enterprise AI & Org Transformation"
-    title="OpenAI launches ChatGPT Work as the first general-purpose product designed to run full knowledge-work loops autonomously over hours rather than assisting with individual prompts."
-    profile="E3 T-Ac U3 H-Ah Z-Now"
-    strength="strong"
-    sources={[
-      {
-        label: "openai.com/news/",
-        url: "https://openai.com/news/",
-      },
-      {
-        label: "every.to/chain-of-thought/how-gpt-5-6-changes-knowledge-work",
-        url: "https://every.to/chain-of-thought/how-gpt-5-6-changes-knowledge-work",
-      },
-    ]}
-  >
+  <Signal {...signals[1]}>
     <p slot="why">
       OpenAI launched ChatGPT Work on July 9: a GPT-5.6 Sol-powered agentic
       product that gathers context across applications and files, completes
@@ -209,24 +310,7 @@ const audioPath = existsSync(audioFsPath)
     </p>
   </Signal>
 
-  <Signal
-    index={3}
-    date="2026-07-09"
-    category="08 AI Productivity Tools · 02 Enterprise AI & Org Transformation"
-    title="Bun's eleven-day AI-assisted Zig-to-Rust rewrite at approximately $165,000 in API costs provides the first dollar-and-timeline benchmark for large-scale production language migration using AI."
-    profile="E3 T-Ac U2 H-Gr Z-Now"
-    strength="strong"
-    sources={[
-      {
-        label: "newsletter.pragmaticengineer.com",
-        url: "https://newsletter.pragmaticengineer.com/archive",
-      },
-      {
-        label: "simonwillison.net/2026/Jul/8/",
-        url: "https://simonwillison.net/2026/Jul/8/",
-      },
-    ]}
-  >
+  <Signal {...signals[2]}>
     <p slot="why">
       Jarred Sumner rewrote the Bun JavaScript runtime from Zig to Rust in
       eleven days using AI assistance, at an API cost of approximately $165,000,
@@ -253,20 +337,7 @@ const audioPath = existsSync(audioFsPath)
     </p>
   </Signal>
 
-  <Signal
-    index={4}
-    date="2026-07-09"
-    category="05 AI Infrastructure Trajectory · 02 Enterprise AI & Org Transformation"
-    title="Meta is building five compute clusters exceeding one gigawatt each and a 3,000-engineer RL organization that converts recorded employee workflows into model training tasks."
-    profile="E3 T-Ac U3 H-Gr Z-Near"
-    strength="strong"
-    sources={[
-      {
-        label: "newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
-        url: "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
-      },
-    ]}
-  >
+  <Signal {...signals[3]}>
     <p slot="why">
       SemiAnalysis's July 9 deep dive documents Meta's closed-model strategy in
       specific detail: five titan clusters each exceeding one gigawatt under
@@ -295,24 +366,7 @@ const audioPath = existsSync(audioFsPath)
     </p>
   </Signal>
 
-  <Signal
-    index={5}
-    date="2026-07-12"
-    category="04 AI Governance & Ethics · 10 Local AI Engineering"
-    title="A pending White House executive order may restrict open-weights AI models above current frontier capability within six months, creating the first existential regulatory test for the open-source AI ecosystem."
-    profile="E2 T-Sh U3 H-Ah Z-Near"
-    strength="weak"
-    sources={[
-      {
-        label: "interconnects.ai/p/6-months-to-live-for-open-models",
-        url: "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
-      },
-      {
-        label: "thezvi.substack.com/p/ai-176-part-2-plan-b",
-        url: "https://thezvi.substack.com/p/ai-176-part-2-plan-b",
-      },
-    ]}
-  >
+  <Signal {...signals[4]}>
     <p slot="why">
       Nathan Lambert (Interconnects, previously at Allen AI) issued a July 12
       post calling the pending White House action "the most serious test to date
@@ -340,31 +394,10 @@ const audioPath = existsSync(audioFsPath)
     </p>
   </Signal>
 
-  <ClusterCallout kicker="The pattern across signals 2, 3, and 4">
-    <p>
-      Signal 2, the ChatGPT Work launch, and signal 3, the Bun eleven-day
-      rewrite, are not independent events; they document the workflow-execution
-      thesis at product scale and engineering scale respectively. ChatGPT Work
-      formalizes what frontier models can run when wrapped in an agentic product
-      layer; the Bun rewrite documents what a skilled practitioner can accomplish
-      when a frontier model is applied to a specific production engineering
-      problem with a clear success criterion. Signal 4, the Meta Superintelligence
-      infrastructure analysis, reveals why these patterns compound: Meta's titan
-      clusters and 3,000-engineer RL organization are structured specifically to
-      convert organizational workflow recordings into training tasks, creating a
-      loop in which each workflow the AI executes becomes training signal for
-      the next generation.
-      <strong>The three signals together define the AI infrastructure investment
-      thesis for 2026 to 2029: organizations that convert their own operational
-      workflows into proprietary AI training data will compound capability
-      advantages that organizations purchasing generic API access cannot
-      replicate.</strong>
-    </p>
-  </ClusterCallout>
-
   <PreviousIssues currentDate={issueDate} />
 
   <Methodology
+    slot="footer"
     frameworkUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/"
     archiveUrl="https://sanjaygupta-professional.github.io/elite-research-pipeline/baseline/zone2-futures-intelligence/06-weak-signal-watch/"
   />

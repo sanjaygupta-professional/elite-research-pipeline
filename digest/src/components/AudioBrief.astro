@@ -14,13 +14,11 @@ const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
 
 {
   hasAudio && (
-    <section class="audio-brief" data-audio-brief>
-      <img
-        class="audio-brief__avatar"
-        src={avatarSrc}
-        alt="Sanjay Gupta"
-        aria-hidden="true"
-      />
+    <section class="audio-brief" data-audio-brief aria-labelledby="audio-brief-heading">
+      <h2 id="audio-brief-heading" class="visually-hidden">
+        Audio brief
+      </h2>
+      <img class="audio-brief__avatar" src={avatarSrc} alt="" />
       <button
         type="button"
         class="audio-brief__play"
@@ -166,11 +164,15 @@ const avatarSrc = `${import.meta.env.BASE_URL}sanjay.png`;
       transform var(--duration-fast) var(--ease-out);
   }
 
-  .audio-brief__play:hover,
-  .audio-brief__play:focus-visible {
+  .audio-brief__play:hover {
     background-color: var(--color-cinnabar);
     color: var(--color-cream);
-    outline: none;
+  }
+
+  /* Focus ring consistent with every other interactive element on the page. */
+  .audio-brief__play:focus-visible {
+    outline: 2px solid var(--color-cinnabar);
+    outline-offset: 3px;
   }
 
   .audio-brief__play:active {

@@ -14,6 +14,8 @@ interface Props {
   sources: Source[];
 }
 
+import SignalProfile from "./SignalProfile.astro";
+
 const { index, date, category, title, profile, strength, sources } = Astro.props;
 const indexLabel = index.toString().padStart(2, "0");
 ---
@@ -28,7 +30,7 @@ const indexLabel = index.toString().padStart(2, "0");
     </div>
     <time class="t-mono signal__date" datetime={date}>{date}</time>
     <p class="t-label signal__category">{category}</p>
-    <p class="t-mono signal__profile" aria-label="Signal profile">{profile}</p>
+    <SignalProfile profile={profile} variant="meters" />
     <div class="signal__sources">
       <span class="t-label signal__sources-label">Sources</span>
       <ol class="signal__sources-list t-mono">
@@ -129,7 +131,7 @@ const indexLabel = index.toString().padStart(2, "0");
   }
 
   .signal__chip[data-strength="strong"] {
-    color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
   }
 
   .signal__chip[data-strength="weak"] {
@@ -146,14 +148,6 @@ const indexLabel = index.toString().padStart(2, "0");
     color: var(--color-mute);
     margin: 0;
     line-height: 1.4;
-  }
-
-  .signal__profile {
-    color: var(--color-cinnabar);
-    font-feature-settings: "ss01", "tnum";
-    font-weight: 500;
-    margin: 0;
-    word-break: break-word;
   }
 
   .signal__sources {
@@ -187,8 +181,8 @@ const indexLabel = index.toString().padStart(2, "0");
   }
 
   .signal__sources-list a:hover {
-    color: var(--color-cinnabar);
-    text-decoration-color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
+    text-decoration-color: var(--color-cinnabar-text);
   }
 
   /* ── Content column ───────────────────────────────────────────── */
@@ -237,7 +231,7 @@ const indexLabel = index.toString().padStart(2, "0");
   }
 
   .signal__watch-label {
-    color: var(--color-cinnabar);
+    color: var(--color-cinnabar-text);
   }
 
   .signal__watch-body {

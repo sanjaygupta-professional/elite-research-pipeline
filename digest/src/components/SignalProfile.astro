@@ -1,0 +1,313 @@
+---
+// SignalProfile — renders the 5-dimension signal profile.
+//
+// "The product," per DESIGN.md. Two variants, same parsed data:
+//   variant="glyph"  → 5 mini bars for the scannable index (compare
+//                      silhouettes down the column at a glance).
+//   variant="meters" → labeled meters for the expanded signal detail;
+//                      self-decoding, so it replaces the need for a
+//                      separate glossary.
+//
+// Driven entirely by the existing `profile` string (e.g.
+// "E3 T-Em U3 H-Gr Z-Near"), so NO content or per-signal prop changes
+// are required in the issue pages. Handles both the compact abbreviations
+// (T-Ac) and older full spellings (T-Accelerating / T-Shifting).
+//
+// Authoritative decode is the signal-scoring framework:
+//   E Evidence 1-5 · T Trajectory · U Capability Unlock 1-4
+//   H Hype-Reality Gap · Z Time Horizon
+
+interface Props {
+  profile: string;
+  variant?: "glyph" | "meters";
+}
+
+const { profile, variant = "glyph" } = Astro.props;
+
+type Dim = {
+  key: string; // E T U H Z
+  label: string; // decoded dimension name
+  value: number; // filled steps (magnitude value, or position 1..max)
+  max: number;
+  short: string; // compact display token ("3", "Ac", "Near")
+  word: string; // full value word ("3 / 5", "Accelerating", "Near")
+  kind: "magnitude" | "position";
+};
+
+type ScaleEntry = { abbr: string; full: string; pos: number };
+
+const SCALES: Record<string, ScaleEntry[]> = {
+  T: [
+    { abbr: "em", full: "Emerging", pos: 1 },
+    { abbr: "ac", full: "Accelerating", pos: 2 },
+    { abbr: "ma", full: "Maturing", pos: 3 },
+    { abbr: "sh", full: "Shifting", pos: 4 },
+  ],
+  H: [
+    { abbr: "gr", full: "Grounded", pos: 1 },
+    { abbr: "ah", full: "Ahead", pos: 2 },
+    { abbr: "ph", full: "Peak-hype", pos: 3 },
+    { abbr: "poh", full: "Post-hype", pos: 4 },
+  ],
+  Z: [
+    { abbr: "now", full: "Now", pos: 1 },
+    { abbr: "near", full: "Near", pos: 2 },
+    { abbr: "med", full: "Medium", pos: 3 },
+    { abbr: "far", full: "Far", pos: 4 },
+  ],
+};
+
+const LABELS: Record<string, string> = {
+  E: "Evidence",
+  T: "Trajectory",
+  U: "Unlock",
+  H: "Hype gap",
+  Z: "Horizon",
+};
+
+const MAGNITUDE_MAX: Record<string, number> = { E: 5, U: 4 };
+
+function lookupPosition(key: string, code: string): ScaleEntry | null {
+  const scale = SCALES[key];
+  if (!scale) return null;
+  const c = code.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return (
+    scale.find((e) => e.abbr === c) ??
+    scale.find((e) => e.full.toLowerCase().replace(/[^a-z]/g, "") === c) ??
+    scale.find((e) => e.full.toLowerCase().replace(/[^a-z]/g, "").startsWith(c)) ??
+    null
+  );
+}
+
+function parseProfile(raw: string): Dim[] {
+  const dims: Dim[] = [];
+  const tokens = (raw || "").trim().split(/\s+/).filter(Boolean);
+  for (const tok of tokens) {
+    const mag = tok.match(/^([A-Za-z])(\d+)$/); // E3, U2
+    if (mag) {
+      const key = mag[1].toUpperCase();
+      const value = parseInt(mag[2], 10);
+      const max = MAGNITUDE_MAX[key] ?? 5;
+      dims.push({
+        key,
+        label: LABELS[key] ?? key,
+        value,
+        max,
+        short: String(value),
+        word: `${value} / ${max}`,
+        kind: "magnitude",
+      });
+      continue;
+    }
+    const pos = tok.match(/^([A-Za-z])-(.+)$/); // T-Ac, H-Grounded
+    if (pos) {
+      const key = pos[1].toUpperCase();
+      const entry = lookupPosition(key, pos[2]);
+      if (entry) {
+        dims.push({
+          key,
+          label: LABELS[key] ?? key,
+          value: entry.pos,
+          max: 4,
+          short: pos[2],
+          word: entry.full,
+          kind: "position",
+        });
+      }
+    }
+  }
+  return dims;
+}
+
+const dims = parseProfile(profile);
+
+// Full decoded label for assistive tech. The visual bars are decorative;
+// this sentence carries the meaning (color/height are never the sole signal).
+const ariaLabel =
+  "Signal profile. " +
+  dims
+    .map((d) =>
+      d.kind === "magnitude"
+        ? `${d.label} ${d.value} of ${d.max}`
+        : `${d.label} ${d.word.toLowerCase()}`,
+    )
+    .join(", ") +
+  ".";
+---
+
+{
+  variant === "glyph" && dims.length > 0 && (
+    <div class="sigprofile sigprofile--glyph" role="img" aria-label={ariaLabel}>
+      {dims.map((d) => (
+        <div class="sigprofile__col" aria-hidden="true">
+          <span class="sigprofile__key">{d.key}</span>
+          <span class="sigprofile__bar" data-kind={d.kind}>
+            <span
+              class="sigprofile__fill"
+              style={`height:${Math.round((d.value / d.max) * 100)}%`}
+            />
+          </span>
+          <span class="sigprofile__val">{d.short}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+{
+  variant === "meters" && dims.length > 0 && (
+    <div class="sigprofile sigprofile--meters">
+      <p class="sigprofile__raw t-mono" aria-hidden="true">
+        {profile}
+      </p>
+      <dl class="sigprofile__meters" aria-label={ariaLabel}>
+        {dims.map((d) => (
+          <div class="sigprofile__meter">
+            <dt class="sigprofile__mlabel">{d.label}</dt>
+            <dd class="sigprofile__mvalue">
+              <span class="sigprofile__cells" aria-hidden="true">
+                {Array.from({ length: d.max }).map((_, i) => (
+                  <span
+                    class="sigprofile__cell"
+                    data-on={i < d.value ? "true" : "false"}
+                  />
+                ))}
+              </span>
+              <span class="sigprofile__word">{d.word}</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+
+<style>
+  /* ── Glyph (index): five mini bars, height encodes value ──────────
+     E and U are magnitudes (n of max); T, H, Z are positions on an
+     ordered axis. Height carries the fingerprint; the value token below
+     and the aria-label carry the exact meaning. Bars are decorative. */
+  .sigprofile--glyph {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .sigprofile__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .sigprofile__key {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-mute);
+    line-height: 1;
+  }
+
+  .sigprofile__bar {
+    display: flex;
+    align-items: flex-end;
+    width: 0.5rem;
+    height: 2.1rem;
+    background-color: var(--color-hairline);
+  }
+
+  .sigprofile__fill {
+    display: block;
+    width: 100%;
+    background-color: var(--color-cinnabar);
+  }
+
+  /* Position dims read a half-tone lighter so a glance separates the two
+     magnitude bars (E, U) from the three positional bars (T, H, Z). */
+  .sigprofile__bar[data-kind="position"] .sigprofile__fill {
+    background-color: var(--color-cinnabar-deep);
+    opacity: 0.55;
+  }
+
+  .sigprofile__val {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-feature-settings: "tnum";
+    color: var(--color-ink);
+    line-height: 1;
+  }
+
+  /* ── Meters (detail): labeled, self-decoding ──────────────────────── */
+  .sigprofile--meters {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-snug);
+  }
+
+  .sigprofile__raw {
+    color: var(--color-cinnabar-deep);
+    font-feature-settings: "ss01", "tnum";
+    font-weight: 500;
+    margin: 0;
+    word-break: break-word;
+  }
+
+  .sigprofile__meters {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .sigprofile__meter {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    align-items: center;
+    column-gap: 0.6rem;
+    row-gap: 0.15rem;
+  }
+
+  .sigprofile__mlabel {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-mute);
+    margin: 0;
+  }
+
+  .sigprofile__mvalue {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .sigprofile__cells {
+    display: inline-flex;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .sigprofile__cell {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--color-hairline);
+  }
+
+  .sigprofile__cell[data-on="true"] {
+    background-color: var(--color-cinnabar-deep);
+  }
+
+  .sigprofile__word {
+    font-family: var(--font-mono);
+    font-size: var(--type-small);
+    color: var(--color-ink);
+    font-feature-settings: "tnum";
+    word-break: break-word;
+  }
+</style>

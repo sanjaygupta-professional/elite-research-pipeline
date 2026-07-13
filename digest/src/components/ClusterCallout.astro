@@ -6,9 +6,9 @@ interface Props {
 const { kicker = "Cluster pattern" } = Astro.props;
 ---
 
-<aside class="cluster" aria-label="Cluster pattern callout">
+<aside class="cluster" aria-labelledby="cluster-heading">
   <div class="cluster__inner measure-wide">
-    <span class="t-label cluster__kicker">{kicker}</span>
+    <h2 id="cluster-heading" class="t-label cluster__kicker">{kicker}</h2>
     <hr class="cinnabar-rule" aria-hidden="true" />
     <div class="cluster__body t-body">
       <slot />
@@ -36,8 +36,11 @@ const { kicker = "Cluster pattern" } = Astro.props;
     gap: var(--space-step);
   }
 
+  /* On the inverted (ink) ground, small cinnabar text needs the lighter
+     variant to clear WCAG AA. cinnabar-light is 5.96:1 on ink. */
   .cluster__kicker {
-    color: var(--color-cinnabar);
+    color: var(--color-cinnabar-light);
+    margin: 0;
   }
 
   .cluster :global(.cinnabar-rule) {
