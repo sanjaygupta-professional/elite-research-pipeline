@@ -10,6 +10,7 @@ import ClusterCallout from "../components/ClusterCallout.astro";
 import SignalIndex from "../components/SignalIndex.astro";
 import Synthesis from "../components/Synthesis.astro";
 import Signal from "../components/Signal.astro";
+import type { SignalLogic } from "../components/SignalSpine.astro";
 import Methodology from "../components/Methodology.astro";
 import PreviousIssues from "../components/PreviousIssues.astro";
 
@@ -39,6 +40,10 @@ interface SignalMeta {
   profile: string;
   strength: Strength;
   sources: { label: string; url: string }[];
+  // Optional 3-beat causal spine. Authored in the scan, distilled ONLY from
+  // this signal's already-cited prose (no new claim/number/URL). Renders as a
+  // visual TL;DR under the title. Prototype: populated for signal 3 only.
+  logic?: SignalLogic;
 }
 
 const signals: SignalMeta[] = [
@@ -84,6 +89,13 @@ const signals: SignalMeta[] = [
       "Bun's eleven-day AI-assisted Zig-to-Rust rewrite at approximately $165,000 in API costs provides the first dollar-and-timeline benchmark for large-scale production language migration using AI.",
     profile: "E3 T-Ac U2 H-Gr Z-Now",
     strength: "strong",
+    logic: {
+      what: "Bun's runtime rewritten Zig → Rust in 11 days, ~$165K in API costs.",
+      mechanism:
+        "≈ one year of small-team engineering, compressed — corroborated by three independent synthesizers.",
+      soWhat:
+        "Large brownfield migration becomes a small-team, API-cost move — no longer a 12–24-month program risk.",
+    },
     sources: [
       {
         label: "newsletter.pragmaticengineer.com",

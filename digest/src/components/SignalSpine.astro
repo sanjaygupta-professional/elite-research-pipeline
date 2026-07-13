@@ -1,0 +1,121 @@
+---
+// SignalSpine — the per-signal logic chain.
+//
+// A three-beat causal distillation of the signal's own argument:
+//   what happened → the mechanism → the enterprise implication ("so what").
+// It is a "picture worth 1000 words" for the signal, sitting under the title
+// as a visual TL;DR before the full prose.
+//
+// IMPORTANT — content discipline: the three beats are authored in the scan and
+// derived ONLY from the signal's already-cited prose. They introduce no new
+// claim, number, or URL, so the spine inherits the signal's sources and adds
+// nothing that needs its own citation. It is a re-presentation, not new content.
+//
+// Rendered as a semantic ordered list (screen readers announce the three beats
+// in order); the connective arrows are decorative CSS and are not announced.
+// All color comes from the shared tokens, so it inverts with the auto dark
+// theme for free — no raster, no per-theme asset.
+
+export interface SignalLogic {
+  what: string; // the event
+  mechanism: string; // why it matters / what shifted
+  soWhat: string; // the enterprise implication
+}
+
+interface Props {
+  logic: SignalLogic;
+}
+
+const { logic } = Astro.props;
+
+const beats: { label: string; text: string }[] = [
+  { label: "What happened", text: logic.what },
+  { label: "Mechanism", text: logic.mechanism },
+  { label: "So what", text: logic.soWhat },
+];
+---
+
+<ol class="spine" aria-label="How this signal reads, in three beats">
+  {
+    beats.map((beat) => (
+      <li class="spine__beat">
+        <span class="t-label spine__label">{beat.label}</span>
+        <span class="spine__text">{beat.text}</span>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  /* Three flat nodes joined by cinnabar arrows. No fill, no shadow — a
+     hairline frame marks each beat so it reads as a diagram, not a paragraph.
+     Desktop: a horizontal spine (arrows point right, between the columns).
+     Mobile: the spine stacks and the arrows point down. */
+  .spine {
+    list-style: none;
+    margin: 0 0 var(--space-rest);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-step);
+    max-width: var(--measure-prose);
+  }
+
+  .spine__beat {
+    position: relative;
+    border: 1px solid var(--color-hairline);
+    border-radius: 0; /* sharp corners — DESIGN.md component philosophy */
+    padding: var(--space-step);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-snug);
+  }
+
+  .spine__label {
+    color: var(--color-cinnabar-text);
+  }
+
+  .spine__text {
+    font-size: var(--type-small);
+    line-height: var(--leading-body);
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
+
+  /* Connective arrow before beats 2 and 3. Decorative (generated content is
+     not announced); the ordered-list sequence carries the meaning for AT. */
+  .spine__beat + .spine__beat::before {
+    content: "";
+    position: absolute;
+    color: var(--color-cinnabar);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  /* Mobile: down arrow centered in the gap above the node. */
+  .spine__beat + .spine__beat::before {
+    content: "\2193"; /* ↓ */
+    top: calc(var(--space-step) / -1);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+  }
+
+  @media (min-width: 620px) {
+    .spine {
+      grid-template-columns: repeat(3, 1fr);
+      /* Extra column-gap leaves room for the right-pointing arrows. */
+      column-gap: 1.6rem;
+    }
+
+    .spine__beat + .spine__beat::before {
+      content: "\2192"; /* → */
+      top: 50%;
+      left: calc(1.6rem / -2);
+      transform: translate(-50%, -50%);
+      font-size: 1.1rem;
+    }
+  }
+</style>
