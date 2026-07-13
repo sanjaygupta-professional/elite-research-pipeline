@@ -1,0 +1,166 @@
+---
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import previousIssues from "../data/issues.json";
+
+interface Props {
+  currentDate: string; // the issue currently being viewed; excluded from the list
+}
+const { currentDate } = Astro.props;
+
+// Each entry's scan number + summary is derived at BUILD TIME by reading the
+// archived issue page it links to. Those pages are the single source of truth
+// (they already carry `scanNumber={N}` and `const description = "..."`), so
+// this never drifts, needs no separate data store, and no backfill. Issues
+// archived by future weekly scans are picked up automatically — the scan
+// copies index.astro into issues/, carrying the same shape this reads.
+const MAX_SUMMARY = 150;
+
+function truncate(text: string): string {
+  const clean = text.trim();
+  if (clean.length <= MAX_SUMMARY) return clean;
+  const cut = clean.slice(0, MAX_SUMMARY);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${cut.slice(0, lastSpace > 0 ? lastSpace : MAX_SUMMARY).trimEnd()}…`;
+}
+
+function issueMeta(date: string) {
+  try {
+    const src = readFileSync(
+      join(process.cwd(), "src", "pages", "issues", `${date}.astro`),
+      "utf8",
+    );
+    const scan = src.match(/scanNumber=\{(\d+)\}/)?.[1] ?? null;
+    const description =
+      src.match(/const description\s*=\s*"((?:[^"\\]|\\.)*)"/)?.[1] ?? "";
+    return { date, scan, summary: description ? truncate(description) : "" };
+  } catch {
+    // Missing/unreadable archive: degrade gracefully to a bare dated link.
+    return { date, scan: null as string | null, summary: "" };
+  }
+}
+
+const issues = previousIssues
+  .filter((i) => i.date !== currentDate)
+  .map((i) => issueMeta(i.date));
+---
+
+{
+  issues.length > 0 && (
+    <section class="prev-issues">
+      <h2 class="prev-issues__heading">Previous Issues</h2>
+      <ul class="prev-issues__list">
+        {issues.map((issue) => (
+          <li class="prev-issues__item">
+            <a
+              class="prev-issues__link"
+              href={`${import.meta.env.BASE_URL}issues/${issue.date}/`}
+            >
+              <span class="prev-issues__meta">
+                <time class="prev-issues__date" datetime={issue.date}>
+                  {issue.date}
+                </time>
+                {issue.scan && (
+                  <>
+                    <span class="prev-issues__sep" aria-hidden="true">
+                      ·
+                    </span>
+                    <span class="prev-issues__scan">Scan №{issue.scan}</span>
+                  </>
+                )}
+              </span>
+              {issue.summary && (
+                <span class="prev-issues__summary">{issue.summary}</span>
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .prev-issues {
+    border-top: var(--rule-thickness) solid var(--color-ink);
+    padding-top: var(--space-rest);
+    margin-top: var(--space-section);
+  }
+
+  .prev-issues__heading {
+    font-family: var(--font-mono);
+    font-size: var(--type-mono-title);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    margin: 0 0 var(--space-step) 0;
+  }
+
+  .prev-issues__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prev-issues__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: var(--space-snug) 0;
+    border-top: var(--space-hairline) solid var(--color-hairline);
+    text-decoration: none;
+    color: var(--color-ink);
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .prev-issues__item:first-child .prev-issues__link {
+    border-top: 0;
+  }
+
+  .prev-issues__link:hover {
+    color: var(--color-cinnabar);
+  }
+
+  .prev-issues__meta {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    font-family: var(--font-mono);
+    font-size: var(--type-small);
+    letter-spacing: 0.005em;
+  }
+
+  .prev-issues__date {
+    color: var(--color-cinnabar);
+    font-weight: 500;
+    font-feature-settings: "tnum";
+  }
+
+  .prev-issues__link:hover .prev-issues__date {
+    color: var(--color-cinnabar-deep);
+  }
+
+  .prev-issues__sep {
+    color: var(--color-hairline);
+    user-select: none;
+  }
+
+  .prev-issues__scan {
+    color: var(--color-mute);
+  }
+
+  .prev-issues__summary {
+    font-family: var(--font-body);
+    font-size: var(--type-small);
+    line-height: 1.45;
+    color: var(--color-mute);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
