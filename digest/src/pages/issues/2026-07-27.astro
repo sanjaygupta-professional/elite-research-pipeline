@@ -2,17 +2,17 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
-import Issue from "../layouts/Issue.astro";
-import Masthead from "../components/Masthead.astro";
-import HeroThesis from "../components/HeroThesis.astro";
-import AudioBrief from "../components/AudioBrief.astro";
-import ClusterCallout from "../components/ClusterCallout.astro";
-import SignalIndex from "../components/SignalIndex.astro";
-import Synthesis from "../components/Synthesis.astro";
-import Signal from "../components/Signal.astro";
-import type { SignalLogic } from "../components/SignalSpine.astro";
-import Methodology from "../components/Methodology.astro";
-import PreviousIssues from "../components/PreviousIssues.astro";
+import Issue from "../../layouts/Issue.astro";
+import Masthead from "../../components/Masthead.astro";
+import HeroThesis from "../../components/HeroThesis.astro";
+import AudioBrief from "../../components/AudioBrief.astro";
+import ClusterCallout from "../../components/ClusterCallout.astro";
+import SignalIndex from "../../components/SignalIndex.astro";
+import Synthesis from "../../components/Synthesis.astro";
+import Signal from "../../components/Signal.astro";
+import type { SignalLogic } from "../../components/SignalSpine.astro";
+import Methodology from "../../components/Methodology.astro";
+import PreviousIssues from "../../components/PreviousIssues.astro";
 
 const issueDate = "2026-07-27";
 const description =
@@ -182,8 +182,8 @@ const signals: SignalMeta[] = [
     slot="header"
     issueDate={issueDate}
     scanNumber={14}
-    signalCount={6}
-    strongCount={5}
+    signalCount={5}
+    strongCount={4}
     weakCount={1}
   />
 
