@@ -1,4 +1,6 @@
 ---
+import { KS_HOME_URL } from "../config";
+
 interface Props {
   issueDate: string; // e.g. "2026-04-27"
   scanNumber: number;
@@ -14,7 +16,7 @@ const {
   signalCount,
   strongCount,
   weakCount,
-  homeUrl = "https://sanjaygupta-professional.github.io/elite-research-pipeline/",
+  homeUrl = KS_HOME_URL,
 } = Astro.props;
 ---
 

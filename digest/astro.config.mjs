@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://sanjaygupta-professional.github.io",
-  base: "/elite-research-pipeline/digest",
+  site: "https://cinnabar-intel.github.io",
+  base: "/digest",
   trailingSlash: "always",
   build: {
     format: "directory",

@@ -2,7 +2,7 @@
 
 A futures intelligence knowledge system at the intersection of **AI / GenAI** and **Organization Transformation**.
 
-**Live site:** https://sanjaygupta-professional.github.io/elite-research-pipeline/
+**Live site:** https://cinnabar-intel.github.io/
 **Author:** [Sanjay Gupta](https://www.linkedin.com/in/sanjayguptaaccenture/) — Senior Executive, Accenture
 **Brand:** Possibilities with Probabilities
 
@@ -12,7 +12,7 @@ A futures intelligence knowledge system at the intersection of **AI / GenAI** an
 
 Two things in one repo:
 
-1. **Knowledge system** (`knowledge-system/`) — the curated, structured corpus. Strategy, taxonomy, baseline research across 4 zones / 10 categories, rolling weak-signal log, and periodic updates. This is the brain. Published as a [browsable site](https://sanjaygupta-professional.github.io/elite-research-pipeline/) via MkDocs Material.
+1. **Knowledge system** (`knowledge-system/`) — the curated, structured corpus. Strategy, taxonomy, baseline research across 4 zones / 10 categories, rolling weak-signal log, and periodic updates. This is the brain. Published as a [browsable site](https://cinnabar-intel.github.io/) via MkDocs Material.
 
 2. **Pipeline tooling** (`assets/project-template/`, `scripts/`) — automation that scans high-signal sources weekly, scores what it finds, and opens a pull request with new entries for human review before merge. This is the engine.
 
@@ -71,10 +71,10 @@ elite-research-pipeline/
 
 The published site mirrors `knowledge-system/`. Most-visited pages:
 
-- [Vision and positioning](https://sanjaygupta-professional.github.io/elite-research-pipeline/design/01-vision-and-positioning/) — why this system exists
-- [Knowledge taxonomy](https://sanjaygupta-professional.github.io/elite-research-pipeline/design/02-knowledge-taxonomy/) — the 4 zones / 10 categories
-- [Weak Signal Watch](https://sanjaygupta-professional.github.io/elite-research-pipeline/baseline/zone2-futures-intelligence/06-weak-signal-watch/) — rolling log of newly observed signals (this is where weekly scans land)
-- [Signal scoring framework](https://sanjaygupta-professional.github.io/elite-research-pipeline/design/05-signal-scoring-framework/) — how every signal is profiled
+- [Vision and positioning](https://cinnabar-intel.github.io/design/01-vision-and-positioning/) — why this system exists
+- [Knowledge taxonomy](https://cinnabar-intel.github.io/design/02-knowledge-taxonomy/) — the 4 zones / 10 categories
+- [Weak Signal Watch](https://cinnabar-intel.github.io/baseline/zone2-futures-intelligence/06-weak-signal-watch/) — rolling log of newly observed signals (this is where weekly scans land)
+- [Signal scoring framework](https://cinnabar-intel.github.io/design/05-signal-scoring-framework/) — how every signal is profiled
 
 Site search is built in (top-right). Visualizations on baseline category files use Mermaid and PaperBanana per [`design/07-visualization-guide.md`](knowledge-system/design/07-visualization-guide.md).
 

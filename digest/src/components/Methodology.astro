@@ -1,10 +1,15 @@
 ---
+import { KS_FRAMEWORK_URL, KS_ARCHIVE_URL } from "../config";
+
 interface Props {
-  frameworkUrl: string;
+  frameworkUrl?: string;
   archiveUrl?: string;
 }
 
-const { frameworkUrl, archiveUrl } = Astro.props;
+const {
+  frameworkUrl = KS_FRAMEWORK_URL,
+  archiveUrl = KS_ARCHIVE_URL,
+} = Astro.props;
 ---
 
 <footer class="methodology">

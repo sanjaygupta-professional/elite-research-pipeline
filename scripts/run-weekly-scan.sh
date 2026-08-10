@@ -192,7 +192,7 @@ Automated Tier 2 source scan from the weekly cron job.
 - `digest/public/audio/${DATE}.mp3` (cloned-voice audio brief — if TTS succeeded; see status: `${AUDIO_NOTE}`)
 
 **Listen before merging:** open the audio brief in GitHub's inline player while this PR is open:
-`https://github.com/sanjaygupta-professional/elite-research-pipeline/blob/${BRANCH}/digest/public/audio/${DATE}.mp3`
+`https://github.com/cinnabar-intel/cinnabar-intel.github.io/blob/${BRANCH}/digest/public/audio/${DATE}.mp3`
 
 (The raw URL serves with `content-disposition: attachment` and downloads instead of playing — use the `blob/` URL above for inline preview.)
 

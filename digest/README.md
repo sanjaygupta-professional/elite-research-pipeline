@@ -8,7 +8,7 @@ Designed via the `/impeccable` flow. Strategy and visual system locked in [`PROD
 
 ```bash
 npm install
-npm run dev          # http://localhost:4321/elite-research-pipeline/digest/
+npm run dev          # http://localhost:4321/digest/
 npm run build        # static output to dist/
 npm run preview      # preview the production build
 ```
@@ -28,7 +28,7 @@ digest/
 │   │   ├── ClusterCallout.astro   Inverted callout (deep ink + cream)
 │   │   └── Methodology.astro      Footer line + author attribution
 │   └── pages/index.astro          The 2026-04-27 issue
-├── astro.config.mjs               base: /elite-research-pipeline/digest
+├── astro.config.mjs               base: /digest
 ├── package.json
 └── tsconfig.json
 ```
@@ -60,7 +60,7 @@ Wired into `.github/workflows/deploy-docs.yml`. On every push to `master` that t
 3. Copies `digest/dist/*` into `site/digest/`
 4. Uploads the merged `site/` as the GitHub Pages artifact
 
-Live URL once deployed: https://sanjaygupta-professional.github.io/elite-research-pipeline/digest/.
+Live URL once deployed: https://cinnabar-intel.github.io/digest/.
 
 ## Adding a new issue
 
