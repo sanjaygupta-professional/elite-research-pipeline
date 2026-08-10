@@ -1,9 +1,9 @@
 site_name: Possibilities with Probabilities
 site_description: A futures intelligence knowledge system at the intersection of AI and organizational transformation.
 site_author: Sanjay Gupta
-site_url: https://sanjaygupta-professional.github.io/elite-research-pipeline/
-repo_url: https://github.com/sanjaygupta-professional/elite-research-pipeline
-repo_name: sanjaygupta-professional/elite-research-pipeline
+site_url: https://cinnabar-intel.github.io/
+repo_url: https://github.com/cinnabar-intel/cinnabar-intel.github.io
+repo_name: cinnabar-intel/cinnabar-intel.github.io
 edit_uri: edit/master/knowledge-system/
 
 docs_dir: knowledge-system
@@ -80,7 +80,7 @@ extra:
       link: https://linkedin.com/in/
       name: LinkedIn
     - icon: fontawesome/brands/github
-      link: https://github.com/sanjaygupta-professional
+      link: https://github.com/cinnabar-intel
       name: GitHub
   generator: false
 

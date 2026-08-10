@@ -8,8 +8,8 @@ import issues from "../data/issues.json";
 // issues.json, reading each page's issueDate + title + description the same way
 // PreviousIssues reads its metadata. Each issue is the single source of truth.
 
-const SITE = import.meta.env.SITE ?? "https://sanjaygupta-professional.github.io";
-const BASE = import.meta.env.BASE_URL; // e.g. "/elite-research-pipeline/digest/"
+const SITE = import.meta.env.SITE ?? "https://cinnabar-intel.github.io";
+const BASE = import.meta.env.BASE_URL; // e.g. "/digest/"
 
 interface Item {
   date: string;
