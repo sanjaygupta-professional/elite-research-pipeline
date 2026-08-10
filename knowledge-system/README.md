@@ -1,8 +1,8 @@
 # Knowledge System — Overview
 
-!!! audio "🔊 This week's audio brief"
-    A 90-second take on the week's signals in my own voice.  
-    [→ Open the dispatch](digest/)
+!!! audio "🔊 The Cinnabar Dispatch: my weekly newsletter"
+    A weekly read on AI and organization transformation, each issue with a 90-second audio brief in my own voice.  
+    [→ Read this week's issue](digest/)
 
 ## What This Is
 
