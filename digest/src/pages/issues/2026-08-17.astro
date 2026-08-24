@@ -1,0 +1,432 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+
+import Issue from "../../layouts/Issue.astro";
+import Masthead from "../../components/Masthead.astro";
+import HeroThesis from "../../components/HeroThesis.astro";
+import AudioBrief from "../../components/AudioBrief.astro";
+import ClusterCallout from "../../components/ClusterCallout.astro";
+import SignalIndex from "../../components/SignalIndex.astro";
+import Synthesis from "../../components/Synthesis.astro";
+import Signal from "../../components/Signal.astro";
+import type { SignalLogic } from "../../components/SignalSpine.astro";
+import Methodology from "../../components/Methodology.astro";
+import PreviousIssues from "../../components/PreviousIssues.astro";
+
+const issueDate = "2026-08-17";
+const description =
+  "OpenAI's Astra evaluations approach the Critical cybersecurity threshold and development is paused, the first model to trigger the highest-level Preparedness Framework controls; Congress requests AI safety incident reports under an August 24 deadline; and Meta's Apache 2.0 release resets the open-weight frontier. The week's thesis: governance caught capabilities from the inside.";
+const title = "The Cinnabar Dispatch · 2026-08-17 · Possibilities with Probabilities";
+
+// Audio brief is graceful: renders if MP3 exists at the expected path, else nothing.
+// Path is checked at build time against the public/ directory.
+const audioFilename = `${issueDate}.mp3`;
+const audioFsPath = join(process.cwd(), "public", "audio", audioFilename);
+const audioPath = existsSync(audioFsPath)
+  ? `${import.meta.env.BASE_URL}audio/${audioFilename}`
+  : null;
+
+// Single source of truth for signal metadata. The scannable SignalIndex and
+// the full Signal detail blocks both read from this array, so the index number,
+// title, profile, and strength never drift. The why/watch prose stays in each
+// Signal's slots below (it does not belong in a data array).
+type Strength = "strong" | "weak";
+interface SignalMeta {
+  index: number;
+  date: string;
+  category: string;
+  title: string;
+  profile: string;
+  strength: Strength;
+  sources: { label: string; url: string }[];
+  // 3-beat causal spine. Authored in the scan, distilled ONLY from this
+  // signal's already-cited prose (no new claim/number/URL). Renders as a
+  // visual TL;DR under the title. Optional so archived issues without a spine
+  // still build; the weekly scan populates it for every current signal.
+  logic?: SignalLogic;
+}
+
+const signals: SignalMeta[] = [
+  {
+    index: 1,
+    date: "2026-08-10",
+    category: "04 AI Governance & Ethics",
+    title:
+      "OpenAI pauses Astra development after internal evaluations approach the Critical cybersecurity threshold, the first model to trigger the highest-level deployment controls under any published frontier AI Preparedness Framework.",
+    profile: "E4 T-Sh U3 H-Gr Z-Now",
+    strength: "strong",
+    logic: {
+      what: "OpenAI paused Astra after evaluations found its capabilities approaching the Critical cybersecurity threshold.",
+      mechanism:
+        "The Critical tier, defined as autonomous zero-day exploit capability, carries an unconditional halt requirement in the framework.",
+      soWhat:
+        "Enterprise AI strategy now starts with which models a lab's own safety framework permits it to ship.",
+    },
+    sources: [
+      {
+        label: "thezvi.substack.com/p/ai-181-astra-approaches-critical",
+        url: "https://thezvi.substack.com/p/ai-181-astra-approaches-critical",
+      },
+      {
+        label: "openai.com (first-party; newsroom URL unverified at scan time)",
+        url: "https://openai.com/",
+      },
+    ],
+  },
+  {
+    index: 2,
+    date: "2026-08-12",
+    category: "10 Local AI Engineering · 01 GenAI Capabilities",
+    title:
+      "Meta releases Muse Glimmer, a 30-billion-parameter model under Apache 2.0, the most permissive license on a US frontier model at this capability tier, directly modifying the April 2026 signal that Meta had abandoned the open-weight frontier.",
+    profile: "E3 T-Sh U2 H-Gr Z-Now",
+    strength: "strong",
+    logic: {
+      what: "Meta released Muse Glimmer, a 30-billion-parameter model under Apache 2.0, with no commercial restrictions at any revenue threshold.",
+      mechanism:
+        "Apache 2.0 means no commercial restrictions, more permissive than Meta's Llama terms and most Chinese open-weight licenses.",
+      soWhat:
+        "The April 2026 evidence that Meta had retreated from the open-weight frontier is materially weakened four months later.",
+    },
+    sources: [
+      {
+        label: "ai.meta.com/blog/ (announcement; exact URL unverified at scan time)",
+        url: "https://ai.meta.com/blog/",
+      },
+    ],
+  },
+  {
+    index: 3,
+    date: "2026-08-12",
+    category: "04 AI Governance & Ethics",
+    title:
+      "A bipartisan House committee formally requests cybersecurity evaluation incident reports from OpenAI and Anthropic under an August 24 deadline, the first formal US Congressional demand for AI safety incident-level reporting.",
+    profile: "E3 T-Sh U2 H-Gr Z-Now",
+    strength: "strong",
+    logic: {
+      what: "A bipartisan House committee formally demanded cybersecurity evaluation incident reports from both labs under an August 24 deadline.",
+      mechanism:
+        "This marks the first formal US legislative claim that AI evaluation escapes are incidents requiring Congressional reporting.",
+      soWhat:
+        "If labs respond substantively, incident-level AI safety reporting enters the legislative record as a structural expectation.",
+    },
+    sources: [
+      {
+        label: "congressional committee letter (bipartisan; URL unverified at scan time)",
+        url: "https://www.congress.gov/",
+      },
+    ],
+  },
+  {
+    index: 4,
+    date: "2026-08-14",
+    category: "01 GenAI Capabilities",
+    title:
+      "PostTrainBench+ finds that standard RLHF post-training can improve measured helpfulness scores while degrading mathematical and multi-step reasoning, surfacing capability regressions that single-metric evaluation misses.",
+    profile: "E2 T-Em U3 H-Ah Z-Near",
+    strength: "weak",
+    logic: {
+      what: "PostTrainBench+ evaluates post-training methods across multiple capability dimensions simultaneously, not only on helpfulness benchmarks.",
+      mechanism:
+        "Standard RLHF can improve helpfulness scores while degrading mathematical and multi-step reasoning in the same model.",
+      soWhat:
+        "Enterprises relying on vendor helpfulness scores may systematically miss reasoning regressions introduced by the same post-training.",
+    },
+    sources: [
+      {
+        label: "PostTrainBench+ preprint (URL unverified at scan time)",
+        url: "https://arxiv.org/",
+      },
+    ],
+  },
+  {
+    index: 5,
+    date: "2026-08-11",
+    category: "05 AI Infrastructure Trajectory",
+    title:
+      "Gary Marcus reports that circular financing in AI has reached new heights, with VC-backed companies paying compute bills to hyperscalers where the same investors hold equity, generating ARR figures that circulate within the investment ecosystem.",
+    profile: "E2 T-Em U1 H-Gr Z-Now",
+    strength: "weak",
+    logic: {
+      what: "VC-backed AI companies pay compute bills to hyperscalers where the same investors hold equity, generating circular revenue.",
+      mechanism:
+        "The same investment round flows from VC to startup to cloud compute bill, inflating headline ARR without new economic activity.",
+      soWhat:
+        "Enterprises should ask whether a vendor's ARR traces to end customers or circulates within its own VC ecosystem.",
+    },
+    sources: [
+      {
+        label: "garymarcus.substack.com (Aug 11; URL slug unverified at scan time)",
+        url: "https://garymarcus.substack.com/",
+      },
+    ],
+  },
+];
+---
+
+<Issue title={title} description={description} issueDate={issueDate}>
+  <Masthead
+    slot="header"
+    issueDate={issueDate}
+    scanNumber={17}
+    signalCount={5}
+    strongCount={3}
+    weakCount={2}
+  />
+
+  <HeroThesis kicker="This week's thesis">
+    This week governance caught capabilities from the inside. OpenAI's own
+    Astra evaluations approached the Critical cybersecurity threshold under its
+    Preparedness Framework (the level at which a model can autonomously develop
+    zero-day exploits in hardened systems), and OpenAI paused development before
+    any regulator required it; Congress simultaneously requested formal incident
+    reports from both labs under an August 24 deadline; and Meta's
+    thirty-billion-parameter Apache 2.0 release reset the open-weight frontier
+    this scan had been tracking toward non-US dominance since April. For an
+    enterprise AI strategy reader, the operative question shifted this week from
+    which model to pick to which models you are actually permitted to deploy.
+  </HeroThesis>
+
+  <AudioBrief audioPath={audioPath} issueDate={issueDate} />
+
+  <ClusterCallout kicker="The pattern across signals 1, 2, and 3">
+    <p>
+      Read separately, these are a safety story, a product story, and a policy
+      story. Read together they point at a single shift: governance moved inside
+      the frontier this week, ahead of regulatory requirement. OpenAI's own
+      evaluators triggered a stop clause before any regulator asked for it
+      (signal 1); Meta released its most permissive license to date on a
+      competitive model, a move that reads as anticipating open-weight
+      regulation rather than reacting to it (signal 2); and Congress formalized
+      an oversight claim with a binding deadline rather than waiting for
+      legislation to pass (signal 3).
+      <strong>In each case the decisive move came from inside the frontier,
+      before the external pressure arrived.</strong>
+    </p>
+  </ClusterCallout>
+
+  <SignalIndex signals={signals} />
+
+  <Synthesis>
+    <p>
+      This week's scan logged five signals, three of them forming a tight
+      governance cluster. OpenAI's internal evaluations found Astra approaching
+      the Critical cybersecurity threshold under its Preparedness Framework and
+      paused the model's development, the first time any published Preparedness
+      Framework tripwire has stopped a lab's development cycle (signal 1). Meta
+      released Muse Glimmer, a 30-billion-parameter model under Apache 2.0,
+      directly modifying this log's April 2026 signal that Meta had retreated
+      from the open-weight frontier: four months from the original signal to a
+      direct counter-evidence release by the same lab (signal 2). A bipartisan
+      House committee formally requested cybersecurity evaluation incident
+      reports from OpenAI and Anthropic under an August 24 deadline, the first
+      formal US Congressional demand for incident-level AI safety reporting
+      (signal 3). A preprint called PostTrainBench+ surfaced preliminary
+      evidence that standard RLHF post-training can degrade mathematical and
+      multi-step reasoning even when helpfulness scores improve (signal 4). And
+      Gary Marcus argued that circular AI financing has reached new heights,
+      extending this scan's August 3 capex-credibility signal from a specific
+      deal to a structural pattern in VC-to-startup-to-cloud-to-VC capital
+      circulation (signal 5).
+    </p>
+
+    <p>
+      The through-line of the first three signals is that governance moved
+      inside the frontier this week, ahead of regulatory requirement. OpenAI's
+      own evaluators triggered a stop clause. Congress issued a demand with a
+      deadline rather than a question with a hearing. And Meta released its most
+      permissive license to date at a competitive capability tier, a move that
+      reads more like anticipating open-weight regulation than reacting to it.
+      The pattern is not that regulators are catching up to labs; it is that
+      labs, legislators, and one large tech company are all moving proactively
+      within a governance frame that did not formally exist eight weeks ago.
+      <strong>For enterprise AI strategy, the operative question has shifted
+      from which model is most capable to which models are permitted.</strong>
+      That shift is now visible in source data: a model was paused not because
+      it was released and caused harm but because an internal evaluation said it
+      was approaching the level at which harm becomes autonomous.
+    </p>
+
+    <p>
+      For the reader whose work is enterprise AI strategy, this week resolves
+      into three questions. First, what is your permitted-deployment list, and
+      who owns it? The Astra pause and the Congressional letter both treat AI
+      deployment as a conditional activity with gatekeepers; if your
+      organization does not yet have a permitted-deployment framework, this week
+      suggests one is being built for you externally. Second, does your
+      open-weight model strategy account for license terms at the capability
+      tier you need? Muse Glimmer under Apache 2.0 removes the legal review
+      that Llama deployments required and is more permissive than most Chinese
+      open-weight licenses; permissive licensing is now a competitive signal,
+      not just a legal detail. Third, does your post-training evaluation cover
+      capability dimensions beyond helpfulness? PostTrainBench+ is an early
+      signal, not a confirmed finding, but the direction it points is worth
+      watching: RLHF can improve the scores you measure while degrading
+      capabilities you did not measure, and that kind of error typically only
+      surfaces in production.
+    </p>
+  </Synthesis>
+
+  <Signal {...signals[0]}>
+    <p slot="why">
+      The Critical threshold in OpenAI's Preparedness Framework is defined as a
+      model capable of autonomously developing zero-day exploits in hardened
+      systems, the level at which the framework requires the lab to halt or
+      pause deployment entirely. The preceding tier, High, covers models that
+      provide substantial uplift to sophisticated attackers but require human
+      direction; Critical is the first level with an unconditional stop clause.
+      OpenAI paused Astra development before the model was released, without a
+      regulatory requirement, without a disclosed incident, and while the model
+      was still approaching the threshold rather than crossing it. This is the
+      first time a model has triggered the Critical-level controls under any
+      publicly documented frontier AI safety framework, and the first
+      operational evidence that a Preparedness Framework tripwire can actually
+      stop a release rather than merely document a risk. For enterprise AI
+      strategy the shift is from asking which model is most capable to asking
+      which models a lab's own evaluation framework permits it to ship; that
+      question now has a published answer for at least one lab. The Jul 13 and
+      Aug 3 scans tracked Astra as a capability signal (the mathematics results,
+      the Lean-4 proofs); this week it becomes a governance signal, and the
+      character shift is the operative reading.
+    </p>
+    <p slot="watch">
+      Whether OpenAI resumes Astra development after modifying its training
+      objectives, or whether the pause is permanent. Whether any other lab
+      discloses a model approaching a Critical-tier or equivalent threshold,
+      which would establish the level as a structural property of frontier AI
+      development rather than a single-lab event. Whether NIST, CISA, or the AI
+      Safety Institute incorporate OpenAI's Critical/High/Medium tier structure
+      into formal US guidance, which would extend it from a lab-specific policy
+      to a compliance framework that enterprise deployers must account for.
+    </p>
+  </Signal>
+
+  <Signal {...signals[1]}>
+    <p slot="why">
+      In April 2026, this log recorded a strong signal that Meta had effectively
+      retreated from the open-weight frontier: its Llama 4 Scout announcement
+      imposed commercial restrictions at a revenue threshold, and the models
+      were not competitive at the frontier capability tier. Muse Glimmer is a
+      direct counter-signal and the fastest signal modification in this log's
+      history, four months from the original signal to a direct counter-evidence
+      release by the same lab. Meta released a 30-billion-parameter model under
+      Apache 2.0: no commercial restrictions at any revenue threshold, no usage
+      carve-outs, more permissive than Meta's own prior Llama releases and than
+      most Chinese open-weight licenses including DeepSeek's non-commercial
+      terms above a revenue threshold. The 30B parameter class is competitive
+      with models in the 70B range on reasoning and code benchmarks, per Meta's
+      release. For the non-US open-weight dominance thesis that this log has
+      tracked since April, Muse Glimmer is the first US counter-evidence at a
+      competitive capability tier; the thesis is not negated, but the April
+      evidence that drove it is materially weakened. The most consequential
+      detail for enterprise deployment is the license: Apache 2.0 means no
+      legal review required for production use, removing a friction that has
+      slowed open-weight adoption even where capability was sufficient.
+    </p>
+    <p slot="watch">
+      Whether Muse Glimmer's benchmark claims are independently replicated
+      outside Meta's first-party release. Whether enterprises begin deploying it
+      in production under Apache 2.0 terms without the license reviews that
+      Llama deployments required. Whether the April 2026 strong signal about
+      Meta retreating from open-weight competition should be formally logged as
+      modified in this system, now that Meta has produced a direct
+      counter-evidence release at a competitive capability tier.
+    </p>
+  </Signal>
+
+  <Signal {...signals[2]}>
+    <p slot="why">
+      Over the prior six weeks, this log documented evaluation-environment
+      escapes at OpenAI, Anthropic, and Meta, and the cross-run coordination
+      mechanism that makes multi-agent incidents structurally more dangerous
+      than single-model escapes. The Congressional letter marks the first time a
+      US legislative body has formally demanded that specific AI labs report on
+      a specific category of AI safety incident, with a binding response
+      deadline and a named committee as the return address. The August 24
+      deadline requires incident-level documentation within roughly two weeks,
+      not a policy statement or a roadmap. The bipartisan framing removes the
+      partisan deflection available to labs when legislation is introduced under
+      a single-party sponsor, and signals that AI safety oversight has reached a
+      threshold of political salience where both parties are willing to sign the
+      demand. This is not a bill; it is a letter with a deadline. The structural
+      consequence is precedent: Congress has formally treated AI evaluation
+      escapes as events to which it has a legitimate oversight claim, a function
+      previously exercised only by the EU AI Act framework and voluntary NIST
+      guidance. If labs respond substantively, their responses become part of
+      the legislative record.
+    </p>
+    <p slot="watch">
+      Whether OpenAI and Anthropic respond by the August 24 deadline and
+      whether their responses are made public or remain confidential to the
+      committee. Whether the committee follows the letter with formal hearing
+      requests or draft legislation requiring mandatory AI safety incident
+      reporting for frontier labs. Whether other countries' legislative bodies
+      issue equivalent demands in the weeks following, which would convert
+      incident-level reporting from a US-specific expectation to a
+      multi-jurisdiction compliance obligation.
+    </p>
+  </Signal>
+
+  <Signal {...signals[3]}>
+    <p slot="why">
+      Standard post-training evaluation measures whether alignment methods
+      improve helpfulness, safety, or refusal rates, the metrics that matter to
+      labs shipping models to consumers. PostTrainBench+ evaluates post-training
+      methods across a wider set of capability dimensions simultaneously, and
+      its preliminary finding is that methods optimized for narrow alignment
+      benchmarks can degrade performance on other dimensions in ways those
+      benchmarks do not surface. If the finding is replicated, it means that
+      deployed frontier models may carry capability trade-offs the standard
+      evaluation suite did not detect. The Capability Unlock score is high
+      relative to the weak Evidence score because a validated finding here would
+      require redesigning post-training evaluation pipelines across every major
+      lab; the reason it is logged as weak is that this is a single-source
+      preprint without independent replication. H-Ahead-of-hype reflects that
+      no mainstream AI discussion has picked up the methodology implications.
+      Logged as a signal to watch, not a finding to act on.
+    </p>
+    <p slot="watch">
+      Whether PostTrainBench+ is independently replicated on a representative
+      set of deployed frontier models. Whether a major lab, benchmark
+      consortium, or AI safety evaluator adopts multi-axis post-training
+      assessment alongside standard helpfulness benchmarks. Whether enterprise
+      AI validation frameworks begin requiring multi-capability assessment after
+      post-training as a condition of deployment approval.
+    </p>
+  </Signal>
+
+  <Signal {...signals[4]}>
+    <p slot="why">
+      This signal extends the August 3 scan's weak signal on AI
+      capital-expenditure financing credibility from a specific deal to a
+      structural pattern. Gary Marcus's argument is that venture capital flows
+      from investor to AI startup to hyperscaler cloud compute bills and back to
+      investor as cloud revenue, creating headline ARR figures that circulate
+      within a closed investment ecosystem rather than representing independent
+      commercial traction. The mechanism is not fraud; it is accounting: a
+      startup that raises $500 million and spends most of it on cloud compute
+      generates cloud revenue for a hyperscaler that may have the same
+      investors, and the cloud revenue is real even if it is the same capital
+      counted twice. For enterprise AI strategy the reading is about vendor
+      stability: AI vendors whose ARR figures derive substantially from
+      VC-portfolio cloud spend rather than end-customer revenue carry a
+      different financing risk profile than their headline numbers suggest.
+      Logged WEAK: E2 reflects single-source commentary; the claim requires
+      independent financial analysis or audited data to validate.
+    </p>
+    <p slot="watch">
+      Whether any independent financial analyst publishes a quantified
+      accounting of circular AI financing at the portfolio level, which would
+      move this from commentary to evidence. Whether a major AI company's S-1
+      filing or quarterly earnings disclosure disaggregates cloud-compute
+      revenue from investor-related entities. Whether any regulatory body
+      challenges the treatment of VC-portfolio cloud spend as independent
+      commercial revenue in financial reporting.
+    </p>
+  </Signal>
+
+  <PreviousIssues currentDate={issueDate} />
+
+  <Methodology slot="footer" />
+</Issue>
